@@ -45,5 +45,4 @@ rm -rf training-parallel-nc-v13
 cd ..
 
 # remove all the parallel data that does not contain German/is not parallel to a German corpus
-cd ..
 find * -type f -not -name "*de*" -exec rm -f {} \;

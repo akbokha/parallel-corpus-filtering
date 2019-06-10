@@ -10,3 +10,5 @@ bicleaner-classify  \
         $TO_BE_CLASSIFIED_DATA  \
         ./output/$OUTPUT_NAME  \
         $TRAINING_METADATA_DIR/en-de.yaml
+
+python extract_corpora_and_scores.py

@@ -28,3 +28,15 @@ $mosesdecoder/scripts/generic/mteval-v13a.pl \
     -r $devset/newstest2017-deen-ref.en.sgm \
     -t data/test.out.sgm \
     > data/test.out.bleu
+
+NOW=(date +"%m_%d_%Y_%H%M%S")
+RESULTS_DIR=../results/$NOW
+mkdir -p $RESULTS_DIR
+
+cp model/model.iter$BEST.* $RESULTS_DIR
+cp model/model.npz*.yml $RESULTS_DIR
+cp model/*.log $RESULTS_DIR
+cp model/bleu_scores $RESULTS_DIR
+cp model/deen.bpe $RESULTS_DIR
+cp model/dev.out $RESULTS_DIR
+cp data $RESULTS_DIR

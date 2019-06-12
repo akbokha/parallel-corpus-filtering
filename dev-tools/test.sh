@@ -31,12 +31,13 @@ $mosesdecoder/scripts/generic/mteval-v13a.pl \
 
 NOW=$(date +"%m_%d_%Y_%H%M%S")
 RESULTS_DIR=../results/$NOW
-mkdir -p $RESULTS_DIR
+mkdir -p $RESULTS_DIR/model
+mkdir -p $RESULTS_DIR/data
 
-cp model/model.iter$BEST.* $RESULTS_DIR
-cp model/model.npz*.yml $RESULTS_DIR
-cp model/*.log $RESULTS_DIR
+cp model/model.iter$BEST.* $RESULTS_DIR/model
+cp model/model.npz*.yml $RESULTS_DIR/model
+cp model/*.log $RESULTS_DIR/model
 cp model/bleu_scores $RESULTS_DIR
-cp model/deen.bpe $RESULTS_DIR
-cp model/dev.out $RESULTS_DIR
-cp data/* $RESULTS_DIR
+cp model/deen.bpe $RESULTS_DIR/model
+cp model/dev.out $RESULTS_DIR/model
+cp data/* $RESULTS_DIR/data

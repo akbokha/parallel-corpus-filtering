@@ -5,7 +5,7 @@ DIRS="$(ssh abdel@magni.inf.ed.ac.uk 'ls -d /fs/bil0/abdel/parallel-corpus-filte
 for dir in $DIRS ; do
     if ! test -f $dir/exp_files.tar.gz; then
         rsync -au --progress \
-            abdel@magni.inf.ed.ac.uk:/fs/bil0/abdel/parallel-corpus-filtering/results/$dir .
+            abdel@magni.inf.ed.ac.uk:/fs/bil0/abdel/parallel-corpus-filtering/results/$dir ./$dir
         find ./$dir -name "*.bpe" \
             -o -name "*.de" \
             -o -name "*.en" \

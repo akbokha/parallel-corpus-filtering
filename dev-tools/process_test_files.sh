@@ -3,7 +3,6 @@ set -e
 
 SRC=de
 TRG=en
-bpe_operations=49500
 
 . ./local-settings.sh
 
@@ -15,7 +14,7 @@ for test_set in $test_sets/*.$SRC; do
 	| $mosesdecoder/scripts/tokenizer/tokenizer.perl -a -l $SRC > "${test_set%.*}".tok.$SRC
     # truecase
     $mosesdecoder/scripts/recaser/truecase.perl -model data/truecase-model.$SRC < "${test_set%.*}".tok.$SRC > "${test_set%.*}".tc.$SRC
-    # apply BPE 
+    # apply BPE
     $subword_nmt/apply_bpe.py -c model/$SRC$TRG.bpe < "${test_set%.*}".tc.$SRC > "${test_set%.*}".bpe.$SRC
 done
 
@@ -27,9 +26,6 @@ for test_set in $test_sets/*.$TRG; do
     	| $mosesdecoder/scripts/tokenizer/tokenizer.perl -a -l $TRG > "${test_set%.*}".tok.$TRG
     # truecase
     $mosesdecoder/scripts/recaser/truecase.perl -model data/truecase-model.$TRG < "${test_set%.*}".tok.$TRG > "${test_set%.*}".tc.$TRG
-    # apply BPE 
+    # apply BPE
     $subword_nmt/apply_bpe.py -c model/$SRC$TRG.bpe < "${test_set%.*}".tc.$TRG > "${test_set%.*}".bpe.$TRG
 done
-
-
-

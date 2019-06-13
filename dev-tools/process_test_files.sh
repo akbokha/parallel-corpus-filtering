@@ -31,4 +31,3 @@ for test_set in $test_sets/*.$TRG; do
     # apply BPE
     $subword_nmt/apply_bpe.py -c model/$SRC$TRG.bpe < data/"${test_file%.*}".tc.$TRG > data/"${test_file%.*}".bpe.$TRG
 done
-

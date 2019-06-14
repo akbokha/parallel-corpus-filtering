@@ -1,7 +1,9 @@
 #!/bin/sh
 
-# experiment-name
+# experiment-name and respective data and model directories
 export experiment=bicleanerv1.1
+export data_dir=experiments/$experiment/data
+export model_dir=experiments/$experiment/model
 
 # set GPU as specified with 0 or dynamically
 export GPU=2

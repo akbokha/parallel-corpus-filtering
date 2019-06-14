@@ -12,9 +12,6 @@ TRG=en
 # or smaller if the operations are learned on the joint vocabulary
 bpe_operations=49500
 
-data_dir=experiments/$experiment/data
-model_dir=experiments/$experiment/model
-
 mkdir -p $data_dir
 mkdir -p $model_dir
 

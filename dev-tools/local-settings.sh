@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# experiment-name
+export experiment=bicleanerv1.1
+
 # set GPU as specified with 0 or dynamically
 export GPU=2
 

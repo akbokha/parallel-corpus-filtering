@@ -24,7 +24,7 @@ for test_set in $test_sets/*.$SRC; do
         | sed -r 's/\@\@ //g' | sed -r 's/\@\@$//g' \
         | $mosesdecoder/scripts/tokenizer/detokenizer.perl -l $TRG \
         | $mosesdecoder/scripts/recaser/detruecase.perl \
-        | $mosesdecoder/scripts/ems/support/wrap-xml.perl $TRG data/"${test_file%.*}".$SRC.sgm \
+        | $mosesdecoder/scripts/ems/support/wrap-xml.perl any data/"${test_file%.*}".$SRC.sgm \
         > data/"${test_file%.*}".out.sgm
 
     $mosesdecoder/scripts/generic/mteval-v13a.pl \

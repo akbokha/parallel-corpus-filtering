@@ -34,3 +34,11 @@ for test_set in $test_sets/*.$SRC; do
         -t $data_dir/"${test_file%.*}".out.sgm \
         > $data_dir/"${test_file%.*}".out.bleu
 done
+
+sed -n -e 's/^.*BLEU score = *//p' *.out.bleu \
+    | awk '{sum += $1 } END { if (NR > 0) print sum / NR }' \
+    | (echo -n "Average BLEU score over the six test-sets: " && cat) >> $data_dir/pcf_avg.out.bleu
+
+sed -n -e 's/^.*NIST score = *//p' *.out.bleu \
+    | awk '{sum += $1 } END { if (NR > 0) print sum / NR }' \
+    | (echo -n "Average NIST score over the six test-sets: " && cat) >> $data_dir/pcf_avg.out.nist

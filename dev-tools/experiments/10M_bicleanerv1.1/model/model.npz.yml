@@ -1,5 +1,5 @@
 workspace: 3000
-log: experiments/10M_bicleanerv1.1/model/train.log
+log: model/train.log
 log-level: info
 log-time-zone: ""
 quiet: false
@@ -9,7 +9,7 @@ clip-gemm: 0
 interpolate-env-vars: false
 relative-paths: false
 dump-config: ""
-model: experiments/10M_bicleanerv1.1/model/model.npz
+model: model/model.npz
 pretrained-model: ""
 ignore-model-config: false
 type: amun
@@ -72,11 +72,11 @@ multi-loss-type: sum
 overwrite: false
 no-reload: false
 train-sets:
-  - experiments/10M_bicleanerv1.1/data/train.bpe.de
-  - experiments/10M_bicleanerv1.1/data/train.bpe.en
+  - data/train.bpe.de
+  - data/train.bpe.en
 vocabs:
-  - experiments/10M_bicleanerv1.1/data/train.bpe.de.json
-  - experiments/10M_bicleanerv1.1/data/train.bpe.en.json
+  - data/train.bpe.de.json
+  - data/train.bpe.en.json
 after-epochs: 0
 after-batches: 0
 disp-freq: 2000
@@ -151,8 +151,8 @@ ulr-dim-emb: 0
 ulr-dropout: 0
 ulr-softmax-temperature: 1
 valid-sets:
-  - experiments/10M_bicleanerv1.1/data/dev.bpe.de
-  - experiments/10M_bicleanerv1.1/data/dev.bpe.en
+  - data/dev.bpe.de
+  - data/dev.bpe.en
 valid-freq: 20000
 valid-metrics:
   - cross-entropy
@@ -167,7 +167,7 @@ allow-unk: false
 n-best: false
 valid-mini-batch: 8
 valid-max-length: 1000
-valid-script-path: ./score-dev_exp.sh
-valid-translation-output: experiments/10M_bicleanerv1.1/model/dev.out
+valid-script-path: ./score-dev.sh
+valid-translation-output: model/dev.out
 keep-best: false
-valid-log: experiments/10M_bicleanerv1.1/model/valid.log
+valid-log: model/valid.log

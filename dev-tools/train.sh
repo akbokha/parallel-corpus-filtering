@@ -2,6 +2,11 @@
 
 . ./local-settings.sh
 
+cp -p ./score-dev.sh ../experiments/$experiment/score-dev.sh
+rel_dirs=$"data_dir=$data_dir\nmodel_dir=$model_dir"
+
+sed -i "4i$rel_dirs" ../experiments/$experiment/score-dev.sh
+
 # kick off training
 $marian/build/marian \
         --sync-sgd \
@@ -21,7 +26,7 @@ $marian/build/marian \
         --valid-sets $data_dir/dev.bpe.de $data_dir/dev.bpe.en \
         --valid-metrics cross-entropy perplexity translation \
         --valid-translation-output $model_dir/dev.out \
-        --valid-script-path ./score-dev.sh \
+        --valid-script-path ../experiments/$experiment/score-dev.sh \
         --seed 1111 --exponential-smoothing \
         --normalize=1 --beam-size=12 --quiet-translation \
         --log $model_dir/train.log --valid-log $model_dir/valid.log

@@ -28,15 +28,3 @@ $mosesdecoder/scripts/generic/mteval-v13a.pl \
     -r $devset/newstest2017-deen-ref.en.sgm \
     -t $data_dir/test.out.sgm \
     > $data_dir/test.out.bleu
-
-# RESULTS_DIR=../results/$experiment
-# mkdir -p $RESULTS_DIR/model
-# mkdir -p $RESULTS_DIR/data
-#
-# cp $model_dir/model.iter$BEST.* $RESULTS_DIR/model
-# cp $model_dir/model.npz*.yml $RESULTS_DIR/model
-# cp $model_dir/*.log $RESULTS_DIR/model
-# cp $model_dir/bleu_scores $RESULTS_DIR
-# cp $model_dir/deen.bpe $RESULTS_DIR/model
-# cp $model_dir/dev.out $RESULTS_DIR/model
-# cp $model_dir/* $RESULTS_DIR/data

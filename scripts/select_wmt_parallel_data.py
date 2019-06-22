@@ -33,8 +33,8 @@ random_sentence_pair_indices = random.sample(range(1, len(sentence_pairs_de)), n
 de_selection = [sentence_pairs_de[i] for i in random_sentence_pair_indices]
 en_selection = [sentence_pairs_en[i] for i in random_sentence_pair_indices]
 
-with open(os.path.join(wmt_data_dir, 'wmt_parallel_data_selection.de'), 'w') as out:
+with open(os.path.join(wmt_data_dir, 'wmt_parallel_data_random_1M_selection.de'), 'w') as out:
     out.writelines(de_selection)
 
-with open(os.path.join(wmt_data_dir, 'wmt_parallel_data_selection.en'), 'w') as out:
+with open(os.path.join(wmt_data_dir, 'wmt_parallel_data_random_1M_selection.en'), 'w') as out:
     out.writelines(en_selection)

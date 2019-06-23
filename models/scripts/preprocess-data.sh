@@ -20,13 +20,13 @@ bpe_operations=32000
 # tokenize
 for prefix in corpus valid test2014 test2015 test2016
 do
-    cat $data_dir/$prefix.$SRC \
+    cat data/$prefix.$SRC \
         | $moses_scripts/scripts/tokenizer/normalize-punctuation.perl -l $SRC \
         | $moses_scripts/scripts/tokenizer/tokenizer.perl -a -l $SRC > $data_dir/$prefix.tok.$SRC
 
     test -f $data_dir/$prefix.$TRG || continue
 
-    cat $data_dir/$prefix.$TRG \
+    cat data/$prefix.$TRG \
         | $moses_scripts/scripts/tokenizer/normalize-punctuation.perl -l $TRG \
         | $moses_scripts/scripts/tokenizer/tokenizer.perl -a -l $TRG > $data_dir/$prefix.tok.$TRG
 done

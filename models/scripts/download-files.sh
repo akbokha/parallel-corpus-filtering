@@ -1,7 +1,7 @@
 #!/bin/bash -v
 
-data_dir=$1
-cd $data_dir
+mkdir -p data
+cd data
 
 # get En-De training data for WMT17
 wget -nc http://www.statmt.org/europarl/v7/de-en.tgz

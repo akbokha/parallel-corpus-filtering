@@ -22,12 +22,12 @@ mkdir -p $data_dir
 mkdir -p $model_dir
 
 # set chosen gpus
-GPUS="0"
+GPUS=$3
 echo Using GPUs: $GPUS
 
-if [ ! -e "$data_dir/corpus.$SRC" ]
+if [ ! -e "data/corpus.$SRC" ]
 then
-    ./scripts/download-files.sh
+    ../scripts/download-files.sh
 fi
 
 # preprocess data
@@ -40,7 +40,7 @@ then
     LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt15 -l $SRC-$TRG --echo src >  $data_dir/test2015.$SRC
     LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt16 -l $SRC-$TRG --echo src >  $data_dir/test2016.$SRC
 
-    ./scripts/preprocess-data.sh $SRC $TRG $data_dir $model_dir
+    ../scripts/preprocess-data.sh $SRC $TRG $data_dir $model_dir
 fi
 
 # create common vocabulary
@@ -62,7 +62,7 @@ then
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics cross-entropy ce-mean-words perplexity translation bleu \
         --valid-sets $data_dir/valid.bpe.$SRC $data_dir/valid.bpe.$TRG \
-        --valid-script-path "bash ./scripts/validate.sh $TRG $data_dir" \
+        --valid-script-path "bash ../scripts/validate.sh $TRG $data_dir" \
         --valid-translation-output "$data_dir/valid.bpe.$SRC.output" --quiet-translation \
         --valid-mini-batch 64 \
         --beam-size 6 --normalize 0.6 \

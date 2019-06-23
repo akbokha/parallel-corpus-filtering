@@ -24,7 +24,7 @@ do
         | $moses_scripts/scripts/tokenizer/normalize-punctuation.perl -l $SRC \
         | $moses_scripts/scripts/tokenizer/tokenizer.perl -a -l $SRC > $data_dir/$prefix.tok.$SRC
 
-    test -f $data_dir/$prefix.$TRG || continue
+    test -f data/$prefix.$TRG || continue
 
     cat data/$prefix.$TRG \
         | $moses_scripts/scripts/tokenizer/normalize-punctuation.perl -l $TRG \

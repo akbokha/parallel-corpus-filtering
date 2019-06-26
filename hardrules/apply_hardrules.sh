@@ -2,8 +2,14 @@
 
 PARALLEL_DATA="../data/official_shared_task_data/data"
 
-mkdir -p output
+EXPERIMENT=${1:-"bicleaner_v1.1"}
+OUTPUT_DIR="./output/$EXPERIMENT"
 
-bicleaner-hardrules -s en -t de $PARALLEL_DATA ./output/data_hardrules
+mkdir -p $OUTPUT_DIR
 
-python filter_hardrules.py
+bicleaner-hardrules --annotated_output $OUTPUT_DIR/data_hardrules_annotated  -s en -t de $PARALLEL_DATA $OUTPUT_DIR/data_hardrules
+
+python filter_hardrules.py $OUTPUT_DIR
+
+rm $OUTPUT_DIR/data_hardrules
+rm $OUTPUT_DIR/data_hardrules_annotated

@@ -1,9 +1,15 @@
 import csv
+import sys
+import os
 
-with open('./output/data_classified') as data, \
-    open('./output/filtered_data_raw.en', 'w') as en, \
-    open('./output/filtered_data_raw.de', 'w') as de, \
-    open('./output/filtered_data_scores', 'w') as scores:
+output_dir='./output'
+if len(sys.argv) > 1:
+    output_dir=sys.argv[1]
+
+with open(os.path.join(output_dir, 'data_classified')) as data, \
+    open(os.path.join(output_dir, 'filtered_data_raw.en'), 'w') as en, \
+    open(os.path.join(output_dir, 'filtered_data_raw.de'), 'w') as de, \
+    open(os.path.join(output_dir, 'filtered_data_scores'), 'w') as scores:
     writer_en = csv.writer(en, delimiter='\t')
     writer_de = csv.writer(de, delimiter='\t')
     writer_sc = csv.writer(scores, delimiter='\t')

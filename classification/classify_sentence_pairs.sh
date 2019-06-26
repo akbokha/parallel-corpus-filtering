@@ -1,14 +1,19 @@
 #!/bin/sh
 
-TRAINING_METADATA_DIR=${1:-"../data/language_packs/en-de"}
-TO_BE_CLASSIFIED_DATA=${2:-"../hardrules/output/data_filtered_hardrules"}
-OUTPUT_NAME=${3:-"data_classified"}
+EXPERIMENT=${1:-"bicleaner_v1.1"}
+TRAINING_METADATA_DIR=${2:-"../data/language_packs/en-de"}
 
-mkdir -p output
+OUTPUT_DIR="./output/$EXPERIMENT"
+
+TO_BE_CLASSIFIED_DATA="../hardrules/output/$EXPERIMENT/data_hardrules_filtered"
+
+mkdir -p $OUTPUT_DIR
 
 bicleaner-classify  \
         $TO_BE_CLASSIFIED_DATA  \
-        ./output/$OUTPUT_NAME  \
+        $OUTPUT_DIR/data_classified  \
         $TRAINING_METADATA_DIR/en-de.yaml
 
-python extract_corpora_and_scores.py
+python extract_corpora_and_scores.py $OUTPUT_DIR
+
+rm $OUTPUT_DIR/data_classified

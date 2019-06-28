@@ -1,40 +1,28 @@
 #!/bin/sh
 
-SRC=en
-TRG=de
+SRC=${1:-"en"}
+TRG=${2:-"de"}
 
 # path to marian
-marian=/fs/bil0/abdel/marian-dev
+marian=/fs/bil0/abdel/marian
 
 marian_scorer=$marian/build/marian-scorer
 
-GPU=0
+GPU="5"
 
-parallel_data=../filtering/output/corpus_lang_filtered
+parallel_data=../filtering/output/corpus_fasttext_filtered
 
-ende_model_dir=../models/translation/models/transformer-model-en-de/model
-deen_model_dir=../models/translation/models/transformer-model-de-en/model
+model_dir="../models/translation/models/transformer-model-$SRC-$TRG"/model
 
 output_dir=output
+mkdir -p $output_dir
 
-export BEST_ende=`ls $ende_model_dir/model.iter*.bleu
-    | perl -ne 'chop; /iter(\d+).npz/; $iter = $1; qx/cat $_/ =~ /BLEU = ([\d\.]+), /; if ($1>$bleu) { $bleu=$1; $best = $iter; print $best."\n"; }'
-    | tail -n 1`
-
-export BEST_deen=`ls $deen_model_dir/model.iter*.bleu
-    | perl -ne 'chop; /iter(\d+).npz/; $iter = $1; qx/cat $_/ =~ /BLEU = ([\d\.]+), /; if ($1>$bleu) { $bleu=$1; $best = $iter; print $best."\n"; }'
-    | tail -n 1`
+BEST=`cat $model_dir/valid.log | grep bleu | sort -rg -k12,12 -t' ' | cut -f8 -d' ' | head -n1`
 
 $marian_scorer \
-    -m $BEST_ende
-    -v $ende_model_dir/vocab.ende.yml $ende_model_dir/vocab.ende.yml
-    -t $parallel_data.{"$SRC", "$TRG"}
-    --summary ce-mean-words
-    --devices $GPU > $output_dir/en_de_dce_scores.txt
+    -m $model_dir/model.iter$BEST.npz \
+    -v $model_dir/vocab.ende.yml $model_dir/vocab.ende.yml \
+    -t $parallel_data.$SRC $parallel_data.$TRG \
+    --devices $GPU \
+    -n  > $output_dir/"$SRC"_"$TRG"_ce_normalized_scores.txt
 
-$marian_scorer \
-    -m $BEST_deen
-    -v $deen_model_dir/vocab.ende.yml $ende_model_dir/vocab.ende.yml
-    -t $parallel_data.{"$TRG", "$SRC"}
-    --summary ce-mean-words
-    --devices $GPU > $output_dir/de_en_dce_scores.txt

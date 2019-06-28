@@ -5,7 +5,7 @@ TRAINING_METADATA_DIR=${2:-"../data/language_packs/en-de"}
 
 OUTPUT_DIR="./output/$EXPERIMENT"
 
-TO_BE_CLASSIFIED_DATA="../hardrules/output/$EXPERIMENT/data_hardrules_filtered"
+TO_BE_CLASSIFIED_DATA=${3:-"../hardrules/output/$EXPERIMENT/data_hardrules_filtered"}
 
 mkdir -p $OUTPUT_DIR
 

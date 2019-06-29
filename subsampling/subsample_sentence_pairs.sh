@@ -3,7 +3,7 @@
 EXPERIMENT=${1:-"bicleaner_v1.1"}
 OUTPUT_NAME=${2:-"parallel_corpus"}
 OUTPUT_DIR="./output/$EXPERIMENT"
-CLASSIFIED_DATA_DIR="../classification/output/$EXPERIMENT"
+CLASSIFIED_DATA_DIR=${3:-"../classification/output/$EXPERIMENT"}
 
 mkdir -p $OUTPUT_DIR
 

@@ -63,7 +63,7 @@ fi
 # create common vocabulary
 if [ ! -e "$model_dir/vocab.ende.yml" ]
 then
-    cat $data_dir/corpus.bpe.$SRC data/corpus.bpe.$TRG | $MARIAN_VOCAB --max-size 36000 > $model_dir/vocab.ende.yml
+    cat $data_dir/corpus.bpe.$SRC $data_dir/corpus.bpe.$TRG | $MARIAN_VOCAB --max-size 36000 > $model_dir/vocab.ende.yml
 fi
 
 # train model
@@ -179,7 +179,7 @@ do
       $MARIAN_SCORER -m $model_dir/model/ens-rtl$i/model.npz.best-perplexity.npz \
         -v $model_dir/vocab.ende.yml $model_dir/vocab.ende.yml -d $GPUS \
         --mini-batch 16 --maxi-batch 100 --maxi-batch-sort trg --n-best --n-best-feature R2L$(expr $i - 1) \
-        -t $data_dir/$prefix.bpe.$SRC data/$prefix.bpe.$SRC.output.nbest.$(expr $i - 1) > data/$prefix.bpe.$SRC.output.nbest.$i
+        -t $data_dir/$prefix.bpe.$SRC $data_dir/$prefix.bpe.$SRC.output.nbest.$(expr $i - 1) > $data_dir/$prefix.bpe.$SRC.output.nbest.$i
     done
 
     cat $data_dir/$prefix.bpe.$SRC.output.nbest.$N \

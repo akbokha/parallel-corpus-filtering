@@ -16,7 +16,7 @@ export sacre_bleu=/fs/bil0/abdel/sacreBLEU
 export wmt_parallel_copora=/fs/bil0/abdel/data/wmt_parallel_data/wmt18_pp_parallel_data_random_1M_selection
 
 # see https://github.com/marian-nmt/marian-examples/tree/master/transformer for more details
-export model_type=transformer-model
+export model_type=wmt2017-transformer
 
 # work-space size (RAM)
 export work_space_size=6000

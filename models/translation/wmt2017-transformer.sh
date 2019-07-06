@@ -18,6 +18,9 @@ experiment="$model_type-$SRC-$TRG"
 data_dir=models/$experiment/data
 model_dir=models/$experiment/model
 
+mkdir -p $data_dir
+mkdir -p $model_dir
+
 # set chosen gpus
 GPUS=$3
 echo Using GPUs: $GPUS
@@ -31,10 +34,10 @@ then
     ../scripts/$model_type/download-files.sh
 fi
 
-mkdir -p model
+mkdir -p $model_dir/model
 
 # preprocess data
-if [ ! -e "data/corpus.bpe.$SRC" ]
+if [ ! -e "$data_dir/corpus.bpe.$SRC" ]
 then
     LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt16 -l $SRC-$TRG --echo src > $data_dir/valid.$SRC
     LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt16 -l $SRC-$TRG --echo ref > $data_dir/valid.$TRG

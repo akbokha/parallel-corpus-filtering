@@ -47,7 +47,7 @@ then
     LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt16 -l $SRC-$TRG --echo src > $data_dir/test2016.$SRC
     LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt17 -l $SRC-$TRG --echo src > $data_dir/test2017.$SRC
 
-    ../scripts/$model_type/preprocess-data.sh
+    ../scripts/$model_type/preprocess-data.sh $SRC $TRG $data_dir $model_dir
 fi
 
 if [ ! -e "$data_dir/news.2016.$TRG" ]
@@ -57,7 +57,7 @@ fi
 
 if [ ! -e "$data_dir/news.2016.bpe.$TRG" ]
 then
-    ../scripts/$model_type/preprocess-data-mono.sh
+    ../scripts/$model_type/preprocess-data-mono.sh $SRC $TRG $data_dir $model_dir
 fi
 
 # create common vocabulary

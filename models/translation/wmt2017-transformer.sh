@@ -176,18 +176,18 @@ do
       $MARIAN_SCORER -m $model_dir/model/ens-rtl$i/model.npz.best-perplexity.npz \
         -v $model_dir/vocab.ende.yml $model_dir/vocab.ende.yml -d $GPUS \
         --mini-batch 16 --maxi-batch 100 --maxi-batch-sort trg --n-best --n-best-feature R2L$(expr $i - 1) \
-        -t $data_dir/$prefix.bpe.$SRC data/$prefix.bpe.$SRC.output.nbest.$(expr $i - 1) > data/$prefix.bpe.en.output.nbest.$i
+        -t $data_dir/$prefix.bpe.$SRC data/$prefix.bpe.$SRC.output.nbest.$(expr $i - 1) > data/$prefix.bpe.$SRC.output.nbest.$i
     done
 
-    cat data/$prefix.bpe.en.output.nbest.$N \
-      | python scripts/rescore.py \
+    cat $data_dir/$prefix.bpe.$SRC.output.nbest.$N \
+      | python ../scripts/$model_type/rescore.py \
       | perl -pe 's/@@ //g' \
-      | ../tools/moses-scripts/scripts/recaser/detruecase.perl \
-      | ../tools/moses-scripts/scripts/tokenizer/detokenizer.perl > data/$prefix.en.output
+      | $moses_scripts/scripts/recaser/detruecase.perl \
+      | $moses_scripts/scripts/tokenizer/detokenizer.perl > $data_dir/$prefix.$SRC.output
 done
 
 # calculate bleu scores on test sets
-LC_ALL=C.UTF-8 ../tools/sacreBLEU/sacrebleu.py -t wmt16 -l en-de < data/valid.en.output
-LC_ALL=C.UTF-8 ../tools/sacreBLEU/sacrebleu.py -t wmt14 -l en-de < data/test2014.en.output
-LC_ALL=C.UTF-8 ../tools/sacreBLEU/sacrebleu.py -t wmt15 -l en-de < data/test2015.en.output
-LC_ALL=C.UTF-8 ../tools/sacreBLEU/sacrebleu.py -t wmt17 -l en-de < data/test2017.en.output
+LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt16 -l $SRC-$TRG < $data_dir/valid.$SRC.output
+LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt14 -l $SRC-$TRG < $data_dir/test2014.$SRC.output
+LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt15 -l $SRC-$TRG < $data_dir/test2015.$SRC.output
+LC_ALL=C.UTF-8 $sacre_bleu/sacrebleu.py -t wmt17 -l $SRC-$TRG < $data_dir/test2017.$SRC.output

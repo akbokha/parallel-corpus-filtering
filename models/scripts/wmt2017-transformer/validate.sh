@@ -1,11 +1,7 @@
 #!/bin/bash
 
 export LC_ALL=C.UTF-8
-
 . ./config.sh
-
-TRG=$1
-data_dir=$2
 
 cat $1 \
     | sed 's/\@\@ //g' \

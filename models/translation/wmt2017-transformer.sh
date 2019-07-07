@@ -21,6 +21,14 @@ model_dir=models/$experiment/model
 mkdir -p $data_dir
 mkdir -p $model_dir
 
+cp -p ../scripts/$model_type/validate.src.sh ./models/$experiment/validate.$SRC.sh
+cp -p ../scripts/$model_type/validate.sh ./models/$experiment/validate.sh
+
+insert_vars=$"data_dir=$data_dir\nSRC=$SRC\nTRG=$TRG"
+
+sed -i "4i$insert_vars" ./models/$experiment/validate.$SRC.sh
+sed -i "5i$insert_vars" ./models/$experiment/validate.sh
+
 # set chosen gpus
 GPUS=$3
 echo Using GPUs: $GPUS
@@ -78,7 +86,7 @@ then
         --mini-batch-fit -w $work_space_size --maxi-batch 1000 \
         --valid-freq 10000 --save-freq 10000 --disp-freq 1000 \
         --valid-metrics ce-mean-words perplexity translation \
-        --valid-script-path "bash ../scripts/$model_type/validate.src.sh $SRC $data_dir" \
+        --valid-script-path "bash ./models/$experiment/validate.$SRC.sh" \
         --valid-translation-output $data_dir/valid.bpe.$TRG.output --quiet-translation \
         --valid-sets $data_dir/valid.bpe.$TRG $data_dir/valid.bpe.$SRC \
         --valid-mini-batch 64 --beam-size 12 --normalize=1 \
@@ -120,7 +128,7 @@ do
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics ce-mean-words perplexity translation \
         --valid-sets $data_dir/valid.bpe.$SRC $data_dir/valid.bpe.$TRG \
-        --valid-script-path "bash ../scripts/$model_type/validate.sh $TRG $data_dir" \
+        --valid-script-path "bash ./models/$experiment/validate.sh" \
         --valid-translation-output $data_dir/valid.bpe.$SRC.output --quiet-translation \
         --beam-size 12 --normalize=1 \
         --valid-mini-batch 64 \
@@ -149,7 +157,7 @@ do
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics ce-mean-words perplexity translation \
         --valid-sets $data_dir/valid.bpe.$SRC $data_dir/valid.bpe.$TRG \
-        --valid-script-path  "bash ../scripts/$model_type/validate.sh $TRG $data_dir" \
+        --valid-script-path  "bash ./models/$experiment/validate.sh" \
         --valid-translation-output $data_dir/valid.bpe.$SRC.output --quiet-translation \
         --beam-size 12 --normalize=1 \
         --valid-mini-batch 64 \

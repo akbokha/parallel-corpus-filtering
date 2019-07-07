@@ -2,9 +2,6 @@
 
 . ./config.sh
 
-SRC=$1
-data_dir=$2
-
 cat $1 \
     | sed 's/\@\@ //g' \
     | $moses_scripts/scripts/recaser/detruecase.perl 2>/dev/null \

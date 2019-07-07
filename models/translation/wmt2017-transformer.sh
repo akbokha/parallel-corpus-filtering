@@ -60,7 +60,7 @@ fi
 
 if [ ! -e "$data_dir/news.2016.$TRG" ]
 then
-    ../scripts/$model_type/download-files-mono.sh
+    ../scripts/$model_type/download-files-mono.sh $TRG
 fi
 
 if [ ! -e "$data_dir/news.2016.bpe.$TRG" ]

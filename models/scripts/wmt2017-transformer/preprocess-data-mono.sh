@@ -16,7 +16,7 @@ model_dir=$4
 
 prefix=news.2016
 
-cat $data_dir/$prefix.$TRG \
+cat data/$prefix.$TRG \
     | $moses_scripts/scripts/tokenizer/normalize-punctuation.perl -l $TRG \
     | $moses_scripts/scripts/tokenizer/tokenizer.perl -a -l $TRG > $data_dir/$prefix.tok.$TRG
 

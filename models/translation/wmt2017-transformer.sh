@@ -58,9 +58,9 @@ then
     ../scripts/$model_type/preprocess-data.sh $SRC $TRG $data_dir $model_dir
 fi
 
-if [ ! -e "$data_dir/news.2016.$TRG" ]
+if [ ! -e "data/news.2016.$TRG" ]
 then
-    ../scripts/$model_type/download-files-mono.sh $TRG
+    ../scripts/$model_type/download-files-mono.sh
 fi
 
 if [ ! -e "$data_dir/news.2016.bpe.$TRG" ]

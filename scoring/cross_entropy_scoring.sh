@@ -23,6 +23,6 @@ BEST=`cat $model_dir/valid.log | grep perplexity | sort -rg -k12,12 -t' ' | cut 
 $marian_scorer \
     -m $model_dir/model.iter$BEST.npz \
     -v "$model_dir/vocab.$LANG.yml" \
-    -t $parallel_data.$SRC $parallel_data.$TRG \
+    -t $parallel_data.$LANG \
     --devices $GPU \
     -n  > $output_dir/"$CORPUS"_"$LANG"_ced_scores.txt

@@ -6,8 +6,8 @@ lang=en
 cut_off_value=0.25
 GPUS="0 1"
 
-./cross_entropy_scoring.sh $lang news-crawl $GPUS $parallel_data $experiment
-./cross_entropy_scoring.sh $lang paracrawl $GPUS $parallel_data $experiment
+./cross_entropy_scoring.sh $lang news-crawl "$GPUS" $parallel_data $experiment
+./cross_entropy_scoring.sh $lang paracrawl "$GPUS" $parallel_data $experiment
 
 cp $parallel_data.* ./output/$experiment/$parallel_data.*
 

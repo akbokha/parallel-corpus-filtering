@@ -24,5 +24,5 @@ $marian_scorer \
     -m $model_dir/model.iter$BEST.npz \
     -v $model_dir/vocab.ende.yml $model_dir/vocab.ende.yml \
     -t $parallel_data.$SRC $parallel_data.$TRG \
-    --devices $GPU \
+    --devices "$GPU" \
     -n  > $output_dir/"$SRC"_"$TRG"_cce_scores.txt

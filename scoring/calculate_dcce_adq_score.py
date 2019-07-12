@@ -27,9 +27,8 @@ with open(data_en) as en, open(data_de) as de, \
     hA_scores = hAs.readlines()
     hB_scores = hBs.readlines()
 
-    assert len(en_sentences) == len(de_sentences) == len(hA_scores) == len(hB_scores)
 
     for en_s, de_s, hA, hB in zip(en_sentences, de_sentences, hA_scores, hB_scores):
-        hA, hB = abs(hA), abs(hB)
-        dcce_adq_score = exp((-1.0 * abs(hA - hB)) + (0.5 * (hA + hB)))
+        hA, hB = abs(float(hA)), abs(float(hB))
+        dcce_adq_score = exp(-1.0 * (abs(hA - hB) + 0.5 * (hA + hB)))
         out.write("%f\n" % dcce_adq_score)

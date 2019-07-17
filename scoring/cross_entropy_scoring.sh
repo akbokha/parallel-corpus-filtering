@@ -9,7 +9,7 @@ parallel_data=${4:-"../filtering/corpus_fasttext_filtered"}
 experiment=${5:-"ced"}
 
 # path to marian
-marian=/fs/bil0/abdel/marian
+marian=/fs/bil0/abdel/marian-dev
 
 marian_scorer=$marian/build/marian-scorer
 
@@ -24,5 +24,5 @@ $marian_scorer \
     -m $model_dir/model.iter$BEST.npz \
     -v "$model_dir/vocab.$LANG.yml" \
     -t $parallel_data.$LANG \
-    --devices $GPU \
-    -n  > $output_dir/"$CORPUS"_"$LANG"_ced_scores.txt
+    --devices "$GPU" \
+    > $output_dir/"$CORPUS"_"$LANG"_ced_scores.txt

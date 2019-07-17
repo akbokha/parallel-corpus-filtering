@@ -3,6 +3,8 @@
 data=${1:-"../data/official_shared_task_data/corpus"}
 experiment=${2:-"random"}
 
+mkdir -p output/$experiment
+
 cp $data.en ./output/$experiment/filtered_data_raw.en
 cp $data.de ./output/$experiment/filtered_data_raw.de
 

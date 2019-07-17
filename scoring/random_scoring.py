@@ -20,5 +20,5 @@ with open(data_en) as en, open(data_de) as de, \
 
     assert len(en_sentences) == len(de_sentences)
 
-    for _ in range(len(en_sentences))
+    for _ in range(len(en_sentences)):
         out.write("%f\n" % random.uniform(0, 1))

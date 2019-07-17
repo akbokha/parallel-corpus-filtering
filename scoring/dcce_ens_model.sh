@@ -9,8 +9,8 @@ experiment=${2:-"fasttext_prob_and_len_dcce_scoring"}
 
 GPUS=${3:-"1"}
 
-./conditional_cross_entropy_scoring.sh $SRC $TRG "$GPUS" $experiment $parallel_data
-./conditional_cross_entropy_scoring.sh $TRG $SRC "$GPUS" $experiment $parallel_data
+./cce_ens_model.sh $SRC $TRG "$GPUS" $experiment $parallel_data
+./cce_ens_model.sh $TRG $SRC "$GPUS" $experiment $parallel_data
 
 cp $parallel_data.* output/$experiment/
 

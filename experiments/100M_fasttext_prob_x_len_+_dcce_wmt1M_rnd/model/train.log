@@ -1,0 +1,906 @@
+[2019-07-13 14:36:33] [marian] Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-13 14:36:33] [marian] Running on fulla as process 146661 with command line:
+[2019-07-13 14:36:33] [marian] /fs/bil0/abdel/marian-dev/build/marian --sync-sgd --model ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz -T . --devices 6 --train-sets ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.de ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.en --vocabs ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.de.json ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.en.json --mini-batch-fit -w 5000 --dim-vocabs 50000 50000 --layer-normalization --dropout-rnn 0.2 --dropout-src 0.1 --dropout-trg 0.1 --learn-rate 0.0001 --after-epochs 0 --early-stopping 5 --valid-freq 20000 --save-freq 20000 --disp-freq 2000 --valid-mini-batch 8 --valid-sets ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/dev.bpe.de ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/dev.bpe.en --valid-metrics cross-entropy perplexity translation --valid-translation-output ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/dev.out --valid-script-path ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/score-dev.sh --seed 1111 --exponential-smoothing --normalize=1 --beam-size=12 --quiet-translation --log ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/train.log --valid-log ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/valid.log
+[2019-07-13 14:36:33] [config] after-batches: 0
+[2019-07-13 14:36:33] [config] after-epochs: 0
+[2019-07-13 14:36:33] [config] allow-unk: false
+[2019-07-13 14:36:33] [config] beam-size: 12
+[2019-07-13 14:36:33] [config] bert-class-symbol: "[CLS]"
+[2019-07-13 14:36:33] [config] bert-mask-symbol: "[MASK]"
+[2019-07-13 14:36:33] [config] bert-masking-fraction: 0.15
+[2019-07-13 14:36:33] [config] bert-sep-symbol: "[SEP]"
+[2019-07-13 14:36:33] [config] bert-train-type-embeddings: true
+[2019-07-13 14:36:33] [config] bert-type-vocab-size: 2
+[2019-07-13 14:36:33] [config] best-deep: false
+[2019-07-13 14:36:33] [config] clip-gemm: 0
+[2019-07-13 14:36:33] [config] clip-norm: 1
+[2019-07-13 14:36:33] [config] cost-type: ce-mean
+[2019-07-13 14:36:33] [config] cpu-threads: 0
+[2019-07-13 14:36:33] [config] data-weighting: ""
+[2019-07-13 14:36:33] [config] data-weighting-type: sentence
+[2019-07-13 14:36:33] [config] dec-cell: gru
+[2019-07-13 14:36:33] [config] dec-cell-base-depth: 2
+[2019-07-13 14:36:33] [config] dec-cell-high-depth: 1
+[2019-07-13 14:36:33] [config] dec-depth: 1
+[2019-07-13 14:36:33] [config] devices:
+[2019-07-13 14:36:33] [config]   - 6
+[2019-07-13 14:36:33] [config] dim-emb: 512
+[2019-07-13 14:36:33] [config] dim-rnn: 1024
+[2019-07-13 14:36:33] [config] dim-vocabs:
+[2019-07-13 14:36:33] [config]   - 50000
+[2019-07-13 14:36:33] [config]   - 50000
+[2019-07-13 14:36:33] [config] disp-first: 0
+[2019-07-13 14:36:33] [config] disp-freq: 2000
+[2019-07-13 14:36:33] [config] disp-label-counts: false
+[2019-07-13 14:36:33] [config] dropout-rnn: 0.2
+[2019-07-13 14:36:33] [config] dropout-src: 0.1
+[2019-07-13 14:36:33] [config] dropout-trg: 0.1
+[2019-07-13 14:36:33] [config] dump-config: ""
+[2019-07-13 14:36:33] [config] early-stopping: 5
+[2019-07-13 14:36:33] [config] embedding-fix-src: false
+[2019-07-13 14:36:33] [config] embedding-fix-trg: false
+[2019-07-13 14:36:33] [config] embedding-normalization: false
+[2019-07-13 14:36:33] [config] embedding-vectors:
+[2019-07-13 14:36:33] [config]   []
+[2019-07-13 14:36:33] [config] enc-cell: gru
+[2019-07-13 14:36:33] [config] enc-cell-depth: 1
+[2019-07-13 14:36:33] [config] enc-depth: 1
+[2019-07-13 14:36:33] [config] enc-type: bidirectional
+[2019-07-13 14:36:33] [config] exponential-smoothing: 0.0001
+[2019-07-13 14:36:33] [config] grad-dropping-momentum: 0
+[2019-07-13 14:36:33] [config] grad-dropping-rate: 0
+[2019-07-13 14:36:33] [config] grad-dropping-warmup: 100
+[2019-07-13 14:36:33] [config] guided-alignment: none
+[2019-07-13 14:36:33] [config] guided-alignment-cost: mse
+[2019-07-13 14:36:33] [config] guided-alignment-weight: 0.1
+[2019-07-13 14:36:33] [config] ignore-model-config: false
+[2019-07-13 14:36:33] [config] input-types:
+[2019-07-13 14:36:33] [config]   []
+[2019-07-13 14:36:33] [config] interpolate-env-vars: false
+[2019-07-13 14:36:33] [config] keep-best: false
+[2019-07-13 14:36:33] [config] label-smoothing: 0
+[2019-07-13 14:36:33] [config] layer-normalization: true
+[2019-07-13 14:36:33] [config] learn-rate: 0.0001
+[2019-07-13 14:36:33] [config] log: ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/train.log
+[2019-07-13 14:36:33] [config] log-level: info
+[2019-07-13 14:36:33] [config] log-time-zone: ""
+[2019-07-13 14:36:33] [config] lr-decay: 0
+[2019-07-13 14:36:33] [config] lr-decay-freq: 50000
+[2019-07-13 14:36:33] [config] lr-decay-inv-sqrt:
+[2019-07-13 14:36:33] [config]   - 0
+[2019-07-13 14:36:33] [config] lr-decay-repeat-warmup: false
+[2019-07-13 14:36:33] [config] lr-decay-reset-optimizer: false
+[2019-07-13 14:36:33] [config] lr-decay-start:
+[2019-07-13 14:36:33] [config]   - 10
+[2019-07-13 14:36:33] [config]   - 1
+[2019-07-13 14:36:33] [config] lr-decay-strategy: epoch+stalled
+[2019-07-13 14:36:33] [config] lr-report: false
+[2019-07-13 14:36:33] [config] lr-warmup: 0
+[2019-07-13 14:36:33] [config] lr-warmup-at-reload: false
+[2019-07-13 14:36:33] [config] lr-warmup-cycle: false
+[2019-07-13 14:36:33] [config] lr-warmup-start-rate: 0
+[2019-07-13 14:36:33] [config] max-length: 50
+[2019-07-13 14:36:33] [config] max-length-crop: false
+[2019-07-13 14:36:33] [config] max-length-factor: 3
+[2019-07-13 14:36:33] [config] maxi-batch: 100
+[2019-07-13 14:36:33] [config] maxi-batch-sort: trg
+[2019-07-13 14:36:33] [config] mini-batch: 64
+[2019-07-13 14:36:33] [config] mini-batch-fit: true
+[2019-07-13 14:36:33] [config] mini-batch-fit-step: 10
+[2019-07-13 14:36:33] [config] mini-batch-overstuff: 1
+[2019-07-13 14:36:33] [config] mini-batch-track-lr: false
+[2019-07-13 14:36:33] [config] mini-batch-understuff: 1
+[2019-07-13 14:36:33] [config] mini-batch-warmup: 0
+[2019-07-13 14:36:33] [config] mini-batch-words: 0
+[2019-07-13 14:36:33] [config] mini-batch-words-ref: 0
+[2019-07-13 14:36:33] [config] model: ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 14:36:33] [config] multi-loss-type: sum
+[2019-07-13 14:36:33] [config] multi-node: false
+[2019-07-13 14:36:33] [config] multi-node-overlap: true
+[2019-07-13 14:36:33] [config] n-best: false
+[2019-07-13 14:36:33] [config] no-nccl: false
+[2019-07-13 14:36:33] [config] no-reload: false
+[2019-07-13 14:36:33] [config] no-restore-corpus: false
+[2019-07-13 14:36:33] [config] no-shuffle: false
+[2019-07-13 14:36:33] [config] normalize: 1
+[2019-07-13 14:36:33] [config] num-devices: 0
+[2019-07-13 14:36:33] [config] optimizer: adam
+[2019-07-13 14:36:33] [config] optimizer-delay: 1
+[2019-07-13 14:36:33] [config] optimizer-params:
+[2019-07-13 14:36:33] [config]   []
+[2019-07-13 14:36:33] [config] overwrite: false
+[2019-07-13 14:36:33] [config] pretrained-model: ""
+[2019-07-13 14:36:33] [config] quiet: false
+[2019-07-13 14:36:33] [config] quiet-translation: true
+[2019-07-13 14:36:33] [config] relative-paths: false
+[2019-07-13 14:36:33] [config] right-left: false
+[2019-07-13 14:36:33] [config] save-freq: 20000
+[2019-07-13 14:36:33] [config] seed: 1111
+[2019-07-13 14:36:33] [config] shuffle-in-ram: false
+[2019-07-13 14:36:33] [config] skip: false
+[2019-07-13 14:36:33] [config] sqlite: ""
+[2019-07-13 14:36:33] [config] sqlite-drop: false
+[2019-07-13 14:36:33] [config] sync-sgd: true
+[2019-07-13 14:36:33] [config] tempdir: .
+[2019-07-13 14:36:33] [config] tied-embeddings: false
+[2019-07-13 14:36:33] [config] tied-embeddings-all: false
+[2019-07-13 14:36:33] [config] tied-embeddings-src: false
+[2019-07-13 14:36:33] [config] train-sets:
+[2019-07-13 14:36:33] [config]   - ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.de
+[2019-07-13 14:36:33] [config]   - ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.en
+[2019-07-13 14:36:33] [config] transformer-aan-activation: swish
+[2019-07-13 14:36:33] [config] transformer-aan-depth: 2
+[2019-07-13 14:36:33] [config] transformer-aan-nogate: false
+[2019-07-13 14:36:33] [config] transformer-decoder-autoreg: self-attention
+[2019-07-13 14:36:33] [config] transformer-dim-aan: 2048
+[2019-07-13 14:36:33] [config] transformer-dim-ffn: 2048
+[2019-07-13 14:36:33] [config] transformer-dropout: 0
+[2019-07-13 14:36:33] [config] transformer-dropout-attention: 0
+[2019-07-13 14:36:33] [config] transformer-dropout-ffn: 0
+[2019-07-13 14:36:33] [config] transformer-ffn-activation: swish
+[2019-07-13 14:36:33] [config] transformer-ffn-depth: 2
+[2019-07-13 14:36:33] [config] transformer-guided-alignment-layer: last
+[2019-07-13 14:36:33] [config] transformer-heads: 8
+[2019-07-13 14:36:33] [config] transformer-no-projection: false
+[2019-07-13 14:36:33] [config] transformer-postprocess: dan
+[2019-07-13 14:36:33] [config] transformer-postprocess-emb: d
+[2019-07-13 14:36:33] [config] transformer-preprocess: ""
+[2019-07-13 14:36:33] [config] transformer-tied-layers:
+[2019-07-13 14:36:33] [config]   []
+[2019-07-13 14:36:33] [config] transformer-train-position-embeddings: false
+[2019-07-13 14:36:33] [config] type: amun
+[2019-07-13 14:36:33] [config] ulr: false
+[2019-07-13 14:36:33] [config] ulr-dim-emb: 0
+[2019-07-13 14:36:33] [config] ulr-dropout: 0
+[2019-07-13 14:36:33] [config] ulr-keys-vectors: ""
+[2019-07-13 14:36:33] [config] ulr-query-vectors: ""
+[2019-07-13 14:36:33] [config] ulr-softmax-temperature: 1
+[2019-07-13 14:36:33] [config] ulr-trainable-transformation: false
+[2019-07-13 14:36:33] [config] valid-freq: 20000
+[2019-07-13 14:36:33] [config] valid-log: ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/valid.log
+[2019-07-13 14:36:33] [config] valid-max-length: 1000
+[2019-07-13 14:36:33] [config] valid-metrics:
+[2019-07-13 14:36:33] [config]   - cross-entropy
+[2019-07-13 14:36:33] [config]   - perplexity
+[2019-07-13 14:36:33] [config]   - translation
+[2019-07-13 14:36:33] [config] valid-mini-batch: 8
+[2019-07-13 14:36:33] [config] valid-script-path: ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/score-dev.sh
+[2019-07-13 14:36:33] [config] valid-sets:
+[2019-07-13 14:36:33] [config]   - ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/dev.bpe.de
+[2019-07-13 14:36:33] [config]   - ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/dev.bpe.en
+[2019-07-13 14:36:33] [config] valid-translation-output: ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/dev.out
+[2019-07-13 14:36:33] [config] vocabs:
+[2019-07-13 14:36:33] [config]   - ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.de.json
+[2019-07-13 14:36:33] [config]   - ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.en.json
+[2019-07-13 14:36:33] [config] word-penalty: 0
+[2019-07-13 14:36:33] [config] workspace: 5000
+[2019-07-13 14:36:33] [config] Model is being created with Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-13 14:36:33] Using synchronous training
+[2019-07-13 14:36:33] [data] Loading vocabulary from JSON/Yaml file ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.de.json
+[2019-07-13 14:36:33] [data] Using unused word id eos for 0
+[2019-07-13 14:36:33] [data] Using unused word id UNK for 1
+[2019-07-13 14:36:33] [data] Setting vocabulary size for input 0 to 50000
+[2019-07-13 14:36:33] [data] Loading vocabulary from JSON/Yaml file ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/data/train.bpe.en.json
+[2019-07-13 14:36:34] [data] Using unused word id eos for 0
+[2019-07-13 14:36:34] [data] Using unused word id UNK for 1
+[2019-07-13 14:36:34] [data] Setting vocabulary size for input 1 to 50000
+[2019-07-13 14:36:34] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-07-13 14:36:34] [batching] Collecting statistics for batch fitting with step size 10
+[2019-07-13 14:36:35] [memory] Extending reserved space to 5120 MB (device gpu6)
+[2019-07-13 14:36:35] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-13 14:36:35] [comm] NCCLCommunicator constructed successfully.
+[2019-07-13 14:36:35] [training] Using 1 GPUs
+[2019-07-13 14:36:35] [memory] Reserving 422 MB, device gpu6
+[2019-07-13 14:36:35] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-07-13 14:36:35] [memory] Reserving 422 MB, device gpu6
+[2019-07-13 14:36:40] [batching] Done. Typical MB size is 6880 target words
+[2019-07-13 14:36:40] [memory] Extending reserved space to 5120 MB (device gpu6)
+[2019-07-13 14:36:40] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-13 14:36:40] [comm] NCCLCommunicator constructed successfully.
+[2019-07-13 14:36:40] [training] Using 1 GPUs
+[2019-07-13 14:36:40] Training started
+[2019-07-13 14:36:40] [data] Shuffling data
+[2019-07-13 14:36:43] [data] Done reading 5434910 sentences
+[2019-07-13 14:37:12] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-13 14:37:21] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-07-13 14:37:21] [memory] Reserving 422 MB, device gpu6
+[2019-07-13 14:37:21] [memory] Reserving 422 MB, device gpu6
+[2019-07-13 14:37:21] [memory] Reserving 422 MB, device gpu6
+[2019-07-13 14:37:21] [memory] Reserving 844 MB, device gpu6
+[2019-07-13 14:43:57] Ep. 1 : Up. 2000 : Sen. 324,558 : Cost 119.06125641 : Time 443.76s : 14744.36 words/s
+[2019-07-13 14:50:33] Ep. 1 : Up. 4000 : Sen. 646,268 : Cost 94.44204712 : Time 395.31s : 16450.62 words/s
+[2019-07-13 14:57:10] Ep. 1 : Up. 6000 : Sen. 971,933 : Cost 82.07472229 : Time 397.53s : 16513.50 words/s
+[2019-07-13 15:03:49] Ep. 1 : Up. 8000 : Sen. 1,299,638 : Cost 74.49142456 : Time 399.12s : 16524.55 words/s
+[2019-07-13 15:10:26] Ep. 1 : Up. 10000 : Sen. 1,624,432 : Cost 69.60100555 : Time 396.35s : 16538.56 words/s
+[2019-07-13 15:17:05] Ep. 1 : Up. 12000 : Sen. 1,949,701 : Cost 66.15794373 : Time 399.66s : 16437.23 words/s
+[2019-07-13 15:23:42] Ep. 1 : Up. 14000 : Sen. 2,274,501 : Cost 63.20210648 : Time 396.82s : 16474.11 words/s
+[2019-07-13 15:30:18] Ep. 1 : Up. 16000 : Sen. 2,597,478 : Cost 61.45665359 : Time 396.30s : 16455.44 words/s
+[2019-07-13 15:36:55] Ep. 1 : Up. 18000 : Sen. 2,920,961 : Cost 59.74261475 : Time 396.74s : 16445.21 words/s
+[2019-07-13 15:43:34] Ep. 1 : Up. 20000 : Sen. 3,244,272 : Cost 58.32857513 : Time 396.38s : 16475.37 words/s
+[2019-07-13 15:43:34] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 15:43:45] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter20000.npz
+[2019-07-13 15:43:54] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 15:44:06] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 15:44:36] [valid] Ep. 1 : Up. 20000 : cross-entropy : 73.8024 : new best
+[2019-07-13 15:44:43] [valid] Ep. 1 : Up. 20000 : perplexity : 18.346 : new best
+[2019-07-13 15:45:41] [valid] Ep. 1 : Up. 20000 : translation : 22.03 : new best
+[2019-07-13 15:52:22] Ep. 1 : Up. 22000 : Sen. 3,569,970 : Cost 57.26025391 : Time 528.17s : 12423.96 words/s
+[2019-07-13 15:59:00] Ep. 1 : Up. 24000 : Sen. 3,893,084 : Cost 56.31985092 : Time 398.60s : 16390.78 words/s
+[2019-07-13 16:05:38] Ep. 1 : Up. 26000 : Sen. 4,217,056 : Cost 55.35547638 : Time 397.37s : 16430.82 words/s
+[2019-07-13 16:12:15] Ep. 1 : Up. 28000 : Sen. 4,541,531 : Cost 54.57973099 : Time 397.62s : 16443.48 words/s
+[2019-07-13 16:15:56] Seen 4720924 samples
+[2019-07-13 16:15:56] Starting epoch 2
+[2019-07-13 16:15:56] [data] Shuffling data
+[2019-07-13 16:15:59] [data] Done reading 5434910 sentences
+[2019-07-13 16:16:28] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-13 16:19:34] Ep. 2 : Up. 30000 : Sen. 145,675 : Cost 53.60965729 : Time 438.98s : 14931.04 words/s
+[2019-07-13 16:26:13] Ep. 2 : Up. 32000 : Sen. 469,238 : Cost 52.74756241 : Time 398.42s : 16408.88 words/s
+[2019-07-13 16:32:52] Ep. 2 : Up. 34000 : Sen. 793,600 : Cost 51.88659668 : Time 398.91s : 16390.32 words/s
+[2019-07-13 16:39:29] Ep. 2 : Up. 36000 : Sen. 1,117,064 : Cost 51.58975220 : Time 397.33s : 16423.49 words/s
+[2019-07-13 16:46:09] Ep. 2 : Up. 38000 : Sen. 1,442,510 : Cost 51.18226624 : Time 399.56s : 16435.91 words/s
+[2019-07-13 16:52:46] Ep. 2 : Up. 40000 : Sen. 1,767,277 : Cost 50.44525146 : Time 397.54s : 16437.85 words/s
+[2019-07-13 16:52:46] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 16:52:56] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter40000.npz
+[2019-07-13 16:53:05] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 16:53:15] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 16:53:43] [valid] Ep. 2 : Up. 40000 : cross-entropy : 62.5444 : new best
+[2019-07-13 16:53:50] [valid] Ep. 2 : Up. 40000 : perplexity : 11.7706 : new best
+[2019-07-13 16:54:40] [valid] Ep. 2 : Up. 40000 : translation : 25.79 : new best
+[2019-07-13 17:01:22] Ep. 2 : Up. 42000 : Sen. 2,092,404 : Cost 50.33374405 : Time 515.38s : 12731.92 words/s
+[2019-07-13 17:07:59] Ep. 2 : Up. 44000 : Sen. 2,416,095 : Cost 50.23178482 : Time 397.58s : 16455.89 words/s
+[2019-07-13 17:14:37] Ep. 2 : Up. 46000 : Sen. 2,740,929 : Cost 49.71529007 : Time 397.92s : 16492.84 words/s
+[2019-07-13 17:21:17] Ep. 2 : Up. 48000 : Sen. 3,066,799 : Cost 49.43054962 : Time 399.84s : 16451.38 words/s
+[2019-07-13 17:27:55] Ep. 2 : Up. 50000 : Sen. 3,390,908 : Cost 49.01743317 : Time 398.11s : 16406.45 words/s
+[2019-07-13 17:34:34] Ep. 2 : Up. 52000 : Sen. 3,715,085 : Cost 48.86872864 : Time 399.16s : 16388.98 words/s
+[2019-07-13 17:41:10] Ep. 2 : Up. 54000 : Sen. 4,038,838 : Cost 48.15869904 : Time 395.74s : 16451.46 words/s
+[2019-07-13 17:47:48] Ep. 2 : Up. 56000 : Sen. 4,362,213 : Cost 48.28399277 : Time 397.82s : 16397.36 words/s
+[2019-07-13 17:54:26] Ep. 2 : Up. 58000 : Sen. 4,686,546 : Cost 48.08317947 : Time 397.99s : 16442.14 words/s
+[2019-07-13 17:55:09] Seen 4720924 samples
+[2019-07-13 17:55:09] Starting epoch 3
+[2019-07-13 17:55:09] [data] Shuffling data
+[2019-07-13 17:55:12] [data] Done reading 5434910 sentences
+[2019-07-13 17:55:39] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-13 18:01:43] Ep. 3 : Up. 60000 : Sen. 288,528 : Cost 47.08583450 : Time 437.29s : 14933.50 words/s
+[2019-07-13 18:01:43] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 18:01:54] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter60000.npz
+[2019-07-13 18:02:01] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 18:02:15] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 18:02:46] [valid] Ep. 3 : Up. 60000 : cross-entropy : 57.521 : new best
+[2019-07-13 18:02:52] [valid] Ep. 3 : Up. 60000 : perplexity : 9.65593 : new best
+[2019-07-13 18:03:42] [valid] Ep. 3 : Up. 60000 : translation : 27.42 : new best
+[2019-07-13 18:10:22] Ep. 3 : Up. 62000 : Sen. 613,312 : Cost 46.44956589 : Time 519.19s : 12574.96 words/s
+[2019-07-13 18:17:00] Ep. 3 : Up. 64000 : Sen. 936,983 : Cost 46.43771362 : Time 397.48s : 16425.58 words/s
+[2019-07-13 18:23:38] Ep. 3 : Up. 66000 : Sen. 1,260,932 : Cost 46.54507828 : Time 398.72s : 16394.19 words/s
+[2019-07-13 18:30:17] Ep. 3 : Up. 68000 : Sen. 1,586,024 : Cost 46.38332367 : Time 399.08s : 16425.77 words/s
+[2019-07-13 18:36:57] Ep. 3 : Up. 70000 : Sen. 1,910,868 : Cost 46.25647354 : Time 399.54s : 16412.99 words/s
+[2019-07-13 18:43:37] Ep. 3 : Up. 72000 : Sen. 2,236,693 : Cost 45.98865509 : Time 399.92s : 16417.11 words/s
+[2019-07-13 18:50:17] Ep. 3 : Up. 74000 : Sen. 2,562,229 : Cost 45.74631882 : Time 400.39s : 16397.60 words/s
+[2019-07-13 18:56:56] Ep. 3 : Up. 76000 : Sen. 2,886,268 : Cost 45.95185471 : Time 398.69s : 16394.69 words/s
+[2019-07-13 19:03:36] Ep. 3 : Up. 78000 : Sen. 3,212,800 : Cost 45.65524673 : Time 400.46s : 16437.79 words/s
+[2019-07-13 19:10:16] Ep. 3 : Up. 80000 : Sen. 3,537,391 : Cost 45.49290466 : Time 399.25s : 16411.16 words/s
+[2019-07-13 19:10:16] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 19:10:26] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter80000.npz
+[2019-07-13 19:10:33] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 19:10:44] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 19:11:12] [valid] Ep. 3 : Up. 80000 : cross-entropy : 54.895 : new best
+[2019-07-13 19:11:18] [valid] Ep. 3 : Up. 80000 : perplexity : 8.70631 : new best
+[2019-07-13 19:12:08] [valid] Ep. 3 : Up. 80000 : translation : 28.36 : new best
+[2019-07-13 19:18:50] Ep. 3 : Up. 82000 : Sen. 3,861,775 : Cost 45.63785934 : Time 513.96s : 12744.70 words/s
+[2019-07-13 19:25:30] Ep. 3 : Up. 84000 : Sen. 4,187,239 : Cost 45.42199326 : Time 400.11s : 16420.99 words/s
+[2019-07-13 19:32:09] Ep. 3 : Up. 86000 : Sen. 4,512,829 : Cost 45.18968201 : Time 399.19s : 16450.97 words/s
+[2019-07-13 19:36:26] Seen 4720924 samples
+[2019-07-13 19:36:26] Starting epoch 4
+[2019-07-13 19:36:26] [data] Shuffling data
+[2019-07-13 19:36:29] [data] Done reading 5434910 sentences
+[2019-07-13 19:36:54] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-13 19:39:24] Ep. 4 : Up. 88000 : Sen. 114,588 : Cost 44.72151566 : Time 435.19s : 14945.79 words/s
+[2019-07-13 19:46:05] Ep. 4 : Up. 90000 : Sen. 440,583 : Cost 44.11622238 : Time 400.93s : 16429.59 words/s
+[2019-07-13 19:52:44] Ep. 4 : Up. 92000 : Sen. 765,000 : Cost 44.16604233 : Time 399.14s : 16401.43 words/s
+[2019-07-13 19:59:24] Ep. 4 : Up. 94000 : Sen. 1,090,059 : Cost 44.07372665 : Time 399.84s : 16398.27 words/s
+[2019-07-13 20:06:03] Ep. 4 : Up. 96000 : Sen. 1,414,796 : Cost 44.01594925 : Time 398.79s : 16428.86 words/s
+[2019-07-13 20:12:41] Ep. 4 : Up. 98000 : Sen. 1,739,257 : Cost 43.91849899 : Time 398.53s : 16420.90 words/s
+[2019-07-13 20:19:21] Ep. 4 : Up. 100000 : Sen. 2,064,982 : Cost 43.75823212 : Time 399.60s : 16428.37 words/s
+[2019-07-13 20:19:21] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 20:19:30] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter100000.npz
+[2019-07-13 20:19:38] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 20:19:48] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 20:20:17] [valid] Ep. 4 : Up. 100000 : cross-entropy : 53.2378 : new best
+[2019-07-13 20:20:24] [valid] Ep. 4 : Up. 100000 : perplexity : 8.15574 : new best
+[2019-07-13 20:21:15] [valid] Ep. 4 : Up. 100000 : translation : 28.67 : new best
+[2019-07-13 20:27:56] Ep. 4 : Up. 102000 : Sen. 2,390,413 : Cost 44.05938339 : Time 514.96s : 12773.10 words/s
+[2019-07-13 20:34:34] Ep. 4 : Up. 104000 : Sen. 2,713,864 : Cost 43.82308960 : Time 397.69s : 16400.91 words/s
+[2019-07-13 20:41:13] Ep. 4 : Up. 106000 : Sen. 3,039,736 : Cost 43.74720383 : Time 399.78s : 16434.72 words/s
+[2019-07-13 20:47:51] Ep. 4 : Up. 108000 : Sen. 3,363,714 : Cost 43.79228973 : Time 397.50s : 16455.00 words/s
+[2019-07-13 20:54:30] Ep. 4 : Up. 110000 : Sen. 3,688,561 : Cost 43.65248489 : Time 399.16s : 16377.12 words/s
+[2019-07-13 21:01:09] Ep. 4 : Up. 112000 : Sen. 4,013,238 : Cost 43.59450150 : Time 398.47s : 16447.31 words/s
+[2019-07-13 21:07:47] Ep. 4 : Up. 114000 : Sen. 4,338,054 : Cost 43.57857513 : Time 398.65s : 16414.37 words/s
+[2019-07-13 21:14:25] Ep. 4 : Up. 116000 : Sen. 4,661,171 : Cost 43.76810074 : Time 398.26s : 16401.73 words/s
+[2019-07-13 21:15:39] Seen 4720924 samples
+[2019-07-13 21:15:39] Starting epoch 5
+[2019-07-13 21:15:39] [data] Shuffling data
+[2019-07-13 21:15:42] [data] Done reading 5434910 sentences
+[2019-07-13 21:16:10] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-13 21:21:47] Ep. 5 : Up. 118000 : Sen. 265,943 : Cost 42.66993332 : Time 441.51s : 14889.92 words/s
+[2019-07-13 21:28:26] Ep. 5 : Up. 120000 : Sen. 590,764 : Cost 42.49192047 : Time 398.56s : 16428.03 words/s
+[2019-07-13 21:28:26] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 21:28:39] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter120000.npz
+[2019-07-13 21:28:49] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 21:29:00] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 21:29:28] [valid] Ep. 5 : Up. 120000 : cross-entropy : 52.0225 : new best
+[2019-07-13 21:29:35] [valid] Ep. 5 : Up. 120000 : perplexity : 7.77419 : new best
+[2019-07-13 21:30:26] [valid] Ep. 5 : Up. 120000 : translation : 29.05 : new best
+[2019-07-13 21:37:07] Ep. 5 : Up. 122000 : Sen. 915,813 : Cost 42.44755554 : Time 521.82s : 12571.02 words/s
+[2019-07-13 21:43:46] Ep. 5 : Up. 124000 : Sen. 1,239,335 : Cost 42.78960419 : Time 398.64s : 16423.70 words/s
+[2019-07-13 21:50:24] Ep. 5 : Up. 126000 : Sen. 1,564,526 : Cost 42.25894165 : Time 397.65s : 16436.78 words/s
+[2019-07-13 21:57:03] Ep. 5 : Up. 128000 : Sen. 1,889,074 : Cost 42.58057022 : Time 399.59s : 16424.72 words/s
+[2019-07-13 22:03:42] Ep. 5 : Up. 130000 : Sen. 2,212,507 : Cost 42.45054245 : Time 398.83s : 16369.52 words/s
+[2019-07-13 22:10:22] Ep. 5 : Up. 132000 : Sen. 2,535,868 : Cost 42.32329941 : Time 399.50s : 16318.43 words/s
+[2019-07-13 22:17:01] Ep. 5 : Up. 134000 : Sen. 2,859,430 : Cost 42.28993225 : Time 399.08s : 16329.86 words/s
+[2019-07-13 22:23:40] Ep. 5 : Up. 136000 : Sen. 3,183,054 : Cost 42.46940613 : Time 399.10s : 16388.37 words/s
+[2019-07-13 22:30:21] Ep. 5 : Up. 138000 : Sen. 3,508,048 : Cost 42.30109024 : Time 401.68s : 16318.29 words/s
+[2019-07-13 22:37:03] Ep. 5 : Up. 140000 : Sen. 3,833,008 : Cost 42.23537064 : Time 401.27s : 16339.64 words/s
+[2019-07-13 22:37:03] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 22:37:13] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter140000.npz
+[2019-07-13 22:37:20] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 22:37:33] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 22:38:06] [valid] Ep. 5 : Up. 140000 : cross-entropy : 51.1741 : new best
+[2019-07-13 22:38:12] [valid] Ep. 5 : Up. 140000 : perplexity : 7.51851 : new best
+[2019-07-13 22:39:02] [valid] Ep. 5 : Up. 140000 : translation : 29.44 : new best
+[2019-07-13 22:45:46] Ep. 5 : Up. 142000 : Sen. 4,158,490 : Cost 42.17502213 : Time 522.89s : 12538.36 words/s
+[2019-07-13 22:52:25] Ep. 5 : Up. 144000 : Sen. 4,482,057 : Cost 42.23822021 : Time 399.53s : 16318.03 words/s
+[2019-07-13 22:57:19] Seen 4720924 samples
+[2019-07-13 22:57:19] Starting epoch 6
+[2019-07-13 22:57:19] [data] Shuffling data
+[2019-07-13 22:57:23] [data] Done reading 5434910 sentences
+[2019-07-13 22:57:47] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-13 22:59:40] Ep. 6 : Up. 146000 : Sen. 85,753 : Cost 41.97151566 : Time 435.35s : 15007.34 words/s
+[2019-07-13 23:06:18] Ep. 6 : Up. 148000 : Sen. 410,213 : Cost 41.23563004 : Time 397.74s : 16438.04 words/s
+[2019-07-13 23:12:54] Ep. 6 : Up. 150000 : Sen. 733,368 : Cost 41.34905624 : Time 396.24s : 16440.76 words/s
+[2019-07-13 23:19:34] Ep. 6 : Up. 152000 : Sen. 1,057,558 : Cost 41.29241562 : Time 399.94s : 16349.70 words/s
+[2019-07-13 23:26:15] Ep. 6 : Up. 154000 : Sen. 1,382,400 : Cost 41.44104385 : Time 400.41s : 16360.39 words/s
+[2019-07-13 23:32:56] Ep. 6 : Up. 156000 : Sen. 1,707,966 : Cost 41.42249680 : Time 401.38s : 16363.37 words/s
+[2019-07-13 23:39:37] Ep. 6 : Up. 158000 : Sen. 2,031,990 : Cost 41.41695786 : Time 400.94s : 16296.72 words/s
+[2019-07-13 23:46:20] Ep. 6 : Up. 160000 : Sen. 2,357,888 : Cost 41.46942902 : Time 402.41s : 16348.13 words/s
+[2019-07-13 23:46:20] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-13 23:46:31] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter160000.npz
+[2019-07-13 23:46:39] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-13 23:46:53] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-13 23:47:22] [valid] Ep. 6 : Up. 160000 : cross-entropy : 50.6016 : new best
+[2019-07-13 23:47:29] [valid] Ep. 6 : Up. 160000 : perplexity : 7.35072 : new best
+[2019-07-13 23:48:20] [valid] Ep. 6 : Up. 160000 : translation : 29.36 : stalled 1 times (last best: 29.44)
+[2019-07-13 23:55:02] Ep. 6 : Up. 162000 : Sen. 2,681,732 : Cost 41.50178528 : Time 522.17s : 12526.40 words/s
+[2019-07-14 00:01:44] Ep. 6 : Up. 164000 : Sen. 3,005,506 : Cost 41.65144348 : Time 402.33s : 16268.80 words/s
+[2019-07-14 00:08:26] Ep. 6 : Up. 166000 : Sen. 3,330,018 : Cost 41.39312363 : Time 401.60s : 16276.29 words/s
+[2019-07-14 00:15:09] Ep. 6 : Up. 168000 : Sen. 3,654,848 : Cost 41.58356094 : Time 403.12s : 16275.17 words/s
+[2019-07-14 00:21:51] Ep. 6 : Up. 170000 : Sen. 3,980,668 : Cost 41.15144348 : Time 402.63s : 16300.00 words/s
+[2019-07-14 00:28:33] Ep. 6 : Up. 172000 : Sen. 4,305,340 : Cost 41.34484482 : Time 402.07s : 16303.11 words/s
+[2019-07-14 00:35:14] Ep. 6 : Up. 174000 : Sen. 4,629,495 : Cost 41.43184662 : Time 400.66s : 16366.17 words/s
+[2019-07-14 00:37:06] Seen 4720924 samples
+[2019-07-14 00:37:06] Starting epoch 7
+[2019-07-14 00:37:06] [data] Shuffling data
+[2019-07-14 00:37:10] [data] Done reading 5434910 sentences
+[2019-07-14 00:37:30] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 00:42:34] Ep. 7 : Up. 176000 : Sen. 232,957 : Cost 40.68646240 : Time 439.86s : 14867.67 words/s
+[2019-07-14 00:49:15] Ep. 7 : Up. 178000 : Sen. 557,732 : Cost 40.59744263 : Time 400.79s : 16321.47 words/s
+[2019-07-14 00:55:57] Ep. 7 : Up. 180000 : Sen. 883,464 : Cost 40.46436691 : Time 402.13s : 16320.48 words/s
+[2019-07-14 00:55:57] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 00:56:08] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter180000.npz
+[2019-07-14 00:56:15] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 00:56:26] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 00:56:54] [valid] Ep. 7 : Up. 180000 : cross-entropy : 50.0477 : new best
+[2019-07-14 00:57:00] [valid] Ep. 7 : Up. 180000 : perplexity : 7.19195 : new best
+[2019-07-14 00:57:52] [valid] Ep. 7 : Up. 180000 : translation : 29.68 : new best
+[2019-07-14 01:04:34] Ep. 7 : Up. 182000 : Sen. 1,207,461 : Cost 40.61772919 : Time 517.23s : 12627.02 words/s
+[2019-07-14 01:11:14] Ep. 7 : Up. 184000 : Sen. 1,530,757 : Cost 40.72109222 : Time 400.34s : 16290.89 words/s
+[2019-07-14 01:17:54] Ep. 7 : Up. 186000 : Sen. 1,854,566 : Cost 40.63234329 : Time 399.50s : 16302.92 words/s
+[2019-07-14 01:24:35] Ep. 7 : Up. 188000 : Sen. 2,178,610 : Cost 40.70109558 : Time 401.34s : 16317.50 words/s
+[2019-07-14 01:31:18] Ep. 7 : Up. 190000 : Sen. 2,502,630 : Cost 40.82724380 : Time 402.46s : 16259.20 words/s
+[2019-07-14 01:38:00] Ep. 7 : Up. 192000 : Sen. 2,828,668 : Cost 40.69163513 : Time 402.30s : 16362.16 words/s
+[2019-07-14 01:44:41] Ep. 7 : Up. 194000 : Sen. 3,152,987 : Cost 40.70104218 : Time 400.54s : 16327.80 words/s
+[2019-07-14 01:51:20] Ep. 7 : Up. 196000 : Sen. 3,477,741 : Cost 40.42585373 : Time 399.40s : 16393.84 words/s
+[2019-07-14 01:57:55] Ep. 7 : Up. 198000 : Sen. 3,802,136 : Cost 40.78656769 : Time 395.29s : 16546.60 words/s
+[2019-07-14 02:04:30] Ep. 7 : Up. 200000 : Sen. 4,126,416 : Cost 40.62833405 : Time 394.33s : 16598.58 words/s
+[2019-07-14 02:04:30] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 02:04:39] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter200000.npz
+[2019-07-14 02:04:46] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 02:04:56] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 02:05:23] [valid] Ep. 7 : Up. 200000 : cross-entropy : 49.7011 : new best
+[2019-07-14 02:05:29] [valid] Ep. 7 : Up. 200000 : perplexity : 7.09436 : new best
+[2019-07-14 02:06:17] [valid] Ep. 7 : Up. 200000 : translation : 29.95 : new best
+[2019-07-14 02:12:52] Ep. 7 : Up. 202000 : Sen. 4,449,732 : Cost 40.58779144 : Time 502.75s : 12972.76 words/s
+[2019-07-14 02:18:22] Seen 4720924 samples
+[2019-07-14 02:18:22] Starting epoch 8
+[2019-07-14 02:18:22] [data] Shuffling data
+[2019-07-14 02:18:26] [data] Done reading 5434910 sentences
+[2019-07-14 02:18:49] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 02:20:02] Ep. 8 : Up. 204000 : Sen. 53,183 : Cost 40.35673141 : Time 429.74s : 15235.58 words/s
+[2019-07-14 02:26:34] Ep. 8 : Up. 206000 : Sen. 375,727 : Cost 39.56906509 : Time 391.57s : 16589.06 words/s
+[2019-07-14 02:33:08] Ep. 8 : Up. 208000 : Sen. 699,485 : Cost 39.92024994 : Time 394.15s : 16617.16 words/s
+[2019-07-14 02:39:42] Ep. 8 : Up. 210000 : Sen. 1,024,132 : Cost 39.59118271 : Time 393.70s : 16600.00 words/s
+[2019-07-14 02:46:16] Ep. 8 : Up. 212000 : Sen. 1,348,842 : Cost 39.84934998 : Time 394.18s : 16611.08 words/s
+[2019-07-14 02:52:51] Ep. 8 : Up. 214000 : Sen. 1,674,880 : Cost 39.89109802 : Time 395.19s : 16656.29 words/s
+[2019-07-14 02:59:26] Ep. 8 : Up. 216000 : Sen. 2,001,065 : Cost 39.80488586 : Time 395.47s : 16626.09 words/s
+[2019-07-14 03:06:00] Ep. 8 : Up. 218000 : Sen. 2,325,412 : Cost 40.09252548 : Time 393.57s : 16629.80 words/s
+[2019-07-14 03:12:34] Ep. 8 : Up. 220000 : Sen. 2,650,130 : Cost 39.95775986 : Time 394.37s : 16608.97 words/s
+[2019-07-14 03:12:34] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 03:12:44] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter220000.npz
+[2019-07-14 03:12:51] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 03:13:01] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 03:13:27] [valid] Ep. 8 : Up. 220000 : cross-entropy : 49.4011 : new best
+[2019-07-14 03:13:33] [valid] Ep. 8 : Up. 220000 : perplexity : 7.01095 : new best
+[2019-07-14 03:14:22] [valid] Ep. 8 : Up. 220000 : translation : 30 : new best
+[2019-07-14 03:20:58] Ep. 8 : Up. 222000 : Sen. 2,974,792 : Cost 39.97375870 : Time 504.09s : 12992.33 words/s
+[2019-07-14 03:27:32] Ep. 8 : Up. 224000 : Sen. 3,299,186 : Cost 39.92790985 : Time 394.01s : 16590.43 words/s
+[2019-07-14 03:34:05] Ep. 8 : Up. 226000 : Sen. 3,621,774 : Cost 40.18487549 : Time 392.11s : 16598.17 words/s
+[2019-07-14 03:40:38] Ep. 8 : Up. 228000 : Sen. 3,945,571 : Cost 40.21612167 : Time 393.40s : 16637.73 words/s
+[2019-07-14 03:47:12] Ep. 8 : Up. 230000 : Sen. 4,270,802 : Cost 40.12410736 : Time 394.19s : 16634.17 words/s
+[2019-07-14 03:53:47] Ep. 8 : Up. 232000 : Sen. 4,595,945 : Cost 40.17253113 : Time 394.88s : 16620.31 words/s
+[2019-07-14 03:56:18] Seen 4720924 samples
+[2019-07-14 03:56:18] Starting epoch 9
+[2019-07-14 03:56:18] [data] Shuffling data
+[2019-07-14 03:56:21] [data] Done reading 5434910 sentences
+[2019-07-14 03:56:41] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 04:00:53] Ep. 9 : Up. 234000 : Sen. 198,400 : Cost 39.37334824 : Time 425.85s : 15299.13 words/s
+[2019-07-14 04:07:27] Ep. 9 : Up. 236000 : Sen. 523,624 : Cost 39.15425110 : Time 393.60s : 16658.82 words/s
+[2019-07-14 04:14:00] Ep. 9 : Up. 238000 : Sen. 848,547 : Cost 39.42082214 : Time 393.97s : 16626.25 words/s
+[2019-07-14 04:20:34] Ep. 9 : Up. 240000 : Sen. 1,173,607 : Cost 39.20593643 : Time 393.76s : 16634.53 words/s
+[2019-07-14 04:20:34] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 04:20:43] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter240000.npz
+[2019-07-14 04:20:51] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 04:21:01] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 04:21:27] [valid] Ep. 9 : Up. 240000 : cross-entropy : 49.1318 : new best
+[2019-07-14 04:21:33] [valid] Ep. 9 : Up. 240000 : perplexity : 6.93689 : new best
+[2019-07-14 04:22:21] [valid] Ep. 9 : Up. 240000 : translation : 30.19 : new best
+[2019-07-14 04:28:57] Ep. 9 : Up. 242000 : Sen. 1,497,468 : Cost 39.45689011 : Time 502.57s : 13031.32 words/s
+[2019-07-14 04:35:32] Ep. 9 : Up. 244000 : Sen. 1,822,517 : Cost 39.61623764 : Time 395.00s : 16643.70 words/s
+[2019-07-14 04:42:04] Ep. 9 : Up. 246000 : Sen. 2,145,495 : Cost 39.42701340 : Time 392.13s : 16592.79 words/s
+[2019-07-14 04:48:37] Ep. 9 : Up. 248000 : Sen. 2,469,524 : Cost 39.48395157 : Time 393.30s : 16628.00 words/s
+[2019-07-14 04:55:15] Ep. 9 : Up. 250000 : Sen. 2,797,196 : Cost 39.56161880 : Time 397.54s : 16653.93 words/s
+[2019-07-14 05:01:48] Ep. 9 : Up. 252000 : Sen. 3,121,497 : Cost 39.58414459 : Time 393.52s : 16636.46 words/s
+[2019-07-14 05:08:22] Ep. 9 : Up. 254000 : Sen. 3,445,029 : Cost 39.52778244 : Time 393.25s : 16594.85 words/s
+[2019-07-14 05:14:55] Ep. 9 : Up. 256000 : Sen. 3,768,940 : Cost 39.37018585 : Time 393.86s : 16540.41 words/s
+[2019-07-14 05:21:29] Ep. 9 : Up. 258000 : Sen. 4,093,632 : Cost 39.58529663 : Time 394.04s : 16656.31 words/s
+[2019-07-14 05:28:03] Ep. 9 : Up. 260000 : Sen. 4,419,235 : Cost 39.39079666 : Time 393.22s : 16639.01 words/s
+[2019-07-14 05:28:03] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 05:28:12] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter260000.npz
+[2019-07-14 05:28:19] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 05:28:29] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 05:28:55] [valid] Ep. 9 : Up. 260000 : cross-entropy : 48.9171 : new best
+[2019-07-14 05:29:02] [valid] Ep. 9 : Up. 260000 : perplexity : 6.87845 : new best
+[2019-07-14 05:29:50] [valid] Ep. 9 : Up. 260000 : translation : 30.19 : stalled 1 times (last best: 30.19)
+[2019-07-14 05:35:58] Seen 4720924 samples
+[2019-07-14 05:35:58] Starting epoch 10
+[2019-07-14 05:35:58] [data] Shuffling data
+[2019-07-14 05:36:01] [data] Done reading 5434910 sentences
+[2019-07-14 05:36:23] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 05:36:59] Ep. 10 : Up. 262000 : Sen. 23,208 : Cost 39.44781113 : Time 535.84s : 12230.59 words/s
+[2019-07-14 05:43:32] Ep. 10 : Up. 264000 : Sen. 348,969 : Cost 38.62163544 : Time 393.89s : 16670.27 words/s
+[2019-07-14 05:50:04] Ep. 10 : Up. 266000 : Sen. 672,000 : Cost 38.74166107 : Time 391.60s : 16640.26 words/s
+[2019-07-14 05:56:38] Ep. 10 : Up. 268000 : Sen. 997,335 : Cost 38.88891602 : Time 394.10s : 16638.48 words/s
+[2019-07-14 06:03:11] Ep. 10 : Up. 270000 : Sen. 1,320,300 : Cost 38.95880127 : Time 393.26s : 16602.80 words/s
+[2019-07-14 06:09:44] Ep. 10 : Up. 272000 : Sen. 1,644,932 : Cost 38.78590393 : Time 392.90s : 16646.71 words/s
+[2019-07-14 06:16:19] Ep. 10 : Up. 274000 : Sen. 1,970,065 : Cost 38.90395737 : Time 394.43s : 16603.80 words/s
+[2019-07-14 06:22:53] Ep. 10 : Up. 276000 : Sen. 2,294,407 : Cost 39.12421417 : Time 394.44s : 16643.57 words/s
+[2019-07-14 06:29:28] Ep. 10 : Up. 278000 : Sen. 2,619,513 : Cost 38.95922470 : Time 395.10s : 16587.57 words/s
+[2019-07-14 06:36:02] Ep. 10 : Up. 280000 : Sen. 2,943,562 : Cost 39.00081635 : Time 393.96s : 16575.40 words/s
+[2019-07-14 06:36:02] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 06:36:12] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter280000.npz
+[2019-07-14 06:36:19] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 06:36:29] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 06:36:55] [valid] Ep. 10 : Up. 280000 : cross-entropy : 48.802 : new best
+[2019-07-14 06:37:02] [valid] Ep. 10 : Up. 280000 : perplexity : 6.84729 : new best
+[2019-07-14 06:37:51] [valid] Ep. 10 : Up. 280000 : translation : 30.34 : new best
+[2019-07-14 06:44:27] Ep. 10 : Up. 282000 : Sen. 3,266,722 : Cost 39.01926804 : Time 504.65s : 12930.19 words/s
+[2019-07-14 06:51:00] Ep. 10 : Up. 284000 : Sen. 3,589,968 : Cost 38.95956039 : Time 393.10s : 16575.00 words/s
+[2019-07-14 06:57:33] Ep. 10 : Up. 286000 : Sen. 3,914,673 : Cost 39.01734543 : Time 392.55s : 16668.71 words/s
+[2019-07-14 07:04:06] Ep. 10 : Up. 288000 : Sen. 4,238,871 : Cost 39.25894928 : Time 393.68s : 16666.14 words/s
+[2019-07-14 07:10:41] Ep. 10 : Up. 290000 : Sen. 4,565,480 : Cost 38.93539429 : Time 394.68s : 16650.96 words/s
+[2019-07-14 07:13:49] Seen 4720924 samples
+[2019-07-14 07:13:49] Starting epoch 11
+[2019-07-14 07:13:49] [data] Shuffling data
+[2019-07-14 07:13:53] [data] Done reading 5434910 sentences
+[2019-07-14 07:14:15] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 07:17:48] Ep. 11 : Up. 292000 : Sen. 168,765 : Cost 38.76622009 : Time 427.55s : 15340.93 words/s
+[2019-07-14 07:24:21] Ep. 11 : Up. 294000 : Sen. 493,859 : Cost 38.16794968 : Time 392.65s : 16652.40 words/s
+[2019-07-14 07:30:56] Ep. 11 : Up. 296000 : Sen. 819,200 : Cost 38.40898895 : Time 394.83s : 16644.49 words/s
+[2019-07-14 07:37:30] Ep. 11 : Up. 298000 : Sen. 1,144,346 : Cost 38.36937714 : Time 393.76s : 16639.79 words/s
+[2019-07-14 07:44:03] Ep. 11 : Up. 300000 : Sen. 1,468,945 : Cost 38.44335175 : Time 393.67s : 16643.48 words/s
+[2019-07-14 07:44:03] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 07:44:13] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter300000.npz
+[2019-07-14 07:44:20] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 07:44:30] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 07:44:56] [valid] Ep. 11 : Up. 300000 : cross-entropy : 48.6484 : new best
+[2019-07-14 07:45:02] [valid] Ep. 11 : Up. 300000 : perplexity : 6.80595 : new best
+[2019-07-14 07:45:50] [valid] Ep. 11 : Up. 300000 : translation : 30.26 : stalled 1 times (last best: 30.34)
+[2019-07-14 07:52:25] Ep. 11 : Up. 302000 : Sen. 1,793,581 : Cost 38.47185898 : Time 501.61s : 13027.86 words/s
+[2019-07-14 07:58:59] Ep. 11 : Up. 304000 : Sen. 2,116,983 : Cost 38.66760254 : Time 394.22s : 16607.00 words/s
+[2019-07-14 08:05:32] Ep. 11 : Up. 306000 : Sen. 2,440,862 : Cost 38.71786499 : Time 393.06s : 16608.23 words/s
+[2019-07-14 08:12:06] Ep. 11 : Up. 308000 : Sen. 2,765,331 : Cost 38.51531601 : Time 393.38s : 16615.99 words/s
+[2019-07-14 08:18:39] Ep. 11 : Up. 310000 : Sen. 3,088,827 : Cost 38.65161514 : Time 393.04s : 16588.50 words/s
+[2019-07-14 08:25:14] Ep. 11 : Up. 312000 : Sen. 3,414,678 : Cost 38.76305771 : Time 394.83s : 16668.40 words/s
+[2019-07-14 08:31:48] Ep. 11 : Up. 314000 : Sen. 3,740,021 : Cost 38.73784637 : Time 394.04s : 16638.55 words/s
+[2019-07-14 08:38:21] Ep. 11 : Up. 316000 : Sen. 4,064,404 : Cost 38.52856064 : Time 393.53s : 16630.91 words/s
+[2019-07-14 08:44:55] Ep. 11 : Up. 318000 : Sen. 4,388,212 : Cost 38.74983978 : Time 393.79s : 16602.22 words/s
+[2019-07-14 08:51:29] Ep. 11 : Up. 320000 : Sen. 4,712,081 : Cost 38.80420685 : Time 393.89s : 16583.50 words/s
+[2019-07-14 08:51:29] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 08:51:38] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter320000.npz
+[2019-07-14 08:51:45] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 08:51:55] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 08:52:20] [valid] Ep. 11 : Up. 320000 : cross-entropy : 48.5077 : new best
+[2019-07-14 08:52:26] [valid] Ep. 11 : Up. 320000 : perplexity : 6.76831 : new best
+[2019-07-14 08:53:14] [valid] Ep. 11 : Up. 320000 : translation : 30.44 : new best
+[2019-07-14 08:53:27] Seen 4720924 samples
+[2019-07-14 08:53:27] Starting epoch 12
+[2019-07-14 08:53:27] [data] Shuffling data
+[2019-07-14 08:53:30] [data] Done reading 5434910 sentences
+[2019-07-14 08:53:53] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 09:00:23] Ep. 12 : Up. 322000 : Sen. 313,370 : Cost 37.91222763 : Time 534.16s : 12185.29 words/s
+[2019-07-14 09:06:56] Ep. 12 : Up. 324000 : Sen. 637,970 : Cost 37.55470276 : Time 392.95s : 16609.01 words/s
+[2019-07-14 09:13:30] Ep. 12 : Up. 326000 : Sen. 962,150 : Cost 38.01799393 : Time 393.65s : 16606.48 words/s
+[2019-07-14 09:20:04] Ep. 12 : Up. 328000 : Sen. 1,287,310 : Cost 38.17173767 : Time 394.95s : 16627.94 words/s
+[2019-07-14 09:26:42] Ep. 12 : Up. 330000 : Sen. 1,612,974 : Cost 38.24600220 : Time 397.36s : 16535.64 words/s
+[2019-07-14 09:33:18] Ep. 12 : Up. 332000 : Sen. 1,936,601 : Cost 38.24444199 : Time 396.34s : 16479.79 words/s
+[2019-07-14 09:39:56] Ep. 12 : Up. 334000 : Sen. 2,261,563 : Cost 38.17906189 : Time 398.01s : 16458.39 words/s
+[2019-07-14 09:46:34] Ep. 12 : Up. 336000 : Sen. 2,585,600 : Cost 38.07542419 : Time 397.44s : 16425.43 words/s
+[2019-07-14 09:53:11] Ep. 12 : Up. 338000 : Sen. 2,909,250 : Cost 38.34181213 : Time 397.69s : 16437.15 words/s
+[2019-07-14 09:59:50] Ep. 12 : Up. 340000 : Sen. 3,234,876 : Cost 38.29327393 : Time 398.81s : 16469.54 words/s
+[2019-07-14 09:59:50] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 10:00:00] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter340000.npz
+[2019-07-14 10:00:07] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 10:00:18] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 10:00:46] [valid] Ep. 12 : Up. 340000 : cross-entropy : 48.5044 : new best
+[2019-07-14 10:00:53] [valid] Ep. 12 : Up. 340000 : perplexity : 6.76743 : new best
+[2019-07-14 10:01:43] [valid] Ep. 12 : Up. 340000 : translation : 30.44 : stalled 1 times (last best: 30.44)
+[2019-07-14 10:08:23] Ep. 12 : Up. 342000 : Sen. 3,559,105 : Cost 38.62475967 : Time 513.02s : 12755.60 words/s
+[2019-07-14 10:15:01] Ep. 12 : Up. 344000 : Sen. 3,883,146 : Cost 38.35581970 : Time 398.20s : 16420.74 words/s
+[2019-07-14 10:21:39] Ep. 12 : Up. 346000 : Sen. 4,208,172 : Cost 38.27823257 : Time 397.63s : 16457.83 words/s
+[2019-07-14 10:28:17] Ep. 12 : Up. 348000 : Sen. 4,532,660 : Cost 38.31301498 : Time 398.49s : 16430.21 words/s
+[2019-07-14 10:32:09] Seen 4720924 samples
+[2019-07-14 10:32:09] Starting epoch 13
+[2019-07-14 10:32:09] [data] Shuffling data
+[2019-07-14 10:32:12] [data] Done reading 5434910 sentences
+[2019-07-14 10:32:36] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 10:35:31] Ep. 13 : Up. 350000 : Sen. 135,836 : Cost 38.14628601 : Time 433.97s : 15072.50 words/s
+[2019-07-14 10:42:10] Ep. 13 : Up. 352000 : Sen. 459,613 : Cost 37.78028870 : Time 398.79s : 16429.27 words/s
+[2019-07-14 10:48:46] Ep. 13 : Up. 354000 : Sen. 784,238 : Cost 37.60593796 : Time 396.05s : 16508.01 words/s
+[2019-07-14 10:55:22] Ep. 13 : Up. 356000 : Sen. 1,109,578 : Cost 37.69041443 : Time 395.34s : 16610.35 words/s
+[2019-07-14 11:01:55] Ep. 13 : Up. 358000 : Sen. 1,433,906 : Cost 37.85269547 : Time 393.58s : 16627.51 words/s
+[2019-07-14 11:08:28] Ep. 13 : Up. 360000 : Sen. 1,757,068 : Cost 37.70689774 : Time 392.71s : 16588.80 words/s
+[2019-07-14 11:08:28] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 11:08:38] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter360000.npz
+[2019-07-14 11:08:45] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 11:08:55] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 11:09:23] [valid] Ep. 13 : Up. 360000 : cross-entropy : 48.4548 : new best
+[2019-07-14 11:09:30] [valid] Ep. 13 : Up. 360000 : perplexity : 6.75421 : new best
+[2019-07-14 11:10:18] [valid] Ep. 13 : Up. 360000 : translation : 30.62 : new best
+[2019-07-14 11:16:53] Ep. 13 : Up. 362000 : Sen. 2,080,939 : Cost 37.93265533 : Time 504.89s : 12926.53 words/s
+[2019-07-14 11:23:26] Ep. 13 : Up. 364000 : Sen. 2,405,468 : Cost 38.05118942 : Time 392.71s : 16675.25 words/s
+[2019-07-14 11:29:58] Ep. 13 : Up. 366000 : Sen. 2,729,122 : Cost 37.91249466 : Time 392.68s : 16635.54 words/s
+[2019-07-14 11:36:30] Ep. 13 : Up. 368000 : Sen. 3,052,362 : Cost 37.91960907 : Time 391.84s : 16632.82 words/s
+[2019-07-14 11:43:04] Ep. 13 : Up. 370000 : Sen. 3,377,068 : Cost 38.11378479 : Time 394.27s : 16614.86 words/s
+[2019-07-14 11:49:39] Ep. 13 : Up. 372000 : Sen. 3,702,111 : Cost 37.95787811 : Time 394.20s : 16622.79 words/s
+[2019-07-14 11:56:12] Ep. 13 : Up. 374000 : Sen. 4,025,600 : Cost 38.28769684 : Time 393.57s : 16584.17 words/s
+[2019-07-14 12:02:49] Ep. 13 : Up. 376000 : Sen. 4,349,903 : Cost 37.99387741 : Time 397.16s : 16481.12 words/s
+[2019-07-14 12:09:27] Ep. 13 : Up. 378000 : Sen. 4,673,874 : Cost 38.28096771 : Time 397.79s : 16421.49 words/s
+[2019-07-14 12:10:25] Seen 4720924 samples
+[2019-07-14 12:10:25] Starting epoch 14
+[2019-07-14 12:10:25] [data] Shuffling data
+[2019-07-14 12:10:28] [data] Done reading 5434910 sentences
+[2019-07-14 12:10:52] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 12:16:41] Ep. 14 : Up. 380000 : Sen. 276,878 : Cost 37.21692276 : Time 433.53s : 15044.48 words/s
+[2019-07-14 12:16:41] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 12:16:51] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter380000.npz
+[2019-07-14 12:16:58] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 12:17:08] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 12:17:33] [valid] Ep. 14 : Up. 380000 : cross-entropy : 48.3089 : new best
+[2019-07-14 12:17:40] [valid] Ep. 14 : Up. 380000 : perplexity : 6.71549 : new best
+[2019-07-14 12:18:31] [valid] Ep. 14 : Up. 380000 : translation : 30.71 : new best
+[2019-07-14 12:25:10] Ep. 14 : Up. 382000 : Sen. 600,544 : Cost 37.42179871 : Time 509.39s : 12813.07 words/s
+[2019-07-14 12:31:44] Ep. 14 : Up. 384000 : Sen. 924,354 : Cost 37.49261475 : Time 393.96s : 16590.29 words/s
+[2019-07-14 12:38:17] Ep. 14 : Up. 386000 : Sen. 1,247,059 : Cost 37.60351562 : Time 392.85s : 16606.54 words/s
+[2019-07-14 12:44:51] Ep. 14 : Up. 388000 : Sen. 1,571,588 : Cost 37.32661438 : Time 393.92s : 16613.43 words/s
+[2019-07-14 12:51:23] Ep. 14 : Up. 390000 : Sen. 1,894,838 : Cost 37.56751633 : Time 392.50s : 16612.48 words/s
+[2019-07-14 12:57:58] Ep. 14 : Up. 392000 : Sen. 2,219,966 : Cost 37.44412613 : Time 394.86s : 16585.24 words/s
+[2019-07-14 13:04:33] Ep. 14 : Up. 394000 : Sen. 2,545,295 : Cost 37.91680908 : Time 395.22s : 16628.51 words/s
+[2019-07-14 13:11:07] Ep. 14 : Up. 396000 : Sen. 2,869,383 : Cost 37.75102615 : Time 393.57s : 16629.19 words/s
+[2019-07-14 13:17:42] Ep. 14 : Up. 398000 : Sen. 3,194,693 : Cost 37.68537521 : Time 394.87s : 16609.79 words/s
+[2019-07-14 13:24:16] Ep. 14 : Up. 400000 : Sen. 3,519,651 : Cost 37.94943237 : Time 393.97s : 16649.44 words/s
+[2019-07-14 13:24:16] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 13:24:25] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter400000.npz
+[2019-07-14 13:24:32] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 13:24:42] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 13:25:08] [valid] Ep. 14 : Up. 400000 : cross-entropy : 48.3194 : stalled 1 times (last best: 48.3089)
+[2019-07-14 13:25:14] [valid] Ep. 14 : Up. 400000 : perplexity : 6.71826 : stalled 1 times (last best: 6.71549)
+[2019-07-14 13:26:02] [valid] Ep. 14 : Up. 400000 : translation : 30.68 : stalled 1 times (last best: 30.71)
+[2019-07-14 13:32:37] Ep. 14 : Up. 402000 : Sen. 3,844,196 : Cost 37.65406418 : Time 501.30s : 13025.68 words/s
+[2019-07-14 13:39:10] Ep. 14 : Up. 404000 : Sen. 4,168,711 : Cost 37.86795425 : Time 393.33s : 16677.09 words/s
+[2019-07-14 13:45:43] Ep. 14 : Up. 406000 : Sen. 4,492,362 : Cost 37.75682449 : Time 392.47s : 16624.49 words/s
+[2019-07-14 13:50:19] Seen 4720924 samples
+[2019-07-14 13:50:19] Starting epoch 15
+[2019-07-14 13:50:19] [data] Shuffling data
+[2019-07-14 13:50:22] [data] Done reading 5434910 sentences
+[2019-07-14 13:50:44] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 13:52:50] Ep. 15 : Up. 408000 : Sen. 96,000 : Cost 37.49459457 : Time 426.70s : 15342.00 words/s
+[2019-07-14 13:59:24] Ep. 15 : Up. 410000 : Sen. 421,482 : Cost 36.94312668 : Time 394.85s : 16648.13 words/s
+[2019-07-14 14:05:57] Ep. 15 : Up. 412000 : Sen. 745,785 : Cost 37.17263794 : Time 392.66s : 16682.61 words/s
+[2019-07-14 14:12:29] Ep. 15 : Up. 414000 : Sen. 1,069,460 : Cost 37.49416351 : Time 392.25s : 16673.03 words/s
+[2019-07-14 14:19:02] Ep. 15 : Up. 416000 : Sen. 1,393,567 : Cost 37.21017456 : Time 392.82s : 16643.24 words/s
+[2019-07-14 14:25:36] Ep. 15 : Up. 418000 : Sen. 1,719,290 : Cost 37.41788864 : Time 393.74s : 16699.45 words/s
+[2019-07-14 14:32:07] Ep. 15 : Up. 420000 : Sen. 2,042,371 : Cost 37.27187729 : Time 391.06s : 16620.84 words/s
+[2019-07-14 14:32:07] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 14:32:17] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter420000.npz
+[2019-07-14 14:32:25] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 14:32:39] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 14:33:05] [valid] Ep. 15 : Up. 420000 : cross-entropy : 48.2962 : new best
+[2019-07-14 14:33:11] [valid] Ep. 15 : Up. 420000 : perplexity : 6.71212 : new best
+[2019-07-14 14:33:59] [valid] Ep. 15 : Up. 420000 : translation : 30.7 : stalled 2 times (last best: 30.71)
+[2019-07-14 14:40:33] Ep. 15 : Up. 422000 : Sen. 2,364,960 : Cost 37.48379135 : Time 506.48s : 12859.95 words/s
+[2019-07-14 14:47:05] Ep. 15 : Up. 424000 : Sen. 2,688,000 : Cost 37.33772278 : Time 391.88s : 16594.99 words/s
+[2019-07-14 14:53:38] Ep. 15 : Up. 426000 : Sen. 3,012,559 : Cost 37.40947723 : Time 392.76s : 16648.79 words/s
+[2019-07-14 15:00:13] Ep. 15 : Up. 428000 : Sen. 3,337,655 : Cost 37.66500854 : Time 394.57s : 16668.53 words/s
+[2019-07-14 15:06:43] Ep. 15 : Up. 430000 : Sen. 3,660,404 : Cost 37.22196579 : Time 390.79s : 16594.34 words/s
+[2019-07-14 15:13:17] Ep. 15 : Up. 432000 : Sen. 3,983,852 : Cost 37.76446152 : Time 393.14s : 16639.63 words/s
+[2019-07-14 15:19:52] Ep. 15 : Up. 434000 : Sen. 4,309,787 : Cost 37.48956299 : Time 395.38s : 16573.34 words/s
+[2019-07-14 15:26:32] Ep. 15 : Up. 436000 : Sen. 4,636,810 : Cost 37.59022141 : Time 400.19s : 16488.36 words/s
+[2019-07-14 15:28:16] Seen 4720924 samples
+[2019-07-14 15:28:16] Starting epoch 16
+[2019-07-14 15:28:16] [data] Shuffling data
+[2019-07-14 15:28:20] [data] Done reading 5434910 sentences
+[2019-07-14 15:28:44] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 15:33:47] Ep. 16 : Up. 438000 : Sen. 240,127 : Cost 37.15584946 : Time 434.93s : 15063.78 words/s
+[2019-07-14 15:40:25] Ep. 16 : Up. 440000 : Sen. 565,723 : Cost 36.63526535 : Time 397.81s : 16454.00 words/s
+[2019-07-14 15:40:25] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 15:40:36] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter440000.npz
+[2019-07-14 15:40:44] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 15:40:55] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 15:41:22] [valid] Ep. 16 : Up. 440000 : cross-entropy : 48.1923 : new best
+[2019-07-14 15:41:29] [valid] Ep. 16 : Up. 440000 : perplexity : 6.68467 : new best
+[2019-07-14 15:42:20] [valid] Ep. 16 : Up. 440000 : translation : 30.64 : stalled 3 times (last best: 30.71)
+[2019-07-14 15:49:00] Ep. 16 : Up. 442000 : Sen. 890,923 : Cost 37.01922607 : Time 514.99s : 12742.90 words/s
+[2019-07-14 15:55:37] Ep. 16 : Up. 444000 : Sen. 1,214,531 : Cost 37.07288742 : Time 397.12s : 16453.90 words/s
+[2019-07-14 16:02:15] Ep. 16 : Up. 446000 : Sen. 1,538,322 : Cost 37.27697372 : Time 397.99s : 16456.82 words/s
+[2019-07-14 16:08:53] Ep. 16 : Up. 448000 : Sen. 1,864,411 : Cost 36.92125320 : Time 397.79s : 16474.12 words/s
+[2019-07-14 16:15:31] Ep. 16 : Up. 450000 : Sen. 2,188,438 : Cost 37.22638321 : Time 397.74s : 16470.96 words/s
+[2019-07-14 16:22:07] Ep. 16 : Up. 452000 : Sen. 2,512,247 : Cost 37.18620682 : Time 396.87s : 16453.16 words/s
+[2019-07-14 16:28:47] Ep. 16 : Up. 454000 : Sen. 2,837,392 : Cost 37.53470612 : Time 399.42s : 16475.39 words/s
+[2019-07-14 16:35:24] Ep. 16 : Up. 456000 : Sen. 3,161,600 : Cost 37.11782837 : Time 397.58s : 16444.71 words/s
+[2019-07-14 16:42:03] Ep. 16 : Up. 458000 : Sen. 3,487,295 : Cost 37.25130463 : Time 398.84s : 16489.01 words/s
+[2019-07-14 16:48:41] Ep. 16 : Up. 460000 : Sen. 3,812,572 : Cost 37.27214813 : Time 398.16s : 16447.53 words/s
+[2019-07-14 16:48:41] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 16:48:55] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter460000.npz
+[2019-07-14 16:49:04] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 16:49:16] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 16:49:45] [valid] Ep. 16 : Up. 460000 : cross-entropy : 48.1848 : new best
+[2019-07-14 16:49:52] [valid] Ep. 16 : Up. 460000 : perplexity : 6.6827 : new best
+[2019-07-14 16:50:43] [valid] Ep. 16 : Up. 460000 : translation : 30.67 : stalled 4 times (last best: 30.71)
+[2019-07-14 16:57:22] Ep. 16 : Up. 462000 : Sen. 4,135,670 : Cost 37.53381729 : Time 520.82s : 12501.84 words/s
+[2019-07-14 17:04:00] Ep. 16 : Up. 464000 : Sen. 4,460,634 : Cost 37.43060303 : Time 397.71s : 16480.26 words/s
+[2019-07-14 17:09:19] Seen 4720924 samples
+[2019-07-14 17:09:19] Starting epoch 17
+[2019-07-14 17:09:19] [data] Shuffling data
+[2019-07-14 17:09:23] [data] Done reading 5434910 sentences
+[2019-07-14 17:09:47] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 17:11:13] Ep. 17 : Up. 466000 : Sen. 62,681 : Cost 37.12429428 : Time 432.79s : 15054.66 words/s
+[2019-07-14 17:17:50] Ep. 17 : Up. 468000 : Sen. 387,978 : Cost 36.64997101 : Time 397.58s : 16484.44 words/s
+[2019-07-14 17:24:27] Ep. 17 : Up. 470000 : Sen. 710,532 : Cost 36.71379852 : Time 397.00s : 16410.57 words/s
+[2019-07-14 17:31:06] Ep. 17 : Up. 472000 : Sen. 1,035,224 : Cost 36.78408432 : Time 398.94s : 16420.66 words/s
+[2019-07-14 17:37:45] Ep. 17 : Up. 474000 : Sen. 1,360,115 : Cost 36.85378647 : Time 399.19s : 16431.19 words/s
+[2019-07-14 17:44:23] Ep. 17 : Up. 476000 : Sen. 1,684,192 : Cost 36.75011826 : Time 397.55s : 16436.30 words/s
+[2019-07-14 17:51:00] Ep. 17 : Up. 478000 : Sen. 2,008,124 : Cost 36.83224106 : Time 397.32s : 16441.72 words/s
+[2019-07-14 17:57:39] Ep. 17 : Up. 480000 : Sen. 2,332,443 : Cost 36.90116501 : Time 398.19s : 16444.38 words/s
+[2019-07-14 17:57:39] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 17:57:49] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter480000.npz
+[2019-07-14 17:58:00] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 17:58:11] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 17:58:39] [valid] Ep. 17 : Up. 480000 : cross-entropy : 48.2365 : stalled 1 times (last best: 48.1848)
+[2019-07-14 17:58:45] [valid] Ep. 17 : Up. 480000 : perplexity : 6.69633 : stalled 1 times (last best: 6.6827)
+[2019-07-14 17:59:37] [valid] Ep. 17 : Up. 480000 : translation : 30.52 : stalled 5 times (last best: 30.71)
+[2019-07-14 18:06:16] Ep. 17 : Up. 482000 : Sen. 2,655,430 : Cost 37.15641022 : Time 517.07s : 12618.68 words/s
+[2019-07-14 18:12:52] Ep. 17 : Up. 484000 : Sen. 2,978,870 : Cost 37.03856277 : Time 396.17s : 16450.73 words/s
+[2019-07-14 18:19:32] Ep. 17 : Up. 486000 : Sen. 3,305,325 : Cost 37.09579086 : Time 399.76s : 16476.45 words/s
+[2019-07-14 18:26:11] Ep. 17 : Up. 488000 : Sen. 3,630,144 : Cost 37.28285217 : Time 399.44s : 16402.53 words/s
+[2019-07-14 18:32:48] Ep. 17 : Up. 490000 : Sen. 3,954,667 : Cost 36.96118927 : Time 397.33s : 16421.44 words/s
+[2019-07-14 18:39:28] Ep. 17 : Up. 492000 : Sen. 4,280,430 : Cost 37.12293625 : Time 399.24s : 16467.23 words/s
+[2019-07-14 18:46:05] Ep. 17 : Up. 494000 : Sen. 4,603,650 : Cost 37.17585373 : Time 397.06s : 16425.35 words/s
+[2019-07-14 18:48:28] Seen 4720924 samples
+[2019-07-14 18:48:28] Starting epoch 18
+[2019-07-14 18:48:28] [data] Shuffling data
+[2019-07-14 18:48:32] [data] Done reading 5434910 sentences
+[2019-07-14 18:48:54] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 18:53:25] Ep. 18 : Up. 496000 : Sen. 206,811 : Cost 36.56938934 : Time 440.47s : 14828.86 words/s
+[2019-07-14 19:00:02] Ep. 18 : Up. 498000 : Sen. 530,587 : Cost 36.55830383 : Time 397.40s : 16432.05 words/s
+[2019-07-14 19:06:40] Ep. 18 : Up. 500000 : Sen. 854,253 : Cost 36.46382141 : Time 397.71s : 16437.60 words/s
+[2019-07-14 19:06:40] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 19:06:51] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter500000.npz
+[2019-07-14 19:06:58] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 19:07:09] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 19:07:37] [valid] Ep. 18 : Up. 500000 : cross-entropy : 48.2033 : stalled 2 times (last best: 48.1848)
+[2019-07-14 19:07:44] [valid] Ep. 18 : Up. 500000 : perplexity : 6.68757 : stalled 2 times (last best: 6.6827)
+[2019-07-14 19:08:35] [valid] Ep. 18 : Up. 500000 : translation : 30.81 : new best
+[2019-07-14 19:15:15] Ep. 18 : Up. 502000 : Sen. 1,179,489 : Cost 36.45464706 : Time 514.89s : 12707.35 words/s
+[2019-07-14 19:21:54] Ep. 18 : Up. 504000 : Sen. 1,505,312 : Cost 36.84538269 : Time 399.24s : 16460.83 words/s
+[2019-07-14 19:28:33] Ep. 18 : Up. 506000 : Sen. 1,828,865 : Cost 36.89038849 : Time 398.51s : 16407.00 words/s
+[2019-07-14 19:35:11] Ep. 18 : Up. 508000 : Sen. 2,152,983 : Cost 36.75280762 : Time 398.40s : 16399.09 words/s
+[2019-07-14 19:41:50] Ep. 18 : Up. 510000 : Sen. 2,477,774 : Cost 36.87745285 : Time 398.98s : 16437.70 words/s
+[2019-07-14 19:48:29] Ep. 18 : Up. 512000 : Sen. 2,802,241 : Cost 37.08463287 : Time 398.78s : 16436.51 words/s
+[2019-07-14 19:55:06] Ep. 18 : Up. 514000 : Sen. 3,126,893 : Cost 36.78313828 : Time 397.48s : 16439.56 words/s
+[2019-07-14 20:01:46] Ep. 18 : Up. 516000 : Sen. 3,452,354 : Cost 36.85260391 : Time 399.80s : 16430.42 words/s
+[2019-07-14 20:08:25] Ep. 18 : Up. 518000 : Sen. 3,776,132 : Cost 36.90024948 : Time 399.04s : 16387.82 words/s
+[2019-07-14 20:15:02] Ep. 18 : Up. 520000 : Sen. 4,099,149 : Cost 36.89029694 : Time 396.40s : 16431.92 words/s
+[2019-07-14 20:15:02] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 20:15:14] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter520000.npz
+[2019-07-14 20:15:22] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 20:15:32] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 20:15:59] [valid] Ep. 18 : Up. 520000 : cross-entropy : 48.1804 : new best
+[2019-07-14 20:16:06] [valid] Ep. 18 : Up. 520000 : perplexity : 6.68153 : new best
+[2019-07-14 20:16:56] [valid] Ep. 18 : Up. 520000 : translation : 30.72 : stalled 1 times (last best: 30.81)
+[2019-07-14 20:23:36] Ep. 18 : Up. 522000 : Sen. 4,423,604 : Cost 37.11017227 : Time 514.68s : 12718.76 words/s
+[2019-07-14 20:29:41] Seen 4720924 samples
+[2019-07-14 20:29:41] Starting epoch 19
+[2019-07-14 20:29:41] [data] Shuffling data
+[2019-07-14 20:29:45] [data] Done reading 5434910 sentences
+[2019-07-14 20:30:09] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 20:30:52] Ep. 19 : Up. 524000 : Sen. 28,479 : Cost 36.95204544 : Time 435.97s : 15039.81 words/s
+[2019-07-14 20:37:29] Ep. 19 : Up. 526000 : Sen. 350,685 : Cost 36.25709915 : Time 396.86s : 16420.38 words/s
+[2019-07-14 20:44:09] Ep. 19 : Up. 528000 : Sen. 675,972 : Cost 36.39203262 : Time 399.45s : 16442.00 words/s
+[2019-07-14 20:50:46] Ep. 19 : Up. 530000 : Sen. 1,000,197 : Cost 36.13576126 : Time 397.52s : 16412.68 words/s
+[2019-07-14 20:57:25] Ep. 19 : Up. 532000 : Sen. 1,325,532 : Cost 36.28838730 : Time 399.03s : 16452.47 words/s
+[2019-07-14 21:04:06] Ep. 19 : Up. 534000 : Sen. 1,651,694 : Cost 36.62901688 : Time 400.52s : 16445.34 words/s
+[2019-07-14 21:10:45] Ep. 19 : Up. 536000 : Sen. 1,976,681 : Cost 36.70731354 : Time 399.42s : 16409.22 words/s
+[2019-07-14 21:17:22] Ep. 19 : Up. 538000 : Sen. 2,298,633 : Cost 36.70121002 : Time 396.49s : 16396.43 words/s
+[2019-07-14 21:23:58] Ep. 19 : Up. 540000 : Sen. 2,621,513 : Cost 36.35102081 : Time 395.93s : 16385.01 words/s
+[2019-07-14 21:23:58] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 21:24:09] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter540000.npz
+[2019-07-14 21:24:17] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 21:24:28] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 21:24:54] [valid] Ep. 19 : Up. 540000 : cross-entropy : 48.2002 : stalled 1 times (last best: 48.1804)
+[2019-07-14 21:25:01] [valid] Ep. 19 : Up. 540000 : perplexity : 6.68675 : stalled 1 times (last best: 6.68153)
+[2019-07-14 21:25:52] [valid] Ep. 19 : Up. 540000 : translation : 30.59 : stalled 2 times (last best: 30.81)
+[2019-07-14 21:32:35] Ep. 19 : Up. 542000 : Sen. 2,947,953 : Cost 36.78536987 : Time 517.34s : 12745.97 words/s
+[2019-07-14 21:39:13] Ep. 19 : Up. 544000 : Sen. 3,272,793 : Cost 36.76213455 : Time 397.82s : 16462.19 words/s
+[2019-07-14 21:45:50] Ep. 19 : Up. 546000 : Sen. 3,596,451 : Cost 36.86365509 : Time 397.59s : 16430.20 words/s
+[2019-07-14 21:52:27] Ep. 19 : Up. 548000 : Sen. 3,919,859 : Cost 36.69676590 : Time 397.05s : 16419.97 words/s
+[2019-07-14 21:59:06] Ep. 19 : Up. 550000 : Sen. 4,245,719 : Cost 36.73624802 : Time 398.66s : 16462.53 words/s
+[2019-07-14 22:05:46] Ep. 19 : Up. 552000 : Sen. 4,570,796 : Cost 37.09879684 : Time 400.17s : 16450.59 words/s
+[2019-07-14 22:08:51] Seen 4720924 samples
+[2019-07-14 22:08:51] Starting epoch 20
+[2019-07-14 22:08:51] [data] Shuffling data
+[2019-07-14 22:08:54] [data] Done reading 5434910 sentences
+[2019-07-14 22:09:15] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 22:13:04] Ep. 20 : Up. 554000 : Sen. 173,935 : Cost 36.37913132 : Time 437.26s : 14944.63 words/s
+[2019-07-14 22:19:43] Ep. 20 : Up. 556000 : Sen. 497,741 : Cost 36.20767212 : Time 399.15s : 16382.01 words/s
+[2019-07-14 22:26:21] Ep. 20 : Up. 558000 : Sen. 822,257 : Cost 36.25968552 : Time 398.45s : 16436.75 words/s
+[2019-07-14 22:32:59] Ep. 20 : Up. 560000 : Sen. 1,145,996 : Cost 36.28541946 : Time 397.57s : 16419.09 words/s
+[2019-07-14 22:32:59] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 22:33:09] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter560000.npz
+[2019-07-14 22:33:16] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 22:33:27] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 22:33:59] [valid] Ep. 20 : Up. 560000 : cross-entropy : 48.162 : new best
+[2019-07-14 22:34:05] [valid] Ep. 20 : Up. 560000 : perplexity : 6.6767 : new best
+[2019-07-14 22:34:57] [valid] Ep. 20 : Up. 560000 : translation : 30.77 : stalled 3 times (last best: 30.81)
+[2019-07-14 22:41:37] Ep. 20 : Up. 562000 : Sen. 1,470,296 : Cost 36.12055588 : Time 518.03s : 12608.99 words/s
+[2019-07-14 22:48:15] Ep. 20 : Up. 564000 : Sen. 1,794,538 : Cost 36.38883591 : Time 398.57s : 16406.10 words/s
+[2019-07-14 22:54:55] Ep. 20 : Up. 566000 : Sen. 2,120,486 : Cost 36.38965988 : Time 399.54s : 16456.41 words/s
+[2019-07-14 23:01:32] Ep. 20 : Up. 568000 : Sen. 2,444,140 : Cost 36.47938538 : Time 397.49s : 16421.08 words/s
+[2019-07-14 23:08:11] Ep. 20 : Up. 570000 : Sen. 2,768,273 : Cost 36.62773514 : Time 399.07s : 16425.82 words/s
+[2019-07-14 23:14:50] Ep. 20 : Up. 572000 : Sen. 3,093,917 : Cost 36.40918732 : Time 398.21s : 16450.45 words/s
+[2019-07-14 23:21:27] Ep. 20 : Up. 574000 : Sen. 3,418,080 : Cost 36.43323135 : Time 397.08s : 16455.60 words/s
+[2019-07-14 23:28:06] Ep. 20 : Up. 576000 : Sen. 3,742,961 : Cost 36.75630951 : Time 399.61s : 16430.98 words/s
+[2019-07-14 23:34:44] Ep. 20 : Up. 578000 : Sen. 4,067,335 : Cost 36.63065338 : Time 397.46s : 16440.47 words/s
+[2019-07-14 23:41:22] Ep. 20 : Up. 580000 : Sen. 4,392,485 : Cost 36.79344177 : Time 398.52s : 16471.51 words/s
+[2019-07-14 23:41:22] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-14 23:41:33] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter580000.npz
+[2019-07-14 23:41:40] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-14 23:41:51] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-14 23:42:19] [valid] Ep. 20 : Up. 580000 : cross-entropy : 48.1392 : new best
+[2019-07-14 23:42:25] [valid] Ep. 20 : Up. 580000 : perplexity : 6.6707 : new best
+[2019-07-14 23:43:16] [valid] Ep. 20 : Up. 580000 : translation : 30.74 : stalled 4 times (last best: 30.81)
+[2019-07-14 23:49:56] Ep. 20 : Up. 582000 : Sen. 4,717,332 : Cost 36.74177170 : Time 513.90s : 12738.79 words/s
+[2019-07-14 23:50:01] Seen 4720924 samples
+[2019-07-14 23:50:01] Starting epoch 21
+[2019-07-14 23:50:01] [data] Shuffling data
+[2019-07-14 23:50:05] [data] Done reading 5434910 sentences
+[2019-07-14 23:50:28] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-14 23:57:11] Ep. 21 : Up. 584000 : Sen. 320,480 : Cost 35.92959213 : Time 434.81s : 15056.14 words/s
+[2019-07-15 00:03:50] Ep. 21 : Up. 586000 : Sen. 645,461 : Cost 35.92038727 : Time 398.62s : 16443.69 words/s
+[2019-07-15 00:10:29] Ep. 21 : Up. 588000 : Sen. 971,005 : Cost 35.88602448 : Time 399.22s : 16399.20 words/s
+[2019-07-15 00:17:06] Ep. 21 : Up. 590000 : Sen. 1,293,162 : Cost 36.26547623 : Time 397.09s : 16374.57 words/s
+[2019-07-15 00:23:44] Ep. 21 : Up. 592000 : Sen. 1,617,078 : Cost 36.08589935 : Time 398.01s : 16410.06 words/s
+[2019-07-15 00:30:22] Ep. 21 : Up. 594000 : Sen. 1,939,914 : Cost 36.31021500 : Time 397.85s : 16400.88 words/s
+[2019-07-15 00:37:01] Ep. 21 : Up. 596000 : Sen. 2,264,003 : Cost 36.18758774 : Time 398.69s : 16391.47 words/s
+[2019-07-15 00:43:40] Ep. 21 : Up. 598000 : Sen. 2,588,821 : Cost 36.40439987 : Time 399.24s : 16432.07 words/s
+[2019-07-15 00:50:18] Ep. 21 : Up. 600000 : Sen. 2,913,747 : Cost 36.28199005 : Time 398.65s : 16431.99 words/s
+[2019-07-15 00:50:18] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-15 00:50:28] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter600000.npz
+[2019-07-15 00:50:36] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-15 00:50:46] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-15 00:51:12] [valid] Ep. 21 : Up. 600000 : cross-entropy : 48.1799 : stalled 1 times (last best: 48.1392)
+[2019-07-15 00:51:19] [valid] Ep. 21 : Up. 600000 : perplexity : 6.68141 : stalled 1 times (last best: 6.6707)
+[2019-07-15 00:52:10] [valid] Ep. 21 : Up. 600000 : translation : 30.7 : stalled 5 times (last best: 30.81)
+[2019-07-15 00:58:54] Ep. 21 : Up. 602000 : Sen. 3,240,808 : Cost 36.37854004 : Time 515.72s : 12791.81 words/s
+[2019-07-15 01:05:32] Ep. 21 : Up. 604000 : Sen. 3,565,204 : Cost 36.48066711 : Time 398.24s : 16443.44 words/s
+[2019-07-15 01:12:11] Ep. 21 : Up. 606000 : Sen. 3,888,958 : Cost 36.65472412 : Time 398.34s : 16386.11 words/s
+[2019-07-15 01:18:50] Ep. 21 : Up. 608000 : Sen. 4,213,705 : Cost 36.60702515 : Time 398.90s : 16430.32 words/s
+[2019-07-15 01:25:29] Ep. 21 : Up. 610000 : Sen. 4,538,170 : Cost 36.51227570 : Time 399.68s : 16373.95 words/s
+[2019-07-15 01:29:14] Seen 4720924 samples
+[2019-07-15 01:29:14] Starting epoch 22
+[2019-07-15 01:29:14] [data] Shuffling data
+[2019-07-15 01:29:18] [data] Done reading 5434910 sentences
+[2019-07-15 01:29:42] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-15 01:32:44] Ep. 22 : Up. 612000 : Sen. 141,314 : Cost 36.07772064 : Time 434.38s : 15037.76 words/s
+[2019-07-15 01:39:22] Ep. 22 : Up. 614000 : Sen. 464,438 : Cost 35.84031677 : Time 398.41s : 16373.43 words/s
+[2019-07-15 01:45:59] Ep. 22 : Up. 616000 : Sen. 788,584 : Cost 35.98147583 : Time 397.19s : 16425.35 words/s
+[2019-07-15 01:52:38] Ep. 22 : Up. 618000 : Sen. 1,112,656 : Cost 35.80743790 : Time 398.66s : 16397.34 words/s
+[2019-07-15 01:59:16] Ep. 22 : Up. 620000 : Sen. 1,437,047 : Cost 36.08772278 : Time 398.34s : 16436.69 words/s
+[2019-07-15 01:59:16] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-15 01:59:26] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter620000.npz
+[2019-07-15 01:59:33] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-15 01:59:44] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-15 02:00:19] [valid] Ep. 22 : Up. 620000 : cross-entropy : 48.1613 : stalled 2 times (last best: 48.1392)
+[2019-07-15 02:00:25] [valid] Ep. 22 : Up. 620000 : perplexity : 6.67652 : stalled 2 times (last best: 6.6707)
+[2019-07-15 02:01:16] [valid] Ep. 22 : Up. 620000 : translation : 30.75 : stalled 6 times (last best: 30.81)
+[2019-07-15 02:07:57] Ep. 22 : Up. 622000 : Sen. 1,762,189 : Cost 35.88877869 : Time 520.37s : 12561.13 words/s
+[2019-07-15 02:14:35] Ep. 22 : Up. 624000 : Sen. 2,085,740 : Cost 36.17906952 : Time 398.23s : 16411.09 words/s
+[2019-07-15 02:21:14] Ep. 22 : Up. 626000 : Sen. 2,411,282 : Cost 36.21026611 : Time 399.21s : 16442.70 words/s
+[2019-07-15 02:27:53] Ep. 22 : Up. 628000 : Sen. 2,736,155 : Cost 36.17979813 : Time 398.47s : 16428.58 words/s
+[2019-07-15 02:34:31] Ep. 22 : Up. 630000 : Sen. 3,059,905 : Cost 36.42024612 : Time 398.12s : 16428.03 words/s
+[2019-07-15 02:41:09] Ep. 22 : Up. 632000 : Sen. 3,384,075 : Cost 36.44757843 : Time 397.87s : 16448.48 words/s
+[2019-07-15 02:47:48] Ep. 22 : Up. 634000 : Sen. 3,708,649 : Cost 36.59104538 : Time 399.03s : 16397.79 words/s
+[2019-07-15 02:54:24] Ep. 22 : Up. 636000 : Sen. 4,032,891 : Cost 36.54848480 : Time 396.54s : 16527.79 words/s
+[2019-07-15 03:01:05] Ep. 22 : Up. 638000 : Sen. 4,358,532 : Cost 36.29349136 : Time 400.53s : 16424.98 words/s
+[2019-07-15 03:07:43] Ep. 22 : Up. 640000 : Sen. 4,683,442 : Cost 36.53610992 : Time 398.16s : 16473.60 words/s
+[2019-07-15 03:07:43] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-15 03:07:53] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter640000.npz
+[2019-07-15 03:08:00] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-15 03:08:10] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-15 03:08:38] [valid] Ep. 22 : Up. 640000 : cross-entropy : 48.147 : stalled 3 times (last best: 48.1392)
+[2019-07-15 03:08:45] [valid] Ep. 22 : Up. 640000 : perplexity : 6.67275 : stalled 3 times (last best: 6.6707)
+[2019-07-15 03:09:35] [valid] Ep. 22 : Up. 640000 : translation : 30.74 : stalled 7 times (last best: 30.81)
+[2019-07-15 03:10:23] Seen 4720924 samples
+[2019-07-15 03:10:23] Starting epoch 23
+[2019-07-15 03:10:23] [data] Shuffling data
+[2019-07-15 03:10:26] [data] Done reading 5434910 sentences
+[2019-07-15 03:10:50] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-15 03:16:53] Ep. 23 : Up. 642000 : Sen. 288,834 : Cost 35.50055695 : Time 550.53s : 11938.46 words/s
+[2019-07-15 03:23:30] Ep. 23 : Up. 644000 : Sen. 612,051 : Cost 35.52417755 : Time 396.86s : 16442.03 words/s
+[2019-07-15 03:30:07] Ep. 23 : Up. 646000 : Sen. 935,496 : Cost 35.71516418 : Time 397.23s : 16431.89 words/s
+[2019-07-15 03:36:48] Ep. 23 : Up. 648000 : Sen. 1,262,196 : Cost 35.82604218 : Time 400.10s : 16456.46 words/s
+[2019-07-15 03:43:26] Ep. 23 : Up. 650000 : Sen. 1,587,200 : Cost 36.07837677 : Time 398.58s : 16473.09 words/s
+[2019-07-15 03:50:04] Ep. 23 : Up. 652000 : Sen. 1,912,467 : Cost 35.98138428 : Time 398.21s : 16470.81 words/s
+[2019-07-15 03:56:44] Ep. 23 : Up. 654000 : Sen. 2,238,374 : Cost 36.05051804 : Time 399.76s : 16450.29 words/s
+[2019-07-15 04:03:24] Ep. 23 : Up. 656000 : Sen. 2,564,177 : Cost 36.12366104 : Time 399.53s : 16420.72 words/s
+[2019-07-15 04:10:02] Ep. 23 : Up. 658000 : Sen. 2,888,446 : Cost 36.32176971 : Time 398.72s : 16421.95 words/s
+[2019-07-15 04:16:39] Ep. 23 : Up. 660000 : Sen. 3,212,800 : Cost 36.17496490 : Time 396.78s : 16487.09 words/s
+[2019-07-15 04:16:39] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-15 04:16:49] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter660000.npz
+[2019-07-15 04:16:56] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-15 04:17:06] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-15 04:17:33] [valid] Ep. 23 : Up. 660000 : cross-entropy : 48.2108 : stalled 4 times (last best: 48.1392)
+[2019-07-15 04:17:39] [valid] Ep. 23 : Up. 660000 : perplexity : 6.68956 : stalled 4 times (last best: 6.6707)
+[2019-07-15 04:18:30] [valid] Ep. 23 : Up. 660000 : translation : 30.86 : new best
+[2019-07-15 04:25:10] Ep. 23 : Up. 662000 : Sen. 3,536,889 : Cost 36.25951767 : Time 510.57s : 12836.86 words/s
+[2019-07-15 04:31:49] Ep. 23 : Up. 664000 : Sen. 3,862,136 : Cost 36.16242218 : Time 399.68s : 16380.85 words/s
+[2019-07-15 04:38:28] Ep. 23 : Up. 666000 : Sen. 4,187,243 : Cost 36.22817612 : Time 398.85s : 16419.32 words/s
+[2019-07-15 04:45:08] Ep. 23 : Up. 668000 : Sen. 4,511,487 : Cost 36.33879089 : Time 399.92s : 16367.50 words/s
+[2019-07-15 04:49:26] Seen 4720924 samples
+[2019-07-15 04:49:26] Starting epoch 24
+[2019-07-15 04:49:26] [data] Shuffling data
+[2019-07-15 04:49:29] [data] Done reading 5434910 sentences
+[2019-07-15 04:49:53] [data] Done shuffling 5434910 sentences to temp files
+[2019-07-15 04:52:23] Ep. 24 : Up. 670000 : Sen. 115,200 : Cost 36.04798508 : Time 434.47s : 15056.21 words/s
+[2019-07-15 04:59:00] Ep. 24 : Up. 672000 : Sen. 438,210 : Cost 35.48221970 : Time 397.22s : 16411.85 words/s
+[2019-07-15 05:05:39] Ep. 24 : Up. 674000 : Sen. 762,128 : Cost 35.72141266 : Time 398.84s : 16397.81 words/s
+[2019-07-15 05:12:19] Ep. 24 : Up. 676000 : Sen. 1,087,387 : Cost 35.64399338 : Time 400.71s : 16363.24 words/s
+[2019-07-15 05:18:58] Ep. 24 : Up. 678000 : Sen. 1,410,420 : Cost 35.80937958 : Time 398.22s : 16349.85 words/s
+[2019-07-15 05:25:37] Ep. 24 : Up. 680000 : Sen. 1,735,076 : Cost 35.79084778 : Time 399.79s : 16371.64 words/s
+[2019-07-15 05:25:37] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-15 05:25:47] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.iter680000.npz
+[2019-07-15 05:25:55] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-15 05:26:07] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz
+[2019-07-15 05:26:35] [valid] Ep. 24 : Up. 680000 : cross-entropy : 48.2153 : stalled 5 times (last best: 48.1392)
+[2019-07-15 05:26:41] [valid] Ep. 24 : Up. 680000 : perplexity : 6.69074 : stalled 5 times (last best: 6.6707)
+[2019-07-15 05:27:33] [valid] Ep. 24 : Up. 680000 : translation : 30.86 : stalled 1 times (last best: 30.86)
+[2019-07-15 05:27:35] Training finished
+[2019-07-15 05:27:41] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.orig.npz
+[2019-07-15 05:27:52] Saving model to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz
+[2019-07-15 05:28:02] Saving Adam parameters to ../experiments/100M_fasttext_prob_x_len_+_dcce_wmt1M_rnd/model/model.npz.optimizer.npz

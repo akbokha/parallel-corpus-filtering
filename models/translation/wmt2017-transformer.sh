@@ -24,10 +24,10 @@ mkdir -p $model_dir
 cp -p ../scripts/$model_type/validate.src.sh ./models/$experiment/validate.$SRC.sh
 cp -p ../scripts/$model_type/validate.sh ./models/$experiment/validate.sh
 
-insert_vars=$"data_dir=$data_dir\nSRC=$SRC\nTRG=$TRG"
+insert_vars=$"data_dir=$data_dir\nSRC=$SRC\nTRG=$TRG\n"
 
-sed -i "4i$insert_vars" ./models/$experiment/validate.$SRC.sh
-sed -i "5i$insert_vars" ./models/$experiment/validate.sh
+sed -i "5i$insert_vars" ./models/$experiment/validate.$SRC.sh
+sed -i "6i$insert_vars" ./models/$experiment/validate.sh
 
 # set chosen gpus
 GPUS=$3
@@ -117,12 +117,15 @@ fi
 
 for i in $(seq 1 $N)
 do
-  mkdir -p $model_dir/model/ens$i
-  # train model
+  if [ ! -e "$model_dir/model/ens$i/model.npz.best-translation.npz" ]
+  then
+    mkdir -p $model_dir/model/ens$i
+     # train model
     $MARIAN_TRAIN \
         --model $model_dir/model/ens$i/model.npz --type transformer \
         --train-sets $data_dir/all.bpe.$SRC $data_dir/all.bpe.$TRG \
-        --max-length 100 \
+        --max-length 50 \
+	--valid-max-length 50 \
         --vocabs $model_dir/vocab.ende.yml $model_dir/vocab.ende.yml \
         --mini-batch-fit -w $work_space_size --mini-batch 1000 --maxi-batch 1000 \
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
@@ -142,18 +145,22 @@ do
         --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 \
         --devices $GPUS --sync-sgd --seed $i$i$i$i  \
         --exponential-smoothing
+  fi
 done
 
 for i in $(seq 1 $N)
 do
-  mkdir -p $model_dir/model/ens-rtl$i
-  # train model
+  if [ ! -e "$model_dir/model/ens-rtl$i/model.npz.best-translation.npz" ]
+  then  
+    mkdir -p $model_dir/model/ens-rtl$i
+    # train model
     $MARIAN_TRAIN \
         --model $model_dir/model/ens-rtl$i/model.npz --type transformer \
         --train-sets $data_dir/all.bpe.$SRC $data_dir/all.bpe.$TRG \
-        --max-length 100 \
+        --max-length 80 \
+        --valid-max-length 50 \
         --vocabs $model_dir/vocab.ende.yml $model_dir/vocab.ende.yml \
-        --mini-batch-fit -w $work_space_spize --mini-batch 1000 --maxi-batch 1000 \
+        --mini-batch-fit -w $work_space_size --mini-batch 1000 --maxi-batch 1000 \
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics ce-mean-words perplexity translation \
         --valid-sets $data_dir/valid.bpe.$SRC $data_dir/valid.bpe.$TRG \
@@ -171,6 +178,7 @@ do
         --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 \
         --devices $GPUS --sync-sgd --seed $i$i$i$i$i \
         --exponential-smoothing --right-left
+  fi
 done
 
 # translate test sets

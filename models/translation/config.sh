@@ -19,4 +19,4 @@ export wmt_parallel_copora=/fs/bil0/abdel/data/wmt_parallel_data/wmt18_pp_parall
 export model_type=wmt2017-transformer
 
 # work-space size (RAM)
-export work_space_size=6000
+export work_space_size=8000

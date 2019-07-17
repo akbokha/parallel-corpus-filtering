@@ -23,7 +23,7 @@ model_dir=models/$experiment/model
 mkdir -p $data_dir
 mkdir -p $model_dir
 
-cp -p ../scripts/$model_type/validate.sh ./models/$experiment/validate.sh
+cp -p ../scripts/wmt1M-transformer/validate.sh ./models/$experiment/validate.sh
 
 insert_vars=$"data_dir=$data_dir\nSRC=$SRC\nTRG=$TRG\n"
 sed -i "6i$insert_vars" ./models/$experiment/validate.sh
@@ -66,7 +66,7 @@ then
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics cross-entropy ce-mean-words perplexity translation bleu \
         --valid-sets $data_dir/valid.bpe.$SRC $data_dir/valid.bpe.$TRG \
-        --valid-script-path "bash ../scripts/validate.sh $TRG $data_dir" \
+        --valid-script-path "bash ./models/$experiment/validate.sh" \
         --valid-translation-output "$data_dir/valid.bpe.$SRC.output" --quiet-translation \
         --valid-mini-batch 64 \
         --beam-size 6 --normalize 0.6 \

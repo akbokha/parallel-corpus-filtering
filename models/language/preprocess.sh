@@ -4,7 +4,6 @@ set -e
 
 . ./config.sh
 
-LANG=en
 bpe_operations=49500
 
 mkdir -p $data_dir

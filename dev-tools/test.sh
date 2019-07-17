@@ -3,6 +3,14 @@ set -e
 
 . ./local-settings.sh
 
+if [ $# -ne 0 ]
+then
+    experiment=$1
+    data_dir=../experiments/$experiment/data
+    model_dir=../experiments/$experiment/model
+    GPU=$2
+fi
+
 export BEST=`ls $model_dir/model.iter*.bleu | perl -ne 'chop; /iter(\d+).npz/; $iter = $1; qx/cat $_/ =~ /BLEU = ([\d\.]+), /; if ($1>$bleu) { $bleu=$1; $best = $iter; print $best."\n"; }' | tail -n 1`
 
 $marian/build/marian-decoder \

@@ -2,6 +2,14 @@
 
 . ./local-settings.sh
 
+if [ $# -ne 0 ]
+then
+    experiment=$1
+    data_dir=../experiments/$experiment/data
+    model_dir=../experiments/$experiment/model
+    GPU=$2
+fi
+
 cp -p ./score-dev.sh ../experiments/$experiment/score-dev.sh
 rel_dirs=$"data_dir=$data_dir\nmodel_dir=$model_dir"
 
@@ -15,7 +23,7 @@ $marian/build/marian \
         --devices $GPU \
         --train-sets $data_dir/train.bpe.de $data_dir/train.bpe.en \
         --vocabs $data_dir/train.bpe.de.json $data_dir/train.bpe.en.json \
-        --mini-batch-fit -w 3000 \
+        --mini-batch-fit -w 5000 \
         --dim-vocabs 50000 50000 \
         --layer-normalization --dropout-rnn 0.2 --dropout-src 0.1 --dropout-trg 0.1 \
         --learn-rate 0.0001 \

@@ -2,6 +2,15 @@
 
 . ./local-settings.sh
 
+if [ $# -ne 0 ]
+then
+    experiment=$1
+    data_dir=../experiments/$experiment/data
+    model_dir=../experiments/$experiment/model
+    GPU=$2
+    my_corpus_stem=$3
+fi
+
 # suffix of source language files
 SRC=de
 

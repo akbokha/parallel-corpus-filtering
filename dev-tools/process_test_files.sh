@@ -6,6 +6,14 @@ TRG=en
 
 . ./local-settings.sh
 
+if [ $# -ne 0 ]
+then
+    experiment=$1
+    data_dir=../experiments/$experiment/data
+    model_dir=../experiments/$experiment/model
+    GPU=$2
+fi
+
 for test_set in $test_sets/*.$SRC; do
     test_file="$(basename "$test_set")"
     # wrap in xml

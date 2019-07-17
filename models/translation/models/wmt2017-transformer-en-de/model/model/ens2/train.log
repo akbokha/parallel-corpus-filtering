@@ -1,0 +1,1807 @@
+[2019-07-10 20:59:14] [marian] Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-10 20:59:14] [marian] Running on fulla as process 307063 with command line:
+[2019-07-10 20:59:14] [marian] /fs/bil0/abdel/marian-dev/build/marian --model models/wmt2017-transformer-en-de/model/model/ens2/model.npz --type transformer --train-sets models/wmt2017-transformer-en-de/data/all.bpe.en models/wmt2017-transformer-en-de/data/all.bpe.de --max-length 100 --valid-max-length 100 --vocabs models/wmt2017-transformer-en-de/model/vocab.ende.yml models/wmt2017-transformer-en-de/model/vocab.ende.yml --mini-batch-fit -w 8000 --mini-batch 1000 --maxi-batch 1000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets models/wmt2017-transformer-en-de/data/valid.bpe.en models/wmt2017-transformer-en-de/data/valid.bpe.de --valid-script-path 'bash ./models/wmt2017-transformer-en-de/validate.sh' --valid-translation-output models/wmt2017-transformer-en-de/data/valid.bpe.en.output --quiet-translation --beam-size 12 --normalize=1 --valid-mini-batch 64 --overwrite --keep-best --early-stopping 5 --after-epochs 8 --cost-type=ce-mean-words --log models/wmt2017-transformer-en-de/model/model/ens2/train.log --valid-log models/wmt2017-transformer-en-de/model/model/ens2/valid.log --enc-depth 6 --dec-depth 6 --tied-embeddings-all --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 1 3 --sync-sgd --seed 2222 --exponential-smoothing
+[2019-07-10 20:59:14] [config] after-batches: 0
+[2019-07-10 20:59:14] [config] after-epochs: 8
+[2019-07-10 20:59:14] [config] allow-unk: false
+[2019-07-10 20:59:14] [config] beam-size: 12
+[2019-07-10 20:59:14] [config] bert-class-symbol: "[CLS]"
+[2019-07-10 20:59:14] [config] bert-mask-symbol: "[MASK]"
+[2019-07-10 20:59:14] [config] bert-masking-fraction: 0.15
+[2019-07-10 20:59:14] [config] bert-sep-symbol: "[SEP]"
+[2019-07-10 20:59:14] [config] bert-train-type-embeddings: true
+[2019-07-10 20:59:14] [config] bert-type-vocab-size: 2
+[2019-07-10 20:59:14] [config] best-deep: false
+[2019-07-10 20:59:14] [config] clip-gemm: 0
+[2019-07-10 20:59:14] [config] clip-norm: 5
+[2019-07-10 20:59:14] [config] cost-type: ce-mean-words
+[2019-07-10 20:59:14] [config] cpu-threads: 0
+[2019-07-10 20:59:14] [config] data-weighting: ""
+[2019-07-10 20:59:14] [config] data-weighting-type: sentence
+[2019-07-10 20:59:14] [config] dec-cell: gru
+[2019-07-10 20:59:14] [config] dec-cell-base-depth: 2
+[2019-07-10 20:59:14] [config] dec-cell-high-depth: 1
+[2019-07-10 20:59:14] [config] dec-depth: 6
+[2019-07-10 20:59:14] [config] devices:
+[2019-07-10 20:59:14] [config]   - 1
+[2019-07-10 20:59:14] [config]   - 3
+[2019-07-10 20:59:14] [config] dim-emb: 512
+[2019-07-10 20:59:14] [config] dim-rnn: 1024
+[2019-07-10 20:59:14] [config] dim-vocabs:
+[2019-07-10 20:59:14] [config]   - 0
+[2019-07-10 20:59:14] [config]   - 0
+[2019-07-10 20:59:14] [config] disp-first: 0
+[2019-07-10 20:59:14] [config] disp-freq: 500
+[2019-07-10 20:59:14] [config] disp-label-counts: false
+[2019-07-10 20:59:14] [config] dropout-rnn: 0
+[2019-07-10 20:59:14] [config] dropout-src: 0
+[2019-07-10 20:59:14] [config] dropout-trg: 0
+[2019-07-10 20:59:14] [config] dump-config: ""
+[2019-07-10 20:59:14] [config] early-stopping: 5
+[2019-07-10 20:59:14] [config] embedding-fix-src: false
+[2019-07-10 20:59:14] [config] embedding-fix-trg: false
+[2019-07-10 20:59:14] [config] embedding-normalization: false
+[2019-07-10 20:59:14] [config] embedding-vectors:
+[2019-07-10 20:59:14] [config]   []
+[2019-07-10 20:59:14] [config] enc-cell: gru
+[2019-07-10 20:59:14] [config] enc-cell-depth: 1
+[2019-07-10 20:59:14] [config] enc-depth: 6
+[2019-07-10 20:59:14] [config] enc-type: bidirectional
+[2019-07-10 20:59:14] [config] exponential-smoothing: 0.0001
+[2019-07-10 20:59:14] [config] grad-dropping-momentum: 0
+[2019-07-10 20:59:14] [config] grad-dropping-rate: 0
+[2019-07-10 20:59:14] [config] grad-dropping-warmup: 100
+[2019-07-10 20:59:14] [config] guided-alignment: none
+[2019-07-10 20:59:14] [config] guided-alignment-cost: mse
+[2019-07-10 20:59:14] [config] guided-alignment-weight: 0.1
+[2019-07-10 20:59:14] [config] ignore-model-config: false
+[2019-07-10 20:59:14] [config] input-types:
+[2019-07-10 20:59:14] [config]   []
+[2019-07-10 20:59:14] [config] interpolate-env-vars: false
+[2019-07-10 20:59:14] [config] keep-best: true
+[2019-07-10 20:59:14] [config] label-smoothing: 0.1
+[2019-07-10 20:59:14] [config] layer-normalization: false
+[2019-07-10 20:59:14] [config] learn-rate: 0.0003
+[2019-07-10 20:59:14] [config] log: models/wmt2017-transformer-en-de/model/model/ens2/train.log
+[2019-07-10 20:59:14] [config] log-level: info
+[2019-07-10 20:59:14] [config] log-time-zone: ""
+[2019-07-10 20:59:14] [config] lr-decay: 0
+[2019-07-10 20:59:14] [config] lr-decay-freq: 50000
+[2019-07-10 20:59:14] [config] lr-decay-inv-sqrt:
+[2019-07-10 20:59:14] [config]   - 16000
+[2019-07-10 20:59:14] [config] lr-decay-repeat-warmup: false
+[2019-07-10 20:59:14] [config] lr-decay-reset-optimizer: false
+[2019-07-10 20:59:14] [config] lr-decay-start:
+[2019-07-10 20:59:14] [config]   - 10
+[2019-07-10 20:59:14] [config]   - 1
+[2019-07-10 20:59:14] [config] lr-decay-strategy: epoch+stalled
+[2019-07-10 20:59:14] [config] lr-report: true
+[2019-07-10 20:59:14] [config] lr-warmup: 16000
+[2019-07-10 20:59:14] [config] lr-warmup-at-reload: false
+[2019-07-10 20:59:14] [config] lr-warmup-cycle: false
+[2019-07-10 20:59:14] [config] lr-warmup-start-rate: 0
+[2019-07-10 20:59:14] [config] max-length: 100
+[2019-07-10 20:59:14] [config] max-length-crop: false
+[2019-07-10 20:59:14] [config] max-length-factor: 3
+[2019-07-10 20:59:14] [config] maxi-batch: 1000
+[2019-07-10 20:59:14] [config] maxi-batch-sort: trg
+[2019-07-10 20:59:14] [config] mini-batch: 1000
+[2019-07-10 20:59:14] [config] mini-batch-fit: true
+[2019-07-10 20:59:14] [config] mini-batch-fit-step: 10
+[2019-07-10 20:59:14] [config] mini-batch-overstuff: 1
+[2019-07-10 20:59:14] [config] mini-batch-track-lr: false
+[2019-07-10 20:59:14] [config] mini-batch-understuff: 1
+[2019-07-10 20:59:14] [config] mini-batch-warmup: 0
+[2019-07-10 20:59:14] [config] mini-batch-words: 0
+[2019-07-10 20:59:14] [config] mini-batch-words-ref: 0
+[2019-07-10 20:59:14] [config] model: models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 20:59:14] [config] multi-loss-type: sum
+[2019-07-10 20:59:14] [config] multi-node: false
+[2019-07-10 20:59:14] [config] multi-node-overlap: true
+[2019-07-10 20:59:14] [config] n-best: false
+[2019-07-10 20:59:14] [config] no-nccl: false
+[2019-07-10 20:59:14] [config] no-reload: false
+[2019-07-10 20:59:14] [config] no-restore-corpus: false
+[2019-07-10 20:59:14] [config] no-shuffle: false
+[2019-07-10 20:59:14] [config] normalize: 1
+[2019-07-10 20:59:14] [config] num-devices: 0
+[2019-07-10 20:59:14] [config] optimizer: adam
+[2019-07-10 20:59:14] [config] optimizer-delay: 1
+[2019-07-10 20:59:14] [config] optimizer-params:
+[2019-07-10 20:59:14] [config]   - 0.9
+[2019-07-10 20:59:14] [config]   - 0.98
+[2019-07-10 20:59:14] [config]   - 1e-09
+[2019-07-10 20:59:14] [config] overwrite: true
+[2019-07-10 20:59:14] [config] pretrained-model: ""
+[2019-07-10 20:59:14] [config] quiet: false
+[2019-07-10 20:59:14] [config] quiet-translation: true
+[2019-07-10 20:59:14] [config] relative-paths: false
+[2019-07-10 20:59:14] [config] right-left: false
+[2019-07-10 20:59:14] [config] save-freq: 5000
+[2019-07-10 20:59:14] [config] seed: 2222
+[2019-07-10 20:59:14] [config] shuffle-in-ram: false
+[2019-07-10 20:59:14] [config] skip: false
+[2019-07-10 20:59:14] [config] sqlite: ""
+[2019-07-10 20:59:14] [config] sqlite-drop: false
+[2019-07-10 20:59:14] [config] sync-sgd: true
+[2019-07-10 20:59:14] [config] tempdir: /tmp
+[2019-07-10 20:59:14] [config] tied-embeddings: false
+[2019-07-10 20:59:14] [config] tied-embeddings-all: true
+[2019-07-10 20:59:14] [config] tied-embeddings-src: false
+[2019-07-10 20:59:14] [config] train-sets:
+[2019-07-10 20:59:14] [config]   - models/wmt2017-transformer-en-de/data/all.bpe.en
+[2019-07-10 20:59:14] [config]   - models/wmt2017-transformer-en-de/data/all.bpe.de
+[2019-07-10 20:59:14] [config] transformer-aan-activation: swish
+[2019-07-10 20:59:14] [config] transformer-aan-depth: 2
+[2019-07-10 20:59:14] [config] transformer-aan-nogate: false
+[2019-07-10 20:59:14] [config] transformer-decoder-autoreg: self-attention
+[2019-07-10 20:59:14] [config] transformer-dim-aan: 2048
+[2019-07-10 20:59:14] [config] transformer-dim-ffn: 2048
+[2019-07-10 20:59:14] [config] transformer-dropout: 0.1
+[2019-07-10 20:59:14] [config] transformer-dropout-attention: 0
+[2019-07-10 20:59:14] [config] transformer-dropout-ffn: 0
+[2019-07-10 20:59:14] [config] transformer-ffn-activation: swish
+[2019-07-10 20:59:14] [config] transformer-ffn-depth: 2
+[2019-07-10 20:59:14] [config] transformer-guided-alignment-layer: last
+[2019-07-10 20:59:14] [config] transformer-heads: 8
+[2019-07-10 20:59:14] [config] transformer-no-projection: false
+[2019-07-10 20:59:14] [config] transformer-postprocess: dan
+[2019-07-10 20:59:14] [config] transformer-postprocess-emb: d
+[2019-07-10 20:59:14] [config] transformer-preprocess: ""
+[2019-07-10 20:59:14] [config] transformer-tied-layers:
+[2019-07-10 20:59:14] [config]   []
+[2019-07-10 20:59:14] [config] transformer-train-position-embeddings: false
+[2019-07-10 20:59:14] [config] type: transformer
+[2019-07-10 20:59:14] [config] ulr: false
+[2019-07-10 20:59:14] [config] ulr-dim-emb: 0
+[2019-07-10 20:59:14] [config] ulr-dropout: 0
+[2019-07-10 20:59:14] [config] ulr-keys-vectors: ""
+[2019-07-10 20:59:14] [config] ulr-query-vectors: ""
+[2019-07-10 20:59:14] [config] ulr-softmax-temperature: 1
+[2019-07-10 20:59:14] [config] ulr-trainable-transformation: false
+[2019-07-10 20:59:14] [config] valid-freq: 5000
+[2019-07-10 20:59:14] [config] valid-log: models/wmt2017-transformer-en-de/model/model/ens2/valid.log
+[2019-07-10 20:59:14] [config] valid-max-length: 100
+[2019-07-10 20:59:14] [config] valid-metrics:
+[2019-07-10 20:59:14] [config]   - ce-mean-words
+[2019-07-10 20:59:14] [config]   - perplexity
+[2019-07-10 20:59:14] [config]   - translation
+[2019-07-10 20:59:14] [config] valid-mini-batch: 64
+[2019-07-10 20:59:14] [config] valid-script-path: bash ./models/wmt2017-transformer-en-de/validate.sh
+[2019-07-10 20:59:14] [config] valid-sets:
+[2019-07-10 20:59:14] [config]   - models/wmt2017-transformer-en-de/data/valid.bpe.en
+[2019-07-10 20:59:14] [config]   - models/wmt2017-transformer-en-de/data/valid.bpe.de
+[2019-07-10 20:59:14] [config] valid-translation-output: models/wmt2017-transformer-en-de/data/valid.bpe.en.output
+[2019-07-10 20:59:14] [config] vocabs:
+[2019-07-10 20:59:14] [config]   - models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 20:59:14] [config]   - models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 20:59:14] [config] word-penalty: 0
+[2019-07-10 20:59:14] [config] workspace: 8000
+[2019-07-10 20:59:14] [config] Model is being created with Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-10 20:59:14] Using synchronous training
+[2019-07-10 20:59:14] [data] Loading vocabulary from JSON/Yaml file models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 20:59:14] [data] Setting vocabulary size for input 0 to 36000
+[2019-07-10 20:59:14] [data] Loading vocabulary from JSON/Yaml file models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 20:59:15] [data] Setting vocabulary size for input 1 to 36000
+[2019-07-10 20:59:15] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-07-10 20:59:15] [batching] Collecting statistics for batch fitting with step size 10
+[2019-07-10 20:59:16] [memory] Extending reserved space to 8064 MB (device gpu1)
+[2019-07-10 20:59:17] [memory] Extending reserved space to 8064 MB (device gpu3)
+[2019-07-10 20:59:17] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-10 20:59:18] [comm] NCCLCommunicator constructed successfully.
+[2019-07-10 20:59:18] [training] Using 2 GPUs
+[2019-07-10 20:59:18] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 20:59:18] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-07-10 20:59:18] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 20:59:25] [batching] Done. Typical MB size is 10656 target words
+[2019-07-10 20:59:25] [memory] Extending reserved space to 8064 MB (device gpu1)
+[2019-07-10 20:59:25] [memory] Extending reserved space to 8064 MB (device gpu3)
+[2019-07-10 20:59:25] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-10 20:59:25] [comm] NCCLCommunicator constructed successfully.
+[2019-07-10 20:59:25] [training] Using 2 GPUs
+[2019-07-10 20:59:25] Training started
+[2019-07-10 20:59:25] [data] Shuffling data
+[2019-07-10 20:59:37] [data] Done reading 19122526 sentences
+[2019-07-10 21:01:44] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-10 21:02:23] [training] Batches are processed as 1 process(es) x 2 devices/process
+[2019-07-10 21:02:23] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 21:02:23] [memory] Reserving 238 MB, device gpu3
+[2019-07-10 21:02:23] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 21:02:23] [memory] Reserving 238 MB, device gpu3
+[2019-07-10 21:02:23] [memory] Reserving 119 MB, device gpu1
+[2019-07-10 21:02:23] [memory] Reserving 119 MB, device gpu3
+[2019-07-10 21:02:23] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 21:02:23] [memory] Reserving 238 MB, device gpu3
+[2019-07-10 21:04:32] Ep. 1 : Up. 500 : Sen. 166,137 : Cost 9.54238415 : Time 317.29s : 14071.03 words/s : L.r. 9.3750e-06
+[2019-07-10 21:06:40] Ep. 1 : Up. 1000 : Sen. 329,078 : Cost 8.20777035 : Time 128.46s : 34214.02 words/s : L.r. 1.8750e-05
+[2019-07-10 21:08:49] Ep. 1 : Up. 1500 : Sen. 487,126 : Cost 7.83501530 : Time 128.37s : 34332.90 words/s : L.r. 2.8125e-05
+[2019-07-10 21:10:58] Ep. 1 : Up. 2000 : Sen. 649,660 : Cost 7.59694338 : Time 129.62s : 34667.78 words/s : L.r. 3.7500e-05
+[2019-07-10 21:13:08] Ep. 1 : Up. 2500 : Sen. 811,724 : Cost 7.28978539 : Time 129.26s : 34341.25 words/s : L.r. 4.6875e-05
+[2019-07-10 21:15:16] Ep. 1 : Up. 3000 : Sen. 968,284 : Cost 7.01603127 : Time 128.57s : 34460.13 words/s : L.r. 5.6250e-05
+[2019-07-10 21:17:25] Ep. 1 : Up. 3500 : Sen. 1,129,134 : Cost 6.77188540 : Time 128.94s : 34340.30 words/s : L.r. 6.5625e-05
+[2019-07-10 21:19:35] Ep. 1 : Up. 4000 : Sen. 1,295,811 : Cost 6.55268669 : Time 129.44s : 34409.22 words/s : L.r. 7.5000e-05
+[2019-07-10 21:21:43] Ep. 1 : Up. 4500 : Sen. 1,455,958 : Cost 6.36777973 : Time 128.06s : 34748.20 words/s : L.r. 8.4375e-05
+[2019-07-10 21:23:51] Ep. 1 : Up. 5000 : Sen. 1,620,834 : Cost 6.10873461 : Time 128.49s : 34559.62 words/s : L.r. 9.3750e-05
+[2019-07-10 21:23:51] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-10 21:23:58] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 21:24:04] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-10 21:24:18] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-10 21:24:23] [valid] Ep. 1 : Up. 5000 : ce-mean-words : 5.2816 : new best
+[2019-07-10 21:24:24] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-10 21:24:29] [valid] Ep. 1 : Up. 5000 : perplexity : 196.685 : new best
+[2019-07-10 21:28:12] Error: CUDA error 2 'out of memory' - /fs/bil0/abdel/marian-dev/src/tensors/gpu/device.cu:32: cudaMalloc(&data_, size)
+[2019-07-10 21:28:12] Error: Aborted from virtual void marian::gpu::Device::reserve(size_t) in /fs/bil0/abdel/marian-dev/src/tensors/gpu/device.cu:32
+
+[CALL STACK]
+[0x19f2e87]         marian::gpu::Device::  reserve  (unsigned long)    + 0xfc7
+[0x74e76d]          marian::TensorAllocator::  allocate  (std::shared_ptr<marian::TensorBase>&,  marian::Shape,  marian::Type) + 0x5fd
+[0x8076b3]          marian::Tensors::  allocateForward  (std::shared_ptr<marian::Chainable<std::shared_ptr<marian::TensorBase>>>) + 0x163
+[0x80607e]          marian::Node::  allocate  ()                       + 0x12e
+[0x64050a]          marian::ExpressionGraph::  forwardNext  ()         + 0xaa
+[0x657027]          marian::BeamSearch::  search  (std::shared_ptr<marian::ExpressionGraph>,  std::shared_ptr<marian::data::CorpusBatch>) + 0x57d7
+[0x979b55]          marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}::  operator()  (unsigned long) const + 0x1e5
+[0x97a2d9]          std::future<std::result_of<marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}& (unsigned long&)>::type> marian::ThreadPool::enqueue<marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}&,unsigned long&>(std::result_of&&,(marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}&)...)::{lambda()#1}::  operator()  () const + 0x29
+[0x97acdc]          std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base,std::__future_base::_Result_base::_Deleter> (),std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>,std::__future_base::_Result_base::_Deleter>,std::_Bind_simple<std::reference_wrapper<std::future<std::result_of<marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}& (unsigned long&)>::type> marian::ThreadPool::enqueue<marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}&,unsigned long&>(std::result_of&&,(marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}&)...)::{lambda()#1}> ()>,void>>::  _M_invoke [0x5a5f19]          std::__future_base::_State_baseV2::  _M_do_set  (std::function<std::unique_ptr<std::__future_base::_Result_base,std::__future_base::_Result_base::_Deleter> ()>*,  bool*) + 0x29
+[0x7ff1ff951a99]                                                       + 0xea99
+[0x96d04f]          std::__future_base::_Task_state<std::future<std::result_of<marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}& (unsigned long&)>::type> marian::ThreadPool::enqueue<marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}&,unsigned long&>(std::result_of&&,(marian::TranslationValidator::validate(std::vector<std::shared_ptr<marian::ExpressionGraph>,std::allocator<std::shared_ptr<marian::ExpressionGraph>>> const&)::{lambda(unsigned long)#1}&)...)::{lambda()#1},std::allocator<int>,void ()>::  _M_run  () + 0xcf
+[0x5d00b4]          std::thread::_Impl<std::_Bind_simple<marian::ThreadPool::reserve(unsigned long)::{lambda()#1} ()>>::  _M_run  () + 0x174
+[0x7ff1ff471c80]                                                       + 0xb8c80
+[0x7ff1ff94a6ba]                                                       + 0x76ba
+[0x7ff1febd741d]    clone                                              + 0x6d
+
+[2019-07-10 22:17:28] [marian] Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-10 22:17:28] [marian] Running on fulla as process 344967 with command line:
+[2019-07-10 22:17:28] [marian] /fs/bil0/abdel/marian-dev/build/marian --model models/wmt2017-transformer-en-de/model/model/ens2/model.npz --type transformer --train-sets models/wmt2017-transformer-en-de/data/all.bpe.en models/wmt2017-transformer-en-de/data/all.bpe.de --max-length 50 --valid-max-length 50 --vocabs models/wmt2017-transformer-en-de/model/vocab.ende.yml models/wmt2017-transformer-en-de/model/vocab.ende.yml --mini-batch-fit -w 8000 --mini-batch 1000 --maxi-batch 1000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets models/wmt2017-transformer-en-de/data/valid.bpe.en models/wmt2017-transformer-en-de/data/valid.bpe.de --valid-script-path 'bash ./models/wmt2017-transformer-en-de/validate.sh' --valid-translation-output models/wmt2017-transformer-en-de/data/valid.bpe.en.output --quiet-translation --beam-size 12 --normalize=1 --valid-mini-batch 64 --overwrite --keep-best --early-stopping 5 --after-epochs 8 --cost-type=ce-mean-words --log models/wmt2017-transformer-en-de/model/model/ens2/train.log --valid-log models/wmt2017-transformer-en-de/model/model/ens2/valid.log --enc-depth 6 --dec-depth 6 --tied-embeddings-all --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 1 3 --sync-sgd --seed 2222 --exponential-smoothing
+[2019-07-10 22:17:29] [config] after-batches: 0
+[2019-07-10 22:17:29] [config] after-epochs: 8
+[2019-07-10 22:17:29] [config] allow-unk: false
+[2019-07-10 22:17:29] [config] beam-size: 12
+[2019-07-10 22:17:29] [config] bert-class-symbol: "[CLS]"
+[2019-07-10 22:17:29] [config] bert-mask-symbol: "[MASK]"
+[2019-07-10 22:17:29] [config] bert-masking-fraction: 0.15
+[2019-07-10 22:17:29] [config] bert-sep-symbol: "[SEP]"
+[2019-07-10 22:17:29] [config] bert-train-type-embeddings: true
+[2019-07-10 22:17:29] [config] bert-type-vocab-size: 2
+[2019-07-10 22:17:29] [config] best-deep: false
+[2019-07-10 22:17:29] [config] clip-gemm: 0
+[2019-07-10 22:17:29] [config] clip-norm: 5
+[2019-07-10 22:17:29] [config] cost-type: ce-mean-words
+[2019-07-10 22:17:29] [config] cpu-threads: 0
+[2019-07-10 22:17:29] [config] data-weighting: ""
+[2019-07-10 22:17:29] [config] data-weighting-type: sentence
+[2019-07-10 22:17:29] [config] dec-cell: gru
+[2019-07-10 22:17:29] [config] dec-cell-base-depth: 2
+[2019-07-10 22:17:29] [config] dec-cell-high-depth: 1
+[2019-07-10 22:17:29] [config] dec-depth: 6
+[2019-07-10 22:17:29] [config] devices:
+[2019-07-10 22:17:29] [config]   - 1
+[2019-07-10 22:17:29] [config]   - 3
+[2019-07-10 22:17:29] [config] dim-emb: 512
+[2019-07-10 22:17:29] [config] dim-rnn: 1024
+[2019-07-10 22:17:29] [config] dim-vocabs:
+[2019-07-10 22:17:29] [config]   - 36000
+[2019-07-10 22:17:29] [config]   - 36000
+[2019-07-10 22:17:29] [config] disp-first: 0
+[2019-07-10 22:17:29] [config] disp-freq: 500
+[2019-07-10 22:17:29] [config] disp-label-counts: false
+[2019-07-10 22:17:29] [config] dropout-rnn: 0
+[2019-07-10 22:17:29] [config] dropout-src: 0
+[2019-07-10 22:17:29] [config] dropout-trg: 0
+[2019-07-10 22:17:29] [config] dump-config: ""
+[2019-07-10 22:17:29] [config] early-stopping: 5
+[2019-07-10 22:17:29] [config] embedding-fix-src: false
+[2019-07-10 22:17:29] [config] embedding-fix-trg: false
+[2019-07-10 22:17:29] [config] embedding-normalization: false
+[2019-07-10 22:17:29] [config] embedding-vectors:
+[2019-07-10 22:17:29] [config]   []
+[2019-07-10 22:17:29] [config] enc-cell: gru
+[2019-07-10 22:17:29] [config] enc-cell-depth: 1
+[2019-07-10 22:17:29] [config] enc-depth: 6
+[2019-07-10 22:17:29] [config] enc-type: bidirectional
+[2019-07-10 22:17:29] [config] exponential-smoothing: 0.0001
+[2019-07-10 22:17:29] [config] grad-dropping-momentum: 0
+[2019-07-10 22:17:29] [config] grad-dropping-rate: 0
+[2019-07-10 22:17:29] [config] grad-dropping-warmup: 100
+[2019-07-10 22:17:29] [config] guided-alignment: none
+[2019-07-10 22:17:29] [config] guided-alignment-cost: mse
+[2019-07-10 22:17:29] [config] guided-alignment-weight: 0.1
+[2019-07-10 22:17:29] [config] ignore-model-config: false
+[2019-07-10 22:17:29] [config] input-types:
+[2019-07-10 22:17:29] [config]   []
+[2019-07-10 22:17:29] [config] interpolate-env-vars: false
+[2019-07-10 22:17:29] [config] keep-best: true
+[2019-07-10 22:17:29] [config] label-smoothing: 0.1
+[2019-07-10 22:17:29] [config] layer-normalization: false
+[2019-07-10 22:17:29] [config] learn-rate: 0.0003
+[2019-07-10 22:17:29] [config] log: models/wmt2017-transformer-en-de/model/model/ens2/train.log
+[2019-07-10 22:17:29] [config] log-level: info
+[2019-07-10 22:17:29] [config] log-time-zone: ""
+[2019-07-10 22:17:29] [config] lr-decay: 0
+[2019-07-10 22:17:29] [config] lr-decay-freq: 50000
+[2019-07-10 22:17:29] [config] lr-decay-inv-sqrt:
+[2019-07-10 22:17:29] [config]   - 16000
+[2019-07-10 22:17:29] [config] lr-decay-repeat-warmup: false
+[2019-07-10 22:17:29] [config] lr-decay-reset-optimizer: false
+[2019-07-10 22:17:29] [config] lr-decay-start:
+[2019-07-10 22:17:29] [config]   - 10
+[2019-07-10 22:17:29] [config]   - 1
+[2019-07-10 22:17:29] [config] lr-decay-strategy: epoch+stalled
+[2019-07-10 22:17:29] [config] lr-report: true
+[2019-07-10 22:17:29] [config] lr-warmup: 16000
+[2019-07-10 22:17:29] [config] lr-warmup-at-reload: false
+[2019-07-10 22:17:29] [config] lr-warmup-cycle: false
+[2019-07-10 22:17:29] [config] lr-warmup-start-rate: 0
+[2019-07-10 22:17:29] [config] max-length: 50
+[2019-07-10 22:17:29] [config] max-length-crop: false
+[2019-07-10 22:17:29] [config] max-length-factor: 3
+[2019-07-10 22:17:29] [config] maxi-batch: 1000
+[2019-07-10 22:17:29] [config] maxi-batch-sort: trg
+[2019-07-10 22:17:29] [config] mini-batch: 1000
+[2019-07-10 22:17:29] [config] mini-batch-fit: true
+[2019-07-10 22:17:29] [config] mini-batch-fit-step: 10
+[2019-07-10 22:17:29] [config] mini-batch-overstuff: 1
+[2019-07-10 22:17:29] [config] mini-batch-track-lr: false
+[2019-07-10 22:17:29] [config] mini-batch-understuff: 1
+[2019-07-10 22:17:29] [config] mini-batch-warmup: 0
+[2019-07-10 22:17:29] [config] mini-batch-words: 0
+[2019-07-10 22:17:29] [config] mini-batch-words-ref: 0
+[2019-07-10 22:17:29] [config] model: models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 22:17:29] [config] multi-loss-type: sum
+[2019-07-10 22:17:29] [config] multi-node: false
+[2019-07-10 22:17:29] [config] multi-node-overlap: true
+[2019-07-10 22:17:29] [config] n-best: false
+[2019-07-10 22:17:29] [config] no-nccl: false
+[2019-07-10 22:17:29] [config] no-reload: false
+[2019-07-10 22:17:29] [config] no-restore-corpus: false
+[2019-07-10 22:17:29] [config] no-shuffle: false
+[2019-07-10 22:17:29] [config] normalize: 1
+[2019-07-10 22:17:29] [config] num-devices: 0
+[2019-07-10 22:17:29] [config] optimizer: adam
+[2019-07-10 22:17:29] [config] optimizer-delay: 1
+[2019-07-10 22:17:29] [config] optimizer-params:
+[2019-07-10 22:17:29] [config]   - 0.9
+[2019-07-10 22:17:29] [config]   - 0.98
+[2019-07-10 22:17:29] [config]   - 1e-09
+[2019-07-10 22:17:29] [config] overwrite: true
+[2019-07-10 22:17:29] [config] pretrained-model: ""
+[2019-07-10 22:17:29] [config] quiet: false
+[2019-07-10 22:17:29] [config] quiet-translation: true
+[2019-07-10 22:17:29] [config] relative-paths: false
+[2019-07-10 22:17:29] [config] right-left: false
+[2019-07-10 22:17:29] [config] save-freq: 5000
+[2019-07-10 22:17:29] [config] seed: 2222
+[2019-07-10 22:17:29] [config] shuffle-in-ram: false
+[2019-07-10 22:17:29] [config] skip: false
+[2019-07-10 22:17:29] [config] sqlite: ""
+[2019-07-10 22:17:29] [config] sqlite-drop: false
+[2019-07-10 22:17:29] [config] sync-sgd: true
+[2019-07-10 22:17:29] [config] tempdir: /tmp
+[2019-07-10 22:17:29] [config] tied-embeddings: false
+[2019-07-10 22:17:29] [config] tied-embeddings-all: true
+[2019-07-10 22:17:29] [config] tied-embeddings-src: false
+[2019-07-10 22:17:29] [config] train-sets:
+[2019-07-10 22:17:29] [config]   - models/wmt2017-transformer-en-de/data/all.bpe.en
+[2019-07-10 22:17:29] [config]   - models/wmt2017-transformer-en-de/data/all.bpe.de
+[2019-07-10 22:17:29] [config] transformer-aan-activation: swish
+[2019-07-10 22:17:29] [config] transformer-aan-depth: 2
+[2019-07-10 22:17:29] [config] transformer-aan-nogate: false
+[2019-07-10 22:17:29] [config] transformer-decoder-autoreg: self-attention
+[2019-07-10 22:17:29] [config] transformer-dim-aan: 2048
+[2019-07-10 22:17:29] [config] transformer-dim-ffn: 2048
+[2019-07-10 22:17:29] [config] transformer-dropout: 0.1
+[2019-07-10 22:17:29] [config] transformer-dropout-attention: 0
+[2019-07-10 22:17:29] [config] transformer-dropout-ffn: 0
+[2019-07-10 22:17:29] [config] transformer-ffn-activation: swish
+[2019-07-10 22:17:29] [config] transformer-ffn-depth: 2
+[2019-07-10 22:17:29] [config] transformer-guided-alignment-layer: last
+[2019-07-10 22:17:29] [config] transformer-heads: 8
+[2019-07-10 22:17:29] [config] transformer-no-projection: false
+[2019-07-10 22:17:29] [config] transformer-postprocess: dan
+[2019-07-10 22:17:29] [config] transformer-postprocess-emb: d
+[2019-07-10 22:17:29] [config] transformer-preprocess: ""
+[2019-07-10 22:17:29] [config] transformer-tied-layers:
+[2019-07-10 22:17:29] [config]   []
+[2019-07-10 22:17:29] [config] transformer-train-position-embeddings: false
+[2019-07-10 22:17:29] [config] type: transformer
+[2019-07-10 22:17:29] [config] ulr: false
+[2019-07-10 22:17:29] [config] ulr-dim-emb: 0
+[2019-07-10 22:17:29] [config] ulr-dropout: 0
+[2019-07-10 22:17:29] [config] ulr-keys-vectors: ""
+[2019-07-10 22:17:29] [config] ulr-query-vectors: ""
+[2019-07-10 22:17:29] [config] ulr-softmax-temperature: 1
+[2019-07-10 22:17:29] [config] ulr-trainable-transformation: false
+[2019-07-10 22:17:29] [config] valid-freq: 5000
+[2019-07-10 22:17:29] [config] valid-log: models/wmt2017-transformer-en-de/model/model/ens2/valid.log
+[2019-07-10 22:17:29] [config] valid-max-length: 50
+[2019-07-10 22:17:29] [config] valid-metrics:
+[2019-07-10 22:17:29] [config]   - ce-mean-words
+[2019-07-10 22:17:29] [config]   - perplexity
+[2019-07-10 22:17:29] [config]   - translation
+[2019-07-10 22:17:29] [config] valid-mini-batch: 64
+[2019-07-10 22:17:29] [config] valid-script-path: bash ./models/wmt2017-transformer-en-de/validate.sh
+[2019-07-10 22:17:29] [config] valid-sets:
+[2019-07-10 22:17:29] [config]   - models/wmt2017-transformer-en-de/data/valid.bpe.en
+[2019-07-10 22:17:29] [config]   - models/wmt2017-transformer-en-de/data/valid.bpe.de
+[2019-07-10 22:17:29] [config] valid-translation-output: models/wmt2017-transformer-en-de/data/valid.bpe.en.output
+[2019-07-10 22:17:29] [config] version: v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-10 22:17:29] [config] vocabs:
+[2019-07-10 22:17:29] [config]   - models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 22:17:29] [config]   - models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 22:17:29] [config] word-penalty: 0
+[2019-07-10 22:17:29] [config] workspace: 8000
+[2019-07-10 22:17:29] [config] Loaded model has been created with Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-10 22:17:29] Using synchronous training
+[2019-07-10 22:17:29] [data] Loading vocabulary from JSON/Yaml file models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 22:17:29] [data] Setting vocabulary size for input 0 to 36000
+[2019-07-10 22:17:29] [data] Loading vocabulary from JSON/Yaml file models/wmt2017-transformer-en-de/model/vocab.ende.yml
+[2019-07-10 22:17:29] [data] Setting vocabulary size for input 1 to 36000
+[2019-07-10 22:17:29] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-07-10 22:17:29] [batching] Collecting statistics for batch fitting with step size 10
+[2019-07-10 22:17:30] [memory] Extending reserved space to 8064 MB (device gpu1)
+[2019-07-10 22:17:32] [memory] Extending reserved space to 8064 MB (device gpu3)
+[2019-07-10 22:17:32] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-10 22:17:32] [comm] NCCLCommunicator constructed successfully.
+[2019-07-10 22:17:32] [training] Using 2 GPUs
+[2019-07-10 22:17:32] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 22:17:32] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-07-10 22:17:32] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 22:17:37] [batching] Done. Typical MB size is 11380 target words
+[2019-07-10 22:17:37] [memory] Extending reserved space to 8064 MB (device gpu1)
+[2019-07-10 22:17:37] [memory] Extending reserved space to 8064 MB (device gpu3)
+[2019-07-10 22:17:37] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-10 22:17:37] [comm] NCCLCommunicator constructed successfully.
+[2019-07-10 22:17:37] [training] Using 2 GPUs
+[2019-07-10 22:17:37] Loading model from models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-10 22:17:41] Loading model from models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-10 22:17:42] Loading Adam parameters from models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-10 22:17:48] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 22:17:49] [memory] Reserving 238 MB, device gpu3
+[2019-07-10 22:17:50] [training] Model reloaded from models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 22:17:50] [data] Restoring the corpus state to epoch 1, batch 5000
+[2019-07-10 22:17:50] [data] Shuffling data
+[2019-07-10 22:18:03] [data] Done reading 19122526 sentences
+[2019-07-10 22:19:48] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-10 22:21:03] Training started
+[2019-07-10 22:21:03] [training] Batches are processed as 1 process(es) x 2 devices/process
+[2019-07-10 22:21:03] [memory] Reserving 238 MB, device gpu3
+[2019-07-10 22:21:03] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 22:21:03] [memory] Reserving 238 MB, device gpu3
+[2019-07-10 22:21:03] [memory] Reserving 238 MB, device gpu1
+[2019-07-10 22:21:03] Loading model from models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 22:21:07] [memory] Reserving 238 MB, device cpu0
+[2019-07-10 22:21:07] [memory] Reserving 119 MB, device gpu1
+[2019-07-10 22:21:07] [memory] Reserving 119 MB, device gpu3
+[2019-07-10 22:23:17] Ep. 1 : Up. 5500 : Sen. 1,814,628 : Cost 5.64914370 : Time 348.23s : 13041.37 words/s : L.r. 1.0313e-04
+[2019-07-10 22:25:29] Ep. 1 : Up. 6000 : Sen. 2,002,541 : Cost 5.36668491 : Time 131.97s : 34527.99 words/s : L.r. 1.1250e-04
+[2019-07-10 22:27:40] Ep. 1 : Up. 6500 : Sen. 2,193,794 : Cost 5.02805901 : Time 130.65s : 34824.92 words/s : L.r. 1.2188e-04
+[2019-07-10 22:29:51] Ep. 1 : Up. 7000 : Sen. 2,384,768 : Cost 4.69963408 : Time 131.13s : 34843.22 words/s : L.r. 1.3125e-04
+[2019-07-10 22:32:02] Ep. 1 : Up. 7500 : Sen. 2,571,080 : Cost 4.50213623 : Time 130.35s : 34681.56 words/s : L.r. 1.4063e-04
+[2019-07-10 22:34:12] Ep. 1 : Up. 8000 : Sen. 2,758,999 : Cost 4.32318783 : Time 130.20s : 34944.21 words/s : L.r. 1.5000e-04
+[2019-07-10 22:36:22] Ep. 1 : Up. 8500 : Sen. 2,948,343 : Cost 4.10658932 : Time 130.04s : 34680.33 words/s : L.r. 1.5938e-04
+[2019-07-10 22:38:31] Ep. 1 : Up. 9000 : Sen. 3,139,949 : Cost 3.96109104 : Time 129.39s : 34739.61 words/s : L.r. 1.6875e-04
+[2019-07-10 22:40:43] Ep. 1 : Up. 9500 : Sen. 3,327,415 : Cost 3.85343575 : Time 131.51s : 34927.63 words/s : L.r. 1.7813e-04
+[2019-07-10 22:42:53] Ep. 1 : Up. 10000 : Sen. 3,518,881 : Cost 3.78315163 : Time 130.37s : 34708.06 words/s : L.r. 1.8750e-04
+[2019-07-10 22:42:53] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-10 22:43:00] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 22:43:07] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-10 22:43:21] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-10 22:43:26] [valid] Ep. 1 : Up. 10000 : ce-mean-words : 2.5003 : new best
+[2019-07-10 22:43:26] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-10 22:43:32] [valid] Ep. 1 : Up. 10000 : perplexity : 12.1862 : new best
+[2019-07-10 22:44:15] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-10 22:44:20] [valid] Ep. 1 : Up. 10000 : translation : 14.28 : new best
+[2019-07-10 22:46:33] Ep. 1 : Up. 10500 : Sen. 3,706,152 : Cost 3.67865753 : Time 219.99s : 20759.76 words/s : L.r. 1.9688e-04
+[2019-07-10 22:48:45] Ep. 1 : Up. 11000 : Sen. 3,889,318 : Cost 3.66459846 : Time 131.39s : 34918.40 words/s : L.r. 2.0625e-04
+[2019-07-10 22:50:56] Ep. 1 : Up. 11500 : Sen. 4,076,823 : Cost 3.57509232 : Time 131.29s : 34891.91 words/s : L.r. 2.1563e-04
+[2019-07-10 22:53:06] Ep. 1 : Up. 12000 : Sen. 4,268,220 : Cost 3.51434374 : Time 130.41s : 34601.15 words/s : L.r. 2.2500e-04
+[2019-07-10 22:55:16] Ep. 1 : Up. 12500 : Sen. 4,462,914 : Cost 3.48408842 : Time 129.71s : 34645.62 words/s : L.r. 2.3438e-04
+[2019-07-10 22:57:27] Ep. 1 : Up. 13000 : Sen. 4,652,124 : Cost 3.45619392 : Time 130.64s : 34764.21 words/s : L.r. 2.4375e-04
+[2019-07-10 22:59:38] Ep. 1 : Up. 13500 : Sen. 4,841,945 : Cost 3.40747905 : Time 131.02s : 34872.00 words/s : L.r. 2.5313e-04
+[2019-07-10 23:01:49] Ep. 1 : Up. 14000 : Sen. 5,038,188 : Cost 3.35527205 : Time 131.57s : 34788.09 words/s : L.r. 2.6250e-04
+[2019-07-10 23:04:00] Ep. 1 : Up. 14500 : Sen. 5,222,239 : Cost 3.36309695 : Time 130.35s : 34727.06 words/s : L.r. 2.7188e-04
+[2019-07-10 23:06:10] Ep. 1 : Up. 15000 : Sen. 5,411,441 : Cost 3.35386920 : Time 130.53s : 34953.18 words/s : L.r. 2.8125e-04
+[2019-07-10 23:06:10] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-10 23:06:17] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 23:06:23] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-10 23:06:37] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-10 23:06:42] [valid] Ep. 1 : Up. 15000 : ce-mean-words : 1.94935 : new best
+[2019-07-10 23:06:43] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-10 23:06:48] [valid] Ep. 1 : Up. 15000 : perplexity : 7.02413 : new best
+[2019-07-10 23:07:31] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-10 23:07:36] [valid] Ep. 1 : Up. 15000 : translation : 18.97 : new best
+[2019-07-10 23:09:48] Ep. 1 : Up. 15500 : Sen. 5,601,603 : Cost 3.29198790 : Time 217.82s : 20792.47 words/s : L.r. 2.9063e-04
+[2019-07-10 23:12:00] Ep. 1 : Up. 16000 : Sen. 5,791,783 : Cost 3.28955770 : Time 131.63s : 34627.73 words/s : L.r. 3.0000e-04
+[2019-07-10 23:14:10] Ep. 1 : Up. 16500 : Sen. 5,979,823 : Cost 3.29113078 : Time 130.66s : 34650.95 words/s : L.r. 2.9542e-04
+[2019-07-10 23:16:22] Ep. 1 : Up. 17000 : Sen. 6,172,093 : Cost 3.22989988 : Time 131.69s : 34281.31 words/s : L.r. 2.9104e-04
+[2019-07-10 23:18:34] Ep. 1 : Up. 17500 : Sen. 6,358,532 : Cost 3.21908569 : Time 131.83s : 34768.29 words/s : L.r. 2.8685e-04
+[2019-07-10 23:20:46] Ep. 1 : Up. 18000 : Sen. 6,545,097 : Cost 3.20564342 : Time 131.79s : 34588.19 words/s : L.r. 2.8284e-04
+[2019-07-10 23:22:57] Ep. 1 : Up. 18500 : Sen. 6,733,050 : Cost 3.17765045 : Time 131.76s : 34632.67 words/s : L.r. 2.7899e-04
+[2019-07-10 23:25:09] Ep. 1 : Up. 19000 : Sen. 6,922,975 : Cost 3.14841437 : Time 131.73s : 34622.54 words/s : L.r. 2.7530e-04
+[2019-07-10 23:27:19] Ep. 1 : Up. 19500 : Sen. 7,110,850 : Cost 3.17837310 : Time 130.47s : 34672.10 words/s : L.r. 2.7175e-04
+[2019-07-10 23:29:31] Ep. 1 : Up. 20000 : Sen. 7,298,075 : Cost 3.12799954 : Time 131.73s : 34684.25 words/s : L.r. 2.6833e-04
+[2019-07-10 23:29:31] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-10 23:29:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 23:29:45] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-10 23:29:58] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-10 23:30:03] [valid] Ep. 1 : Up. 20000 : ce-mean-words : 1.73336 : new best
+[2019-07-10 23:30:04] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-10 23:30:09] [valid] Ep. 1 : Up. 20000 : perplexity : 5.65965 : new best
+[2019-07-10 23:30:50] [valid] Ep. 1 : Up. 20000 : translation : 18.88 : stalled 1 times (last best: 18.97)
+[2019-07-10 23:33:02] Ep. 1 : Up. 20500 : Sen. 7,489,557 : Cost 3.09964943 : Time 210.79s : 21396.08 words/s : L.r. 2.6504e-04
+[2019-07-10 23:35:13] Ep. 1 : Up. 21000 : Sen. 7,680,286 : Cost 3.08723164 : Time 131.31s : 34751.95 words/s : L.r. 2.6186e-04
+[2019-07-10 23:37:26] Ep. 1 : Up. 21500 : Sen. 7,866,188 : Cost 3.05314708 : Time 132.20s : 34262.42 words/s : L.r. 2.5880e-04
+[2019-07-10 23:39:37] Ep. 1 : Up. 22000 : Sen. 8,049,880 : Cost 3.11908102 : Time 131.76s : 34868.00 words/s : L.r. 2.5584e-04
+[2019-07-10 23:41:48] Ep. 1 : Up. 22500 : Sen. 8,245,187 : Cost 3.04195905 : Time 131.03s : 34358.92 words/s : L.r. 2.5298e-04
+[2019-07-10 23:43:59] Ep. 1 : Up. 23000 : Sen. 8,438,383 : Cost 3.04749751 : Time 130.78s : 34768.55 words/s : L.r. 2.5022e-04
+[2019-07-10 23:46:10] Ep. 1 : Up. 23500 : Sen. 8,627,619 : Cost 3.03587842 : Time 131.37s : 34691.29 words/s : L.r. 2.4754e-04
+[2019-07-10 23:48:23] Ep. 1 : Up. 24000 : Sen. 8,814,383 : Cost 3.04965496 : Time 132.38s : 34607.82 words/s : L.r. 2.4495e-04
+[2019-07-10 23:50:35] Ep. 1 : Up. 24500 : Sen. 9,001,282 : Cost 3.00914097 : Time 131.69s : 34617.62 words/s : L.r. 2.4244e-04
+[2019-07-10 23:52:46] Ep. 1 : Up. 25000 : Sen. 9,193,624 : Cost 3.00664496 : Time 131.28s : 34626.47 words/s : L.r. 2.4000e-04
+[2019-07-10 23:52:46] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-10 23:52:52] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-10 23:52:59] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-10 23:53:13] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-10 23:53:18] [valid] Ep. 1 : Up. 25000 : ce-mean-words : 1.61527 : new best
+[2019-07-10 23:53:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-10 23:53:24] [valid] Ep. 1 : Up. 25000 : perplexity : 5.02927 : new best
+[2019-07-10 23:54:04] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-10 23:54:09] [valid] Ep. 1 : Up. 25000 : translation : 21.47 : new best
+[2019-07-10 23:56:21] Ep. 1 : Up. 25500 : Sen. 9,384,631 : Cost 3.01271296 : Time 215.09s : 20896.90 words/s : L.r. 2.3764e-04
+[2019-07-10 23:58:33] Ep. 1 : Up. 26000 : Sen. 9,574,529 : Cost 2.96141505 : Time 131.68s : 34860.14 words/s : L.r. 2.3534e-04
+[2019-07-11 00:00:44] Ep. 1 : Up. 26500 : Sen. 9,761,678 : Cost 3.03629303 : Time 131.30s : 34687.26 words/s : L.r. 2.3311e-04
+[2019-07-11 00:02:55] Ep. 1 : Up. 27000 : Sen. 9,954,929 : Cost 2.95391083 : Time 131.57s : 34215.35 words/s : L.r. 2.3094e-04
+[2019-07-11 00:05:08] Ep. 1 : Up. 27500 : Sen. 10,141,346 : Cost 2.97850943 : Time 132.95s : 34315.70 words/s : L.r. 2.2883e-04
+[2019-07-11 00:07:21] Ep. 1 : Up. 28000 : Sen. 10,327,550 : Cost 2.95136881 : Time 133.05s : 34571.88 words/s : L.r. 2.2678e-04
+[2019-07-11 00:09:33] Ep. 1 : Up. 28500 : Sen. 10,521,241 : Cost 2.94936395 : Time 131.51s : 34496.21 words/s : L.r. 2.2478e-04
+[2019-07-11 00:11:44] Ep. 1 : Up. 29000 : Sen. 10,707,916 : Cost 2.98244238 : Time 130.81s : 34533.47 words/s : L.r. 2.2283e-04
+[2019-07-11 00:13:56] Ep. 1 : Up. 29500 : Sen. 10,897,735 : Cost 2.94487023 : Time 132.50s : 34480.72 words/s : L.r. 2.2094e-04
+[2019-07-11 00:16:08] Ep. 1 : Up. 30000 : Sen. 11,089,606 : Cost 2.92682266 : Time 131.37s : 34262.69 words/s : L.r. 2.1909e-04
+[2019-07-11 00:16:08] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 00:16:15] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 00:16:22] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 00:16:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 00:16:45] [valid] Ep. 1 : Up. 30000 : ce-mean-words : 1.54736 : new best
+[2019-07-11 00:16:46] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 00:16:53] [valid] Ep. 1 : Up. 30000 : perplexity : 4.69905 : new best
+[2019-07-11 00:17:35] [valid] Ep. 1 : Up. 30000 : translation : 20.67 : stalled 1 times (last best: 21.47)
+[2019-07-11 00:19:50] Ep. 1 : Up. 30500 : Sen. 11,278,082 : Cost 2.94128752 : Time 221.98s : 20410.51 words/s : L.r. 2.1729e-04
+[2019-07-11 00:22:02] Ep. 1 : Up. 31000 : Sen. 11,461,574 : Cost 2.98142648 : Time 132.31s : 34381.07 words/s : L.r. 2.1553e-04
+[2019-07-11 00:24:17] Ep. 1 : Up. 31500 : Sen. 11,651,336 : Cost 2.91855311 : Time 134.93s : 33759.08 words/s : L.r. 2.1381e-04
+[2019-07-11 00:26:31] Ep. 1 : Up. 32000 : Sen. 11,840,976 : Cost 2.91261530 : Time 134.49s : 34354.54 words/s : L.r. 2.1213e-04
+[2019-07-11 00:28:45] Ep. 1 : Up. 32500 : Sen. 12,029,368 : Cost 2.91015244 : Time 133.41s : 34008.16 words/s : L.r. 2.1049e-04
+[2019-07-11 00:30:59] Ep. 1 : Up. 33000 : Sen. 12,220,399 : Cost 2.89619541 : Time 134.35s : 33938.52 words/s : L.r. 2.0889e-04
+[2019-07-11 00:33:12] Ep. 1 : Up. 33500 : Sen. 12,406,608 : Cost 2.95524430 : Time 132.54s : 34085.05 words/s : L.r. 2.0733e-04
+[2019-07-11 00:35:23] Ep. 1 : Up. 34000 : Sen. 12,597,727 : Cost 2.90359378 : Time 131.81s : 34094.46 words/s : L.r. 2.0580e-04
+[2019-07-11 00:37:36] Ep. 1 : Up. 34500 : Sen. 12,786,448 : Cost 2.88206077 : Time 132.80s : 34385.09 words/s : L.r. 2.0430e-04
+[2019-07-11 00:39:47] Ep. 1 : Up. 35000 : Sen. 12,972,838 : Cost 2.89673638 : Time 131.21s : 34471.37 words/s : L.r. 2.0284e-04
+[2019-07-11 00:39:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 00:39:54] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 00:40:01] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 00:40:14] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 00:40:19] [valid] Ep. 1 : Up. 35000 : ce-mean-words : 1.50265 : new best
+[2019-07-11 00:40:20] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 00:40:25] [valid] Ep. 1 : Up. 35000 : perplexity : 4.49359 : new best
+[2019-07-11 00:41:05] [valid] Ep. 1 : Up. 35000 : translation : 20.99 : stalled 2 times (last best: 21.47)
+[2019-07-11 00:43:19] Ep. 1 : Up. 35500 : Sen. 13,161,729 : Cost 2.86875224 : Time 211.12s : 21511.38 words/s : L.r. 2.0140e-04
+[2019-07-11 00:45:31] Ep. 1 : Up. 36000 : Sen. 13,352,039 : Cost 2.87301564 : Time 132.47s : 34475.12 words/s : L.r. 2.0000e-04
+[2019-07-11 00:47:42] Ep. 1 : Up. 36500 : Sen. 13,542,570 : Cost 2.87796021 : Time 130.84s : 34580.78 words/s : L.r. 1.9863e-04
+[2019-07-11 00:49:53] Ep. 1 : Up. 37000 : Sen. 13,734,144 : Cost 2.91650963 : Time 131.10s : 34928.18 words/s : L.r. 1.9728e-04
+[2019-07-11 00:52:04] Ep. 1 : Up. 37500 : Sen. 13,921,086 : Cost 2.93144250 : Time 130.83s : 34807.32 words/s : L.r. 1.9596e-04
+[2019-07-11 00:54:14] Ep. 1 : Up. 38000 : Sen. 14,110,664 : Cost 2.86209083 : Time 130.41s : 34679.45 words/s : L.r. 1.9467e-04
+[2019-07-11 00:56:26] Ep. 1 : Up. 38500 : Sen. 14,303,226 : Cost 2.85817885 : Time 131.30s : 34731.92 words/s : L.r. 1.9340e-04
+[2019-07-11 00:58:38] Ep. 1 : Up. 39000 : Sen. 14,492,512 : Cost 2.83703780 : Time 132.87s : 34191.65 words/s : L.r. 1.9215e-04
+[2019-07-11 01:00:52] Ep. 1 : Up. 39500 : Sen. 14,680,735 : Cost 2.85339570 : Time 133.47s : 34066.92 words/s : L.r. 1.9093e-04
+[2019-07-11 01:03:05] Ep. 1 : Up. 40000 : Sen. 14,869,163 : Cost 2.84809113 : Time 132.80s : 34433.48 words/s : L.r. 1.8974e-04
+[2019-07-11 01:03:05] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 01:03:11] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 01:03:18] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 01:03:32] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 01:03:37] [valid] Ep. 1 : Up. 40000 : ce-mean-words : 1.46905 : new best
+[2019-07-11 01:03:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 01:03:43] [valid] Ep. 1 : Up. 40000 : perplexity : 4.34509 : new best
+[2019-07-11 01:04:23] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 01:04:28] [valid] Ep. 1 : Up. 40000 : translation : 23.97 : new best
+[2019-07-11 01:06:40] Ep. 1 : Up. 40500 : Sen. 15,059,135 : Cost 2.88669920 : Time 215.56s : 21142.50 words/s : L.r. 1.8856e-04
+[2019-07-11 01:08:51] Ep. 1 : Up. 41000 : Sen. 15,246,292 : Cost 2.86619949 : Time 130.95s : 34379.40 words/s : L.r. 1.8741e-04
+[2019-07-11 01:11:03] Ep. 1 : Up. 41500 : Sen. 15,431,684 : Cost 2.84181046 : Time 131.49s : 34822.30 words/s : L.r. 1.8628e-04
+[2019-07-11 01:13:13] Ep. 1 : Up. 42000 : Sen. 15,620,335 : Cost 2.83669162 : Time 130.71s : 34656.94 words/s : L.r. 1.8516e-04
+[2019-07-11 01:15:25] Ep. 1 : Up. 42500 : Sen. 15,819,676 : Cost 2.78993201 : Time 131.42s : 34596.56 words/s : L.r. 1.8407e-04
+[2019-07-11 01:17:36] Ep. 1 : Up. 43000 : Sen. 16,009,262 : Cost 2.86107635 : Time 131.04s : 34807.15 words/s : L.r. 1.8300e-04
+[2019-07-11 01:19:46] Ep. 1 : Up. 43500 : Sen. 16,197,393 : Cost 2.87889600 : Time 130.05s : 34755.86 words/s : L.r. 1.8194e-04
+[2019-07-11 01:21:56] Ep. 1 : Up. 44000 : Sen. 16,388,169 : Cost 2.84149647 : Time 130.11s : 34536.40 words/s : L.r. 1.8091e-04
+[2019-07-11 01:24:07] Ep. 1 : Up. 44500 : Sen. 16,573,793 : Cost 2.82473040 : Time 130.68s : 34834.20 words/s : L.r. 1.7989e-04
+[2019-07-11 01:26:18] Ep. 1 : Up. 45000 : Sen. 16,758,407 : Cost 2.80851054 : Time 131.25s : 34933.37 words/s : L.r. 1.7889e-04
+[2019-07-11 01:26:18] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 01:26:24] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 01:26:31] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 01:26:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 01:26:50] [valid] Ep. 1 : Up. 45000 : ce-mean-words : 1.44419 : new best
+[2019-07-11 01:26:51] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 01:26:56] [valid] Ep. 1 : Up. 45000 : perplexity : 4.23843 : new best
+[2019-07-11 01:27:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 01:27:43] [valid] Ep. 1 : Up. 45000 : translation : 25.24 : new best
+[2019-07-11 01:28:55] Seen 16859559 samples
+[2019-07-11 01:28:55] Starting epoch 2
+[2019-07-11 01:28:55] [data] Shuffling data
+[2019-07-11 01:29:09] [data] Done reading 19122526 sentences
+[2019-07-11 01:30:55] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-11 01:32:29] Ep. 2 : Up. 45500 : Sen. 86,358 : Cost 2.82995176 : Time 370.80s : 11873.45 words/s : L.r. 1.7790e-04
+[2019-07-11 01:34:40] Ep. 2 : Up. 46000 : Sen. 283,557 : Cost 2.79294252 : Time 131.13s : 34788.58 words/s : L.r. 1.7693e-04
+[2019-07-11 01:36:50] Ep. 2 : Up. 46500 : Sen. 465,943 : Cost 2.84689355 : Time 130.40s : 34975.89 words/s : L.r. 1.7598e-04
+[2019-07-11 01:39:01] Ep. 2 : Up. 47000 : Sen. 654,613 : Cost 2.81199479 : Time 130.62s : 34812.11 words/s : L.r. 1.7504e-04
+[2019-07-11 01:41:13] Ep. 2 : Up. 47500 : Sen. 844,005 : Cost 2.81402612 : Time 131.80s : 34262.68 words/s : L.r. 1.7411e-04
+[2019-07-11 01:43:26] Ep. 2 : Up. 48000 : Sen. 1,032,148 : Cost 2.76928639 : Time 133.56s : 33904.99 words/s : L.r. 1.7321e-04
+[2019-07-11 01:45:37] Ep. 2 : Up. 48500 : Sen. 1,215,212 : Cost 2.79253531 : Time 131.03s : 34335.14 words/s : L.r. 1.7231e-04
+[2019-07-11 01:47:50] Ep. 2 : Up. 49000 : Sen. 1,404,843 : Cost 2.81684113 : Time 132.51s : 34604.40 words/s : L.r. 1.7143e-04
+[2019-07-11 01:50:02] Ep. 2 : Up. 49500 : Sen. 1,593,936 : Cost 2.82957268 : Time 131.73s : 34290.63 words/s : L.r. 1.7056e-04
+[2019-07-11 01:52:14] Ep. 2 : Up. 50000 : Sen. 1,779,667 : Cost 2.80654216 : Time 132.72s : 34636.47 words/s : L.r. 1.6971e-04
+[2019-07-11 01:52:14] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 01:52:21] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 01:52:27] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 01:52:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 01:52:46] [valid] Ep. 2 : Up. 50000 : ce-mean-words : 1.42496 : new best
+[2019-07-11 01:52:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 01:52:52] [valid] Ep. 2 : Up. 50000 : perplexity : 4.1577 : new best
+[2019-07-11 01:53:33] [valid] Ep. 2 : Up. 50000 : translation : 25.24 : stalled 1 times (last best: 25.24)
+[2019-07-11 01:55:49] Ep. 2 : Up. 50500 : Sen. 1,979,480 : Cost 2.79097009 : Time 214.34s : 21198.80 words/s : L.r. 1.6886e-04
+[2019-07-11 01:58:03] Ep. 2 : Up. 51000 : Sen. 2,158,878 : Cost 2.80448699 : Time 134.57s : 34039.76 words/s : L.r. 1.6803e-04
+[2019-07-11 02:00:15] Ep. 2 : Up. 51500 : Sen. 2,344,984 : Cost 2.79745960 : Time 131.39s : 34182.08 words/s : L.r. 1.6722e-04
+[2019-07-11 02:02:27] Ep. 2 : Up. 52000 : Sen. 2,524,134 : Cost 2.85812140 : Time 132.57s : 34110.91 words/s : L.r. 1.6641e-04
+[2019-07-11 02:04:40] Ep. 2 : Up. 52500 : Sen. 2,720,648 : Cost 2.76829433 : Time 132.87s : 34396.82 words/s : L.r. 1.6562e-04
+[2019-07-11 02:06:52] Ep. 2 : Up. 53000 : Sen. 2,920,624 : Cost 2.72940946 : Time 132.19s : 34520.34 words/s : L.r. 1.6483e-04
+[2019-07-11 02:09:02] Ep. 2 : Up. 53500 : Sen. 3,116,660 : Cost 2.76953363 : Time 130.23s : 35035.21 words/s : L.r. 1.6406e-04
+[2019-07-11 02:11:15] Ep. 2 : Up. 54000 : Sen. 3,303,581 : Cost 2.76267815 : Time 132.82s : 34336.92 words/s : L.r. 1.6330e-04
+[2019-07-11 02:13:26] Ep. 2 : Up. 54500 : Sen. 3,490,857 : Cost 2.79778862 : Time 131.14s : 34979.23 words/s : L.r. 1.6255e-04
+[2019-07-11 02:15:38] Ep. 2 : Up. 55000 : Sen. 3,681,151 : Cost 2.79354239 : Time 131.86s : 34467.40 words/s : L.r. 1.6181e-04
+[2019-07-11 02:15:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 02:15:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 02:15:51] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 02:16:05] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 02:16:09] [valid] Ep. 2 : Up. 55000 : ce-mean-words : 1.4079 : new best
+[2019-07-11 02:16:10] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 02:16:15] [valid] Ep. 2 : Up. 55000 : perplexity : 4.08736 : new best
+[2019-07-11 02:16:56] [valid] Ep. 2 : Up. 55000 : translation : 24.47 : stalled 2 times (last best: 25.24)
+[2019-07-11 02:19:08] Ep. 2 : Up. 55500 : Sen. 3,873,720 : Cost 2.80803728 : Time 210.09s : 21553.88 words/s : L.r. 1.6108e-04
+[2019-07-11 02:21:19] Ep. 2 : Up. 56000 : Sen. 4,060,019 : Cost 2.78950524 : Time 130.43s : 34454.23 words/s : L.r. 1.6036e-04
+[2019-07-11 02:23:29] Ep. 2 : Up. 56500 : Sen. 4,247,737 : Cost 2.81385612 : Time 130.69s : 34524.32 words/s : L.r. 1.5965e-04
+[2019-07-11 02:25:39] Ep. 2 : Up. 57000 : Sen. 4,432,546 : Cost 2.79142857 : Time 129.90s : 35004.76 words/s : L.r. 1.5894e-04
+[2019-07-11 02:27:51] Ep. 2 : Up. 57500 : Sen. 4,626,682 : Cost 2.74482751 : Time 131.52s : 34580.51 words/s : L.r. 1.5825e-04
+[2019-07-11 02:30:03] Ep. 2 : Up. 58000 : Sen. 4,813,237 : Cost 2.76548028 : Time 131.71s : 34571.48 words/s : L.r. 1.5757e-04
+[2019-07-11 02:32:14] Ep. 2 : Up. 58500 : Sen. 5,004,358 : Cost 2.75336552 : Time 131.33s : 35112.60 words/s : L.r. 1.5689e-04
+[2019-07-11 02:34:24] Ep. 2 : Up. 59000 : Sen. 5,192,126 : Cost 2.74927568 : Time 129.75s : 35067.19 words/s : L.r. 1.5623e-04
+[2019-07-11 02:36:35] Ep. 2 : Up. 59500 : Sen. 5,381,704 : Cost 2.77044821 : Time 130.93s : 34697.93 words/s : L.r. 1.5557e-04
+[2019-07-11 02:38:46] Ep. 2 : Up. 60000 : Sen. 5,576,238 : Cost 2.78411722 : Time 130.93s : 34568.41 words/s : L.r. 1.5492e-04
+[2019-07-11 02:38:46] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 02:38:52] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 02:38:59] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 02:39:12] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 02:39:17] [valid] Ep. 2 : Up. 60000 : ce-mean-words : 1.39356 : new best
+[2019-07-11 02:39:17] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 02:39:22] [valid] Ep. 2 : Up. 60000 : perplexity : 4.02916 : new best
+[2019-07-11 02:40:01] [valid] Ep. 2 : Up. 60000 : translation : 23.99 : stalled 3 times (last best: 25.24)
+[2019-07-11 02:42:13] Ep. 2 : Up. 60500 : Sen. 5,765,134 : Cost 2.78583002 : Time 207.22s : 21966.34 words/s : L.r. 1.5428e-04
+[2019-07-11 02:44:26] Ep. 2 : Up. 61000 : Sen. 5,951,112 : Cost 2.78296518 : Time 133.15s : 34279.43 words/s : L.r. 1.5364e-04
+[2019-07-11 02:46:38] Ep. 2 : Up. 61500 : Sen. 6,136,391 : Cost 2.76004052 : Time 131.87s : 34354.32 words/s : L.r. 1.5302e-04
+[2019-07-11 02:48:48] Ep. 2 : Up. 62000 : Sen. 6,328,184 : Cost 2.74206591 : Time 130.68s : 34790.90 words/s : L.r. 1.5240e-04
+[2019-07-11 02:51:00] Ep. 2 : Up. 62500 : Sen. 6,517,143 : Cost 2.75989771 : Time 131.90s : 34462.60 words/s : L.r. 1.5179e-04
+[2019-07-11 02:53:12] Ep. 2 : Up. 63000 : Sen. 6,705,550 : Cost 2.76056504 : Time 131.64s : 34640.84 words/s : L.r. 1.5119e-04
+[2019-07-11 02:55:23] Ep. 2 : Up. 63500 : Sen. 6,896,769 : Cost 2.76800632 : Time 130.79s : 34952.81 words/s : L.r. 1.5059e-04
+[2019-07-11 02:57:34] Ep. 2 : Up. 64000 : Sen. 7,090,920 : Cost 2.77711725 : Time 131.45s : 34259.40 words/s : L.r. 1.5000e-04
+[2019-07-11 02:59:47] Ep. 2 : Up. 64500 : Sen. 7,283,241 : Cost 2.73715687 : Time 132.70s : 34774.08 words/s : L.r. 1.4942e-04
+[2019-07-11 03:01:57] Ep. 2 : Up. 65000 : Sen. 7,467,163 : Cost 2.81071091 : Time 130.52s : 34505.00 words/s : L.r. 1.4884e-04
+[2019-07-11 03:01:57] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 03:02:04] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 03:02:11] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 03:02:25] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 03:02:30] [valid] Ep. 2 : Up. 65000 : ce-mean-words : 1.38123 : new best
+[2019-07-11 03:02:31] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 03:02:36] [valid] Ep. 2 : Up. 65000 : perplexity : 3.9798 : new best
+[2019-07-11 03:03:25] [valid] Ep. 2 : Up. 65000 : translation : 23.47 : stalled 4 times (last best: 25.24)
+[2019-07-11 03:05:39] Ep. 2 : Up. 65500 : Sen. 7,653,047 : Cost 2.74943042 : Time 221.09s : 20564.89 words/s : L.r. 1.4827e-04
+[2019-07-11 03:07:49] Ep. 2 : Up. 66000 : Sen. 7,842,118 : Cost 2.73420215 : Time 130.59s : 34763.60 words/s : L.r. 1.4771e-04
+[2019-07-11 03:10:00] Ep. 2 : Up. 66500 : Sen. 8,033,284 : Cost 2.73107338 : Time 131.26s : 34586.72 words/s : L.r. 1.4715e-04
+[2019-07-11 03:12:13] Ep. 2 : Up. 67000 : Sen. 8,220,672 : Cost 2.74268031 : Time 132.33s : 34584.97 words/s : L.r. 1.4660e-04
+[2019-07-11 03:14:25] Ep. 2 : Up. 67500 : Sen. 8,413,166 : Cost 2.74471283 : Time 132.36s : 34498.08 words/s : L.r. 1.4606e-04
+[2019-07-11 03:16:36] Ep. 2 : Up. 68000 : Sen. 8,603,306 : Cost 2.73305750 : Time 131.26s : 34395.78 words/s : L.r. 1.4552e-04
+[2019-07-11 03:18:47] Ep. 2 : Up. 68500 : Sen. 8,791,602 : Cost 2.73160243 : Time 131.00s : 34733.56 words/s : L.r. 1.4499e-04
+[2019-07-11 03:20:59] Ep. 2 : Up. 69000 : Sen. 8,979,304 : Cost 2.78659487 : Time 131.88s : 34535.43 words/s : L.r. 1.4446e-04
+[2019-07-11 03:23:10] Ep. 2 : Up. 69500 : Sen. 9,167,745 : Cost 2.73432732 : Time 130.40s : 34604.72 words/s : L.r. 1.4394e-04
+[2019-07-11 03:25:20] Ep. 2 : Up. 70000 : Sen. 9,359,463 : Cost 2.71941280 : Time 129.91s : 34779.33 words/s : L.r. 1.4343e-04
+[2019-07-11 03:25:20] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 03:25:26] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 03:25:32] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 03:25:51] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 03:25:58] [valid] Ep. 2 : Up. 70000 : ce-mean-words : 1.37034 : new best
+[2019-07-11 03:25:58] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 03:26:04] [valid] Ep. 2 : Up. 70000 : perplexity : 3.93671 : new best
+[2019-07-11 03:26:46] [valid] Ep. 2 : Up. 70000 : translation : 22.16 : stalled 5 times (last best: 25.24)
+[2019-07-11 03:28:59] Ep. 2 : Up. 70500 : Sen. 9,548,558 : Cost 2.72690725 : Time 219.32s : 20840.96 words/s : L.r. 1.4292e-04
+[2019-07-11 03:31:10] Ep. 2 : Up. 71000 : Sen. 9,735,605 : Cost 2.75910211 : Time 130.86s : 34805.36 words/s : L.r. 1.4241e-04
+[2019-07-11 03:33:21] Ep. 2 : Up. 71500 : Sen. 9,927,462 : Cost 2.74732685 : Time 131.22s : 34871.45 words/s : L.r. 1.4191e-04
+[2019-07-11 03:35:33] Ep. 2 : Up. 72000 : Sen. 10,112,584 : Cost 2.77238417 : Time 131.52s : 34610.10 words/s : L.r. 1.4142e-04
+[2019-07-11 03:37:42] Ep. 2 : Up. 72500 : Sen. 10,298,496 : Cost 2.73759413 : Time 129.79s : 34558.25 words/s : L.r. 1.4093e-04
+[2019-07-11 03:39:52] Ep. 2 : Up. 73000 : Sen. 10,492,455 : Cost 2.72637177 : Time 129.56s : 34966.71 words/s : L.r. 1.4045e-04
+[2019-07-11 03:42:02] Ep. 2 : Up. 73500 : Sen. 10,679,375 : Cost 2.76525712 : Time 130.16s : 34768.18 words/s : L.r. 1.3997e-04
+[2019-07-11 03:44:14] Ep. 2 : Up. 74000 : Sen. 10,872,551 : Cost 2.70437479 : Time 131.88s : 34664.83 words/s : L.r. 1.3950e-04
+[2019-07-11 03:46:26] Ep. 2 : Up. 74500 : Sen. 11,058,736 : Cost 2.75622416 : Time 131.63s : 35164.24 words/s : L.r. 1.3903e-04
+[2019-07-11 03:48:38] Ep. 2 : Up. 75000 : Sen. 11,249,224 : Cost 2.74218655 : Time 132.24s : 34473.13 words/s : L.r. 1.3856e-04
+[2019-07-11 03:48:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 03:48:44] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 03:48:51] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 03:49:04] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 03:49:09] [valid] Ep. 2 : Up. 75000 : ce-mean-words : 1.36018 : new best
+[2019-07-11 03:49:10] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 03:49:15] [valid] Ep. 2 : Up. 75000 : perplexity : 3.89688 : new best
+[2019-07-11 03:49:54] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 03:49:58] [valid] Ep. 2 : Up. 75000 : translation : 26.05 : new best
+[2019-07-11 03:52:11] Ep. 2 : Up. 75500 : Sen. 11,441,206 : Cost 2.70678520 : Time 213.18s : 21380.34 words/s : L.r. 1.3810e-04
+[2019-07-11 03:54:21] Ep. 2 : Up. 76000 : Sen. 11,628,545 : Cost 2.73787475 : Time 129.92s : 34937.26 words/s : L.r. 1.3765e-04
+[2019-07-11 03:56:31] Ep. 2 : Up. 76500 : Sen. 11,816,975 : Cost 2.69684076 : Time 130.32s : 34812.44 words/s : L.r. 1.3720e-04
+[2019-07-11 03:58:41] Ep. 2 : Up. 77000 : Sen. 12,006,790 : Cost 2.74572492 : Time 130.01s : 34765.09 words/s : L.r. 1.3675e-04
+[2019-07-11 04:00:52] Ep. 2 : Up. 77500 : Sen. 12,196,167 : Cost 2.75231814 : Time 130.50s : 34769.37 words/s : L.r. 1.3631e-04
+[2019-07-11 04:03:03] Ep. 2 : Up. 78000 : Sen. 12,378,870 : Cost 2.70151258 : Time 130.88s : 34821.04 words/s : L.r. 1.3587e-04
+[2019-07-11 04:05:13] Ep. 2 : Up. 78500 : Sen. 12,575,185 : Cost 2.71667051 : Time 130.18s : 34782.01 words/s : L.r. 1.3544e-04
+[2019-07-11 04:07:22] Ep. 2 : Up. 79000 : Sen. 12,765,205 : Cost 2.74935532 : Time 129.68s : 34721.41 words/s : L.r. 1.3501e-04
+[2019-07-11 04:09:33] Ep. 2 : Up. 79500 : Sen. 12,953,475 : Cost 2.70436311 : Time 130.32s : 35284.59 words/s : L.r. 1.3459e-04
+[2019-07-11 04:11:45] Ep. 2 : Up. 80000 : Sen. 13,144,656 : Cost 2.73272085 : Time 132.44s : 34553.07 words/s : L.r. 1.3416e-04
+[2019-07-11 04:11:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 04:11:52] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 04:11:59] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 04:12:14] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 04:12:19] [valid] Ep. 2 : Up. 80000 : ce-mean-words : 1.35084 : new best
+[2019-07-11 04:12:20] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 04:12:25] [valid] Ep. 2 : Up. 80000 : perplexity : 3.86067 : new best
+[2019-07-11 04:13:08] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 04:13:13] [valid] Ep. 2 : Up. 80000 : translation : 26.64 : new best
+[2019-07-11 04:15:26] Ep. 2 : Up. 80500 : Sen. 13,331,320 : Cost 2.71270561 : Time 221.23s : 20592.72 words/s : L.r. 1.3375e-04
+[2019-07-11 04:17:38] Ep. 2 : Up. 81000 : Sen. 13,514,132 : Cost 2.73063803 : Time 131.46s : 34540.41 words/s : L.r. 1.3333e-04
+[2019-07-11 04:19:50] Ep. 2 : Up. 81500 : Sen. 13,706,911 : Cost 2.72669625 : Time 131.79s : 34667.31 words/s : L.r. 1.3292e-04
+[2019-07-11 04:22:02] Ep. 2 : Up. 82000 : Sen. 13,898,172 : Cost 2.70583916 : Time 132.18s : 34694.93 words/s : L.r. 1.3252e-04
+[2019-07-11 04:24:12] Ep. 2 : Up. 82500 : Sen. 14,086,622 : Cost 2.74512601 : Time 130.15s : 34550.71 words/s : L.r. 1.3212e-04
+[2019-07-11 04:26:23] Ep. 2 : Up. 83000 : Sen. 14,281,771 : Cost 2.69058681 : Time 130.70s : 34997.69 words/s : L.r. 1.3172e-04
+[2019-07-11 04:28:33] Ep. 2 : Up. 83500 : Sen. 14,469,789 : Cost 2.72843528 : Time 129.97s : 35035.31 words/s : L.r. 1.3132e-04
+[2019-07-11 04:30:44] Ep. 2 : Up. 84000 : Sen. 14,661,645 : Cost 2.69759178 : Time 131.00s : 35010.76 words/s : L.r. 1.3093e-04
+[2019-07-11 04:32:56] Ep. 2 : Up. 84500 : Sen. 14,848,766 : Cost 2.72632885 : Time 132.14s : 34046.30 words/s : L.r. 1.3054e-04
+[2019-07-11 04:35:06] Ep. 2 : Up. 85000 : Sen. 15,033,478 : Cost 2.75196600 : Time 130.46s : 34737.34 words/s : L.r. 1.3016e-04
+[2019-07-11 04:35:06] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 04:35:13] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 04:35:19] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 04:35:32] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 04:35:37] [valid] Ep. 2 : Up. 85000 : ce-mean-words : 1.34352 : new best
+[2019-07-11 04:35:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 04:35:43] [valid] Ep. 2 : Up. 85000 : perplexity : 3.8325 : new best
+[2019-07-11 04:36:21] [valid] Ep. 2 : Up. 85000 : translation : 26.05 : stalled 1 times (last best: 26.64)
+[2019-07-11 04:38:36] Ep. 2 : Up. 85500 : Sen. 15,222,812 : Cost 2.71344423 : Time 209.58s : 21567.46 words/s : L.r. 1.2978e-04
+[2019-07-11 04:40:46] Ep. 2 : Up. 86000 : Sen. 15,409,658 : Cost 2.70398903 : Time 130.55s : 34676.64 words/s : L.r. 1.2940e-04
+[2019-07-11 04:42:58] Ep. 2 : Up. 86500 : Sen. 15,600,800 : Cost 2.75103402 : Time 131.27s : 34865.06 words/s : L.r. 1.2902e-04
+[2019-07-11 04:45:07] Ep. 2 : Up. 87000 : Sen. 15,791,868 : Cost 2.70823383 : Time 129.72s : 35154.90 words/s : L.r. 1.2865e-04
+[2019-07-11 04:47:19] Ep. 2 : Up. 87500 : Sen. 15,981,993 : Cost 2.67219830 : Time 131.55s : 34647.29 words/s : L.r. 1.2829e-04
+[2019-07-11 04:49:31] Ep. 2 : Up. 88000 : Sen. 16,173,584 : Cost 2.72555876 : Time 131.91s : 34522.10 words/s : L.r. 1.2792e-04
+[2019-07-11 04:51:42] Ep. 2 : Up. 88500 : Sen. 16,359,132 : Cost 2.70906758 : Time 131.24s : 34681.55 words/s : L.r. 1.2756e-04
+[2019-07-11 04:53:52] Ep. 2 : Up. 89000 : Sen. 16,551,248 : Cost 2.72279906 : Time 130.08s : 34907.09 words/s : L.r. 1.2720e-04
+[2019-07-11 04:56:02] Ep. 2 : Up. 89500 : Sen. 16,742,983 : Cost 2.71686697 : Time 129.75s : 34976.94 words/s : L.r. 1.2684e-04
+[2019-07-11 04:58:12] Ep. 2 : Up. 90000 : Sen. 16,929,772 : Cost 2.69141603 : Time 130.13s : 34758.38 words/s : L.r. 1.2649e-04
+[2019-07-11 04:58:12] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 04:58:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 04:58:27] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 04:58:42] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 04:58:47] [valid] Ep. 2 : Up. 90000 : ce-mean-words : 1.33684 : new best
+[2019-07-11 04:58:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 04:58:52] [valid] Ep. 2 : Up. 90000 : perplexity : 3.80699 : new best
+[2019-07-11 04:59:40] [valid] Ep. 2 : Up. 90000 : translation : 26.08 : stalled 2 times (last best: 26.64)
+[2019-07-11 05:01:52] Ep. 2 : Up. 90500 : Sen. 17,111,802 : Cost 2.69945788 : Time 219.91s : 20072.67 words/s : L.r. 1.2614e-04
+[2019-07-11 05:02:04] Seen 17128033 samples
+[2019-07-11 05:02:04] Starting epoch 3
+[2019-07-11 05:02:04] [data] Shuffling data
+[2019-07-11 05:02:18] [data] Done reading 19122526 sentences
+[2019-07-11 05:04:07] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-11 05:06:49] Ep. 3 : Up. 91000 : Sen. 174,029 : Cost 2.68661308 : Time 297.23s : 15086.68 words/s : L.r. 1.2579e-04
+[2019-07-11 05:09:00] Ep. 3 : Up. 91500 : Sen. 360,215 : Cost 2.70550871 : Time 131.00s : 34743.87 words/s : L.r. 1.2545e-04
+[2019-07-11 05:11:13] Ep. 3 : Up. 92000 : Sen. 553,268 : Cost 2.66716790 : Time 132.51s : 34488.87 words/s : L.r. 1.2511e-04
+[2019-07-11 05:13:23] Ep. 3 : Up. 92500 : Sen. 739,552 : Cost 2.71163464 : Time 130.03s : 35016.75 words/s : L.r. 1.2477e-04
+[2019-07-11 05:15:33] Ep. 3 : Up. 93000 : Sen. 929,446 : Cost 2.69147134 : Time 130.21s : 35225.70 words/s : L.r. 1.2443e-04
+[2019-07-11 05:17:43] Ep. 3 : Up. 93500 : Sen. 1,117,898 : Cost 2.67329502 : Time 129.56s : 34826.88 words/s : L.r. 1.2410e-04
+[2019-07-11 05:19:54] Ep. 3 : Up. 94000 : Sen. 1,306,485 : Cost 2.68253851 : Time 131.72s : 34736.62 words/s : L.r. 1.2377e-04
+[2019-07-11 05:22:04] Ep. 3 : Up. 94500 : Sen. 1,491,485 : Cost 2.69976783 : Time 130.16s : 34900.19 words/s : L.r. 1.2344e-04
+[2019-07-11 05:24:16] Ep. 3 : Up. 95000 : Sen. 1,687,832 : Cost 2.67136121 : Time 131.79s : 34447.13 words/s : L.r. 1.2312e-04
+[2019-07-11 05:24:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 05:24:24] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 05:24:31] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 05:24:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 05:24:50] [valid] Ep. 3 : Up. 95000 : ce-mean-words : 1.33152 : new best
+[2019-07-11 05:24:51] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 05:24:56] [valid] Ep. 3 : Up. 95000 : perplexity : 3.78679 : new best
+[2019-07-11 05:25:43] [valid] Ep. 3 : Up. 95000 : translation : 26.01 : stalled 3 times (last best: 26.64)
+[2019-07-11 05:27:56] Ep. 3 : Up. 95500 : Sen. 1,879,469 : Cost 2.69236350 : Time 219.86s : 20651.60 words/s : L.r. 1.2279e-04
+[2019-07-11 05:30:07] Ep. 3 : Up. 96000 : Sen. 2,067,216 : Cost 2.71513343 : Time 131.36s : 34552.09 words/s : L.r. 1.2247e-04
+[2019-07-11 05:32:20] Ep. 3 : Up. 96500 : Sen. 2,255,831 : Cost 2.70215178 : Time 132.82s : 34364.51 words/s : L.r. 1.2216e-04
+[2019-07-11 05:34:32] Ep. 3 : Up. 97000 : Sen. 2,444,112 : Cost 2.66288972 : Time 131.33s : 34900.94 words/s : L.r. 1.2184e-04
+[2019-07-11 05:36:43] Ep. 3 : Up. 97500 : Sen. 2,633,995 : Cost 2.70683432 : Time 131.19s : 35161.24 words/s : L.r. 1.2153e-04
+[2019-07-11 05:38:52] Ep. 3 : Up. 98000 : Sen. 2,824,049 : Cost 2.67565203 : Time 129.67s : 34579.66 words/s : L.r. 1.2122e-04
+[2019-07-11 05:41:03] Ep. 3 : Up. 98500 : Sen. 3,012,136 : Cost 2.69036651 : Time 130.09s : 34881.60 words/s : L.r. 1.2091e-04
+[2019-07-11 05:43:12] Ep. 3 : Up. 99000 : Sen. 3,201,196 : Cost 2.68256640 : Time 129.46s : 34559.98 words/s : L.r. 1.2060e-04
+[2019-07-11 05:45:23] Ep. 3 : Up. 99500 : Sen. 3,391,291 : Cost 2.67923975 : Time 131.18s : 34818.66 words/s : L.r. 1.2030e-04
+[2019-07-11 05:47:34] Ep. 3 : Up. 100000 : Sen. 3,587,940 : Cost 2.66709542 : Time 130.81s : 35079.07 words/s : L.r. 1.2000e-04
+[2019-07-11 05:47:34] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 05:47:40] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 05:47:47] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 05:47:59] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 05:48:04] [valid] Ep. 3 : Up. 100000 : ce-mean-words : 1.32671 : new best
+[2019-07-11 05:48:05] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 05:48:10] [valid] Ep. 3 : Up. 100000 : perplexity : 3.76864 : new best
+[2019-07-11 05:48:47] [valid] Ep. 3 : Up. 100000 : translation : 26.21 : stalled 4 times (last best: 26.64)
+[2019-07-11 05:50:59] Ep. 3 : Up. 100500 : Sen. 3,778,550 : Cost 2.69224000 : Time 204.94s : 22207.04 words/s : L.r. 1.1970e-04
+[2019-07-11 05:53:10] Ep. 3 : Up. 101000 : Sen. 3,960,157 : Cost 2.69452333 : Time 130.90s : 34996.49 words/s : L.r. 1.1940e-04
+[2019-07-11 05:55:21] Ep. 3 : Up. 101500 : Sen. 4,146,764 : Cost 2.68857622 : Time 130.78s : 34955.74 words/s : L.r. 1.1911e-04
+[2019-07-11 05:57:30] Ep. 3 : Up. 102000 : Sen. 4,334,783 : Cost 2.67479849 : Time 129.70s : 34798.18 words/s : L.r. 1.1882e-04
+[2019-07-11 05:59:41] Ep. 3 : Up. 102500 : Sen. 4,520,007 : Cost 2.65154099 : Time 130.69s : 34696.93 words/s : L.r. 1.1853e-04
+[2019-07-11 06:01:52] Ep. 3 : Up. 103000 : Sen. 4,705,858 : Cost 2.72563314 : Time 131.25s : 34466.96 words/s : L.r. 1.1824e-04
+[2019-07-11 06:04:03] Ep. 3 : Up. 103500 : Sen. 4,905,764 : Cost 2.67790031 : Time 130.57s : 35113.41 words/s : L.r. 1.1795e-04
+[2019-07-11 06:06:15] Ep. 3 : Up. 104000 : Sen. 5,096,530 : Cost 2.67006230 : Time 132.19s : 34633.95 words/s : L.r. 1.1767e-04
+[2019-07-11 06:08:26] Ep. 3 : Up. 104500 : Sen. 5,289,494 : Cost 2.70044017 : Time 130.86s : 34863.38 words/s : L.r. 1.1739e-04
+[2019-07-11 06:10:36] Ep. 3 : Up. 105000 : Sen. 5,477,383 : Cost 2.67155814 : Time 129.68s : 34787.40 words/s : L.r. 1.1711e-04
+[2019-07-11 06:10:36] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 06:10:42] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 06:10:48] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 06:11:01] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 06:11:06] [valid] Ep. 3 : Up. 105000 : ce-mean-words : 1.32146 : new best
+[2019-07-11 06:11:07] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 06:11:11] [valid] Ep. 3 : Up. 105000 : perplexity : 3.7489 : new best
+[2019-07-11 06:11:51] [valid] Ep. 3 : Up. 105000 : translation : 26.58 : stalled 5 times (last best: 26.64)
+[2019-07-11 06:14:06] Ep. 3 : Up. 105500 : Sen. 5,666,466 : Cost 2.69286752 : Time 210.55s : 21642.21 words/s : L.r. 1.1683e-04
+[2019-07-11 06:16:18] Ep. 3 : Up. 106000 : Sen. 5,856,444 : Cost 2.66867638 : Time 131.66s : 34536.51 words/s : L.r. 1.1655e-04
+[2019-07-11 06:18:28] Ep. 3 : Up. 106500 : Sen. 6,040,348 : Cost 2.69950819 : Time 130.44s : 34714.39 words/s : L.r. 1.1628e-04
+[2019-07-11 06:20:41] Ep. 3 : Up. 107000 : Sen. 6,230,749 : Cost 2.67614436 : Time 132.25s : 34202.98 words/s : L.r. 1.1601e-04
+[2019-07-11 06:22:50] Ep. 3 : Up. 107500 : Sen. 6,425,259 : Cost 2.64983106 : Time 129.96s : 34937.45 words/s : L.r. 1.1574e-04
+[2019-07-11 06:25:01] Ep. 3 : Up. 108000 : Sen. 6,613,440 : Cost 2.69308972 : Time 130.30s : 35047.48 words/s : L.r. 1.1547e-04
+[2019-07-11 06:27:13] Ep. 3 : Up. 108500 : Sen. 6,799,912 : Cost 2.67778683 : Time 132.17s : 34897.73 words/s : L.r. 1.1520e-04
+[2019-07-11 06:29:23] Ep. 3 : Up. 109000 : Sen. 6,987,698 : Cost 2.69743180 : Time 130.40s : 34643.95 words/s : L.r. 1.1494e-04
+[2019-07-11 06:31:34] Ep. 3 : Up. 109500 : Sen. 7,174,939 : Cost 2.69695735 : Time 131.13s : 35151.71 words/s : L.r. 1.1468e-04
+[2019-07-11 06:33:46] Ep. 3 : Up. 110000 : Sen. 7,366,967 : Cost 2.65442228 : Time 131.36s : 34786.65 words/s : L.r. 1.1442e-04
+[2019-07-11 06:33:46] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 06:33:53] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 06:34:00] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 06:34:13] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 06:34:18] [valid] Ep. 3 : Up. 110000 : ce-mean-words : 1.31669 : new best
+[2019-07-11 06:34:18] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 06:34:23] [valid] Ep. 3 : Up. 110000 : perplexity : 3.73105 : new best
+[2019-07-11 06:35:06] [valid] Ep. 3 : Up. 110000 : translation : 26.43 : stalled 6 times (last best: 26.64)
+[2019-07-11 06:37:18] Ep. 3 : Up. 110500 : Sen. 7,556,055 : Cost 2.67001820 : Time 211.77s : 21567.85 words/s : L.r. 1.1416e-04
+[2019-07-11 06:39:27] Ep. 3 : Up. 111000 : Sen. 7,748,648 : Cost 2.69584680 : Time 129.40s : 34743.18 words/s : L.r. 1.1390e-04
+[2019-07-11 06:41:37] Ep. 3 : Up. 111500 : Sen. 7,934,728 : Cost 2.68750453 : Time 129.72s : 34836.19 words/s : L.r. 1.1364e-04
+[2019-07-11 06:43:47] Ep. 3 : Up. 112000 : Sen. 8,124,696 : Cost 2.65065360 : Time 130.32s : 34844.32 words/s : L.r. 1.1339e-04
+[2019-07-11 06:45:57] Ep. 3 : Up. 112500 : Sen. 8,306,520 : Cost 2.68724918 : Time 129.91s : 34898.78 words/s : L.r. 1.1314e-04
+[2019-07-11 06:48:07] Ep. 3 : Up. 113000 : Sen. 8,491,834 : Cost 2.64781761 : Time 130.30s : 34667.93 words/s : L.r. 1.1289e-04
+[2019-07-11 06:50:17] Ep. 3 : Up. 113500 : Sen. 8,686,949 : Cost 2.68250632 : Time 130.08s : 35013.49 words/s : L.r. 1.1264e-04
+[2019-07-11 06:52:31] Ep. 3 : Up. 114000 : Sen. 8,880,642 : Cost 2.67291260 : Time 134.12s : 33853.89 words/s : L.r. 1.1239e-04
+[2019-07-11 06:54:42] Ep. 3 : Up. 114500 : Sen. 9,065,996 : Cost 2.71763468 : Time 130.19s : 34691.33 words/s : L.r. 1.1214e-04
+[2019-07-11 06:56:51] Ep. 3 : Up. 115000 : Sen. 9,253,028 : Cost 2.67162538 : Time 129.80s : 34889.41 words/s : L.r. 1.1190e-04
+[2019-07-11 06:56:51] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 06:56:58] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 06:57:15] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 06:57:28] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 06:57:33] [valid] Ep. 3 : Up. 115000 : ce-mean-words : 1.31175 : new best
+[2019-07-11 06:57:33] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 06:57:38] [valid] Ep. 3 : Up. 115000 : perplexity : 3.71266 : new best
+[2019-07-11 06:58:19] [valid] Ep. 3 : Up. 115000 : translation : 26.43 : stalled 7 times (last best: 26.64)
+[2019-07-11 07:00:30] Ep. 3 : Up. 115500 : Sen. 9,434,757 : Cost 2.71852279 : Time 218.22s : 20873.74 words/s : L.r. 1.1166e-04
+[2019-07-11 07:02:41] Ep. 3 : Up. 116000 : Sen. 9,635,629 : Cost 2.62797308 : Time 130.93s : 34868.33 words/s : L.r. 1.1142e-04
+[2019-07-11 07:04:51] Ep. 3 : Up. 116500 : Sen. 9,820,150 : Cost 2.67042160 : Time 130.85s : 34927.38 words/s : L.r. 1.1118e-04
+[2019-07-11 07:07:02] Ep. 3 : Up. 117000 : Sen. 10,013,602 : Cost 2.67177057 : Time 130.77s : 34782.02 words/s : L.r. 1.1094e-04
+[2019-07-11 07:09:14] Ep. 3 : Up. 117500 : Sen. 10,200,327 : Cost 2.66902113 : Time 131.93s : 34727.27 words/s : L.r. 1.1070e-04
+[2019-07-11 07:11:23] Ep. 3 : Up. 118000 : Sen. 10,392,732 : Cost 2.66408706 : Time 128.95s : 34840.60 words/s : L.r. 1.1047e-04
+[2019-07-11 07:13:33] Ep. 3 : Up. 118500 : Sen. 10,581,721 : Cost 2.68707132 : Time 129.80s : 34948.69 words/s : L.r. 1.1024e-04
+[2019-07-11 07:15:43] Ep. 3 : Up. 119000 : Sen. 10,774,965 : Cost 2.66539526 : Time 130.19s : 34746.33 words/s : L.r. 1.1000e-04
+[2019-07-11 07:17:54] Ep. 3 : Up. 119500 : Sen. 10,962,341 : Cost 2.64943767 : Time 130.80s : 35094.98 words/s : L.r. 1.0977e-04
+[2019-07-11 07:20:04] Ep. 3 : Up. 120000 : Sen. 11,154,180 : Cost 2.67404938 : Time 130.26s : 35085.36 words/s : L.r. 1.0954e-04
+[2019-07-11 07:20:04] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 07:20:11] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 07:20:18] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 07:20:31] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 07:20:37] [valid] Ep. 3 : Up. 120000 : ce-mean-words : 1.30796 : new best
+[2019-07-11 07:20:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 07:20:43] [valid] Ep. 3 : Up. 120000 : perplexity : 3.69863 : new best
+[2019-07-11 07:21:26] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 07:21:31] [valid] Ep. 3 : Up. 120000 : translation : 26.94 : new best
+[2019-07-11 07:23:44] Ep. 3 : Up. 120500 : Sen. 11,340,366 : Cost 2.64246154 : Time 219.59s : 21035.45 words/s : L.r. 1.0932e-04
+[2019-07-11 07:25:55] Ep. 3 : Up. 121000 : Sen. 11,525,510 : Cost 2.68036628 : Time 130.99s : 34528.76 words/s : L.r. 1.0909e-04
+[2019-07-11 07:28:07] Ep. 3 : Up. 121500 : Sen. 11,716,447 : Cost 2.65373707 : Time 132.01s : 34268.74 words/s : L.r. 1.0887e-04
+[2019-07-11 07:30:17] Ep. 3 : Up. 122000 : Sen. 11,907,672 : Cost 2.66019440 : Time 130.53s : 34836.46 words/s : L.r. 1.0864e-04
+[2019-07-11 07:32:28] Ep. 3 : Up. 122500 : Sen. 12,097,734 : Cost 2.67930603 : Time 130.72s : 34951.33 words/s : L.r. 1.0842e-04
+[2019-07-11 07:34:38] Ep. 3 : Up. 123000 : Sen. 12,285,595 : Cost 2.64935684 : Time 129.52s : 34742.36 words/s : L.r. 1.0820e-04
+[2019-07-11 07:36:49] Ep. 3 : Up. 123500 : Sen. 12,480,593 : Cost 2.67358613 : Time 131.24s : 35002.71 words/s : L.r. 1.0798e-04
+[2019-07-11 07:38:59] Ep. 3 : Up. 124000 : Sen. 12,667,697 : Cost 2.67418647 : Time 130.31s : 34933.14 words/s : L.r. 1.0776e-04
+[2019-07-11 07:41:09] Ep. 3 : Up. 124500 : Sen. 12,857,193 : Cost 2.67186713 : Time 129.77s : 34641.76 words/s : L.r. 1.0755e-04
+[2019-07-11 07:43:19] Ep. 3 : Up. 125000 : Sen. 13,047,224 : Cost 2.66929221 : Time 130.24s : 35102.24 words/s : L.r. 1.0733e-04
+[2019-07-11 07:43:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 07:43:25] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 07:43:32] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 07:43:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 07:43:49] [valid] Ep. 3 : Up. 125000 : ce-mean-words : 1.30369 : new best
+[2019-07-11 07:43:50] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 07:43:55] [valid] Ep. 3 : Up. 125000 : perplexity : 3.68287 : new best
+[2019-07-11 07:44:33] [valid] Ep. 3 : Up. 125000 : translation : 26.94 : stalled 1 times (last best: 26.94)
+[2019-07-11 07:46:44] Ep. 3 : Up. 125500 : Sen. 13,241,928 : Cost 2.63889337 : Time 205.20s : 22092.36 words/s : L.r. 1.0712e-04
+[2019-07-11 07:48:54] Ep. 3 : Up. 126000 : Sen. 13,434,145 : Cost 2.65808606 : Time 129.67s : 34661.46 words/s : L.r. 1.0690e-04
+[2019-07-11 07:51:04] Ep. 3 : Up. 126500 : Sen. 13,621,097 : Cost 2.67017388 : Time 129.82s : 35035.94 words/s : L.r. 1.0669e-04
+[2019-07-11 07:53:15] Ep. 3 : Up. 127000 : Sen. 13,805,335 : Cost 2.66078353 : Time 130.84s : 35006.24 words/s : L.r. 1.0648e-04
+[2019-07-11 07:55:25] Ep. 3 : Up. 127500 : Sen. 13,991,577 : Cost 2.67538476 : Time 130.43s : 35167.66 words/s : L.r. 1.0627e-04
+[2019-07-11 07:57:35] Ep. 3 : Up. 128000 : Sen. 14,181,580 : Cost 2.65520144 : Time 129.83s : 34896.69 words/s : L.r. 1.0607e-04
+[2019-07-11 07:59:45] Ep. 3 : Up. 128500 : Sen. 14,373,323 : Cost 2.67572737 : Time 129.97s : 34705.64 words/s : L.r. 1.0586e-04
+[2019-07-11 08:01:55] Ep. 3 : Up. 129000 : Sen. 14,563,419 : Cost 2.64310288 : Time 130.62s : 34963.00 words/s : L.r. 1.0565e-04
+[2019-07-11 08:04:06] Ep. 3 : Up. 129500 : Sen. 14,750,747 : Cost 2.66523004 : Time 130.07s : 35069.34 words/s : L.r. 1.0545e-04
+[2019-07-11 08:06:16] Ep. 3 : Up. 130000 : Sen. 14,937,582 : Cost 2.64327717 : Time 130.77s : 34865.72 words/s : L.r. 1.0525e-04
+[2019-07-11 08:06:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 08:06:23] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 08:06:29] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 08:06:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 08:06:46] [valid] Ep. 3 : Up. 130000 : ce-mean-words : 1.30034 : new best
+[2019-07-11 08:06:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 08:06:52] [valid] Ep. 3 : Up. 130000 : perplexity : 3.67055 : new best
+[2019-07-11 08:07:32] [valid] Ep. 3 : Up. 130000 : translation : 26.8 : stalled 2 times (last best: 26.94)
+[2019-07-11 08:09:43] Ep. 3 : Up. 130500 : Sen. 15,124,827 : Cost 2.67637920 : Time 206.41s : 22058.27 words/s : L.r. 1.0505e-04
+[2019-07-11 08:11:53] Ep. 3 : Up. 131000 : Sen. 15,311,382 : Cost 2.69792700 : Time 129.86s : 34808.75 words/s : L.r. 1.0484e-04
+[2019-07-11 08:14:02] Ep. 3 : Up. 131500 : Sen. 15,501,720 : Cost 2.65452123 : Time 129.69s : 34964.37 words/s : L.r. 1.0464e-04
+[2019-07-11 08:16:13] Ep. 3 : Up. 132000 : Sen. 15,689,090 : Cost 2.64907193 : Time 131.17s : 34778.07 words/s : L.r. 1.0445e-04
+[2019-07-11 08:18:24] Ep. 3 : Up. 132500 : Sen. 15,882,496 : Cost 2.63628697 : Time 130.59s : 35090.14 words/s : L.r. 1.0425e-04
+[2019-07-11 08:20:33] Ep. 3 : Up. 133000 : Sen. 16,074,059 : Cost 2.66375947 : Time 129.31s : 34771.50 words/s : L.r. 1.0405e-04
+[2019-07-11 08:22:44] Ep. 3 : Up. 133500 : Sen. 16,261,571 : Cost 2.66667175 : Time 130.87s : 34899.51 words/s : L.r. 1.0386e-04
+[2019-07-11 08:24:55] Ep. 3 : Up. 134000 : Sen. 16,449,258 : Cost 2.64893723 : Time 130.57s : 34888.45 words/s : L.r. 1.0366e-04
+[2019-07-11 08:27:04] Ep. 3 : Up. 134500 : Sen. 16,635,781 : Cost 2.66338968 : Time 129.39s : 34861.96 words/s : L.r. 1.0347e-04
+[2019-07-11 08:29:14] Ep. 3 : Up. 135000 : Sen. 16,826,060 : Cost 2.64860392 : Time 130.22s : 35116.59 words/s : L.r. 1.0328e-04
+[2019-07-11 08:29:14] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 08:29:21] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 08:29:28] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 08:29:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 08:29:45] [valid] Ep. 3 : Up. 135000 : ce-mean-words : 1.29701 : new best
+[2019-07-11 08:29:46] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 08:29:51] [valid] Ep. 3 : Up. 135000 : perplexity : 3.65834 : new best
+[2019-07-11 08:30:32] [valid] Ep. 3 : Up. 135000 : translation : 26.46 : stalled 3 times (last best: 26.94)
+[2019-07-11 08:32:45] Ep. 3 : Up. 135500 : Sen. 17,016,012 : Cost 2.66180778 : Time 210.13s : 21688.87 words/s : L.r. 1.0309e-04
+[2019-07-11 08:34:04] Seen 17128033 samples
+[2019-07-11 08:34:04] Starting epoch 4
+[2019-07-11 08:34:04] [data] Shuffling data
+[2019-07-11 08:34:16] [data] Done reading 19122526 sentences
+[2019-07-11 08:35:56] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-11 08:37:19] Ep. 4 : Up. 136000 : Sen. 72,434 : Cost 2.63008881 : Time 274.46s : 15977.72 words/s : L.r. 1.0290e-04
+[2019-07-11 08:39:30] Ep. 4 : Up. 136500 : Sen. 262,196 : Cost 2.62071896 : Time 130.43s : 34875.11 words/s : L.r. 1.0271e-04
+[2019-07-11 08:41:40] Ep. 4 : Up. 137000 : Sen. 453,224 : Cost 2.62950993 : Time 130.69s : 35079.59 words/s : L.r. 1.0252e-04
+[2019-07-11 08:43:50] Ep. 4 : Up. 137500 : Sen. 640,114 : Cost 2.65544534 : Time 130.02s : 35055.13 words/s : L.r. 1.0234e-04
+[2019-07-11 08:46:00] Ep. 4 : Up. 138000 : Sen. 827,820 : Cost 2.66811895 : Time 129.45s : 34804.99 words/s : L.r. 1.0215e-04
+[2019-07-11 08:48:10] Ep. 4 : Up. 138500 : Sen. 1,018,841 : Cost 2.64692283 : Time 130.30s : 34963.73 words/s : L.r. 1.0197e-04
+[2019-07-11 08:50:21] Ep. 4 : Up. 139000 : Sen. 1,209,460 : Cost 2.59399962 : Time 131.18s : 34799.38 words/s : L.r. 1.0178e-04
+[2019-07-11 08:52:31] Ep. 4 : Up. 139500 : Sen. 1,396,272 : Cost 2.64825439 : Time 129.62s : 34859.41 words/s : L.r. 1.0160e-04
+[2019-07-11 08:54:41] Ep. 4 : Up. 140000 : Sen. 1,577,858 : Cost 2.65479589 : Time 130.29s : 35115.17 words/s : L.r. 1.0142e-04
+[2019-07-11 08:54:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 08:54:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 08:54:54] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 08:55:07] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 08:55:11] [valid] Ep. 4 : Up. 140000 : ce-mean-words : 1.29523 : new best
+[2019-07-11 08:55:12] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 08:55:17] [valid] Ep. 4 : Up. 140000 : perplexity : 3.65185 : new best
+[2019-07-11 08:55:58] [valid] Ep. 4 : Up. 140000 : translation : 26.46 : stalled 4 times (last best: 26.94)
+[2019-07-11 08:58:09] Ep. 4 : Up. 140500 : Sen. 1,769,934 : Cost 2.67721963 : Time 207.59s : 21809.77 words/s : L.r. 1.0124e-04
+[2019-07-11 09:00:19] Ep. 4 : Up. 141000 : Sen. 1,962,164 : Cost 2.63108301 : Time 130.14s : 34980.52 words/s : L.r. 1.0106e-04
+[2019-07-11 09:02:30] Ep. 4 : Up. 141500 : Sen. 2,155,397 : Cost 2.65040612 : Time 131.02s : 34633.87 words/s : L.r. 1.0088e-04
+[2019-07-11 09:04:40] Ep. 4 : Up. 142000 : Sen. 2,340,085 : Cost 2.64767218 : Time 129.81s : 34838.14 words/s : L.r. 1.0070e-04
+[2019-07-11 09:06:50] Ep. 4 : Up. 142500 : Sen. 2,528,382 : Cost 2.66397858 : Time 130.71s : 34793.27 words/s : L.r. 1.0052e-04
+[2019-07-11 09:09:02] Ep. 4 : Up. 143000 : Sen. 2,721,542 : Cost 2.60962534 : Time 131.36s : 34635.26 words/s : L.r. 1.0035e-04
+[2019-07-11 09:11:13] Ep. 4 : Up. 143500 : Sen. 2,914,744 : Cost 2.63361406 : Time 131.18s : 34618.41 words/s : L.r. 1.0017e-04
+[2019-07-11 09:13:24] Ep. 4 : Up. 144000 : Sen. 3,096,968 : Cost 2.65405941 : Time 131.35s : 34831.56 words/s : L.r. 1.0000e-04
+[2019-07-11 09:15:35] Ep. 4 : Up. 144500 : Sen. 3,283,818 : Cost 2.67445421 : Time 131.03s : 34418.14 words/s : L.r. 9.9827e-05
+[2019-07-11 09:17:49] Ep. 4 : Up. 145000 : Sen. 3,471,714 : Cost 2.61867189 : Time 134.02s : 34072.34 words/s : L.r. 9.9655e-05
+[2019-07-11 09:17:49] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 09:17:57] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 09:18:04] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 09:18:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 09:18:24] [valid] Ep. 4 : Up. 145000 : ce-mean-words : 1.2931 : new best
+[2019-07-11 09:18:25] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 09:18:30] [valid] Ep. 4 : Up. 145000 : perplexity : 3.64406 : new best
+[2019-07-11 09:19:17] [valid] Ep. 4 : Up. 145000 : translation : 26.46 : stalled 5 times (last best: 26.94)
+[2019-07-11 09:21:33] Ep. 4 : Up. 145500 : Sen. 3,665,668 : Cost 2.60552907 : Time 223.35s : 20464.40 words/s : L.r. 9.9483e-05
+[2019-07-11 09:23:45] Ep. 4 : Up. 146000 : Sen. 3,853,249 : Cost 2.63289356 : Time 131.91s : 34666.63 words/s : L.r. 9.9313e-05
+[2019-07-11 09:25:56] Ep. 4 : Up. 146500 : Sen. 4,048,814 : Cost 2.68840289 : Time 130.93s : 34701.52 words/s : L.r. 9.9143e-05
+[2019-07-11 09:28:08] Ep. 4 : Up. 147000 : Sen. 4,238,384 : Cost 2.64916730 : Time 132.08s : 34505.86 words/s : L.r. 9.8974e-05
+[2019-07-11 09:30:19] Ep. 4 : Up. 147500 : Sen. 4,425,742 : Cost 2.61977434 : Time 130.97s : 34793.45 words/s : L.r. 9.8806e-05
+[2019-07-11 09:32:28] Ep. 4 : Up. 148000 : Sen. 4,616,138 : Cost 2.64175963 : Time 129.42s : 34741.38 words/s : L.r. 9.8639e-05
+[2019-07-11 09:34:39] Ep. 4 : Up. 148500 : Sen. 4,805,329 : Cost 2.63138461 : Time 131.35s : 35049.69 words/s : L.r. 9.8473e-05
+[2019-07-11 09:36:50] Ep. 4 : Up. 149000 : Sen. 4,994,340 : Cost 2.64389896 : Time 130.11s : 34637.03 words/s : L.r. 9.8308e-05
+[2019-07-11 09:39:00] Ep. 4 : Up. 149500 : Sen. 5,185,888 : Cost 2.64407682 : Time 130.41s : 35120.43 words/s : L.r. 9.8143e-05
+[2019-07-11 09:41:11] Ep. 4 : Up. 150000 : Sen. 5,372,076 : Cost 2.63029146 : Time 130.87s : 34591.82 words/s : L.r. 9.7980e-05
+[2019-07-11 09:41:11] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 09:41:17] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 09:41:24] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 09:41:37] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 09:41:42] [valid] Ep. 4 : Up. 150000 : ce-mean-words : 1.29082 : new best
+[2019-07-11 09:41:42] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 09:41:47] [valid] Ep. 4 : Up. 150000 : perplexity : 3.63578 : new best
+[2019-07-11 09:42:30] [valid] Ep. 4 : Up. 150000 : translation : 26.23 : stalled 6 times (last best: 26.94)
+[2019-07-11 09:44:42] Ep. 4 : Up. 150500 : Sen. 5,567,621 : Cost 2.63439393 : Time 211.33s : 21490.49 words/s : L.r. 9.7817e-05
+[2019-07-11 09:46:52] Ep. 4 : Up. 151000 : Sen. 5,752,988 : Cost 2.65158916 : Time 130.27s : 34833.60 words/s : L.r. 9.7655e-05
+[2019-07-11 09:49:03] Ep. 4 : Up. 151500 : Sen. 5,939,628 : Cost 2.63871336 : Time 130.27s : 35110.58 words/s : L.r. 9.7493e-05
+[2019-07-11 09:51:13] Ep. 4 : Up. 152000 : Sen. 6,131,998 : Cost 2.62211466 : Time 130.14s : 34861.93 words/s : L.r. 9.7333e-05
+[2019-07-11 09:53:24] Ep. 4 : Up. 152500 : Sen. 6,322,566 : Cost 2.61348462 : Time 130.72s : 34900.07 words/s : L.r. 9.7173e-05
+[2019-07-11 09:55:34] Ep. 4 : Up. 153000 : Sen. 6,515,449 : Cost 2.66382551 : Time 130.55s : 34775.77 words/s : L.r. 9.7014e-05
+[2019-07-11 09:57:45] Ep. 4 : Up. 153500 : Sen. 6,705,969 : Cost 2.61141324 : Time 131.14s : 34744.68 words/s : L.r. 9.6856e-05
+[2019-07-11 09:59:55] Ep. 4 : Up. 154000 : Sen. 6,888,296 : Cost 2.68280888 : Time 129.91s : 34882.95 words/s : L.r. 9.6699e-05
+[2019-07-11 10:02:05] Ep. 4 : Up. 154500 : Sen. 7,074,308 : Cost 2.63277507 : Time 130.14s : 34877.87 words/s : L.r. 9.6542e-05
+[2019-07-11 10:04:16] Ep. 4 : Up. 155000 : Sen. 7,261,745 : Cost 2.63099003 : Time 130.39s : 34980.45 words/s : L.r. 9.6386e-05
+[2019-07-11 10:04:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 10:04:22] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 10:04:28] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 10:04:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 10:04:46] [valid] Ep. 4 : Up. 155000 : ce-mean-words : 1.28838 : new best
+[2019-07-11 10:04:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 10:04:52] [valid] Ep. 4 : Up. 155000 : perplexity : 3.6269 : new best
+[2019-07-11 10:05:37] [valid] Ep. 4 : Up. 155000 : translation : 26.63 : stalled 7 times (last best: 26.94)
+[2019-07-11 10:07:49] Ep. 4 : Up. 155500 : Sen. 7,450,321 : Cost 2.65350032 : Time 213.67s : 21418.19 words/s : L.r. 9.6231e-05
+[2019-07-11 10:09:59] Ep. 4 : Up. 156000 : Sen. 7,636,590 : Cost 2.67067719 : Time 129.28s : 34851.57 words/s : L.r. 9.6077e-05
+[2019-07-11 10:12:09] Ep. 4 : Up. 156500 : Sen. 7,830,505 : Cost 2.60901427 : Time 130.33s : 34782.50 words/s : L.r. 9.5923e-05
+[2019-07-11 10:14:20] Ep. 4 : Up. 157000 : Sen. 8,022,152 : Cost 2.63114882 : Time 130.99s : 34715.71 words/s : L.r. 9.5770e-05
+[2019-07-11 10:16:30] Ep. 4 : Up. 157500 : Sen. 8,211,362 : Cost 2.64091444 : Time 130.25s : 34668.87 words/s : L.r. 9.5618e-05
+[2019-07-11 10:18:41] Ep. 4 : Up. 158000 : Sen. 8,400,474 : Cost 2.60910130 : Time 130.75s : 34849.29 words/s : L.r. 9.5467e-05
+[2019-07-11 10:20:52] Ep. 4 : Up. 158500 : Sen. 8,585,487 : Cost 2.67856073 : Time 130.92s : 35039.73 words/s : L.r. 9.5316e-05
+[2019-07-11 10:23:03] Ep. 4 : Up. 159000 : Sen. 8,781,392 : Cost 2.58957791 : Time 131.11s : 34695.71 words/s : L.r. 9.5166e-05
+[2019-07-11 10:25:14] Ep. 4 : Up. 159500 : Sen. 8,968,702 : Cost 2.65613079 : Time 130.63s : 35003.39 words/s : L.r. 9.5017e-05
+[2019-07-11 10:27:24] Ep. 4 : Up. 160000 : Sen. 9,159,233 : Cost 2.62522030 : Time 130.52s : 34942.47 words/s : L.r. 9.4868e-05
+[2019-07-11 10:27:24] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 10:27:30] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 10:27:37] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 10:27:50] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 10:27:55] [valid] Ep. 4 : Up. 160000 : ce-mean-words : 1.28593 : new best
+[2019-07-11 10:27:56] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 10:28:01] [valid] Ep. 4 : Up. 160000 : perplexity : 3.61802 : new best
+[2019-07-11 10:28:41] [valid] Ep. 4 : Up. 160000 : translation : 26.34 : stalled 8 times (last best: 26.94)
+[2019-07-11 10:30:54] Ep. 4 : Up. 160500 : Sen. 9,349,175 : Cost 2.62985659 : Time 209.71s : 21896.80 words/s : L.r. 9.4720e-05
+[2019-07-11 10:33:04] Ep. 4 : Up. 161000 : Sen. 9,536,997 : Cost 2.61363077 : Time 129.67s : 34858.44 words/s : L.r. 9.4573e-05
+[2019-07-11 10:35:14] Ep. 4 : Up. 161500 : Sen. 9,720,325 : Cost 2.64913917 : Time 130.82s : 34827.92 words/s : L.r. 9.4427e-05
+[2019-07-11 10:37:25] Ep. 4 : Up. 162000 : Sen. 9,911,561 : Cost 2.64311552 : Time 130.25s : 34727.06 words/s : L.r. 9.4281e-05
+[2019-07-11 10:39:35] Ep. 4 : Up. 162500 : Sen. 10,101,764 : Cost 2.65107131 : Time 130.71s : 35004.28 words/s : L.r. 9.4136e-05
+[2019-07-11 10:41:45] Ep. 4 : Up. 163000 : Sen. 10,289,089 : Cost 2.67783976 : Time 129.78s : 34794.48 words/s : L.r. 9.3991e-05
+[2019-07-11 10:43:56] Ep. 4 : Up. 163500 : Sen. 10,478,384 : Cost 2.63231921 : Time 130.64s : 35027.04 words/s : L.r. 9.3847e-05
+[2019-07-11 10:46:06] Ep. 4 : Up. 164000 : Sen. 10,666,521 : Cost 2.61807275 : Time 129.78s : 34763.14 words/s : L.r. 9.3704e-05
+[2019-07-11 10:48:17] Ep. 4 : Up. 164500 : Sen. 10,859,720 : Cost 2.59268785 : Time 131.48s : 34759.64 words/s : L.r. 9.3562e-05
+[2019-07-11 10:50:27] Ep. 4 : Up. 165000 : Sen. 11,048,510 : Cost 2.64320612 : Time 130.35s : 34765.02 words/s : L.r. 9.3420e-05
+[2019-07-11 10:50:27] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 10:50:33] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 10:50:40] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 10:50:53] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 10:50:57] [valid] Ep. 4 : Up. 165000 : ce-mean-words : 1.28339 : new best
+[2019-07-11 10:50:58] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 10:51:03] [valid] Ep. 4 : Up. 165000 : perplexity : 3.60885 : new best
+[2019-07-11 10:51:44] [valid] Ep. 4 : Up. 165000 : translation : 26.34 : stalled 9 times (last best: 26.94)
+[2019-07-11 10:53:56] Ep. 4 : Up. 165500 : Sen. 11,242,729 : Cost 2.61700916 : Time 209.02s : 21897.24 words/s : L.r. 9.3279e-05
+[2019-07-11 10:56:06] Ep. 4 : Up. 166000 : Sen. 11,432,539 : Cost 2.65662313 : Time 129.42s : 35102.71 words/s : L.r. 9.3138e-05
+[2019-07-11 10:58:17] Ep. 4 : Up. 166500 : Sen. 11,623,116 : Cost 2.63274169 : Time 130.83s : 34819.34 words/s : L.r. 9.2998e-05
+[2019-07-11 11:00:26] Ep. 4 : Up. 167000 : Sen. 11,810,354 : Cost 2.63863325 : Time 129.49s : 34824.73 words/s : L.r. 9.2859e-05
+[2019-07-11 11:02:38] Ep. 4 : Up. 167500 : Sen. 11,996,572 : Cost 2.62882376 : Time 131.84s : 34686.58 words/s : L.r. 9.2720e-05
+[2019-07-11 11:04:48] Ep. 4 : Up. 168000 : Sen. 12,192,285 : Cost 2.63183427 : Time 130.38s : 34795.88 words/s : L.r. 9.2582e-05
+[2019-07-11 11:06:59] Ep. 4 : Up. 168500 : Sen. 12,380,435 : Cost 2.62455320 : Time 130.71s : 35212.18 words/s : L.r. 9.2445e-05
+[2019-07-11 11:09:09] Ep. 4 : Up. 169000 : Sen. 12,568,302 : Cost 2.64126444 : Time 130.01s : 34858.64 words/s : L.r. 9.2308e-05
+[2019-07-11 11:11:20] Ep. 4 : Up. 169500 : Sen. 12,756,822 : Cost 2.63315821 : Time 130.80s : 35164.98 words/s : L.r. 9.2171e-05
+[2019-07-11 11:13:29] Ep. 4 : Up. 170000 : Sen. 12,942,666 : Cost 2.63543200 : Time 129.28s : 34604.86 words/s : L.r. 9.2036e-05
+[2019-07-11 11:13:29] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 11:13:35] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 11:13:42] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 11:13:55] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 11:14:00] [valid] Ep. 4 : Up. 170000 : ce-mean-words : 1.28116 : new best
+[2019-07-11 11:14:00] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 11:14:05] [valid] Ep. 4 : Up. 170000 : perplexity : 3.6008 : new best
+[2019-07-11 11:14:45] [valid] Ep. 4 : Up. 170000 : translation : 26.16 : stalled 10 times (last best: 26.94)
+[2019-07-11 11:16:55] Ep. 4 : Up. 170500 : Sen. 13,130,882 : Cost 2.63435411 : Time 206.28s : 21840.11 words/s : L.r. 9.1901e-05
+[2019-07-11 11:19:07] Ep. 4 : Up. 171000 : Sen. 13,318,252 : Cost 2.63955903 : Time 131.13s : 35046.30 words/s : L.r. 9.1766e-05
+[2019-07-11 11:21:18] Ep. 4 : Up. 171500 : Sen. 13,510,570 : Cost 2.62033463 : Time 130.92s : 34650.84 words/s : L.r. 9.1632e-05
+[2019-07-11 11:23:28] Ep. 4 : Up. 172000 : Sen. 13,702,025 : Cost 2.62231636 : Time 130.79s : 34955.46 words/s : L.r. 9.1499e-05
+[2019-07-11 11:25:39] Ep. 4 : Up. 172500 : Sen. 13,888,523 : Cost 2.62283492 : Time 130.23s : 34825.66 words/s : L.r. 9.1366e-05
+[2019-07-11 11:27:50] Ep. 4 : Up. 173000 : Sen. 14,081,779 : Cost 2.64392161 : Time 131.43s : 34827.07 words/s : L.r. 9.1234e-05
+[2019-07-11 11:30:00] Ep. 4 : Up. 173500 : Sen. 14,267,306 : Cost 2.63147950 : Time 130.22s : 34976.11 words/s : L.r. 9.1103e-05
+[2019-07-11 11:32:12] Ep. 4 : Up. 174000 : Sen. 14,458,664 : Cost 2.64928150 : Time 131.44s : 34853.94 words/s : L.r. 9.0972e-05
+[2019-07-11 11:34:23] Ep. 4 : Up. 174500 : Sen. 14,653,793 : Cost 2.57802987 : Time 131.14s : 34549.76 words/s : L.r. 9.0841e-05
+[2019-07-11 11:36:33] Ep. 4 : Up. 175000 : Sen. 14,839,855 : Cost 2.65657234 : Time 129.73s : 34554.18 words/s : L.r. 9.0711e-05
+[2019-07-11 11:36:33] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 11:36:39] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 11:36:47] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 11:37:01] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 11:37:07] [valid] Ep. 4 : Up. 175000 : ce-mean-words : 1.27928 : new best
+[2019-07-11 11:37:07] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 11:37:14] [valid] Ep. 4 : Up. 175000 : perplexity : 3.59403 : new best
+[2019-07-11 11:38:04] [valid] Ep. 4 : Up. 175000 : translation : 26.29 : stalled 11 times (last best: 26.94)
+[2019-07-11 11:40:17] Ep. 4 : Up. 175500 : Sen. 15,021,124 : Cost 2.64513803 : Time 224.85s : 20163.58 words/s : L.r. 9.0582e-05
+[2019-07-11 11:42:28] Ep. 4 : Up. 176000 : Sen. 15,207,281 : Cost 2.64105010 : Time 130.18s : 34537.52 words/s : L.r. 9.0453e-05
+[2019-07-11 11:44:39] Ep. 4 : Up. 176500 : Sen. 15,397,222 : Cost 2.59899759 : Time 131.68s : 34885.22 words/s : L.r. 9.0325e-05
+[2019-07-11 11:46:50] Ep. 4 : Up. 177000 : Sen. 15,585,106 : Cost 2.63141036 : Time 130.94s : 34243.36 words/s : L.r. 9.0198e-05
+[2019-07-11 11:49:03] Ep. 4 : Up. 177500 : Sen. 15,778,645 : Cost 2.62064290 : Time 133.17s : 34125.57 words/s : L.r. 9.0070e-05
+[2019-07-11 11:51:15] Ep. 4 : Up. 178000 : Sen. 15,969,922 : Cost 2.64113021 : Time 131.73s : 34995.84 words/s : L.r. 8.9944e-05
+[2019-07-11 11:53:27] Ep. 4 : Up. 178500 : Sen. 16,162,609 : Cost 2.60035253 : Time 132.01s : 34616.31 words/s : L.r. 8.9818e-05
+[2019-07-11 11:55:40] Ep. 4 : Up. 179000 : Sen. 16,351,082 : Cost 2.63651347 : Time 132.98s : 34144.16 words/s : L.r. 8.9692e-05
+[2019-07-11 11:57:51] Ep. 4 : Up. 179500 : Sen. 16,539,134 : Cost 2.64727259 : Time 130.86s : 34617.35 words/s : L.r. 8.9567e-05
+[2019-07-11 12:00:03] Ep. 4 : Up. 180000 : Sen. 16,730,415 : Cost 2.64853168 : Time 131.92s : 34605.75 words/s : L.r. 8.9443e-05
+[2019-07-11 12:00:03] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 12:00:09] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 12:00:16] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 12:00:30] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 12:00:35] [valid] Ep. 4 : Up. 180000 : ce-mean-words : 1.27781 : new best
+[2019-07-11 12:00:36] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 12:00:41] [valid] Ep. 4 : Up. 180000 : perplexity : 3.58876 : new best
+[2019-07-11 12:01:28] [valid] Ep. 4 : Up. 180000 : translation : 24.09 : stalled 12 times (last best: 26.94)
+[2019-07-11 12:03:41] Ep. 4 : Up. 180500 : Sen. 16,920,816 : Cost 2.62981439 : Time 218.07s : 20770.11 words/s : L.r. 8.9319e-05
+[2019-07-11 12:05:50] Ep. 4 : Up. 181000 : Sen. 17,100,448 : Cost 2.61634302 : Time 129.57s : 34246.51 words/s : L.r. 8.9195e-05
+[2019-07-11 12:06:10] Seen 17128033 samples
+[2019-07-11 12:06:10] Starting epoch 5
+[2019-07-11 12:06:10] [data] Shuffling data
+[2019-07-11 12:06:22] [data] Done reading 19122526 sentences
+[2019-07-11 12:08:03] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-11 12:10:29] Ep. 5 : Up. 181500 : Sen. 161,786 : Cost 2.59039569 : Time 278.65s : 16346.24 words/s : L.r. 8.9072e-05
+[2019-07-11 12:12:40] Ep. 5 : Up. 182000 : Sen. 354,091 : Cost 2.62261677 : Time 130.85s : 34715.14 words/s : L.r. 8.8950e-05
+[2019-07-11 12:14:50] Ep. 5 : Up. 182500 : Sen. 540,158 : Cost 2.59122801 : Time 129.98s : 34673.26 words/s : L.r. 8.8828e-05
+[2019-07-11 12:17:02] Ep. 5 : Up. 183000 : Sen. 729,908 : Cost 2.63711166 : Time 131.88s : 34114.27 words/s : L.r. 8.8707e-05
+[2019-07-11 12:19:14] Ep. 5 : Up. 183500 : Sen. 921,724 : Cost 2.60479689 : Time 132.00s : 34569.77 words/s : L.r. 8.8586e-05
+[2019-07-11 12:21:34] Ep. 5 : Up. 184000 : Sen. 1,106,260 : Cost 2.62146258 : Time 139.69s : 32482.99 words/s : L.r. 8.8465e-05
+[2019-07-11 12:23:52] Ep. 5 : Up. 184500 : Sen. 1,294,430 : Cost 2.59652686 : Time 138.13s : 33040.02 words/s : L.r. 8.8345e-05
+[2019-07-11 12:26:08] Ep. 5 : Up. 185000 : Sen. 1,492,245 : Cost 2.64008212 : Time 135.92s : 33349.60 words/s : L.r. 8.8226e-05
+[2019-07-11 12:26:08] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 12:26:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 12:26:24] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 12:26:39] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 12:26:44] [valid] Ep. 5 : Up. 185000 : ce-mean-words : 1.27721 : new best
+[2019-07-11 12:26:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 12:26:50] [valid] Ep. 5 : Up. 185000 : perplexity : 3.58662 : new best
+[2019-07-11 12:27:35] [valid] Ep. 5 : Up. 185000 : translation : 26.08 : stalled 13 times (last best: 26.94)
+[2019-07-11 12:29:53] Ep. 5 : Up. 185500 : Sen. 1,679,812 : Cost 2.57932663 : Time 225.66s : 20171.88 words/s : L.r. 8.8107e-05
+[2019-07-11 12:32:09] Ep. 5 : Up. 186000 : Sen. 1,867,439 : Cost 2.61332893 : Time 135.23s : 33406.51 words/s : L.r. 8.7988e-05
+[2019-07-11 12:34:23] Ep. 5 : Up. 186500 : Sen. 2,052,932 : Cost 2.63238597 : Time 134.27s : 34299.51 words/s : L.r. 8.7870e-05
+[2019-07-11 12:36:33] Ep. 5 : Up. 187000 : Sen. 2,242,127 : Cost 2.63374949 : Time 130.41s : 34760.59 words/s : L.r. 8.7753e-05
+[2019-07-11 12:38:45] Ep. 5 : Up. 187500 : Sen. 2,428,380 : Cost 2.63535094 : Time 131.55s : 33803.75 words/s : L.r. 8.7636e-05
+[2019-07-11 12:40:57] Ep. 5 : Up. 188000 : Sen. 2,616,416 : Cost 2.61386299 : Time 131.97s : 34492.53 words/s : L.r. 8.7519e-05
+[2019-07-11 12:43:10] Ep. 5 : Up. 188500 : Sen. 2,806,055 : Cost 2.59583855 : Time 133.20s : 34459.25 words/s : L.r. 8.7403e-05
+[2019-07-11 12:45:22] Ep. 5 : Up. 189000 : Sen. 2,999,406 : Cost 2.58510852 : Time 132.14s : 34773.29 words/s : L.r. 8.7287e-05
+[2019-07-11 12:47:33] Ep. 5 : Up. 189500 : Sen. 3,186,547 : Cost 2.58957434 : Time 131.37s : 34887.49 words/s : L.r. 8.7172e-05
+[2019-07-11 12:49:45] Ep. 5 : Up. 190000 : Sen. 3,368,643 : Cost 2.58859539 : Time 131.72s : 34680.96 words/s : L.r. 8.7057e-05
+[2019-07-11 12:49:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 12:49:52] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 12:50:00] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 12:50:14] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 12:50:19] [valid] Ep. 5 : Up. 190000 : ce-mean-words : 1.27666 : new best
+[2019-07-11 12:50:20] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 12:50:26] [valid] Ep. 5 : Up. 190000 : perplexity : 3.58466 : new best
+[2019-07-11 12:51:10] [valid] Ep. 5 : Up. 190000 : translation : 26.08 : stalled 14 times (last best: 26.94)
+[2019-07-11 12:53:28] Ep. 5 : Up. 190500 : Sen. 3,564,080 : Cost 2.63832426 : Time 222.57s : 20204.01 words/s : L.r. 8.6943e-05
+[2019-07-11 12:55:43] Ep. 5 : Up. 191000 : Sen. 3,758,038 : Cost 2.61196542 : Time 135.16s : 33760.67 words/s : L.r. 8.6829e-05
+[2019-07-11 12:57:54] Ep. 5 : Up. 191500 : Sen. 3,944,324 : Cost 2.64493752 : Time 130.87s : 34520.24 words/s : L.r. 8.6716e-05
+[2019-07-11 13:00:07] Ep. 5 : Up. 192000 : Sen. 4,134,094 : Cost 2.58468390 : Time 133.30s : 34169.19 words/s : L.r. 8.6603e-05
+[2019-07-11 13:02:19] Ep. 5 : Up. 192500 : Sen. 4,317,336 : Cost 2.62423563 : Time 132.27s : 34612.85 words/s : L.r. 8.6490e-05
+[2019-07-11 13:04:31] Ep. 5 : Up. 193000 : Sen. 4,507,395 : Cost 2.61372423 : Time 131.63s : 34831.60 words/s : L.r. 8.6378e-05
+[2019-07-11 13:06:42] Ep. 5 : Up. 193500 : Sen. 4,703,133 : Cost 2.60825276 : Time 130.56s : 34310.18 words/s : L.r. 8.6266e-05
+[2019-07-11 13:08:53] Ep. 5 : Up. 194000 : Sen. 4,896,469 : Cost 2.62526345 : Time 131.00s : 34500.36 words/s : L.r. 8.6155e-05
+[2019-07-11 13:11:05] Ep. 5 : Up. 194500 : Sen. 5,079,456 : Cost 2.63565803 : Time 132.66s : 34591.02 words/s : L.r. 8.6044e-05
+[2019-07-11 13:13:21] Ep. 5 : Up. 195000 : Sen. 5,270,385 : Cost 2.59036374 : Time 135.72s : 33456.74 words/s : L.r. 8.5934e-05
+[2019-07-11 13:13:21] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 13:13:28] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 13:13:36] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 13:13:51] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 13:13:57] [valid] Ep. 5 : Up. 195000 : ce-mean-words : 1.27525 : new best
+[2019-07-11 13:13:57] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 13:14:03] [valid] Ep. 5 : Up. 195000 : perplexity : 3.57959 : new best
+[2019-07-11 13:14:48] [valid] Ep. 5 : Up. 195000 : translation : 26.16 : stalled 15 times (last best: 26.94)
+[2019-07-11 13:17:06] Ep. 5 : Up. 195500 : Sen. 5,461,342 : Cost 2.58762574 : Time 225.09s : 20238.12 words/s : L.r. 8.5824e-05
+[2019-07-11 13:19:19] Ep. 5 : Up. 196000 : Sen. 5,656,271 : Cost 2.61285901 : Time 132.87s : 34285.18 words/s : L.r. 8.5714e-05
+[2019-07-11 13:21:29] Ep. 5 : Up. 196500 : Sen. 5,843,094 : Cost 2.62638760 : Time 130.32s : 34985.21 words/s : L.r. 8.5605e-05
+[2019-07-11 13:23:39] Ep. 5 : Up. 197000 : Sen. 6,026,150 : Cost 2.65013456 : Time 129.79s : 34861.48 words/s : L.r. 8.5496e-05
+[2019-07-11 13:25:50] Ep. 5 : Up. 197500 : Sen. 6,214,054 : Cost 2.61699319 : Time 130.46s : 34865.51 words/s : L.r. 8.5388e-05
+[2019-07-11 13:28:01] Ep. 5 : Up. 198000 : Sen. 6,403,756 : Cost 2.61319828 : Time 131.31s : 34746.56 words/s : L.r. 8.5280e-05
+[2019-07-11 13:30:11] Ep. 5 : Up. 198500 : Sen. 6,596,345 : Cost 2.62591720 : Time 130.21s : 34754.06 words/s : L.r. 8.5173e-05
+[2019-07-11 13:32:21] Ep. 5 : Up. 199000 : Sen. 6,780,856 : Cost 2.62464929 : Time 130.16s : 34803.37 words/s : L.r. 8.5066e-05
+[2019-07-11 13:34:33] Ep. 5 : Up. 199500 : Sen. 6,973,586 : Cost 2.58071303 : Time 131.40s : 34780.12 words/s : L.r. 8.4959e-05
+[2019-07-11 13:36:49] Ep. 5 : Up. 200000 : Sen. 7,160,458 : Cost 2.59223866 : Time 135.96s : 33448.23 words/s : L.r. 8.4853e-05
+[2019-07-11 13:36:49] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 13:36:56] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 13:37:04] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 13:37:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 13:37:24] [valid] Ep. 5 : Up. 200000 : ce-mean-words : 1.27397 : new best
+[2019-07-11 13:37:25] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 13:37:31] [valid] Ep. 5 : Up. 200000 : perplexity : 3.57502 : new best
+[2019-07-11 13:38:16] [valid] Ep. 5 : Up. 200000 : translation : 26.16 : stalled 16 times (last best: 26.94)
+[2019-07-11 13:40:30] Ep. 5 : Up. 200500 : Sen. 7,352,313 : Cost 2.60546780 : Time 221.19s : 20558.54 words/s : L.r. 8.4747e-05
+[2019-07-11 13:42:41] Ep. 5 : Up. 201000 : Sen. 7,538,393 : Cost 2.62697840 : Time 130.86s : 34625.16 words/s : L.r. 8.4641e-05
+[2019-07-11 13:44:54] Ep. 5 : Up. 201500 : Sen. 7,724,128 : Cost 2.66534710 : Time 133.26s : 34175.54 words/s : L.r. 8.4536e-05
+[2019-07-11 13:47:07] Ep. 5 : Up. 202000 : Sen. 7,918,876 : Cost 2.57949615 : Time 133.18s : 33757.49 words/s : L.r. 8.4432e-05
+[2019-07-11 13:49:20] Ep. 5 : Up. 202500 : Sen. 8,109,876 : Cost 2.60158086 : Time 133.01s : 34579.70 words/s : L.r. 8.4327e-05
+[2019-07-11 13:51:35] Ep. 5 : Up. 203000 : Sen. 8,295,287 : Cost 2.59752917 : Time 134.54s : 33804.03 words/s : L.r. 8.4223e-05
+[2019-07-11 13:53:49] Ep. 5 : Up. 203500 : Sen. 8,484,228 : Cost 2.64033699 : Time 134.08s : 34180.24 words/s : L.r. 8.4120e-05
+[2019-07-11 13:56:01] Ep. 5 : Up. 204000 : Sen. 8,671,872 : Cost 2.61972499 : Time 132.05s : 33912.25 words/s : L.r. 8.4017e-05
+[2019-07-11 13:58:18] Ep. 5 : Up. 204500 : Sen. 8,863,182 : Cost 2.59119725 : Time 137.70s : 33235.63 words/s : L.r. 8.3914e-05
+[2019-07-11 14:00:34] Ep. 5 : Up. 205000 : Sen. 9,051,569 : Cost 2.63725448 : Time 135.98s : 33337.00 words/s : L.r. 8.3812e-05
+[2019-07-11 14:00:34] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 14:00:42] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 14:00:50] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 14:01:05] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 14:01:10] [valid] Ep. 5 : Up. 205000 : ce-mean-words : 1.27224 : new best
+[2019-07-11 14:01:11] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 14:01:16] [valid] Ep. 5 : Up. 205000 : perplexity : 3.56885 : new best
+[2019-07-11 14:02:01] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 14:02:07] [valid] Ep. 5 : Up. 205000 : translation : 27.95 : new best
+[2019-07-11 14:04:22] Ep. 5 : Up. 205500 : Sen. 9,244,988 : Cost 2.57538009 : Time 227.71s : 20041.38 words/s : L.r. 8.3710e-05
+[2019-07-11 14:06:34] Ep. 5 : Up. 206000 : Sen. 9,435,081 : Cost 2.63183236 : Time 131.40s : 34417.01 words/s : L.r. 8.3608e-05
+[2019-07-11 14:08:45] Ep. 5 : Up. 206500 : Sen. 9,623,447 : Cost 2.62397408 : Time 131.85s : 34488.66 words/s : L.r. 8.3507e-05
+[2019-07-11 14:10:57] Ep. 5 : Up. 207000 : Sen. 9,807,214 : Cost 2.62655878 : Time 131.70s : 34757.66 words/s : L.r. 8.3406e-05
+[2019-07-11 14:13:08] Ep. 5 : Up. 207500 : Sen. 10,000,756 : Cost 2.60816932 : Time 130.76s : 34753.60 words/s : L.r. 8.3305e-05
+[2019-07-11 14:15:20] Ep. 5 : Up. 208000 : Sen. 10,194,723 : Cost 2.60259533 : Time 132.04s : 34607.13 words/s : L.r. 8.3205e-05
+[2019-07-11 14:17:33] Ep. 5 : Up. 208500 : Sen. 10,384,933 : Cost 2.61733747 : Time 133.31s : 34011.43 words/s : L.r. 8.3105e-05
+[2019-07-11 14:19:50] Ep. 5 : Up. 209000 : Sen. 10,568,464 : Cost 2.60845733 : Time 137.22s : 33330.99 words/s : L.r. 8.3006e-05
+[2019-07-11 14:22:06] Ep. 5 : Up. 209500 : Sen. 10,758,065 : Cost 2.62317681 : Time 136.03s : 33478.30 words/s : L.r. 8.2907e-05
+[2019-07-11 14:24:22] Ep. 5 : Up. 210000 : Sen. 10,948,498 : Cost 2.62230182 : Time 135.31s : 33350.59 words/s : L.r. 8.2808e-05
+[2019-07-11 14:24:22] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 14:24:29] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 14:24:37] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 14:24:54] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 14:25:01] [valid] Ep. 5 : Up. 210000 : ce-mean-words : 1.271 : new best
+[2019-07-11 14:25:02] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 14:25:09] [valid] Ep. 5 : Up. 210000 : perplexity : 3.56443 : new best
+[2019-07-11 14:25:56] [valid] Ep. 5 : Up. 210000 : translation : 27.95 : stalled 1 times (last best: 27.95)
+[2019-07-11 14:28:12] Ep. 5 : Up. 210500 : Sen. 11,134,154 : Cost 2.58895564 : Time 229.84s : 19917.07 words/s : L.r. 8.2709e-05
+[2019-07-11 14:30:24] Ep. 5 : Up. 211000 : Sen. 11,324,584 : Cost 2.59597683 : Time 132.69s : 34177.99 words/s : L.r. 8.2611e-05
+[2019-07-11 14:32:38] Ep. 5 : Up. 211500 : Sen. 11,513,488 : Cost 2.60670733 : Time 133.36s : 34096.24 words/s : L.r. 8.2514e-05
+[2019-07-11 14:34:51] Ep. 5 : Up. 212000 : Sen. 11,706,859 : Cost 2.61952305 : Time 133.13s : 34220.75 words/s : L.r. 8.2416e-05
+[2019-07-11 14:37:04] Ep. 5 : Up. 212500 : Sen. 11,894,373 : Cost 2.63697982 : Time 132.76s : 34383.63 words/s : L.r. 8.2319e-05
+[2019-07-11 14:39:13] Ep. 5 : Up. 213000 : Sen. 12,083,906 : Cost 2.62503028 : Time 129.76s : 34448.29 words/s : L.r. 8.2223e-05
+[2019-07-11 14:41:25] Ep. 5 : Up. 213500 : Sen. 12,271,477 : Cost 2.59334016 : Time 131.53s : 35153.68 words/s : L.r. 8.2126e-05
+[2019-07-11 14:43:42] Ep. 5 : Up. 214000 : Sen. 12,458,165 : Cost 2.64894843 : Time 137.08s : 33755.39 words/s : L.r. 8.2030e-05
+[2019-07-11 14:45:57] Ep. 5 : Up. 214500 : Sen. 12,642,598 : Cost 2.62101769 : Time 134.63s : 33530.61 words/s : L.r. 8.1935e-05
+[2019-07-11 14:48:07] Ep. 5 : Up. 215000 : Sen. 12,843,485 : Cost 2.56820607 : Time 130.96s : 34132.16 words/s : L.r. 8.1839e-05
+[2019-07-11 14:48:07] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 14:48:15] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 14:48:21] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 14:48:36] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 14:48:41] [valid] Ep. 5 : Up. 215000 : ce-mean-words : 1.26946 : new best
+[2019-07-11 14:48:42] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 14:48:47] [valid] Ep. 5 : Up. 215000 : perplexity : 3.55892 : new best
+[2019-07-11 14:49:34] [valid] Ep. 5 : Up. 215000 : translation : 27.82 : stalled 2 times (last best: 27.95)
+[2019-07-11 14:51:47] Ep. 5 : Up. 215500 : Sen. 13,030,448 : Cost 2.61088300 : Time 220.00s : 20562.93 words/s : L.r. 8.1744e-05
+[2019-07-11 14:54:01] Ep. 5 : Up. 216000 : Sen. 13,218,378 : Cost 2.59425402 : Time 133.12s : 34423.21 words/s : L.r. 8.1650e-05
+[2019-07-11 14:56:13] Ep. 5 : Up. 216500 : Sen. 13,402,779 : Cost 2.59733081 : Time 132.60s : 34182.58 words/s : L.r. 8.1555e-05
+[2019-07-11 14:58:26] Ep. 5 : Up. 217000 : Sen. 13,593,977 : Cost 2.60639215 : Time 133.10s : 34370.69 words/s : L.r. 8.1461e-05
+[2019-07-11 15:00:39] Ep. 5 : Up. 217500 : Sen. 13,785,765 : Cost 2.62385345 : Time 132.27s : 34284.45 words/s : L.r. 8.1368e-05
+[2019-07-11 15:02:53] Ep. 5 : Up. 218000 : Sen. 13,974,324 : Cost 2.62807393 : Time 133.93s : 33701.14 words/s : L.r. 8.1274e-05
+[2019-07-11 15:05:09] Ep. 5 : Up. 218500 : Sen. 14,166,273 : Cost 2.61228919 : Time 136.74s : 33225.89 words/s : L.r. 8.1181e-05
+[2019-07-11 15:07:24] Ep. 5 : Up. 219000 : Sen. 14,351,492 : Cost 2.60838795 : Time 134.72s : 33752.57 words/s : L.r. 8.1088e-05
+[2019-07-11 15:09:38] Ep. 5 : Up. 219500 : Sen. 14,541,545 : Cost 2.61026764 : Time 133.95s : 33744.18 words/s : L.r. 8.0996e-05
+[2019-07-11 15:11:50] Ep. 5 : Up. 220000 : Sen. 14,736,674 : Cost 2.57982016 : Time 131.70s : 34705.67 words/s : L.r. 8.0904e-05
+[2019-07-11 15:11:50] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 15:11:56] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 15:12:03] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 15:12:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 15:12:21] [valid] Ep. 5 : Up. 220000 : ce-mean-words : 1.26759 : new best
+[2019-07-11 15:12:22] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 15:12:27] [valid] Ep. 5 : Up. 220000 : perplexity : 3.55227 : new best
+[2019-07-11 15:13:05] [valid] Ep. 5 : Up. 220000 : translation : 27.81 : stalled 3 times (last best: 27.95)
+[2019-07-11 15:15:19] Ep. 5 : Up. 220500 : Sen. 14,922,775 : Cost 2.60539961 : Time 209.13s : 21883.83 words/s : L.r. 8.0812e-05
+[2019-07-11 15:17:31] Ep. 5 : Up. 221000 : Sen. 15,108,233 : Cost 2.62804532 : Time 131.91s : 34535.28 words/s : L.r. 8.0721e-05
+[2019-07-11 15:19:41] Ep. 5 : Up. 221500 : Sen. 15,299,530 : Cost 2.60753608 : Time 130.24s : 34989.05 words/s : L.r. 8.0630e-05
+[2019-07-11 15:21:51] Ep. 5 : Up. 222000 : Sen. 15,490,736 : Cost 2.60061908 : Time 130.57s : 34603.40 words/s : L.r. 8.0539e-05
+[2019-07-11 15:24:02] Ep. 5 : Up. 222500 : Sen. 15,678,363 : Cost 2.61046934 : Time 130.61s : 34791.08 words/s : L.r. 8.0448e-05
+[2019-07-11 15:26:15] Ep. 5 : Up. 223000 : Sen. 15,868,402 : Cost 2.61628842 : Time 132.43s : 34526.98 words/s : L.r. 8.0358e-05
+[2019-07-11 15:28:30] Ep. 5 : Up. 223500 : Sen. 16,053,918 : Cost 2.61493969 : Time 135.61s : 33422.89 words/s : L.r. 8.0268e-05
+[2019-07-11 15:30:44] Ep. 5 : Up. 224000 : Sen. 16,238,242 : Cost 2.62432456 : Time 134.22s : 33567.37 words/s : L.r. 8.0178e-05
+[2019-07-11 15:32:56] Ep. 5 : Up. 224500 : Sen. 16,433,078 : Cost 2.59671402 : Time 131.42s : 34583.36 words/s : L.r. 8.0089e-05
+[2019-07-11 15:35:08] Ep. 5 : Up. 225000 : Sen. 16,621,628 : Cost 2.60348916 : Time 131.88s : 34655.07 words/s : L.r. 8.0000e-05
+[2019-07-11 15:35:08] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 15:35:14] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 15:35:20] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 15:35:34] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 15:35:38] [valid] Ep. 5 : Up. 225000 : ce-mean-words : 1.2659 : new best
+[2019-07-11 15:35:39] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 15:35:44] [valid] Ep. 5 : Up. 225000 : perplexity : 3.54628 : new best
+[2019-07-11 15:36:23] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 15:36:28] [valid] Ep. 5 : Up. 225000 : translation : 27.99 : new best
+[2019-07-11 15:38:38] Ep. 5 : Up. 225500 : Sen. 16,807,494 : Cost 2.62486053 : Time 210.61s : 21473.21 words/s : L.r. 7.9911e-05
+[2019-07-11 15:40:49] Ep. 5 : Up. 226000 : Sen. 17,002,840 : Cost 2.58455324 : Time 131.01s : 34877.33 words/s : L.r. 7.9823e-05
+[2019-07-11 15:42:19] Seen 17128033 samples
+[2019-07-11 15:42:19] Starting epoch 6
+[2019-07-11 15:42:19] [data] Shuffling data
+[2019-07-11 15:42:30] [data] Done reading 19122526 sentences
+[2019-07-11 15:44:17] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-11 15:45:29] Ep. 6 : Up. 226500 : Sen. 58,711 : Cost 2.61073804 : Time 279.63s : 15675.54 words/s : L.r. 7.9735e-05
+[2019-07-11 15:47:42] Ep. 6 : Up. 227000 : Sen. 249,321 : Cost 2.58274508 : Time 133.54s : 34005.92 words/s : L.r. 7.9647e-05
+[2019-07-11 15:49:57] Ep. 6 : Up. 227500 : Sen. 444,576 : Cost 2.58875370 : Time 134.98s : 33465.06 words/s : L.r. 7.9559e-05
+[2019-07-11 15:52:11] Ep. 6 : Up. 228000 : Sen. 630,863 : Cost 2.59718633 : Time 133.14s : 34167.88 words/s : L.r. 7.9472e-05
+[2019-07-11 15:54:22] Ep. 6 : Up. 228500 : Sen. 814,658 : Cost 2.58826303 : Time 130.98s : 34920.07 words/s : L.r. 7.9385e-05
+[2019-07-11 15:56:32] Ep. 6 : Up. 229000 : Sen. 1,003,502 : Cost 2.59336996 : Time 130.74s : 34894.80 words/s : L.r. 7.9298e-05
+[2019-07-11 15:58:43] Ep. 6 : Up. 229500 : Sen. 1,194,188 : Cost 2.58224559 : Time 130.68s : 35114.65 words/s : L.r. 7.9212e-05
+[2019-07-11 16:00:53] Ep. 6 : Up. 230000 : Sen. 1,382,947 : Cost 2.60280347 : Time 129.95s : 34652.76 words/s : L.r. 7.9126e-05
+[2019-07-11 16:00:53] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 16:00:59] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 16:01:05] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 16:01:18] [valid] Ep. 6 : Up. 230000 : ce-mean-words : 1.26614 : stalled 1 times (last best: 1.2659)
+[2019-07-11 16:01:19] [valid] Ep. 6 : Up. 230000 : perplexity : 3.54714 : stalled 1 times (last best: 3.54628)
+[2019-07-11 16:01:56] [valid] Ep. 6 : Up. 230000 : translation : 26.34 : stalled 1 times (last best: 27.99)
+[2019-07-11 16:04:08] Ep. 6 : Up. 230500 : Sen. 1,571,060 : Cost 2.58336830 : Time 194.74s : 23306.00 words/s : L.r. 7.9040e-05
+[2019-07-11 16:06:19] Ep. 6 : Up. 231000 : Sen. 1,762,545 : Cost 2.62631083 : Time 131.15s : 34820.59 words/s : L.r. 7.8954e-05
+[2019-07-11 16:08:31] Ep. 6 : Up. 231500 : Sen. 1,950,014 : Cost 2.57175231 : Time 132.60s : 34022.97 words/s : L.r. 7.8869e-05
+[2019-07-11 16:10:47] Ep. 6 : Up. 232000 : Sen. 2,139,352 : Cost 2.60496521 : Time 135.40s : 33857.74 words/s : L.r. 7.8784e-05
+[2019-07-11 16:12:59] Ep. 6 : Up. 232500 : Sen. 2,324,016 : Cost 2.55929852 : Time 132.58s : 34127.82 words/s : L.r. 7.8699e-05
+[2019-07-11 16:15:10] Ep. 6 : Up. 233000 : Sen. 2,513,956 : Cost 2.60398793 : Time 131.07s : 34516.62 words/s : L.r. 7.8615e-05
+[2019-07-11 16:17:21] Ep. 6 : Up. 233500 : Sen. 2,702,060 : Cost 2.58061671 : Time 130.93s : 34598.32 words/s : L.r. 7.8530e-05
+[2019-07-11 16:19:33] Ep. 6 : Up. 234000 : Sen. 2,892,947 : Cost 2.60541677 : Time 132.02s : 34649.45 words/s : L.r. 7.8446e-05
+[2019-07-11 16:21:48] Ep. 6 : Up. 234500 : Sen. 3,089,205 : Cost 2.61147404 : Time 134.23s : 33904.88 words/s : L.r. 7.8363e-05
+[2019-07-11 16:24:00] Ep. 6 : Up. 235000 : Sen. 3,282,142 : Cost 2.59819579 : Time 132.83s : 34176.64 words/s : L.r. 7.8279e-05
+[2019-07-11 16:24:00] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 16:24:08] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 16:24:16] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 16:24:31] [valid] Ep. 6 : Up. 235000 : ce-mean-words : 1.26685 : stalled 2 times (last best: 1.2659)
+[2019-07-11 16:24:32] [valid] Ep. 6 : Up. 235000 : perplexity : 3.54965 : stalled 2 times (last best: 3.54628)
+[2019-07-11 16:25:21] [valid] Ep. 6 : Up. 235000 : translation : 27.86 : stalled 2 times (last best: 27.99)
+[2019-07-11 16:27:36] Ep. 6 : Up. 235500 : Sen. 3,468,110 : Cost 2.61736822 : Time 215.46s : 21157.64 words/s : L.r. 7.8196e-05
+[2019-07-11 16:29:57] Ep. 6 : Up. 236000 : Sen. 3,650,954 : Cost 2.61747217 : Time 141.49s : 32040.60 words/s : L.r. 7.8113e-05
+[2019-07-11 16:32:14] Ep. 6 : Up. 236500 : Sen. 3,839,335 : Cost 2.58939385 : Time 136.12s : 33540.86 words/s : L.r. 7.8031e-05
+[2019-07-11 16:34:29] Ep. 6 : Up. 237000 : Sen. 4,033,079 : Cost 2.56204867 : Time 135.95s : 33457.21 words/s : L.r. 7.7948e-05
+[2019-07-11 16:36:43] Ep. 6 : Up. 237500 : Sen. 4,225,530 : Cost 2.58170009 : Time 133.62s : 34096.28 words/s : L.r. 7.7866e-05
+[2019-07-11 16:38:53] Ep. 6 : Up. 238000 : Sen. 4,419,907 : Cost 2.60864329 : Time 130.25s : 34752.01 words/s : L.r. 7.7784e-05
+[2019-07-11 16:41:07] Ep. 6 : Up. 238500 : Sen. 4,605,841 : Cost 2.59910464 : Time 133.33s : 34406.88 words/s : L.r. 7.7703e-05
+[2019-07-11 16:43:20] Ep. 6 : Up. 239000 : Sen. 4,792,417 : Cost 2.61598039 : Time 133.38s : 34326.74 words/s : L.r. 7.7622e-05
+[2019-07-11 16:45:31] Ep. 6 : Up. 239500 : Sen. 4,977,123 : Cost 2.58383965 : Time 130.59s : 34560.12 words/s : L.r. 7.7540e-05
+[2019-07-11 16:47:41] Ep. 6 : Up. 240000 : Sen. 5,167,866 : Cost 2.57090569 : Time 130.30s : 34613.97 words/s : L.r. 7.7460e-05
+[2019-07-11 16:47:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 16:47:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 16:47:54] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 16:48:09] [valid] Ep. 6 : Up. 240000 : ce-mean-words : 1.26662 : stalled 3 times (last best: 1.2659)
+[2019-07-11 16:48:09] [valid] Ep. 6 : Up. 240000 : perplexity : 3.54885 : stalled 3 times (last best: 3.54628)
+[2019-07-11 16:48:53] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 16:49:02] [valid] Ep. 6 : Up. 240000 : translation : 28.3 : new best
+[2019-07-11 16:51:15] Ep. 6 : Up. 240500 : Sen. 5,354,210 : Cost 2.60924387 : Time 214.51s : 21283.41 words/s : L.r. 7.7379e-05
+[2019-07-11 16:53:32] Ep. 6 : Up. 241000 : Sen. 5,544,893 : Cost 2.57144642 : Time 136.33s : 33594.16 words/s : L.r. 7.7299e-05
+[2019-07-11 16:55:47] Ep. 6 : Up. 241500 : Sen. 5,732,595 : Cost 2.62706804 : Time 135.08s : 33391.18 words/s : L.r. 7.7219e-05
+[2019-07-11 16:57:59] Ep. 6 : Up. 242000 : Sen. 5,921,264 : Cost 2.60516286 : Time 132.60s : 34296.03 words/s : L.r. 7.7139e-05
+[2019-07-11 17:00:12] Ep. 6 : Up. 242500 : Sen. 6,110,698 : Cost 2.60074496 : Time 132.11s : 34735.92 words/s : L.r. 7.7059e-05
+[2019-07-11 17:02:22] Ep. 6 : Up. 243000 : Sen. 6,305,103 : Cost 2.60619831 : Time 130.74s : 34415.36 words/s : L.r. 7.6980e-05
+[2019-07-11 17:04:34] Ep. 6 : Up. 243500 : Sen. 6,491,569 : Cost 2.59962511 : Time 131.19s : 34977.16 words/s : L.r. 7.6901e-05
+[2019-07-11 17:06:45] Ep. 6 : Up. 244000 : Sen. 6,687,061 : Cost 2.58157969 : Time 131.33s : 34489.75 words/s : L.r. 7.6822e-05
+[2019-07-11 17:08:58] Ep. 6 : Up. 244500 : Sen. 6,871,211 : Cost 2.59817243 : Time 132.68s : 34266.41 words/s : L.r. 7.6744e-05
+[2019-07-11 17:11:11] Ep. 6 : Up. 245000 : Sen. 7,059,026 : Cost 2.59356189 : Time 132.99s : 33932.72 words/s : L.r. 7.6665e-05
+[2019-07-11 17:11:11] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 17:11:18] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 17:11:26] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 17:11:42] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 17:11:47] [valid] Ep. 6 : Up. 245000 : ce-mean-words : 1.26481 : new best
+[2019-07-11 17:11:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 17:11:53] [valid] Ep. 6 : Up. 245000 : perplexity : 3.54241 : new best
+[2019-07-11 17:12:38] [valid] Ep. 6 : Up. 245000 : translation : 26.27 : stalled 1 times (last best: 28.3)
+[2019-07-11 17:14:54] Ep. 6 : Up. 245500 : Sen. 7,251,738 : Cost 2.58222270 : Time 223.84s : 20277.31 words/s : L.r. 7.6587e-05
+[2019-07-11 17:17:09] Ep. 6 : Up. 246000 : Sen. 7,443,183 : Cost 2.59004211 : Time 134.87s : 33486.78 words/s : L.r. 7.6509e-05
+[2019-07-11 17:19:23] Ep. 6 : Up. 246500 : Sen. 7,634,810 : Cost 2.60459971 : Time 133.76s : 34120.64 words/s : L.r. 7.6432e-05
+[2019-07-11 17:21:35] Ep. 6 : Up. 247000 : Sen. 7,817,253 : Cost 2.60063410 : Time 132.11s : 34613.13 words/s : L.r. 7.6354e-05
+[2019-07-11 17:23:47] Ep. 6 : Up. 247500 : Sen. 8,004,700 : Cost 2.60757780 : Time 132.19s : 34599.98 words/s : L.r. 7.6277e-05
+[2019-07-11 17:25:59] Ep. 6 : Up. 248000 : Sen. 8,199,855 : Cost 2.57807326 : Time 132.16s : 34200.09 words/s : L.r. 7.6200e-05
+[2019-07-11 17:28:12] Ep. 6 : Up. 248500 : Sen. 8,386,596 : Cost 2.62471414 : Time 132.43s : 34287.34 words/s : L.r. 7.6123e-05
+[2019-07-11 17:30:25] Ep. 6 : Up. 249000 : Sen. 8,575,297 : Cost 2.59393263 : Time 132.94s : 34312.67 words/s : L.r. 7.6047e-05
+[2019-07-11 17:32:39] Ep. 6 : Up. 249500 : Sen. 8,762,345 : Cost 2.58075237 : Time 133.78s : 34178.78 words/s : L.r. 7.5971e-05
+[2019-07-11 17:34:56] Ep. 6 : Up. 250000 : Sen. 8,949,562 : Cost 2.60833144 : Time 137.65s : 33294.35 words/s : L.r. 7.5895e-05
+[2019-07-11 17:34:56] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 17:35:04] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 17:35:12] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 17:35:27] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 17:35:33] [valid] Ep. 6 : Up. 250000 : ce-mean-words : 1.26246 : new best
+[2019-07-11 17:35:34] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 17:35:39] [valid] Ep. 6 : Up. 250000 : perplexity : 3.53411 : new best
+[2019-07-11 17:36:24] [valid] Ep. 6 : Up. 250000 : translation : 26.19 : stalled 2 times (last best: 28.3)
+[2019-07-11 17:38:40] Ep. 6 : Up. 250500 : Sen. 9,141,407 : Cost 2.59485722 : Time 224.19s : 20076.39 words/s : L.r. 7.5819e-05
+[2019-07-11 17:40:56] Ep. 6 : Up. 251000 : Sen. 9,334,170 : Cost 2.60139990 : Time 135.95s : 33621.34 words/s : L.r. 7.5743e-05
+[2019-07-11 17:43:10] Ep. 6 : Up. 251500 : Sen. 9,521,560 : Cost 2.57852125 : Time 133.41s : 34230.66 words/s : L.r. 7.5668e-05
+[2019-07-11 17:45:22] Ep. 6 : Up. 252000 : Sen. 9,708,768 : Cost 2.60861039 : Time 131.98s : 34743.44 words/s : L.r. 7.5593e-05
+[2019-07-11 17:47:33] Ep. 6 : Up. 252500 : Sen. 9,896,835 : Cost 2.57256198 : Time 131.35s : 34515.15 words/s : L.r. 7.5518e-05
+[2019-07-11 17:49:45] Ep. 6 : Up. 253000 : Sen. 10,087,070 : Cost 2.59899569 : Time 131.53s : 34184.23 words/s : L.r. 7.5443e-05
+[2019-07-11 17:51:58] Ep. 6 : Up. 253500 : Sen. 10,269,590 : Cost 2.57887793 : Time 132.98s : 34352.57 words/s : L.r. 7.5369e-05
+[2019-07-11 17:54:10] Ep. 6 : Up. 254000 : Sen. 10,459,127 : Cost 2.59428191 : Time 132.57s : 33801.23 words/s : L.r. 7.5295e-05
+[2019-07-11 17:56:24] Ep. 6 : Up. 254500 : Sen. 10,651,610 : Cost 2.57955313 : Time 134.06s : 34377.20 words/s : L.r. 7.5221e-05
+[2019-07-11 17:58:39] Ep. 6 : Up. 255000 : Sen. 10,841,403 : Cost 2.61508179 : Time 135.20s : 33442.00 words/s : L.r. 7.5147e-05
+[2019-07-11 17:58:39] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 17:58:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 17:58:54] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 17:59:09] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 17:59:14] [valid] Ep. 6 : Up. 255000 : ce-mean-words : 1.26084 : new best
+[2019-07-11 17:59:15] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 17:59:20] [valid] Ep. 6 : Up. 255000 : perplexity : 3.52839 : new best
+[2019-07-11 18:00:04] [valid] Ep. 6 : Up. 255000 : translation : 26.48 : stalled 3 times (last best: 28.3)
+[2019-07-11 18:02:21] Ep. 6 : Up. 255500 : Sen. 11,038,794 : Cost 2.58623457 : Time 221.80s : 20500.10 words/s : L.r. 7.5073e-05
+[2019-07-11 18:04:36] Ep. 6 : Up. 256000 : Sen. 11,222,229 : Cost 2.60415792 : Time 134.30s : 33858.59 words/s : L.r. 7.5000e-05
+[2019-07-11 18:06:47] Ep. 6 : Up. 256500 : Sen. 11,411,681 : Cost 2.58216572 : Time 131.22s : 34478.89 words/s : L.r. 7.4927e-05
+[2019-07-11 18:08:59] Ep. 6 : Up. 257000 : Sen. 11,602,949 : Cost 2.55308604 : Time 132.37s : 34690.29 words/s : L.r. 7.4854e-05
+[2019-07-11 18:11:10] Ep. 6 : Up. 257500 : Sen. 11,787,289 : Cost 2.62078762 : Time 131.28s : 34160.03 words/s : L.r. 7.4781e-05
+[2019-07-11 18:13:23] Ep. 6 : Up. 258000 : Sen. 11,979,628 : Cost 2.63316536 : Time 132.86s : 34510.98 words/s : L.r. 7.4709e-05
+[2019-07-11 18:15:35] Ep. 6 : Up. 258500 : Sen. 12,172,327 : Cost 2.58134723 : Time 131.35s : 34734.33 words/s : L.r. 7.4636e-05
+[2019-07-11 18:17:47] Ep. 6 : Up. 259000 : Sen. 12,357,965 : Cost 2.56754446 : Time 132.66s : 34276.12 words/s : L.r. 7.4564e-05
+[2019-07-11 18:20:00] Ep. 6 : Up. 259500 : Sen. 12,546,732 : Cost 2.58900428 : Time 132.33s : 34054.42 words/s : L.r. 7.4493e-05
+[2019-07-11 18:22:12] Ep. 6 : Up. 260000 : Sen. 12,740,173 : Cost 2.60970473 : Time 132.35s : 34254.03 words/s : L.r. 7.4421e-05
+[2019-07-11 18:22:12] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 18:22:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 18:22:26] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 18:22:42] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 18:22:47] [valid] Ep. 6 : Up. 260000 : ce-mean-words : 1.25949 : new best
+[2019-07-11 18:22:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 18:22:55] [valid] Ep. 6 : Up. 260000 : perplexity : 3.52364 : new best
+[2019-07-11 18:23:42] [valid] Ep. 6 : Up. 260000 : translation : 26.91 : stalled 4 times (last best: 28.3)
+[2019-07-11 18:25:56] Ep. 6 : Up. 260500 : Sen. 12,927,144 : Cost 2.62152934 : Time 224.21s : 20342.01 words/s : L.r. 7.4349e-05
+[2019-07-11 18:28:10] Ep. 6 : Up. 261000 : Sen. 13,111,411 : Cost 2.59441400 : Time 133.42s : 34530.15 words/s : L.r. 7.4278e-05
+[2019-07-11 18:30:22] Ep. 6 : Up. 261500 : Sen. 13,298,812 : Cost 2.59381557 : Time 132.41s : 34621.87 words/s : L.r. 7.4207e-05
+[2019-07-11 18:32:34] Ep. 6 : Up. 262000 : Sen. 13,493,180 : Cost 2.59237480 : Time 132.02s : 34439.30 words/s : L.r. 7.4136e-05
+[2019-07-11 18:34:46] Ep. 6 : Up. 262500 : Sen. 13,684,467 : Cost 2.61702824 : Time 132.32s : 34167.53 words/s : L.r. 7.4066e-05
+[2019-07-11 18:36:58] Ep. 6 : Up. 263000 : Sen. 13,871,909 : Cost 2.58062482 : Time 131.72s : 34325.90 words/s : L.r. 7.3995e-05
+[2019-07-11 18:39:10] Ep. 6 : Up. 263500 : Sen. 14,058,770 : Cost 2.60024071 : Time 131.67s : 34656.57 words/s : L.r. 7.3925e-05
+[2019-07-11 18:41:21] Ep. 6 : Up. 264000 : Sen. 14,247,778 : Cost 2.57219887 : Time 131.21s : 34603.82 words/s : L.r. 7.3855e-05
+[2019-07-11 18:43:34] Ep. 6 : Up. 264500 : Sen. 14,436,341 : Cost 2.62454176 : Time 132.91s : 34253.43 words/s : L.r. 7.3785e-05
+[2019-07-11 18:45:45] Ep. 6 : Up. 265000 : Sen. 14,630,031 : Cost 2.57273054 : Time 131.22s : 34385.34 words/s : L.r. 7.3715e-05
+[2019-07-11 18:45:45] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 18:45:53] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 18:46:00] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 18:46:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 18:46:21] [valid] Ep. 6 : Up. 265000 : ce-mean-words : 1.25815 : new best
+[2019-07-11 18:46:22] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 18:46:28] [valid] Ep. 6 : Up. 265000 : perplexity : 3.51889 : new best
+[2019-07-11 18:47:14] [valid] Ep. 6 : Up. 265000 : translation : 27.31 : stalled 5 times (last best: 28.3)
+[2019-07-11 18:49:28] Ep. 6 : Up. 265500 : Sen. 14,812,747 : Cost 2.61342287 : Time 222.92s : 20235.03 words/s : L.r. 7.3646e-05
+[2019-07-11 18:51:42] Ep. 6 : Up. 266000 : Sen. 15,006,860 : Cost 2.57549596 : Time 133.89s : 34257.91 words/s : L.r. 7.3577e-05
+[2019-07-11 18:53:55] Ep. 6 : Up. 266500 : Sen. 15,194,790 : Cost 2.60665131 : Time 132.64s : 34428.52 words/s : L.r. 7.3508e-05
+[2019-07-11 18:56:06] Ep. 6 : Up. 267000 : Sen. 15,381,556 : Cost 2.58824229 : Time 130.93s : 34648.90 words/s : L.r. 7.3439e-05
+[2019-07-11 18:58:17] Ep. 6 : Up. 267500 : Sen. 15,571,822 : Cost 2.61456633 : Time 131.46s : 34696.48 words/s : L.r. 7.3370e-05
+[2019-07-11 19:00:31] Ep. 6 : Up. 268000 : Sen. 15,759,322 : Cost 2.57663155 : Time 133.63s : 34340.24 words/s : L.r. 7.3302e-05
+[2019-07-11 19:02:43] Ep. 6 : Up. 268500 : Sen. 15,947,088 : Cost 2.59833956 : Time 131.93s : 34104.60 words/s : L.r. 7.3233e-05
+[2019-07-11 19:04:55] Ep. 6 : Up. 269000 : Sen. 16,143,368 : Cost 2.58092356 : Time 132.65s : 34247.95 words/s : L.r. 7.3165e-05
+[2019-07-11 19:07:08] Ep. 6 : Up. 269500 : Sen. 16,329,443 : Cost 2.59194994 : Time 133.01s : 34484.72 words/s : L.r. 7.3097e-05
+[2019-07-11 19:09:21] Ep. 6 : Up. 270000 : Sen. 16,521,818 : Cost 2.57799363 : Time 132.68s : 33917.41 words/s : L.r. 7.3030e-05
+[2019-07-11 19:09:21] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 19:09:27] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 19:09:34] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 19:09:49] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 19:09:54] [valid] Ep. 6 : Up. 270000 : ce-mean-words : 1.25725 : new best
+[2019-07-11 19:09:54] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 19:10:00] [valid] Ep. 6 : Up. 270000 : perplexity : 3.51575 : new best
+[2019-07-11 19:10:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 19:10:53] [valid] Ep. 6 : Up. 270000 : translation : 29.13 : new best
+[2019-07-11 19:13:08] Ep. 6 : Up. 270500 : Sen. 16,708,594 : Cost 2.60122991 : Time 226.61s : 20073.24 words/s : L.r. 7.2962e-05
+[2019-07-11 19:15:22] Ep. 6 : Up. 271000 : Sen. 16,896,215 : Cost 2.60370970 : Time 134.45s : 33801.55 words/s : L.r. 7.2895e-05
+[2019-07-11 19:17:34] Ep. 6 : Up. 271500 : Sen. 17,086,091 : Cost 2.57867336 : Time 132.43s : 33459.67 words/s : L.r. 7.2828e-05
+[2019-07-11 19:18:07] Seen 17128033 samples
+[2019-07-11 19:18:07] Starting epoch 7
+[2019-07-11 19:18:07] [data] Shuffling data
+[2019-07-11 19:18:22] [data] Done reading 19122526 sentences
+[2019-07-11 19:20:57] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-11 19:23:25] Ep. 7 : Up. 272000 : Sen. 140,424 : Cost 2.62069845 : Time 350.83s : 12759.94 words/s : L.r. 7.2761e-05
+[2019-07-11 19:25:39] Ep. 7 : Up. 272500 : Sen. 326,203 : Cost 2.60188842 : Time 134.17s : 34306.32 words/s : L.r. 7.2694e-05
+[2019-07-11 19:27:54] Ep. 7 : Up. 273000 : Sen. 515,591 : Cost 2.55253625 : Time 134.38s : 33835.31 words/s : L.r. 7.2627e-05
+[2019-07-11 19:30:07] Ep. 7 : Up. 273500 : Sen. 700,378 : Cost 2.59226513 : Time 132.90s : 34368.77 words/s : L.r. 7.2561e-05
+[2019-07-11 19:32:19] Ep. 7 : Up. 274000 : Sen. 896,214 : Cost 2.55814433 : Time 132.56s : 33558.45 words/s : L.r. 7.2495e-05
+[2019-07-11 19:34:33] Ep. 7 : Up. 274500 : Sen. 1,090,381 : Cost 2.56155491 : Time 133.89s : 34152.48 words/s : L.r. 7.2429e-05
+[2019-07-11 19:36:48] Ep. 7 : Up. 275000 : Sen. 1,279,533 : Cost 2.56712818 : Time 135.07s : 33937.93 words/s : L.r. 7.2363e-05
+[2019-07-11 19:36:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 19:36:55] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 19:37:03] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 19:37:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 19:37:27] [valid] Ep. 7 : Up. 275000 : ce-mean-words : 1.25596 : new best
+[2019-07-11 19:37:27] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 19:37:33] [valid] Ep. 7 : Up. 275000 : perplexity : 3.51122 : new best
+[2019-07-11 19:38:20] [valid] Ep. 7 : Up. 275000 : translation : 28.81 : stalled 1 times (last best: 29.13)
+[2019-07-11 19:40:36] Ep. 7 : Up. 275500 : Sen. 1,471,295 : Cost 2.59189320 : Time 228.07s : 19769.11 words/s : L.r. 7.2297e-05
+[2019-07-11 19:42:50] Ep. 7 : Up. 276000 : Sen. 1,661,424 : Cost 2.58067322 : Time 133.48s : 33848.64 words/s : L.r. 7.2232e-05
+[2019-07-11 19:45:04] Ep. 7 : Up. 276500 : Sen. 1,845,288 : Cost 2.59949684 : Time 134.44s : 33964.15 words/s : L.r. 7.2166e-05
+[2019-07-11 19:47:19] Ep. 7 : Up. 277000 : Sen. 2,036,544 : Cost 2.56834817 : Time 134.57s : 33872.45 words/s : L.r. 7.2101e-05
+[2019-07-11 19:49:34] Ep. 7 : Up. 277500 : Sen. 2,230,786 : Cost 2.61195421 : Time 134.85s : 33791.57 words/s : L.r. 7.2036e-05
+[2019-07-11 19:51:48] Ep. 7 : Up. 278000 : Sen. 2,419,597 : Cost 2.55863333 : Time 134.68s : 33672.16 words/s : L.r. 7.1971e-05
+[2019-07-11 19:54:01] Ep. 7 : Up. 278500 : Sen. 2,604,904 : Cost 2.57360983 : Time 132.96s : 34353.34 words/s : L.r. 7.1907e-05
+[2019-07-11 19:56:16] Ep. 7 : Up. 279000 : Sen. 2,787,710 : Cost 2.59233427 : Time 134.42s : 34012.96 words/s : L.r. 7.1842e-05
+[2019-07-11 19:58:29] Ep. 7 : Up. 279500 : Sen. 2,980,626 : Cost 2.57020068 : Time 133.05s : 33781.55 words/s : L.r. 7.1778e-05
+[2019-07-11 20:00:43] Ep. 7 : Up. 280000 : Sen. 3,168,308 : Cost 2.57297802 : Time 133.77s : 34335.85 words/s : L.r. 7.1714e-05
+[2019-07-11 20:00:43] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 20:00:50] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 20:00:58] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 20:01:13] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 20:01:18] [valid] Ep. 7 : Up. 280000 : ce-mean-words : 1.25546 : new best
+[2019-07-11 20:01:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 20:01:24] [valid] Ep. 7 : Up. 280000 : perplexity : 3.50947 : new best
+[2019-07-11 20:02:13] [valid] Ep. 7 : Up. 280000 : translation : 29.13 : stalled 2 times (last best: 29.13)
+[2019-07-11 20:04:27] Ep. 7 : Up. 280500 : Sen. 3,364,860 : Cost 2.56587434 : Time 224.40s : 19993.98 words/s : L.r. 7.1650e-05
+[2019-07-11 20:06:40] Ep. 7 : Up. 281000 : Sen. 3,555,546 : Cost 2.60527158 : Time 133.01s : 34135.97 words/s : L.r. 7.1586e-05
+[2019-07-11 20:08:54] Ep. 7 : Up. 281500 : Sen. 3,742,559 : Cost 2.60679102 : Time 134.17s : 34167.02 words/s : L.r. 7.1522e-05
+[2019-07-11 20:11:07] Ep. 7 : Up. 282000 : Sen. 3,925,723 : Cost 2.57064080 : Time 132.86s : 34156.96 words/s : L.r. 7.1459e-05
+[2019-07-11 20:13:20] Ep. 7 : Up. 282500 : Sen. 4,115,066 : Cost 2.58003950 : Time 133.11s : 34330.73 words/s : L.r. 7.1396e-05
+[2019-07-11 20:15:32] Ep. 7 : Up. 283000 : Sen. 4,301,976 : Cost 2.60089064 : Time 132.25s : 34407.40 words/s : L.r. 7.1333e-05
+[2019-07-11 20:17:46] Ep. 7 : Up. 283500 : Sen. 4,487,977 : Cost 2.58541512 : Time 133.81s : 33935.96 words/s : L.r. 7.1270e-05
+[2019-07-11 20:20:01] Ep. 7 : Up. 284000 : Sen. 4,680,917 : Cost 2.54798722 : Time 134.50s : 34288.47 words/s : L.r. 7.1207e-05
+[2019-07-11 20:22:13] Ep. 7 : Up. 284500 : Sen. 4,867,501 : Cost 2.58638716 : Time 132.59s : 34070.26 words/s : L.r. 7.1144e-05
+[2019-07-11 20:24:26] Ep. 7 : Up. 285000 : Sen. 5,061,415 : Cost 2.61755633 : Time 132.86s : 33933.25 words/s : L.r. 7.1082e-05
+[2019-07-11 20:24:26] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 20:24:34] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 20:24:41] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 20:24:56] [valid] Ep. 7 : Up. 285000 : ce-mean-words : 1.25559 : stalled 1 times (last best: 1.25546)
+[2019-07-11 20:24:57] [valid] Ep. 7 : Up. 285000 : perplexity : 3.50992 : stalled 1 times (last best: 3.50947)
+[2019-07-11 20:25:42] [valid] Ep. 7 : Up. 285000 : translation : 29.13 : stalled 3 times (last best: 29.13)
+[2019-07-11 20:27:58] Ep. 7 : Up. 285500 : Sen. 5,250,702 : Cost 2.54322815 : Time 211.78s : 21514.50 words/s : L.r. 7.1020e-05
+[2019-07-11 20:30:11] Ep. 7 : Up. 286000 : Sen. 5,441,607 : Cost 2.59783936 : Time 133.04s : 33878.43 words/s : L.r. 7.0957e-05
+[2019-07-11 20:32:24] Ep. 7 : Up. 286500 : Sen. 5,632,391 : Cost 2.56347775 : Time 132.85s : 34148.71 words/s : L.r. 7.0896e-05
+[2019-07-11 20:34:37] Ep. 7 : Up. 287000 : Sen. 5,821,049 : Cost 2.58383870 : Time 133.04s : 34276.37 words/s : L.r. 7.0834e-05
+[2019-07-11 20:36:52] Ep. 7 : Up. 287500 : Sen. 6,008,852 : Cost 2.59622002 : Time 134.95s : 34117.83 words/s : L.r. 7.0772e-05
+[2019-07-11 20:39:05] Ep. 7 : Up. 288000 : Sen. 6,197,893 : Cost 2.57480240 : Time 133.13s : 34000.25 words/s : L.r. 7.0711e-05
+[2019-07-11 20:41:19] Ep. 7 : Up. 288500 : Sen. 6,387,031 : Cost 2.55570054 : Time 134.49s : 34257.52 words/s : L.r. 7.0649e-05
+[2019-07-11 20:43:34] Ep. 7 : Up. 289000 : Sen. 6,576,712 : Cost 2.56406856 : Time 134.78s : 33860.67 words/s : L.r. 7.0588e-05
+[2019-07-11 20:45:47] Ep. 7 : Up. 289500 : Sen. 6,756,552 : Cost 2.61232281 : Time 132.50s : 34099.43 words/s : L.r. 7.0527e-05
+[2019-07-11 20:47:59] Ep. 7 : Up. 290000 : Sen. 6,951,476 : Cost 2.59430313 : Time 132.63s : 34044.47 words/s : L.r. 7.0466e-05
+[2019-07-11 20:47:59] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 20:48:07] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 20:48:14] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 20:48:29] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 20:48:34] [valid] Ep. 7 : Up. 290000 : ce-mean-words : 1.25521 : new best
+[2019-07-11 20:48:35] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 20:48:40] [valid] Ep. 7 : Up. 290000 : perplexity : 3.50859 : new best
+[2019-07-11 20:49:27] [valid] Ep. 7 : Up. 290000 : translation : 29.04 : stalled 4 times (last best: 29.13)
+[2019-07-11 20:51:43] Ep. 7 : Up. 290500 : Sen. 7,147,285 : Cost 2.62506199 : Time 224.12s : 20164.09 words/s : L.r. 7.0406e-05
+[2019-07-11 20:53:57] Ep. 7 : Up. 291000 : Sen. 7,333,020 : Cost 2.59317231 : Time 133.47s : 33585.95 words/s : L.r. 7.0345e-05
+[2019-07-11 20:56:12] Ep. 7 : Up. 291500 : Sen. 7,521,740 : Cost 2.56708360 : Time 135.14s : 33982.06 words/s : L.r. 7.0285e-05
+[2019-07-11 20:58:27] Ep. 7 : Up. 292000 : Sen. 7,713,506 : Cost 2.56490755 : Time 135.36s : 33767.54 words/s : L.r. 7.0225e-05
+[2019-07-11 21:00:41] Ep. 7 : Up. 292500 : Sen. 7,903,930 : Cost 2.56541967 : Time 133.49s : 33825.39 words/s : L.r. 7.0165e-05
+[2019-07-11 21:02:56] Ep. 7 : Up. 293000 : Sen. 8,090,219 : Cost 2.57997394 : Time 134.94s : 34002.15 words/s : L.r. 7.0105e-05
+[2019-07-11 21:05:09] Ep. 7 : Up. 293500 : Sen. 8,276,250 : Cost 2.59730291 : Time 133.11s : 33939.55 words/s : L.r. 7.0045e-05
+[2019-07-11 21:07:22] Ep. 7 : Up. 294000 : Sen. 8,467,458 : Cost 2.57167387 : Time 132.84s : 34048.19 words/s : L.r. 6.9985e-05
+[2019-07-11 21:09:37] Ep. 7 : Up. 294500 : Sen. 8,658,026 : Cost 2.57762885 : Time 135.50s : 34037.15 words/s : L.r. 6.9926e-05
+[2019-07-11 21:11:50] Ep. 7 : Up. 295000 : Sen. 8,847,569 : Cost 2.57835054 : Time 132.76s : 34102.26 words/s : L.r. 6.9867e-05
+[2019-07-11 21:11:50] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 21:11:56] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 21:12:04] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 21:12:17] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 21:12:22] [valid] Ep. 7 : Up. 295000 : ce-mean-words : 1.25465 : new best
+[2019-07-11 21:12:23] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 21:12:28] [valid] Ep. 7 : Up. 295000 : perplexity : 3.5066 : new best
+[2019-07-11 21:13:15] [valid] Ep. 7 : Up. 295000 : translation : 29.03 : stalled 5 times (last best: 29.13)
+[2019-07-11 21:15:31] Ep. 7 : Up. 295500 : Sen. 9,037,697 : Cost 2.60597324 : Time 220.89s : 20690.76 words/s : L.r. 6.9808e-05
+[2019-07-11 21:17:45] Ep. 7 : Up. 296000 : Sen. 9,219,239 : Cost 2.60601473 : Time 133.90s : 34023.59 words/s : L.r. 6.9749e-05
+[2019-07-11 21:19:59] Ep. 7 : Up. 296500 : Sen. 9,411,010 : Cost 2.56386614 : Time 134.07s : 34274.38 words/s : L.r. 6.9690e-05
+[2019-07-11 21:22:13] Ep. 7 : Up. 297000 : Sen. 9,609,785 : Cost 2.58296227 : Time 134.06s : 34032.77 words/s : L.r. 6.9631e-05
+[2019-07-11 21:24:25] Ep. 7 : Up. 297500 : Sen. 9,792,001 : Cost 2.59230900 : Time 132.55s : 33921.61 words/s : L.r. 6.9573e-05
+[2019-07-11 21:26:37] Ep. 7 : Up. 298000 : Sen. 9,983,404 : Cost 2.56617451 : Time 131.76s : 34444.74 words/s : L.r. 6.9514e-05
+[2019-07-11 21:28:50] Ep. 7 : Up. 298500 : Sen. 10,172,044 : Cost 2.57883787 : Time 132.66s : 34466.54 words/s : L.r. 6.9456e-05
+[2019-07-11 21:31:05] Ep. 7 : Up. 299000 : Sen. 10,362,910 : Cost 2.57443404 : Time 135.08s : 34118.44 words/s : L.r. 6.9398e-05
+[2019-07-11 21:33:18] Ep. 7 : Up. 299500 : Sen. 10,554,203 : Cost 2.56296396 : Time 132.92s : 33950.27 words/s : L.r. 6.9340e-05
+[2019-07-11 21:35:31] Ep. 7 : Up. 300000 : Sen. 10,743,855 : Cost 2.59133792 : Time 132.83s : 33711.54 words/s : L.r. 6.9282e-05
+[2019-07-11 21:35:31] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 21:35:38] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 21:35:45] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 21:36:00] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 21:36:06] [valid] Ep. 7 : Up. 300000 : ce-mean-words : 1.25451 : new best
+[2019-07-11 21:36:06] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 21:36:12] [valid] Ep. 7 : Up. 300000 : perplexity : 3.50614 : new best
+[2019-07-11 21:36:59] [valid] Ep. 7 : Up. 300000 : translation : 28.99 : stalled 6 times (last best: 29.13)
+[2019-07-11 21:39:15] Ep. 7 : Up. 300500 : Sen. 10,927,967 : Cost 2.60419488 : Time 223.89s : 20406.59 words/s : L.r. 6.9224e-05
+[2019-07-11 21:41:28] Ep. 7 : Up. 301000 : Sen. 11,116,603 : Cost 2.61718702 : Time 133.62s : 33778.72 words/s : L.r. 6.9167e-05
+[2019-07-11 21:43:40] Ep. 7 : Up. 301500 : Sen. 11,306,351 : Cost 2.59757829 : Time 131.98s : 33901.95 words/s : L.r. 6.9109e-05
+[2019-07-11 21:45:54] Ep. 7 : Up. 302000 : Sen. 11,494,963 : Cost 2.56676817 : Time 133.63s : 34214.85 words/s : L.r. 6.9052e-05
+[2019-07-11 21:48:07] Ep. 7 : Up. 302500 : Sen. 11,685,955 : Cost 2.57065129 : Time 133.15s : 34133.12 words/s : L.r. 6.8995e-05
+[2019-07-11 21:50:21] Ep. 7 : Up. 303000 : Sen. 11,876,888 : Cost 2.54052496 : Time 134.06s : 34124.95 words/s : L.r. 6.8938e-05
+[2019-07-11 21:52:34] Ep. 7 : Up. 303500 : Sen. 12,062,804 : Cost 2.60461187 : Time 133.45s : 34565.38 words/s : L.r. 6.8881e-05
+[2019-07-11 21:54:48] Ep. 7 : Up. 304000 : Sen. 12,252,038 : Cost 2.57217574 : Time 133.76s : 33975.44 words/s : L.r. 6.8825e-05
+[2019-07-11 21:57:01] Ep. 7 : Up. 304500 : Sen. 12,438,810 : Cost 2.59604383 : Time 132.84s : 33872.80 words/s : L.r. 6.8768e-05
+[2019-07-11 21:59:13] Ep. 7 : Up. 305000 : Sen. 12,632,701 : Cost 2.55901694 : Time 132.37s : 34055.63 words/s : L.r. 6.8712e-05
+[2019-07-11 21:59:13] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 21:59:20] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 21:59:27] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 21:59:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 21:59:47] [valid] Ep. 7 : Up. 305000 : ce-mean-words : 1.25404 : new best
+[2019-07-11 21:59:47] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 21:59:53] [valid] Ep. 7 : Up. 305000 : perplexity : 3.50449 : new best
+[2019-07-11 22:00:39] [valid] Ep. 7 : Up. 305000 : translation : 28.98 : stalled 7 times (last best: 29.13)
+[2019-07-11 22:02:55] Ep. 7 : Up. 305500 : Sen. 12,825,213 : Cost 2.55073833 : Time 221.36s : 20649.83 words/s : L.r. 6.8656e-05
+[2019-07-11 22:05:09] Ep. 7 : Up. 306000 : Sen. 13,010,348 : Cost 2.63213229 : Time 134.11s : 34184.51 words/s : L.r. 6.8599e-05
+[2019-07-11 22:07:22] Ep. 7 : Up. 306500 : Sen. 13,200,775 : Cost 2.58551407 : Time 132.67s : 34545.11 words/s : L.r. 6.8543e-05
+[2019-07-11 22:09:34] Ep. 7 : Up. 307000 : Sen. 13,386,997 : Cost 2.55752373 : Time 132.84s : 34087.33 words/s : L.r. 6.8488e-05
+[2019-07-11 22:11:47] Ep. 7 : Up. 307500 : Sen. 13,578,648 : Cost 2.58073783 : Time 132.90s : 33810.49 words/s : L.r. 6.8432e-05
+[2019-07-11 22:14:01] Ep. 7 : Up. 308000 : Sen. 13,770,226 : Cost 2.59670806 : Time 133.22s : 34219.78 words/s : L.r. 6.8376e-05
+[2019-07-11 22:16:13] Ep. 7 : Up. 308500 : Sen. 13,955,856 : Cost 2.59666729 : Time 132.84s : 34328.22 words/s : L.r. 6.8321e-05
+[2019-07-11 22:18:27] Ep. 7 : Up. 309000 : Sen. 14,148,142 : Cost 2.55798411 : Time 133.09s : 34299.88 words/s : L.r. 6.8266e-05
+[2019-07-11 22:20:38] Ep. 7 : Up. 309500 : Sen. 14,340,797 : Cost 2.55044842 : Time 131.50s : 34283.79 words/s : L.r. 6.8210e-05
+[2019-07-11 22:22:51] Ep. 7 : Up. 310000 : Sen. 14,530,788 : Cost 2.58652306 : Time 132.54s : 34329.84 words/s : L.r. 6.8155e-05
+[2019-07-11 22:22:51] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 22:22:58] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 22:23:05] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 22:23:20] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 22:23:25] [valid] Ep. 7 : Up. 310000 : ce-mean-words : 1.25303 : new best
+[2019-07-11 22:23:26] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 22:23:31] [valid] Ep. 7 : Up. 310000 : perplexity : 3.50094 : new best
+[2019-07-11 22:24:18] [valid] Ep. 7 : Up. 310000 : translation : 28.8 : stalled 8 times (last best: 29.13)
+[2019-07-11 22:26:30] Ep. 7 : Up. 310500 : Sen. 14,719,313 : Cost 2.58464050 : Time 219.80s : 20526.39 words/s : L.r. 6.8101e-05
+[2019-07-11 22:28:43] Ep. 7 : Up. 311000 : Sen. 14,905,765 : Cost 2.58610463 : Time 133.14s : 34391.34 words/s : L.r. 6.8046e-05
+[2019-07-11 22:30:57] Ep. 7 : Up. 311500 : Sen. 15,088,656 : Cost 2.62851143 : Time 133.19s : 34393.59 words/s : L.r. 6.7991e-05
+[2019-07-11 22:33:10] Ep. 7 : Up. 312000 : Sen. 15,279,664 : Cost 2.54829669 : Time 133.59s : 34039.78 words/s : L.r. 6.7937e-05
+[2019-07-11 22:35:23] Ep. 7 : Up. 312500 : Sen. 15,467,543 : Cost 2.60583115 : Time 133.20s : 33713.43 words/s : L.r. 6.7882e-05
+[2019-07-11 22:37:37] Ep. 7 : Up. 313000 : Sen. 15,656,707 : Cost 2.61242580 : Time 133.38s : 34245.15 words/s : L.r. 6.7828e-05
+[2019-07-11 22:39:50] Ep. 7 : Up. 313500 : Sen. 15,843,049 : Cost 2.56175756 : Time 133.11s : 34081.25 words/s : L.r. 6.7774e-05
+[2019-07-11 22:42:04] Ep. 7 : Up. 314000 : Sen. 16,040,820 : Cost 2.54647803 : Time 133.80s : 34432.24 words/s : L.r. 6.7720e-05
+[2019-07-11 22:44:18] Ep. 7 : Up. 314500 : Sen. 16,228,659 : Cost 2.59963131 : Time 134.07s : 34139.50 words/s : L.r. 6.7666e-05
+[2019-07-11 22:46:31] Ep. 7 : Up. 315000 : Sen. 16,417,698 : Cost 2.58688426 : Time 133.08s : 34216.37 words/s : L.r. 6.7612e-05
+[2019-07-11 22:46:31] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 22:46:37] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 22:46:45] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 22:47:00] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 22:47:05] [valid] Ep. 7 : Up. 315000 : ce-mean-words : 1.25219 : new best
+[2019-07-11 22:47:06] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 22:47:11] [valid] Ep. 7 : Up. 315000 : perplexity : 3.49801 : new best
+[2019-07-11 22:47:54] [valid] Ep. 7 : Up. 315000 : translation : 26.24 : stalled 9 times (last best: 29.13)
+[2019-07-11 22:50:08] Ep. 7 : Up. 315500 : Sen. 16,609,568 : Cost 2.54881334 : Time 217.05s : 20811.17 words/s : L.r. 6.7559e-05
+[2019-07-11 22:52:21] Ep. 7 : Up. 316000 : Sen. 16,797,937 : Cost 2.57386994 : Time 133.15s : 34043.87 words/s : L.r. 6.7505e-05
+[2019-07-11 22:54:33] Ep. 7 : Up. 316500 : Sen. 16,985,714 : Cost 2.61438894 : Time 132.18s : 34258.58 words/s : L.r. 6.7452e-05
+[2019-07-11 22:56:16] Seen 17128033 samples
+[2019-07-11 22:56:16] Starting epoch 8
+[2019-07-11 22:56:16] [data] Shuffling data
+[2019-07-11 22:56:32] [data] Done reading 19122526 sentences
+[2019-07-11 22:58:54] [data] Done shuffling 19122526 sentences to temp files
+[2019-07-11 23:00:11] Ep. 8 : Up. 317000 : Sen. 36,316 : Cost 2.60319734 : Time 337.68s : 12939.05 words/s : L.r. 6.7399e-05
+[2019-07-11 23:02:22] Ep. 8 : Up. 317500 : Sen. 229,253 : Cost 2.53487420 : Time 131.06s : 34738.14 words/s : L.r. 6.7346e-05
+[2019-07-11 23:04:33] Ep. 8 : Up. 318000 : Sen. 416,613 : Cost 2.57354236 : Time 131.20s : 34972.87 words/s : L.r. 6.7293e-05
+[2019-07-11 23:06:44] Ep. 8 : Up. 318500 : Sen. 609,323 : Cost 2.55407000 : Time 130.48s : 34681.57 words/s : L.r. 6.7240e-05
+[2019-07-11 23:08:54] Ep. 8 : Up. 319000 : Sen. 800,212 : Cost 2.57926989 : Time 130.01s : 34500.14 words/s : L.r. 6.7187e-05
+[2019-07-11 23:11:05] Ep. 8 : Up. 319500 : Sen. 984,720 : Cost 2.57148433 : Time 131.25s : 34876.16 words/s : L.r. 6.7135e-05
+[2019-07-11 23:13:16] Ep. 8 : Up. 320000 : Sen. 1,170,101 : Cost 2.57598495 : Time 130.88s : 34799.97 words/s : L.r. 6.7082e-05
+[2019-07-11 23:13:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 23:13:24] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 23:13:31] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 23:13:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 23:13:54] [valid] Ep. 8 : Up. 320000 : ce-mean-words : 1.25154 : new best
+[2019-07-11 23:13:54] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 23:14:02] [valid] Ep. 8 : Up. 320000 : perplexity : 3.49572 : new best
+[2019-07-11 23:14:44] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-11 23:14:49] [valid] Ep. 8 : Up. 320000 : translation : 29.7 : new best
+[2019-07-11 23:17:02] Ep. 8 : Up. 320500 : Sen. 1,361,060 : Cost 2.53898478 : Time 226.14s : 20096.04 words/s : L.r. 6.7030e-05
+[2019-07-11 23:19:13] Ep. 8 : Up. 321000 : Sen. 1,552,835 : Cost 2.61075974 : Time 130.88s : 34931.79 words/s : L.r. 6.6977e-05
+[2019-07-11 23:21:24] Ep. 8 : Up. 321500 : Sen. 1,739,038 : Cost 2.56951308 : Time 131.54s : 34821.44 words/s : L.r. 6.6925e-05
+[2019-07-11 23:23:34] Ep. 8 : Up. 322000 : Sen. 1,929,304 : Cost 2.57168579 : Time 129.95s : 34732.33 words/s : L.r. 6.6873e-05
+[2019-07-11 23:25:45] Ep. 8 : Up. 322500 : Sen. 2,118,874 : Cost 2.54393339 : Time 130.61s : 34791.54 words/s : L.r. 6.6822e-05
+[2019-07-11 23:27:55] Ep. 8 : Up. 323000 : Sen. 2,307,183 : Cost 2.59670162 : Time 130.30s : 34948.04 words/s : L.r. 6.6770e-05
+[2019-07-11 23:30:07] Ep. 8 : Up. 323500 : Sen. 2,490,196 : Cost 2.57128930 : Time 131.35s : 34464.75 words/s : L.r. 6.6718e-05
+[2019-07-11 23:32:19] Ep. 8 : Up. 324000 : Sen. 2,683,355 : Cost 2.52683496 : Time 132.36s : 34684.81 words/s : L.r. 6.6667e-05
+[2019-07-11 23:34:29] Ep. 8 : Up. 324500 : Sen. 2,876,847 : Cost 2.58397412 : Time 130.42s : 34643.47 words/s : L.r. 6.6615e-05
+[2019-07-11 23:36:40] Ep. 8 : Up. 325000 : Sen. 3,067,969 : Cost 2.56585169 : Time 130.99s : 34813.42 words/s : L.r. 6.6564e-05
+[2019-07-11 23:36:40] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-11 23:36:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-11 23:36:56] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-11 23:37:12] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-11 23:37:18] [valid] Ep. 8 : Up. 325000 : ce-mean-words : 1.2515 : new best
+[2019-07-11 23:37:18] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-11 23:37:24] [valid] Ep. 8 : Up. 325000 : perplexity : 3.49557 : new best
+[2019-07-11 23:38:03] [valid] Ep. 8 : Up. 325000 : translation : 29.32 : stalled 1 times (last best: 29.7)
+[2019-07-11 23:40:16] Ep. 8 : Up. 325500 : Sen. 3,255,401 : Cost 2.59742618 : Time 215.92s : 21293.31 words/s : L.r. 6.6513e-05
+[2019-07-11 23:42:28] Ep. 8 : Up. 326000 : Sen. 3,439,285 : Cost 2.54044747 : Time 131.41s : 34810.53 words/s : L.r. 6.6462e-05
+[2019-07-11 23:44:39] Ep. 8 : Up. 326500 : Sen. 3,628,975 : Cost 2.58043361 : Time 131.22s : 34605.33 words/s : L.r. 6.6411e-05
+[2019-07-11 23:46:50] Ep. 8 : Up. 327000 : Sen. 3,817,328 : Cost 2.59304976 : Time 130.77s : 34690.75 words/s : L.r. 6.6360e-05
+[2019-07-11 23:49:00] Ep. 8 : Up. 327500 : Sen. 4,013,111 : Cost 2.56921792 : Time 129.83s : 34434.14 words/s : L.r. 6.6309e-05
+[2019-07-11 23:51:11] Ep. 8 : Up. 328000 : Sen. 4,204,626 : Cost 2.54081869 : Time 131.66s : 34530.72 words/s : L.r. 6.6259e-05
+[2019-07-11 23:53:21] Ep. 8 : Up. 328500 : Sen. 4,399,688 : Cost 2.58658528 : Time 129.58s : 34491.16 words/s : L.r. 6.6208e-05
+[2019-07-11 23:55:31] Ep. 8 : Up. 329000 : Sen. 4,577,986 : Cost 2.56327057 : Time 130.41s : 34900.31 words/s : L.r. 6.6158e-05
+[2019-07-11 23:57:44] Ep. 8 : Up. 329500 : Sen. 4,770,375 : Cost 2.54235935 : Time 132.67s : 34959.49 words/s : L.r. 6.6108e-05
+[2019-07-11 23:59:54] Ep. 8 : Up. 330000 : Sen. 4,958,318 : Cost 2.61415577 : Time 130.38s : 34754.61 words/s : L.r. 6.6058e-05
+[2019-07-11 23:59:54] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 00:00:01] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 00:00:08] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-12 00:00:23] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 00:00:28] [valid] Ep. 8 : Up. 330000 : ce-mean-words : 1.25145 : new best
+[2019-07-12 00:00:29] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 00:00:34] [valid] Ep. 8 : Up. 330000 : perplexity : 3.49542 : new best
+[2019-07-12 00:01:16] [valid] Ep. 8 : Up. 330000 : translation : 29.47 : stalled 2 times (last best: 29.7)
+[2019-07-12 00:03:28] Ep. 8 : Up. 330500 : Sen. 5,149,899 : Cost 2.57348347 : Time 214.11s : 21141.69 words/s : L.r. 6.6008e-05
+[2019-07-12 00:05:39] Ep. 8 : Up. 331000 : Sen. 5,338,327 : Cost 2.56274343 : Time 130.77s : 34722.18 words/s : L.r. 6.5958e-05
+[2019-07-12 00:07:51] Ep. 8 : Up. 331500 : Sen. 5,524,858 : Cost 2.55392718 : Time 131.78s : 34880.83 words/s : L.r. 6.5908e-05
+[2019-07-12 00:10:02] Ep. 8 : Up. 332000 : Sen. 5,713,232 : Cost 2.58375597 : Time 130.62s : 35047.21 words/s : L.r. 6.5859e-05
+[2019-07-12 00:12:13] Ep. 8 : Up. 332500 : Sen. 5,903,835 : Cost 2.57093763 : Time 130.92s : 34653.28 words/s : L.r. 6.5809e-05
+[2019-07-12 00:14:23] Ep. 8 : Up. 333000 : Sen. 6,098,926 : Cost 2.58852839 : Time 130.80s : 34820.45 words/s : L.r. 6.5760e-05
+[2019-07-12 00:16:34] Ep. 8 : Up. 333500 : Sen. 6,287,389 : Cost 2.60915804 : Time 130.75s : 34879.72 words/s : L.r. 6.5710e-05
+[2019-07-12 00:18:45] Ep. 8 : Up. 334000 : Sen. 6,472,191 : Cost 2.54657149 : Time 130.70s : 34643.86 words/s : L.r. 6.5661e-05
+[2019-07-12 00:20:57] Ep. 8 : Up. 334500 : Sen. 6,662,403 : Cost 2.57777929 : Time 132.38s : 34674.60 words/s : L.r. 6.5612e-05
+[2019-07-12 00:23:07] Ep. 8 : Up. 335000 : Sen. 6,851,434 : Cost 2.57304859 : Time 129.98s : 34452.05 words/s : L.r. 6.5563e-05
+[2019-07-12 00:23:07] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 00:23:13] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 00:23:20] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-12 00:23:40] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 00:23:47] [valid] Ep. 8 : Up. 335000 : ce-mean-words : 1.25135 : new best
+[2019-07-12 00:23:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 00:23:56] [valid] Ep. 8 : Up. 335000 : perplexity : 3.49505 : new best
+[2019-07-12 00:24:37] [valid] Ep. 8 : Up. 335000 : translation : 27.56 : stalled 3 times (last best: 29.7)
+[2019-07-12 00:26:50] Ep. 8 : Up. 335500 : Sen. 7,042,905 : Cost 2.54590821 : Time 223.17s : 20554.17 words/s : L.r. 6.5514e-05
+[2019-07-12 00:29:01] Ep. 8 : Up. 336000 : Sen. 7,235,302 : Cost 2.58578825 : Time 130.33s : 34478.98 words/s : L.r. 6.5465e-05
+[2019-07-12 00:31:11] Ep. 8 : Up. 336500 : Sen. 7,423,552 : Cost 2.58179665 : Time 130.03s : 34626.15 words/s : L.r. 6.5417e-05
+[2019-07-12 00:33:22] Ep. 8 : Up. 337000 : Sen. 7,614,103 : Cost 2.58603883 : Time 131.05s : 34910.45 words/s : L.r. 6.5368e-05
+[2019-07-12 00:35:33] Ep. 8 : Up. 337500 : Sen. 7,795,687 : Cost 2.56357718 : Time 131.23s : 34679.67 words/s : L.r. 6.5320e-05
+[2019-07-12 00:37:44] Ep. 8 : Up. 338000 : Sen. 7,986,536 : Cost 2.56270361 : Time 130.98s : 34917.88 words/s : L.r. 6.5271e-05
+[2019-07-12 00:39:54] Ep. 8 : Up. 338500 : Sen. 8,176,159 : Cost 2.58150125 : Time 130.48s : 34801.86 words/s : L.r. 6.5223e-05
+[2019-07-12 00:42:05] Ep. 8 : Up. 339000 : Sen. 8,360,060 : Cost 2.57337165 : Time 130.51s : 34782.17 words/s : L.r. 6.5175e-05
+[2019-07-12 00:44:16] Ep. 8 : Up. 339500 : Sen. 8,557,073 : Cost 2.58215356 : Time 130.78s : 34630.06 words/s : L.r. 6.5127e-05
+[2019-07-12 00:46:26] Ep. 8 : Up. 340000 : Sen. 8,751,262 : Cost 2.53851891 : Time 130.76s : 34594.31 words/s : L.r. 6.5079e-05
+[2019-07-12 00:46:26] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 00:46:34] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 00:46:41] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-12 00:46:55] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 00:46:59] [valid] Ep. 8 : Up. 340000 : ce-mean-words : 1.2505 : new best
+[2019-07-12 00:47:00] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 00:47:05] [valid] Ep. 8 : Up. 340000 : perplexity : 3.49209 : new best
+[2019-07-12 00:47:49] [valid] Ep. 8 : Up. 340000 : translation : 27.56 : stalled 4 times (last best: 29.7)
+[2019-07-12 00:50:01] Ep. 8 : Up. 340500 : Sen. 8,936,440 : Cost 2.58080029 : Time 214.12s : 21338.12 words/s : L.r. 6.5031e-05
+[2019-07-12 00:52:13] Ep. 8 : Up. 341000 : Sen. 9,124,167 : Cost 2.57008839 : Time 132.36s : 34745.44 words/s : L.r. 6.4984e-05
+[2019-07-12 00:54:23] Ep. 8 : Up. 341500 : Sen. 9,308,110 : Cost 2.58140540 : Time 130.39s : 34638.12 words/s : L.r. 6.4936e-05
+[2019-07-12 00:56:35] Ep. 8 : Up. 342000 : Sen. 9,503,261 : Cost 2.55805039 : Time 131.35s : 34506.54 words/s : L.r. 6.4889e-05
+[2019-07-12 00:58:47] Ep. 8 : Up. 342500 : Sen. 9,688,628 : Cost 2.55855322 : Time 132.01s : 35029.05 words/s : L.r. 6.4841e-05
+[2019-07-12 01:00:57] Ep. 8 : Up. 343000 : Sen. 9,875,230 : Cost 2.60188627 : Time 130.66s : 34715.96 words/s : L.r. 6.4794e-05
+[2019-07-12 01:03:08] Ep. 8 : Up. 343500 : Sen. 10,072,628 : Cost 2.58101964 : Time 130.22s : 34683.88 words/s : L.r. 6.4747e-05
+[2019-07-12 01:05:18] Ep. 8 : Up. 344000 : Sen. 10,260,246 : Cost 2.56852007 : Time 130.86s : 34871.11 words/s : L.r. 6.4700e-05
+[2019-07-12 01:07:31] Ep. 8 : Up. 344500 : Sen. 10,454,648 : Cost 2.54989672 : Time 132.12s : 34543.03 words/s : L.r. 6.4653e-05
+[2019-07-12 01:09:41] Ep. 8 : Up. 345000 : Sen. 10,639,314 : Cost 2.58736038 : Time 130.87s : 34772.27 words/s : L.r. 6.4606e-05
+[2019-07-12 01:09:41] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 01:09:48] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 01:09:56] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-12 01:10:11] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 01:10:16] [valid] Ep. 8 : Up. 345000 : ce-mean-words : 1.24974 : new best
+[2019-07-12 01:10:16] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 01:10:21] [valid] Ep. 8 : Up. 345000 : perplexity : 3.48943 : new best
+[2019-07-12 01:11:04] [valid] Ep. 8 : Up. 345000 : translation : 27.51 : stalled 5 times (last best: 29.7)
+[2019-07-12 01:13:15] Ep. 8 : Up. 345500 : Sen. 10,825,829 : Cost 2.59450030 : Time 213.76s : 20985.76 words/s : L.r. 6.4559e-05
+[2019-07-12 01:15:27] Ep. 8 : Up. 346000 : Sen. 11,014,330 : Cost 2.57185483 : Time 131.50s : 34837.28 words/s : L.r. 6.4512e-05
+[2019-07-12 01:17:37] Ep. 8 : Up. 346500 : Sen. 11,203,846 : Cost 2.56201434 : Time 130.06s : 34614.94 words/s : L.r. 6.4466e-05
+[2019-07-12 01:19:48] Ep. 8 : Up. 347000 : Sen. 11,392,880 : Cost 2.54447651 : Time 131.55s : 34718.63 words/s : L.r. 6.4419e-05
+[2019-07-12 01:21:59] Ep. 8 : Up. 347500 : Sen. 11,580,822 : Cost 2.57925177 : Time 130.21s : 34764.60 words/s : L.r. 6.4373e-05
+[2019-07-12 01:24:10] Ep. 8 : Up. 348000 : Sen. 11,772,617 : Cost 2.56059813 : Time 131.64s : 35066.46 words/s : L.r. 6.4327e-05
+[2019-07-12 01:26:22] Ep. 8 : Up. 348500 : Sen. 11,962,776 : Cost 2.59800911 : Time 131.43s : 34641.29 words/s : L.r. 6.4281e-05
+[2019-07-12 01:28:32] Ep. 8 : Up. 349000 : Sen. 12,151,795 : Cost 2.59741426 : Time 130.67s : 34574.54 words/s : L.r. 6.4235e-05
+[2019-07-12 01:30:43] Ep. 8 : Up. 349500 : Sen. 12,343,356 : Cost 2.57359505 : Time 130.41s : 34580.28 words/s : L.r. 6.4189e-05
+[2019-07-12 01:32:53] Ep. 8 : Up. 350000 : Sen. 12,533,580 : Cost 2.57700491 : Time 130.35s : 34792.80 words/s : L.r. 6.4143e-05
+[2019-07-12 01:32:53] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 01:33:00] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 01:33:07] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-12 01:33:22] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 01:33:27] [valid] Ep. 8 : Up. 350000 : ce-mean-words : 1.24819 : new best
+[2019-07-12 01:33:27] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 01:33:32] [valid] Ep. 8 : Up. 350000 : perplexity : 3.48404 : new best
+[2019-07-12 01:34:14] [valid] Ep. 8 : Up. 350000 : translation : 27.56 : stalled 6 times (last best: 29.7)
+[2019-07-12 01:36:26] Ep. 8 : Up. 350500 : Sen. 12,716,302 : Cost 2.55696273 : Time 213.35s : 21270.92 words/s : L.r. 6.4097e-05
+[2019-07-12 01:38:38] Ep. 8 : Up. 351000 : Sen. 12,904,761 : Cost 2.56358838 : Time 131.43s : 35059.98 words/s : L.r. 6.4051e-05
+[2019-07-12 01:40:49] Ep. 8 : Up. 351500 : Sen. 13,099,032 : Cost 2.59778428 : Time 131.23s : 34686.96 words/s : L.r. 6.4006e-05
+[2019-07-12 01:43:00] Ep. 8 : Up. 352000 : Sen. 13,285,902 : Cost 2.58156657 : Time 131.42s : 34725.99 words/s : L.r. 6.3960e-05
+[2019-07-12 01:45:11] Ep. 8 : Up. 352500 : Sen. 13,479,761 : Cost 2.55988407 : Time 130.26s : 34925.91 words/s : L.r. 6.3915e-05
+[2019-07-12 01:47:22] Ep. 8 : Up. 353000 : Sen. 13,666,911 : Cost 2.56767941 : Time 130.94s : 34846.08 words/s : L.r. 6.3870e-05
+[2019-07-12 01:49:33] Ep. 8 : Up. 353500 : Sen. 13,852,974 : Cost 2.59610510 : Time 130.92s : 34790.50 words/s : L.r. 6.3824e-05
+[2019-07-12 01:51:43] Ep. 8 : Up. 354000 : Sen. 14,042,452 : Cost 2.54291081 : Time 130.07s : 34743.09 words/s : L.r. 6.3779e-05
+[2019-07-12 01:53:54] Ep. 8 : Up. 354500 : Sen. 14,229,564 : Cost 2.55894136 : Time 131.29s : 34867.70 words/s : L.r. 6.3734e-05
+[2019-07-12 01:56:04] Ep. 8 : Up. 355000 : Sen. 14,418,960 : Cost 2.56927681 : Time 130.49s : 34661.38 words/s : L.r. 6.3689e-05
+[2019-07-12 01:56:04] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 01:56:14] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 01:56:22] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-12 01:56:37] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 01:56:43] [valid] Ep. 8 : Up. 355000 : ce-mean-words : 1.24694 : new best
+[2019-07-12 01:56:44] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 01:56:49] [valid] Ep. 8 : Up. 355000 : perplexity : 3.47967 : new best
+[2019-07-12 01:57:31] [valid] Ep. 8 : Up. 355000 : translation : 27.84 : stalled 7 times (last best: 29.7)
+[2019-07-12 01:59:44] Ep. 8 : Up. 355500 : Sen. 14,606,771 : Cost 2.58653593 : Time 219.15s : 20731.98 words/s : L.r. 6.3645e-05
+[2019-07-12 02:01:55] Ep. 8 : Up. 356000 : Sen. 14,799,024 : Cost 2.58752608 : Time 131.33s : 34639.61 words/s : L.r. 6.3600e-05
+[2019-07-12 02:04:05] Ep. 8 : Up. 356500 : Sen. 14,990,192 : Cost 2.57030630 : Time 130.49s : 34605.13 words/s : L.r. 6.3555e-05
+[2019-07-12 02:06:16] Ep. 8 : Up. 357000 : Sen. 15,178,474 : Cost 2.57173491 : Time 130.53s : 34727.45 words/s : L.r. 6.3511e-05
+[2019-07-12 02:08:27] Ep. 8 : Up. 357500 : Sen. 15,362,462 : Cost 2.60249257 : Time 130.93s : 34646.72 words/s : L.r. 6.3466e-05
+[2019-07-12 02:10:38] Ep. 8 : Up. 358000 : Sen. 15,554,759 : Cost 2.58966899 : Time 131.09s : 34597.37 words/s : L.r. 6.3422e-05
+[2019-07-12 02:12:48] Ep. 8 : Up. 358500 : Sen. 15,740,301 : Cost 2.55815697 : Time 130.19s : 34869.20 words/s : L.r. 6.3378e-05
+[2019-07-12 02:15:00] Ep. 8 : Up. 359000 : Sen. 15,930,715 : Cost 2.54312778 : Time 131.91s : 34642.74 words/s : L.r. 6.3334e-05
+[2019-07-12 02:17:12] Ep. 8 : Up. 359500 : Sen. 16,125,022 : Cost 2.52173877 : Time 131.56s : 34969.94 words/s : L.r. 6.3290e-05
+[2019-07-12 02:19:22] Ep. 8 : Up. 360000 : Sen. 16,314,606 : Cost 2.57988262 : Time 130.32s : 34678.80 words/s : L.r. 6.3246e-05
+[2019-07-12 02:19:22] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 02:19:29] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 02:19:37] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz
+[2019-07-12 02:19:52] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 02:19:57] [valid] Ep. 8 : Up. 360000 : ce-mean-words : 1.2463 : new best
+[2019-07-12 02:19:58] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 02:20:03] [valid] Ep. 8 : Up. 360000 : perplexity : 3.47746 : new best
+[2019-07-12 02:20:45] [valid] Ep. 8 : Up. 360000 : translation : 27.84 : stalled 8 times (last best: 29.7)
+[2019-07-12 02:22:57] Ep. 8 : Up. 360500 : Sen. 16,505,659 : Cost 2.58854222 : Time 215.08s : 21084.41 words/s : L.r. 6.3202e-05
+[2019-07-12 02:25:08] Ep. 8 : Up. 361000 : Sen. 16,694,566 : Cost 2.57386184 : Time 131.14s : 35022.94 words/s : L.r. 6.3158e-05
+[2019-07-12 02:27:19] Ep. 8 : Up. 361500 : Sen. 16,880,673 : Cost 2.58823752 : Time 130.66s : 34803.23 words/s : L.r. 6.3114e-05
+[2019-07-12 02:29:27] Ep. 8 : Up. 362000 : Sen. 17,067,690 : Cost 2.57208633 : Time 128.27s : 34230.96 words/s : L.r. 6.3071e-05
+[2019-07-12 02:30:11] Seen 17128033 samples
+[2019-07-12 02:30:11] Starting epoch 9
+[2019-07-12 02:30:11] Training finished
+[2019-07-12 02:30:13] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-ce-mean-words.npz
+[2019-07-12 02:30:18] [valid] Ep. 9 : Up. 362169 : ce-mean-words : 1.2456 : new best
+[2019-07-12 02:30:19] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-perplexity.npz
+[2019-07-12 02:30:23] [valid] Ep. 9 : Up. 362169 : perplexity : 3.47503 : new best
+[2019-07-12 02:31:03] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.best-translation.npz
+[2019-07-12 02:31:08] [valid] Ep. 9 : Up. 362169 : translation : 30.25 : new best
+[2019-07-12 02:31:10] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.orig.npz
+[2019-07-12 02:31:17] Saving model weights and runtime parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz
+[2019-07-12 02:31:24] Saving Adam parameters to models/wmt2017-transformer-en-de/model/model/ens2/model.npz.optimizer.npz

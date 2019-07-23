@@ -18,7 +18,7 @@ BEST_SRC_TRG=`cat $model_dir_src_trg/valid.log | grep bleu | sort -rg -k12,12 -t
 BEST_TRG_SRC=`cat $model_dir_trg_src/valid.log | grep bleu | sort -rg -k12,12 -t' ' | cut -f8 -d' ' | head -n1`
 
 bicleaner-train \
-          $language_pack/train.en-de \
+          $language_pack/dev.en-de \
           --treat_oovs \
 	  --processes 4 \
           --gpu $GPUS \
@@ -29,10 +29,10 @@ bicleaner-train \
           -D $language_pack/dict-de.gz \
           -b  1000 \
           -c $classifier_dir/en-de.classifier \
-          -g 50000 \
-          -w 50000 \
-          --good_test_examples 10000 \
-          --wrong_test_examples 10000 \
+          -g 4 \
+          -w 4 \
+          --good_test_examples 1 \
+          --wrong_test_examples 1 \
           -m $classifier_dir/training.en-de.yaml \
           --classifier_type random_forest \
           --dcce_model_src_trg $model_dir_src_trg/model.iter$BEST_SRC_TRG.npz \

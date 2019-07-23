@@ -18,5 +18,6 @@ $marian_scorer \
     -v $src_vocab $trg_vocab \
     -t $src_sentences $trg_sentences \
     --devices "$gpus" \
+    --workspace 4096 \
     --quiet-translation \
     -n

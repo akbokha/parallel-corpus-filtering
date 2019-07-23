@@ -20,7 +20,6 @@ BEST_TRG_SRC=`cat $model_dir_trg_src/valid.log | grep bleu | sort -rg -k12,12 -t
 bicleaner-train \
           $language_pack/train.en-de \
           --treat_oovs \
-	      --processes 4 \
           --gpu $GPUS \
           --normalize_by_length \
           -s $SRC \

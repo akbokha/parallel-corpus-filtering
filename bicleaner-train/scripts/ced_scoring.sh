@@ -16,5 +16,4 @@ $marian_scorer \
     -v $vocab \
     -t $sentences \
     --devices "$gpus" \
-    --workspace 4096 \
-    --quiet
+    --workspace 4096

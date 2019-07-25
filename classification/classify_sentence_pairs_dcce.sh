@@ -3,6 +3,9 @@
 EXPERIMENT=${1:-"bicleaner_v1.1"}
 TRAINING_METADATA_DIR=${2:-"../data/language_packs/en-de"}
 
+SRC=en
+TRG=de
+
 OUTPUT_DIR="./output/$EXPERIMENT"
 
 TO_BE_CLASSIFIED_DATA=${3:-"../hardrules/output/$EXPERIMENT/data_hardrules_filtered"}
@@ -22,7 +25,7 @@ bicleaner-classify  \
         $OUTPUT_DIR/data_classified  \
         $TRAINING_METADATA_DIR/en-de.yaml \
         --threshold 0.5 \
-        --gpu 0 \
+        --gpu $GPUS \
         --dcce_model_src_trg $model_dir_src_trg/model.iter$BEST_SRC_TRG.npz \
         --dcce_model_trg_src $model_dir_trg_src/model.iter$BEST_TRG_SRC.npz \
         --dcce_src_vocab_src_trg $model_dir_src_trg/vocab.ende.yml \

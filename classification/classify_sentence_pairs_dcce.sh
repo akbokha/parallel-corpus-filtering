@@ -1,6 +1,6 @@
 #!/bin/sh
 
-EXPERIMENT=${1:-"bicleaner_v1.1"}
+EXPERIMENT=${1:-"bicleaner_dcce"}
 TRAINING_METADATA_DIR=${2:-"../data/language_packs/en-de"}
 
 SRC=en

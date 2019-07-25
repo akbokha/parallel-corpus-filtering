@@ -32,7 +32,7 @@ BEST_TRG_ND=`cat $trg_model_nd_dir/valid.log | grep perplexity | sort -rg -k12,1
 bicleaner-train \
           $language_pack/train.en-de \
           --treat_oovs \
-          --gpu $GPUS \
+          --gpu "$GPUS" \
           --normalize_by_length \
           -s $SRC \
           -t $TRG \

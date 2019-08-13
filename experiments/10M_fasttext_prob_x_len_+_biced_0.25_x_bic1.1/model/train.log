@@ -1,0 +1,629 @@
+[2019-07-17 20:23:48] [marian] Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-17 20:23:48] [marian] Running on zisa as process 18778 with command line:
+[2019-07-17 20:23:48] [marian] /fs/bil0/abdel/marian-dev/build/marian --sync-sgd --model ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz -T . --devices 0 --train-sets ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.de ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.en --vocabs ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.de.json ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.en.json --mini-batch-fit -w 5000 --dim-vocabs 50000 50000 --layer-normalization --dropout-rnn 0.2 --dropout-src 0.1 --dropout-trg 0.1 --learn-rate 0.0001 --after-epochs 0 --early-stopping 5 --valid-freq 20000 --save-freq 20000 --disp-freq 2000 --valid-mini-batch 8 --valid-sets ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/dev.bpe.de ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/dev.bpe.en --valid-metrics cross-entropy perplexity translation --valid-translation-output ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/dev.out --valid-script-path ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/score-dev.sh --seed 1111 --exponential-smoothing --normalize=1 --beam-size=12 --quiet-translation --log ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/train.log --valid-log ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/valid.log
+[2019-07-17 20:23:48] [config] after-batches: 0
+[2019-07-17 20:23:48] [config] after-epochs: 0
+[2019-07-17 20:23:48] [config] allow-unk: false
+[2019-07-17 20:23:48] [config] beam-size: 12
+[2019-07-17 20:23:48] [config] bert-class-symbol: "[CLS]"
+[2019-07-17 20:23:48] [config] bert-mask-symbol: "[MASK]"
+[2019-07-17 20:23:48] [config] bert-masking-fraction: 0.15
+[2019-07-17 20:23:48] [config] bert-sep-symbol: "[SEP]"
+[2019-07-17 20:23:48] [config] bert-train-type-embeddings: true
+[2019-07-17 20:23:48] [config] bert-type-vocab-size: 2
+[2019-07-17 20:23:48] [config] best-deep: false
+[2019-07-17 20:23:48] [config] clip-gemm: 0
+[2019-07-17 20:23:48] [config] clip-norm: 1
+[2019-07-17 20:23:48] [config] cost-type: ce-mean
+[2019-07-17 20:23:48] [config] cpu-threads: 0
+[2019-07-17 20:23:48] [config] data-weighting: ""
+[2019-07-17 20:23:48] [config] data-weighting-type: sentence
+[2019-07-17 20:23:48] [config] dec-cell: gru
+[2019-07-17 20:23:48] [config] dec-cell-base-depth: 2
+[2019-07-17 20:23:48] [config] dec-cell-high-depth: 1
+[2019-07-17 20:23:48] [config] dec-depth: 1
+[2019-07-17 20:23:48] [config] devices:
+[2019-07-17 20:23:48] [config]   - 0
+[2019-07-17 20:23:48] [config] dim-emb: 512
+[2019-07-17 20:23:48] [config] dim-rnn: 1024
+[2019-07-17 20:23:48] [config] dim-vocabs:
+[2019-07-17 20:23:48] [config]   - 50000
+[2019-07-17 20:23:48] [config]   - 50000
+[2019-07-17 20:23:48] [config] disp-first: 0
+[2019-07-17 20:23:48] [config] disp-freq: 2000
+[2019-07-17 20:23:48] [config] disp-label-counts: false
+[2019-07-17 20:23:48] [config] dropout-rnn: 0.2
+[2019-07-17 20:23:48] [config] dropout-src: 0.1
+[2019-07-17 20:23:48] [config] dropout-trg: 0.1
+[2019-07-17 20:23:48] [config] dump-config: ""
+[2019-07-17 20:23:48] [config] early-stopping: 5
+[2019-07-17 20:23:48] [config] embedding-fix-src: false
+[2019-07-17 20:23:48] [config] embedding-fix-trg: false
+[2019-07-17 20:23:48] [config] embedding-normalization: false
+[2019-07-17 20:23:48] [config] embedding-vectors:
+[2019-07-17 20:23:48] [config]   []
+[2019-07-17 20:23:48] [config] enc-cell: gru
+[2019-07-17 20:23:48] [config] enc-cell-depth: 1
+[2019-07-17 20:23:48] [config] enc-depth: 1
+[2019-07-17 20:23:48] [config] enc-type: bidirectional
+[2019-07-17 20:23:48] [config] exponential-smoothing: 0.0001
+[2019-07-17 20:23:48] [config] grad-dropping-momentum: 0
+[2019-07-17 20:23:48] [config] grad-dropping-rate: 0
+[2019-07-17 20:23:48] [config] grad-dropping-warmup: 100
+[2019-07-17 20:23:48] [config] guided-alignment: none
+[2019-07-17 20:23:48] [config] guided-alignment-cost: mse
+[2019-07-17 20:23:48] [config] guided-alignment-weight: 0.1
+[2019-07-17 20:23:48] [config] ignore-model-config: false
+[2019-07-17 20:23:48] [config] input-types:
+[2019-07-17 20:23:48] [config]   []
+[2019-07-17 20:23:48] [config] interpolate-env-vars: false
+[2019-07-17 20:23:48] [config] keep-best: false
+[2019-07-17 20:23:48] [config] label-smoothing: 0
+[2019-07-17 20:23:48] [config] layer-normalization: true
+[2019-07-17 20:23:48] [config] learn-rate: 0.0001
+[2019-07-17 20:23:48] [config] log: ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/train.log
+[2019-07-17 20:23:48] [config] log-level: info
+[2019-07-17 20:23:48] [config] log-time-zone: ""
+[2019-07-17 20:23:48] [config] lr-decay: 0
+[2019-07-17 20:23:48] [config] lr-decay-freq: 50000
+[2019-07-17 20:23:48] [config] lr-decay-inv-sqrt:
+[2019-07-17 20:23:48] [config]   - 0
+[2019-07-17 20:23:48] [config] lr-decay-repeat-warmup: false
+[2019-07-17 20:23:48] [config] lr-decay-reset-optimizer: false
+[2019-07-17 20:23:48] [config] lr-decay-start:
+[2019-07-17 20:23:48] [config]   - 10
+[2019-07-17 20:23:48] [config]   - 1
+[2019-07-17 20:23:48] [config] lr-decay-strategy: epoch+stalled
+[2019-07-17 20:23:48] [config] lr-report: false
+[2019-07-17 20:23:48] [config] lr-warmup: 0
+[2019-07-17 20:23:48] [config] lr-warmup-at-reload: false
+[2019-07-17 20:23:48] [config] lr-warmup-cycle: false
+[2019-07-17 20:23:48] [config] lr-warmup-start-rate: 0
+[2019-07-17 20:23:48] [config] max-length: 50
+[2019-07-17 20:23:48] [config] max-length-crop: false
+[2019-07-17 20:23:48] [config] max-length-factor: 3
+[2019-07-17 20:23:48] [config] maxi-batch: 100
+[2019-07-17 20:23:48] [config] maxi-batch-sort: trg
+[2019-07-17 20:23:48] [config] mini-batch: 64
+[2019-07-17 20:23:48] [config] mini-batch-fit: true
+[2019-07-17 20:23:48] [config] mini-batch-fit-step: 10
+[2019-07-17 20:23:48] [config] mini-batch-overstuff: 1
+[2019-07-17 20:23:48] [config] mini-batch-track-lr: false
+[2019-07-17 20:23:48] [config] mini-batch-understuff: 1
+[2019-07-17 20:23:48] [config] mini-batch-warmup: 0
+[2019-07-17 20:23:48] [config] mini-batch-words: 0
+[2019-07-17 20:23:48] [config] mini-batch-words-ref: 0
+[2019-07-17 20:23:48] [config] model: ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-17 20:23:48] [config] multi-loss-type: sum
+[2019-07-17 20:23:48] [config] multi-node: false
+[2019-07-17 20:23:48] [config] multi-node-overlap: true
+[2019-07-17 20:23:48] [config] n-best: false
+[2019-07-17 20:23:48] [config] no-nccl: false
+[2019-07-17 20:23:48] [config] no-reload: false
+[2019-07-17 20:23:48] [config] no-restore-corpus: false
+[2019-07-17 20:23:48] [config] no-shuffle: false
+[2019-07-17 20:23:48] [config] normalize: 1
+[2019-07-17 20:23:48] [config] num-devices: 0
+[2019-07-17 20:23:48] [config] optimizer: adam
+[2019-07-17 20:23:48] [config] optimizer-delay: 1
+[2019-07-17 20:23:48] [config] optimizer-params:
+[2019-07-17 20:23:48] [config]   []
+[2019-07-17 20:23:48] [config] overwrite: false
+[2019-07-17 20:23:48] [config] pretrained-model: ""
+[2019-07-17 20:23:48] [config] quiet: false
+[2019-07-17 20:23:48] [config] quiet-translation: true
+[2019-07-17 20:23:48] [config] relative-paths: false
+[2019-07-17 20:23:48] [config] right-left: false
+[2019-07-17 20:23:48] [config] save-freq: 20000
+[2019-07-17 20:23:48] [config] seed: 1111
+[2019-07-17 20:23:48] [config] shuffle-in-ram: false
+[2019-07-17 20:23:48] [config] skip: false
+[2019-07-17 20:23:48] [config] sqlite: ""
+[2019-07-17 20:23:48] [config] sqlite-drop: false
+[2019-07-17 20:23:48] [config] sync-sgd: true
+[2019-07-17 20:23:48] [config] tempdir: .
+[2019-07-17 20:23:48] [config] tied-embeddings: false
+[2019-07-17 20:23:48] [config] tied-embeddings-all: false
+[2019-07-17 20:23:48] [config] tied-embeddings-src: false
+[2019-07-17 20:23:48] [config] train-sets:
+[2019-07-17 20:23:48] [config]   - ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.de
+[2019-07-17 20:23:48] [config]   - ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.en
+[2019-07-17 20:23:48] [config] transformer-aan-activation: swish
+[2019-07-17 20:23:48] [config] transformer-aan-depth: 2
+[2019-07-17 20:23:48] [config] transformer-aan-nogate: false
+[2019-07-17 20:23:48] [config] transformer-decoder-autoreg: self-attention
+[2019-07-17 20:23:48] [config] transformer-dim-aan: 2048
+[2019-07-17 20:23:48] [config] transformer-dim-ffn: 2048
+[2019-07-17 20:23:48] [config] transformer-dropout: 0
+[2019-07-17 20:23:48] [config] transformer-dropout-attention: 0
+[2019-07-17 20:23:48] [config] transformer-dropout-ffn: 0
+[2019-07-17 20:23:48] [config] transformer-ffn-activation: swish
+[2019-07-17 20:23:48] [config] transformer-ffn-depth: 2
+[2019-07-17 20:23:48] [config] transformer-guided-alignment-layer: last
+[2019-07-17 20:23:48] [config] transformer-heads: 8
+[2019-07-17 20:23:48] [config] transformer-no-projection: false
+[2019-07-17 20:23:48] [config] transformer-postprocess: dan
+[2019-07-17 20:23:48] [config] transformer-postprocess-emb: d
+[2019-07-17 20:23:48] [config] transformer-preprocess: ""
+[2019-07-17 20:23:48] [config] transformer-tied-layers:
+[2019-07-17 20:23:48] [config]   []
+[2019-07-17 20:23:48] [config] transformer-train-position-embeddings: false
+[2019-07-17 20:23:48] [config] type: amun
+[2019-07-17 20:23:48] [config] ulr: false
+[2019-07-17 20:23:48] [config] ulr-dim-emb: 0
+[2019-07-17 20:23:48] [config] ulr-dropout: 0
+[2019-07-17 20:23:48] [config] ulr-keys-vectors: ""
+[2019-07-17 20:23:48] [config] ulr-query-vectors: ""
+[2019-07-17 20:23:48] [config] ulr-softmax-temperature: 1
+[2019-07-17 20:23:48] [config] ulr-trainable-transformation: false
+[2019-07-17 20:23:48] [config] valid-freq: 20000
+[2019-07-17 20:23:48] [config] valid-log: ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/valid.log
+[2019-07-17 20:23:48] [config] valid-max-length: 1000
+[2019-07-17 20:23:48] [config] valid-metrics:
+[2019-07-17 20:23:48] [config]   - cross-entropy
+[2019-07-17 20:23:48] [config]   - perplexity
+[2019-07-17 20:23:48] [config]   - translation
+[2019-07-17 20:23:48] [config] valid-mini-batch: 8
+[2019-07-17 20:23:48] [config] valid-script-path: ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/score-dev.sh
+[2019-07-17 20:23:48] [config] valid-sets:
+[2019-07-17 20:23:48] [config]   - ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/dev.bpe.de
+[2019-07-17 20:23:48] [config]   - ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/dev.bpe.en
+[2019-07-17 20:23:48] [config] valid-translation-output: ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/dev.out
+[2019-07-17 20:23:48] [config] vocabs:
+[2019-07-17 20:23:48] [config]   - ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.de.json
+[2019-07-17 20:23:48] [config]   - ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.en.json
+[2019-07-17 20:23:48] [config] word-penalty: 0
+[2019-07-17 20:23:48] [config] workspace: 5000
+[2019-07-17 20:23:48] [config] Model is being created with Marian v1.7.8 ec2d66e 2019-05-27 14:52:11 +0100
+[2019-07-17 20:23:48] Using synchronous training
+[2019-07-17 20:23:48] [data] Loading vocabulary from JSON/Yaml file ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.de.json
+[2019-07-17 20:23:48] [data] Using unused word id eos for 0
+[2019-07-17 20:23:48] [data] Using unused word id UNK for 1
+[2019-07-17 20:23:48] [data] Setting vocabulary size for input 0 to 50000
+[2019-07-17 20:23:48] [data] Loading vocabulary from JSON/Yaml file ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/data/train.bpe.en.json
+[2019-07-17 20:23:48] [data] Using unused word id eos for 0
+[2019-07-17 20:23:48] [data] Using unused word id UNK for 1
+[2019-07-17 20:23:48] [data] Setting vocabulary size for input 1 to 50000
+[2019-07-17 20:23:48] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-07-17 20:23:48] [batching] Collecting statistics for batch fitting with step size 10
+[2019-07-17 20:23:49] [memory] Extending reserved space to 5120 MB (device gpu0)
+[2019-07-17 20:23:49] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-17 20:23:49] [comm] NCCLCommunicator constructed successfully.
+[2019-07-17 20:23:49] [training] Using 1 GPUs
+[2019-07-17 20:23:49] [memory] Reserving 422 MB, device gpu0
+[2019-07-17 20:23:49] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-07-17 20:23:49] [memory] Reserving 422 MB, device gpu0
+[2019-07-17 20:24:01] [batching] Done. Typical MB size is 6880 target words
+[2019-07-17 20:24:01] [memory] Extending reserved space to 5120 MB (device gpu0)
+[2019-07-17 20:24:01] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-07-17 20:24:01] [comm] NCCLCommunicator constructed successfully.
+[2019-07-17 20:24:01] [training] Using 1 GPUs
+[2019-07-17 20:24:01] Training started
+[2019-07-17 20:24:01] [data] Shuffling data
+[2019-07-17 20:24:01] [data] Done reading 581059 sentences
+[2019-07-17 20:24:03] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 20:24:06] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-07-17 20:24:06] [memory] Reserving 422 MB, device gpu0
+[2019-07-17 20:24:06] [memory] Reserving 422 MB, device gpu0
+[2019-07-17 20:24:06] [memory] Reserving 422 MB, device gpu0
+[2019-07-17 20:24:06] [memory] Reserving 844 MB, device gpu0
+[2019-07-17 20:44:23] Ep. 1 : Up. 2000 : Sen. 383,026 : Cost 126.63707733 : Time 1234.72s : 7054.54 words/s
+[2019-07-17 20:52:39] Seen 537734 samples
+[2019-07-17 20:52:39] Starting epoch 2
+[2019-07-17 20:52:39] [data] Shuffling data
+[2019-07-17 20:52:39] [data] Done reading 581059 sentences
+[2019-07-17 20:52:41] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 21:04:51] Ep. 2 : Up. 4000 : Sen. 226,743 : Cost 91.13020325 : Time 1227.86s : 7077.34 words/s
+[2019-07-17 21:21:25] Seen 537734 samples
+[2019-07-17 21:21:25] Starting epoch 3
+[2019-07-17 21:21:25] [data] Shuffling data
+[2019-07-17 21:21:25] [data] Done reading 581059 sentences
+[2019-07-17 21:21:27] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 21:25:18] Ep. 3 : Up. 6000 : Sen. 72,049 : Cost 74.02593994 : Time 1227.31s : 7084.35 words/s
+[2019-07-17 21:45:47] Ep. 3 : Up. 8000 : Sen. 455,667 : Cost 64.73703766 : Time 1228.80s : 7114.12 words/s
+[2019-07-17 21:50:09] Seen 537734 samples
+[2019-07-17 21:50:09] Starting epoch 4
+[2019-07-17 21:50:09] [data] Shuffling data
+[2019-07-17 21:50:10] [data] Done reading 581059 sentences
+[2019-07-17 21:50:11] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 22:06:14] Ep. 4 : Up. 10000 : Sen. 298,945 : Cost 58.63565063 : Time 1227.47s : 7068.54 words/s
+[2019-07-17 22:18:57] Seen 537734 samples
+[2019-07-17 22:18:57] Starting epoch 5
+[2019-07-17 22:18:57] [data] Shuffling data
+[2019-07-17 22:18:57] [data] Done reading 581059 sentences
+[2019-07-17 22:18:59] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 22:26:46] Ep. 5 : Up. 12000 : Sen. 145,906 : Cost 54.22982788 : Time 1231.60s : 7086.05 words/s
+[2019-07-17 22:47:16] Ep. 5 : Up. 14000 : Sen. 528,518 : Cost 51.65260315 : Time 1230.33s : 7087.91 words/s
+[2019-07-17 22:47:45] Seen 537734 samples
+[2019-07-17 22:47:45] Starting epoch 6
+[2019-07-17 22:47:45] [data] Shuffling data
+[2019-07-17 22:47:46] [data] Done reading 581059 sentences
+[2019-07-17 22:47:48] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 23:07:52] Ep. 6 : Up. 16000 : Sen. 374,361 : Cost 48.47153854 : Time 1235.74s : 7060.70 words/s
+[2019-07-17 23:16:37] Seen 537734 samples
+[2019-07-17 23:16:37] Starting epoch 7
+[2019-07-17 23:16:37] [data] Shuffling data
+[2019-07-17 23:16:37] [data] Done reading 581059 sentences
+[2019-07-17 23:16:39] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 23:28:29] Ep. 7 : Up. 18000 : Sen. 219,592 : Cost 46.46733856 : Time 1236.62s : 7040.85 words/s
+[2019-07-17 23:45:33] Seen 537734 samples
+[2019-07-17 23:45:33] Starting epoch 8
+[2019-07-17 23:45:33] [data] Shuffling data
+[2019-07-17 23:45:34] [data] Done reading 581059 sentences
+[2019-07-17 23:45:36] [data] Done shuffling 581059 sentences to temp files
+[2019-07-17 23:49:08] Ep. 8 : Up. 20000 : Sen. 65,811 : Cost 45.06106186 : Time 1239.62s : 7041.32 words/s
+[2019-07-17 23:49:08] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-17 23:49:16] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter20000.npz
+[2019-07-17 23:49:23] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-17 23:49:31] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-17 23:49:56] [valid] Ep. 8 : Up. 20000 : cross-entropy : 69.9429 : new best
+[2019-07-17 23:50:05] [valid] Ep. 8 : Up. 20000 : perplexity : 15.8728 : new best
+[2019-07-17 23:51:17] [valid] Ep. 8 : Up. 20000 : translation : 23.98 : new best
+[2019-07-18 00:11:52] Ep. 8 : Up. 22000 : Sen. 450,334 : Cost 43.24524689 : Time 1363.53s : 6412.63 words/s
+[2019-07-18 00:16:34] Seen 537734 samples
+[2019-07-18 00:16:34] Starting epoch 9
+[2019-07-18 00:16:34] [data] Shuffling data
+[2019-07-18 00:16:34] [data] Done reading 581059 sentences
+[2019-07-18 00:16:36] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 00:32:25] Ep. 9 : Up. 24000 : Sen. 295,285 : Cost 42.13506699 : Time 1233.13s : 7059.51 words/s
+[2019-07-18 00:45:26] Seen 537734 samples
+[2019-07-18 00:45:26] Starting epoch 10
+[2019-07-18 00:45:26] [data] Shuffling data
+[2019-07-18 00:45:26] [data] Done reading 581059 sentences
+[2019-07-18 00:45:28] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 00:52:59] Ep. 10 : Up. 26000 : Sen. 139,992 : Cost 41.03001785 : Time 1234.34s : 7055.78 words/s
+[2019-07-18 01:13:28] Ep. 10 : Up. 28000 : Sen. 523,422 : Cost 40.25217819 : Time 1228.64s : 7094.52 words/s
+[2019-07-18 01:14:15] Seen 537734 samples
+[2019-07-18 01:14:15] Starting epoch 11
+[2019-07-18 01:14:15] [data] Shuffling data
+[2019-07-18 01:14:15] [data] Done reading 581059 sentences
+[2019-07-18 01:14:17] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 01:33:59] Ep. 11 : Up. 30000 : Sen. 368,017 : Cost 38.50780487 : Time 1231.49s : 7060.45 words/s
+[2019-07-18 01:43:06] Seen 537734 samples
+[2019-07-18 01:43:06] Starting epoch 12
+[2019-07-18 01:43:06] [data] Shuffling data
+[2019-07-18 01:43:06] [data] Done reading 581059 sentences
+[2019-07-18 01:43:08] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 01:54:36] Ep. 12 : Up. 32000 : Sen. 214,498 : Cost 37.91677475 : Time 1236.85s : 7063.84 words/s
+[2019-07-18 02:11:57] Seen 537734 samples
+[2019-07-18 02:11:57] Starting epoch 13
+[2019-07-18 02:11:57] [data] Shuffling data
+[2019-07-18 02:11:58] [data] Done reading 581059 sentences
+[2019-07-18 02:12:00] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 02:15:11] Ep. 13 : Up. 34000 : Sen. 58,850 : Cost 37.29882431 : Time 1234.76s : 7049.78 words/s
+[2019-07-18 02:35:44] Ep. 13 : Up. 36000 : Sen. 442,735 : Cost 36.30332947 : Time 1232.53s : 7085.52 words/s
+[2019-07-18 02:40:49] Seen 537734 samples
+[2019-07-18 02:40:49] Starting epoch 14
+[2019-07-18 02:40:49] [data] Shuffling data
+[2019-07-18 02:40:49] [data] Done reading 581059 sentences
+[2019-07-18 02:40:51] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 02:56:16] Ep. 14 : Up. 38000 : Sen. 287,247 : Cost 35.46521759 : Time 1232.15s : 7057.70 words/s
+[2019-07-18 03:09:42] Seen 537734 samples
+[2019-07-18 03:09:42] Starting epoch 15
+[2019-07-18 03:09:42] [data] Shuffling data
+[2019-07-18 03:09:42] [data] Done reading 581059 sentences
+[2019-07-18 03:09:44] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 03:16:51] Ep. 15 : Up. 40000 : Sen. 132,162 : Cost 34.96015930 : Time 1235.12s : 7043.15 words/s
+[2019-07-18 03:16:51] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 03:16:59] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter40000.npz
+[2019-07-18 03:17:06] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 03:17:14] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-18 03:17:40] [valid] Ep. 15 : Up. 40000 : cross-entropy : 63.8482 : new best
+[2019-07-18 03:17:49] [valid] Ep. 15 : Up. 40000 : perplexity : 12.4747 : new best
+[2019-07-18 03:19:00] [valid] Ep. 15 : Up. 40000 : translation : 26.03 : new best
+[2019-07-18 03:39:29] Ep. 15 : Up. 42000 : Sen. 514,305 : Cost 34.46669388 : Time 1357.75s : 6403.06 words/s
+[2019-07-18 03:40:45] Seen 537734 samples
+[2019-07-18 03:40:45] Starting epoch 16
+[2019-07-18 03:40:45] [data] Shuffling data
+[2019-07-18 03:40:45] [data] Done reading 581059 sentences
+[2019-07-18 03:40:47] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 04:00:04] Ep. 16 : Up. 44000 : Sen. 360,105 : Cost 33.38936234 : Time 1235.29s : 7060.77 words/s
+[2019-07-18 04:09:36] Seen 537734 samples
+[2019-07-18 04:09:36] Starting epoch 17
+[2019-07-18 04:09:36] [data] Shuffling data
+[2019-07-18 04:09:36] [data] Done reading 581059 sentences
+[2019-07-18 04:09:38] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 04:20:41] Ep. 17 : Up. 46000 : Sen. 205,906 : Cost 33.21392822 : Time 1237.26s : 7057.90 words/s
+[2019-07-18 04:38:27] Seen 537734 samples
+[2019-07-18 04:38:27] Starting epoch 18
+[2019-07-18 04:38:27] [data] Shuffling data
+[2019-07-18 04:38:27] [data] Done reading 581059 sentences
+[2019-07-18 04:38:29] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 04:41:13] Ep. 18 : Up. 48000 : Sen. 50,022 : Cost 32.65102005 : Time 1231.85s : 7053.34 words/s
+[2019-07-18 05:01:43] Ep. 18 : Up. 50000 : Sen. 433,648 : Cost 31.90300369 : Time 1229.77s : 7089.73 words/s
+[2019-07-18 05:07:18] Seen 537734 samples
+[2019-07-18 05:07:18] Starting epoch 19
+[2019-07-18 05:07:18] [data] Shuffling data
+[2019-07-18 05:07:18] [data] Done reading 581059 sentences
+[2019-07-18 05:07:20] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 05:22:17] Ep. 19 : Up. 52000 : Sen. 278,403 : Cost 31.60149956 : Time 1233.91s : 7058.02 words/s
+[2019-07-18 05:36:10] Seen 537734 samples
+[2019-07-18 05:36:10] Starting epoch 20
+[2019-07-18 05:36:10] [data] Shuffling data
+[2019-07-18 05:36:10] [data] Done reading 581059 sentences
+[2019-07-18 05:36:12] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 05:42:52] Ep. 20 : Up. 54000 : Sen. 124,198 : Cost 31.22217369 : Time 1235.79s : 7054.21 words/s
+[2019-07-18 06:03:24] Ep. 20 : Up. 56000 : Sen. 507,111 : Cost 30.76716995 : Time 1231.27s : 7078.35 words/s
+[2019-07-18 06:05:01] Seen 537734 samples
+[2019-07-18 06:05:01] Starting epoch 21
+[2019-07-18 06:05:01] [data] Shuffling data
+[2019-07-18 06:05:02] [data] Done reading 581059 sentences
+[2019-07-18 06:05:04] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 06:23:59] Ep. 21 : Up. 58000 : Sen. 352,737 : Cost 29.81202316 : Time 1235.48s : 7054.26 words/s
+[2019-07-18 06:33:55] Seen 537734 samples
+[2019-07-18 06:33:55] Starting epoch 22
+[2019-07-18 06:33:55] [data] Shuffling data
+[2019-07-18 06:33:55] [data] Done reading 581059 sentences
+[2019-07-18 06:33:58] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 06:44:33] Ep. 22 : Up. 60000 : Sen. 197,341 : Cost 29.70861626 : Time 1234.11s : 7044.55 words/s
+[2019-07-18 06:44:33] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 06:44:42] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter60000.npz
+[2019-07-18 06:44:49] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 06:44:59] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-18 06:45:30] [valid] Ep. 22 : Up. 60000 : cross-entropy : 63.0145 : new best
+[2019-07-18 06:45:39] [valid] Ep. 22 : Up. 60000 : perplexity : 12.0703 : new best
+[2019-07-18 06:46:51] [valid] Ep. 22 : Up. 60000 : translation : 26.33 : new best
+[2019-07-18 07:04:54] Seen 537734 samples
+[2019-07-18 07:04:54] Starting epoch 23
+[2019-07-18 07:04:54] [data] Shuffling data
+[2019-07-18 07:04:54] [data] Done reading 581059 sentences
+[2019-07-18 07:04:56] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 07:07:11] Ep. 23 : Up. 62000 : Sen. 42,182 : Cost 29.57343864 : Time 1357.95s : 6410.87 words/s
+[2019-07-18 07:27:27] Ep. 23 : Up. 64000 : Sen. 424,822 : Cost 28.95197487 : Time 1215.87s : 7169.69 words/s
+[2019-07-18 07:33:25] Seen 537734 samples
+[2019-07-18 07:33:25] Starting epoch 24
+[2019-07-18 07:33:25] [data] Shuffling data
+[2019-07-18 07:33:25] [data] Done reading 581059 sentences
+[2019-07-18 07:33:27] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 07:47:46] Ep. 24 : Up. 66000 : Sen. 270,045 : Cost 28.63978004 : Time 1218.81s : 7139.08 words/s
+[2019-07-18 08:01:54] Seen 537734 samples
+[2019-07-18 08:01:54] Starting epoch 25
+[2019-07-18 08:01:54] [data] Shuffling data
+[2019-07-18 08:01:55] [data] Done reading 581059 sentences
+[2019-07-18 08:01:56] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 08:08:03] Ep. 25 : Up. 68000 : Sen. 115,200 : Cost 28.20896339 : Time 1216.97s : 7155.42 words/s
+[2019-07-18 08:28:16] Ep. 25 : Up. 70000 : Sen. 497,528 : Cost 28.06414604 : Time 1213.15s : 7170.06 words/s
+[2019-07-18 08:30:25] Seen 537734 samples
+[2019-07-18 08:30:25] Starting epoch 26
+[2019-07-18 08:30:25] [data] Shuffling data
+[2019-07-18 08:30:25] [data] Done reading 581059 sentences
+[2019-07-18 08:30:27] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 08:48:36] Ep. 26 : Up. 72000 : Sen. 342,850 : Cost 27.48456383 : Time 1219.96s : 7146.91 words/s
+[2019-07-18 08:58:55] Seen 537734 samples
+[2019-07-18 08:58:55] Starting epoch 27
+[2019-07-18 08:58:55] [data] Shuffling data
+[2019-07-18 08:58:55] [data] Done reading 581059 sentences
+[2019-07-18 08:58:57] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 09:08:54] Ep. 27 : Up. 74000 : Sen. 187,425 : Cost 27.37751579 : Time 1218.30s : 7135.81 words/s
+[2019-07-18 09:27:25] Seen 537734 samples
+[2019-07-18 09:27:25] Starting epoch 28
+[2019-07-18 09:27:25] [data] Shuffling data
+[2019-07-18 09:27:25] [data] Done reading 581059 sentences
+[2019-07-18 09:27:27] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 09:29:14] Ep. 28 : Up. 76000 : Sen. 33,409 : Cost 27.22469330 : Time 1220.07s : 7154.28 words/s
+[2019-07-18 09:49:29] Ep. 28 : Up. 78000 : Sen. 416,480 : Cost 26.68520546 : Time 1215.05s : 7175.86 words/s
+[2019-07-18 09:55:54] Seen 537734 samples
+[2019-07-18 09:55:54] Starting epoch 29
+[2019-07-18 09:55:54] [data] Shuffling data
+[2019-07-18 09:55:54] [data] Done reading 581059 sentences
+[2019-07-18 09:55:56] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 10:09:48] Ep. 29 : Up. 80000 : Sen. 261,320 : Cost 26.32015228 : Time 1218.82s : 7145.33 words/s
+[2019-07-18 10:09:48] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 10:09:57] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter80000.npz
+[2019-07-18 10:10:04] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 10:10:13] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-18 10:10:38] [valid] Ep. 29 : Up. 80000 : cross-entropy : 63.7903 : stalled 1 times (last best: 63.0145)
+[2019-07-18 10:10:47] [valid] Ep. 29 : Up. 80000 : perplexity : 12.4462 : stalled 1 times (last best: 12.0703)
+[2019-07-18 10:11:59] [valid] Ep. 29 : Up. 80000 : translation : 26.37 : new best
+[2019-07-18 10:26:36] Seen 537734 samples
+[2019-07-18 10:26:36] Starting epoch 30
+[2019-07-18 10:26:36] [data] Shuffling data
+[2019-07-18 10:26:36] [data] Done reading 581059 sentences
+[2019-07-18 10:26:38] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 10:32:18] Ep. 30 : Up. 82000 : Sen. 106,655 : Cost 26.37817192 : Time 1349.49s : 6446.27 words/s
+[2019-07-18 10:52:33] Ep. 30 : Up. 84000 : Sen. 490,272 : Cost 25.90141678 : Time 1215.76s : 7180.32 words/s
+[2019-07-18 10:55:05] Seen 537734 samples
+[2019-07-18 10:55:05] Starting epoch 31
+[2019-07-18 10:55:05] [data] Shuffling data
+[2019-07-18 10:55:05] [data] Done reading 581059 sentences
+[2019-07-18 10:55:07] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 11:12:51] Ep. 31 : Up. 86000 : Sen. 335,468 : Cost 25.48252678 : Time 1217.95s : 7147.21 words/s
+[2019-07-18 11:23:34] Seen 537734 samples
+[2019-07-18 11:23:34] Starting epoch 32
+[2019-07-18 11:23:34] [data] Shuffling data
+[2019-07-18 11:23:34] [data] Done reading 581059 sentences
+[2019-07-18 11:23:36] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 11:33:14] Ep. 32 : Up. 88000 : Sen. 181,394 : Cost 25.66484833 : Time 1222.20s : 7146.43 words/s
+[2019-07-18 11:52:04] Seen 537734 samples
+[2019-07-18 11:52:04] Starting epoch 33
+[2019-07-18 11:52:04] [data] Shuffling data
+[2019-07-18 11:52:04] [data] Done reading 581059 sentences
+[2019-07-18 11:52:06] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 11:53:33] Ep. 33 : Up. 90000 : Sen. 26,976 : Cost 25.24787712 : Time 1219.39s : 7149.28 words/s
+[2019-07-18 12:13:47] Ep. 33 : Up. 92000 : Sen. 409,600 : Cost 24.82922173 : Time 1213.53s : 7177.07 words/s
+[2019-07-18 12:20:32] Seen 537734 samples
+[2019-07-18 12:20:32] Starting epoch 34
+[2019-07-18 12:20:32] [data] Shuffling data
+[2019-07-18 12:20:33] [data] Done reading 581059 sentences
+[2019-07-18 12:20:35] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 12:34:06] Ep. 34 : Up. 94000 : Sen. 254,375 : Cost 24.63049507 : Time 1219.58s : 7146.03 words/s
+[2019-07-18 12:49:02] Seen 537734 samples
+[2019-07-18 12:49:02] Starting epoch 35
+[2019-07-18 12:49:02] [data] Shuffling data
+[2019-07-18 12:49:02] [data] Done reading 581059 sentences
+[2019-07-18 12:49:04] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 12:54:25] Ep. 35 : Up. 96000 : Sen. 99,554 : Cost 24.58737946 : Time 1218.74s : 7141.68 words/s
+[2019-07-18 13:14:37] Ep. 35 : Up. 98000 : Sen. 482,689 : Cost 24.12338638 : Time 1212.40s : 7176.26 words/s
+[2019-07-18 13:17:33] Seen 537734 samples
+[2019-07-18 13:17:33] Starting epoch 36
+[2019-07-18 13:17:33] [data] Shuffling data
+[2019-07-18 13:17:33] [data] Done reading 581059 sentences
+[2019-07-18 13:17:35] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 13:34:55] Ep. 36 : Up. 100000 : Sen. 327,570 : Cost 24.00889587 : Time 1217.23s : 7151.34 words/s
+[2019-07-18 13:34:55] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 13:35:03] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter100000.npz
+[2019-07-18 13:35:10] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 13:35:19] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-18 13:35:44] [valid] Ep. 36 : Up. 100000 : cross-entropy : 65.469 : stalled 2 times (last best: 63.0145)
+[2019-07-18 13:35:53] [valid] Ep. 36 : Up. 100000 : perplexity : 13.3 : stalled 2 times (last best: 12.0703)
+[2019-07-18 13:37:05] [valid] Ep. 36 : Up. 100000 : translation : 26.31 : stalled 1 times (last best: 26.37)
+[2019-07-18 13:48:14] Seen 537734 samples
+[2019-07-18 13:48:14] Starting epoch 37
+[2019-07-18 13:48:14] [data] Shuffling data
+[2019-07-18 13:48:14] [data] Done reading 581059 sentences
+[2019-07-18 13:48:16] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 13:57:23] Ep. 37 : Up. 102000 : Sen. 171,719 : Cost 23.86702919 : Time 1348.38s : 6445.77 words/s
+[2019-07-18 14:16:43] Seen 537734 samples
+[2019-07-18 14:16:43] Starting epoch 38
+[2019-07-18 14:16:43] [data] Shuffling data
+[2019-07-18 14:16:44] [data] Done reading 581059 sentences
+[2019-07-18 14:16:45] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 14:17:42] Ep. 38 : Up. 104000 : Sen. 17,334 : Cost 23.85352707 : Time 1219.17s : 7150.83 words/s
+[2019-07-18 14:37:56] Ep. 38 : Up. 106000 : Sen. 400,776 : Cost 23.41721535 : Time 1213.92s : 7185.63 words/s
+[2019-07-18 14:45:10] Seen 537734 samples
+[2019-07-18 14:45:10] Starting epoch 39
+[2019-07-18 14:45:10] [data] Shuffling data
+[2019-07-18 14:45:11] [data] Done reading 581059 sentences
+[2019-07-18 14:45:12] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 14:58:18] Ep. 39 : Up. 108000 : Sen. 247,391 : Cost 23.11540222 : Time 1221.69s : 7161.80 words/s
+[2019-07-18 15:13:39] Seen 537734 samples
+[2019-07-18 15:13:39] Starting epoch 40
+[2019-07-18 15:13:39] [data] Shuffling data
+[2019-07-18 15:13:39] [data] Done reading 581059 sentences
+[2019-07-18 15:13:41] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 15:18:30] Ep. 40 : Up. 110000 : Sen. 90,813 : Cost 22.98210716 : Time 1212.80s : 7142.95 words/s
+[2019-07-18 15:38:46] Ep. 40 : Up. 112000 : Sen. 474,617 : Cost 23.11364174 : Time 1215.62s : 7185.46 words/s
+[2019-07-18 15:42:07] Seen 537734 samples
+[2019-07-18 15:42:07] Starting epoch 41
+[2019-07-18 15:42:07] [data] Shuffling data
+[2019-07-18 15:42:07] [data] Done reading 581059 sentences
+[2019-07-18 15:42:09] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 15:59:03] Ep. 41 : Up. 114000 : Sen. 319,798 : Cost 22.60426521 : Time 1217.01s : 7156.34 words/s
+[2019-07-18 16:10:36] Seen 537734 samples
+[2019-07-18 16:10:36] Starting epoch 42
+[2019-07-18 16:10:36] [data] Shuffling data
+[2019-07-18 16:10:36] [data] Done reading 581059 sentences
+[2019-07-18 16:10:38] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 16:19:22] Ep. 42 : Up. 116000 : Sen. 165,252 : Cost 22.62514305 : Time 1218.68s : 7147.92 words/s
+[2019-07-18 16:39:07] Seen 537734 samples
+[2019-07-18 16:39:07] Starting epoch 43
+[2019-07-18 16:39:07] [data] Shuffling data
+[2019-07-18 16:39:07] [data] Done reading 581059 sentences
+[2019-07-18 16:39:09] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 16:39:42] Ep. 43 : Up. 118000 : Sen. 9,824 : Cost 22.67835808 : Time 1220.53s : 7134.29 words/s
+[2019-07-18 16:59:56] Ep. 43 : Up. 120000 : Sen. 393,563 : Cost 22.10597038 : Time 1214.08s : 7188.30 words/s
+[2019-07-18 16:59:56] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 17:00:05] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter120000.npz
+[2019-07-18 17:00:12] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 17:00:20] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-18 17:00:45] [valid] Ep. 43 : Up. 120000 : cross-entropy : 67.1239 : stalled 3 times (last best: 63.0145)
+[2019-07-18 17:00:54] [valid] Ep. 43 : Up. 120000 : perplexity : 14.1991 : stalled 3 times (last best: 12.0703)
+[2019-07-18 17:02:05] [valid] Ep. 43 : Up. 120000 : translation : 25.91 : stalled 2 times (last best: 26.37)
+[2019-07-18 17:09:44] Seen 537734 samples
+[2019-07-18 17:09:44] Starting epoch 44
+[2019-07-18 17:09:44] [data] Shuffling data
+[2019-07-18 17:09:44] [data] Done reading 581059 sentences
+[2019-07-18 17:09:46] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 17:22:24] Ep. 44 : Up. 122000 : Sen. 238,596 : Cost 22.02893639 : Time 1347.11s : 6463.61 words/s
+[2019-07-18 17:38:11] Seen 537734 samples
+[2019-07-18 17:38:11] Starting epoch 45
+[2019-07-18 17:38:11] [data] Shuffling data
+[2019-07-18 17:38:12] [data] Done reading 581059 sentences
+[2019-07-18 17:38:13] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 17:42:40] Ep. 45 : Up. 124000 : Sen. 83,855 : Cost 22.12503052 : Time 1216.08s : 7159.32 words/s
+[2019-07-18 18:02:52] Ep. 45 : Up. 126000 : Sen. 466,183 : Cost 21.90794563 : Time 1212.74s : 7177.78 words/s
+[2019-07-18 18:06:40] Seen 537734 samples
+[2019-07-18 18:06:40] Starting epoch 46
+[2019-07-18 18:06:40] [data] Shuffling data
+[2019-07-18 18:06:40] [data] Done reading 581059 sentences
+[2019-07-18 18:06:42] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 18:23:07] Ep. 46 : Up. 128000 : Sen. 310,940 : Cost 21.31188774 : Time 1214.85s : 7154.39 words/s
+[2019-07-18 18:35:07] Seen 537734 samples
+[2019-07-18 18:35:07] Starting epoch 47
+[2019-07-18 18:35:07] [data] Shuffling data
+[2019-07-18 18:35:08] [data] Done reading 581059 sentences
+[2019-07-18 18:35:09] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 18:43:27] Ep. 47 : Up. 130000 : Sen. 156,523 : Cost 21.64344215 : Time 1219.50s : 7157.67 words/s
+[2019-07-18 19:03:35] Seen 537734 samples
+[2019-07-18 19:03:35] Starting epoch 48
+[2019-07-18 19:03:35] [data] Shuffling data
+[2019-07-18 19:03:35] [data] Done reading 581059 sentences
+[2019-07-18 19:03:37] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 19:03:42] Ep. 48 : Up. 132000 : Sen. 612 : Cost 21.60138512 : Time 1214.97s : 7153.30 words/s
+[2019-07-18 19:23:52] Ep. 48 : Up. 134000 : Sen. 383,408 : Cost 20.98825836 : Time 1210.25s : 7189.25 words/s
+[2019-07-18 19:32:02] Seen 537734 samples
+[2019-07-18 19:32:02] Starting epoch 49
+[2019-07-18 19:32:02] [data] Shuffling data
+[2019-07-18 19:32:02] [data] Done reading 581059 sentences
+[2019-07-18 19:32:04] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 19:44:11] Ep. 49 : Up. 136000 : Sen. 228,923 : Cost 21.01543045 : Time 1219.15s : 7155.46 words/s
+[2019-07-18 20:00:30] Seen 537734 samples
+[2019-07-18 20:00:30] Starting epoch 50
+[2019-07-18 20:00:30] [data] Shuffling data
+[2019-07-18 20:00:30] [data] Done reading 581059 sentences
+[2019-07-18 20:00:32] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 20:04:30] Ep. 50 : Up. 138000 : Sen. 74,004 : Cost 20.95109558 : Time 1218.51s : 7150.20 words/s
+[2019-07-18 20:24:41] Ep. 50 : Up. 140000 : Sen. 457,638 : Cost 20.70667076 : Time 1211.01s : 7187.45 words/s
+[2019-07-18 20:24:41] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 20:24:48] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter140000.npz
+[2019-07-18 20:24:55] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 20:25:04] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-18 20:25:29] [valid] Ep. 50 : Up. 140000 : cross-entropy : 69.0464 : stalled 4 times (last best: 63.0145)
+[2019-07-18 20:25:38] [valid] Ep. 50 : Up. 140000 : perplexity : 15.3201 : stalled 4 times (last best: 12.0703)
+[2019-07-18 20:26:50] [valid] Ep. 50 : Up. 140000 : translation : 25.48 : stalled 3 times (last best: 26.37)
+[2019-07-18 20:31:08] Seen 537734 samples
+[2019-07-18 20:31:08] Starting epoch 51
+[2019-07-18 20:31:08] [data] Shuffling data
+[2019-07-18 20:31:08] [data] Done reading 581059 sentences
+[2019-07-18 20:31:10] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 20:47:16] Ep. 51 : Up. 142000 : Sen. 302,972 : Cost 20.59898376 : Time 1355.01s : 6452.67 words/s
+[2019-07-18 20:59:41] Seen 537734 samples
+[2019-07-18 20:59:41] Starting epoch 52
+[2019-07-18 20:59:41] [data] Shuffling data
+[2019-07-18 20:59:42] [data] Done reading 581059 sentences
+[2019-07-18 20:59:44] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 21:07:41] Ep. 52 : Up. 144000 : Sen. 149,636 : Cost 20.38629723 : Time 1225.16s : 7126.81 words/s
+[2019-07-18 21:28:00] Ep. 52 : Up. 146000 : Sen. 533,137 : Cost 20.39329720 : Time 1219.20s : 7148.04 words/s
+[2019-07-18 21:28:17] Seen 537734 samples
+[2019-07-18 21:28:17] Starting epoch 53
+[2019-07-18 21:28:17] [data] Shuffling data
+[2019-07-18 21:28:17] [data] Done reading 581059 sentences
+[2019-07-18 21:28:19] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 21:48:17] Ep. 53 : Up. 148000 : Sen. 377,600 : Cost 20.45471001 : Time 1216.77s : 7150.59 words/s
+[2019-07-18 21:56:44] Seen 537734 samples
+[2019-07-18 21:56:44] Starting epoch 54
+[2019-07-18 21:56:44] [data] Shuffling data
+[2019-07-18 21:56:44] [data] Done reading 581059 sentences
+[2019-07-18 21:56:46] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 22:08:35] Ep. 54 : Up. 150000 : Sen. 223,388 : Cost 20.10437775 : Time 1218.59s : 7161.56 words/s
+[2019-07-18 22:25:12] Seen 537734 samples
+[2019-07-18 22:25:12] Starting epoch 55
+[2019-07-18 22:25:12] [data] Shuffling data
+[2019-07-18 22:25:12] [data] Done reading 581059 sentences
+[2019-07-18 22:25:14] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 22:28:54] Ep. 55 : Up. 152000 : Sen. 67,730 : Cost 20.14971542 : Time 1218.26s : 7132.25 words/s
+[2019-07-18 22:49:08] Ep. 55 : Up. 154000 : Sen. 449,764 : Cost 19.81658173 : Time 1214.77s : 7159.81 words/s
+[2019-07-18 22:53:52] Seen 537734 samples
+[2019-07-18 22:53:52] Starting epoch 56
+[2019-07-18 22:53:52] [data] Shuffling data
+[2019-07-18 22:53:53] [data] Done reading 581059 sentences
+[2019-07-18 22:53:55] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 23:09:38] Ep. 56 : Up. 156000 : Sen. 295,333 : Cost 19.60115623 : Time 1229.26s : 7089.98 words/s
+[2019-07-18 23:22:25] Seen 537734 samples
+[2019-07-18 23:22:25] Starting epoch 57
+[2019-07-18 23:22:25] [data] Shuffling data
+[2019-07-18 23:22:26] [data] Done reading 581059 sentences
+[2019-07-18 23:22:27] [data] Done shuffling 581059 sentences to temp files
+[2019-07-18 23:29:55] Ep. 57 : Up. 158000 : Sen. 140,800 : Cost 19.74458122 : Time 1217.08s : 7160.66 words/s
+[2019-07-18 23:50:13] Ep. 57 : Up. 160000 : Sen. 523,916 : Cost 19.70923615 : Time 1218.28s : 7155.48 words/s
+[2019-07-18 23:50:13] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 23:50:22] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.iter160000.npz
+[2019-07-18 23:50:29] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 23:50:38] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz
+[2019-07-18 23:51:04] [valid] Ep. 57 : Up. 160000 : cross-entropy : 70.9017 : stalled 5 times (last best: 63.0145)
+[2019-07-18 23:51:13] [valid] Ep. 57 : Up. 160000 : perplexity : 16.4859 : stalled 5 times (last best: 12.0703)
+[2019-07-18 23:52:29] [valid] Ep. 57 : Up. 160000 : translation : 25.22 : stalled 4 times (last best: 26.37)
+[2019-07-18 23:52:31] Training finished
+[2019-07-18 23:52:34] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.orig.npz
+[2019-07-18 23:52:43] Saving model to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz
+[2019-07-18 23:52:52] Saving Adam parameters to ../experiments/10M_fasttext_prob_x_len_+_biced_0.25_x_bic1.1/model/model.npz.optimizer.npz

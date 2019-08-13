@@ -1,0 +1,169 @@
+workspace: 3000
+log: ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/model/train.log
+log-level: info
+log-time-zone: ""
+quiet: false
+quiet-translation: true
+seed: 1111
+clip-gemm: 0
+interpolate-env-vars: false
+relative-paths: false
+dump-config: ""
+model: ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/model/model.npz
+pretrained-model: ""
+ignore-model-config: false
+type: amun
+dim-vocabs:
+  - 50000
+  - 50000
+dim-emb: 512
+dim-rnn: 1024
+enc-type: bidirectional
+enc-cell: gru
+enc-cell-depth: 1
+enc-depth: 1
+dec-cell: gru
+dec-cell-base-depth: 2
+dec-cell-high-depth: 1
+dec-depth: 1
+skip: false
+layer-normalization: true
+right-left: false
+input-types: []
+best-deep: false
+tied-embeddings: false
+tied-embeddings-src: false
+tied-embeddings-all: false
+transformer-heads: 8
+transformer-no-projection: false
+transformer-dim-ffn: 2048
+transformer-ffn-depth: 2
+transformer-ffn-activation: swish
+transformer-dim-aan: 2048
+transformer-aan-depth: 2
+transformer-aan-activation: swish
+transformer-aan-nogate: false
+transformer-decoder-autoreg: self-attention
+transformer-tied-layers: []
+transformer-guided-alignment-layer: last
+transformer-preprocess: ""
+transformer-postprocess-emb: d
+transformer-postprocess: dan
+transformer-train-position-embeddings: false
+bert-mask-symbol: "[MASK]"
+bert-sep-symbol: "[SEP]"
+bert-class-symbol: "[CLS]"
+bert-masking-fraction: 0.15
+bert-train-type-embeddings: true
+bert-type-vocab-size: 2
+dropout-rnn: 0.2
+dropout-src: 0.1
+dropout-trg: 0.1
+grad-dropping-rate: 0
+grad-dropping-momentum: 0
+grad-dropping-warmup: 100
+transformer-dropout: 0
+transformer-dropout-attention: 0
+transformer-dropout-ffn: 0
+cost-type: ce-mean
+multi-loss-type: sum
+overwrite: false
+no-reload: false
+train-sets:
+  - ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/data/train.bpe.de
+  - ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/data/train.bpe.en
+vocabs:
+  - ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/data/train.bpe.de.json
+  - ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/data/train.bpe.en.json
+after-epochs: 0
+after-batches: 0
+disp-freq: 2000
+disp-first: 0
+disp-label-counts: false
+save-freq: 20000
+max-length: 50
+max-length-crop: false
+no-shuffle: false
+no-restore-corpus: false
+tempdir: .
+sqlite: ""
+sqlite-drop: false
+devices:
+  - 0
+num-devices: 0
+no-nccl: false
+cpu-threads: 0
+mini-batch: 64
+mini-batch-words: 0
+mini-batch-fit: true
+mini-batch-fit-step: 10
+maxi-batch: 100
+maxi-batch-sort: trg
+shuffle-in-ram: false
+mini-batch-words-ref: 0
+mini-batch-warmup: 0
+mini-batch-track-lr: false
+mini-batch-overstuff: 1
+mini-batch-understuff: 1
+optimizer: adam
+optimizer-params: []
+optimizer-delay: 1
+sync-sgd: true
+learn-rate: 0.0001
+lr-report: false
+lr-decay: 0
+lr-decay-strategy: epoch+stalled
+lr-decay-start:
+  - 10
+  - 1
+lr-decay-freq: 50000
+lr-decay-reset-optimizer: false
+lr-decay-repeat-warmup: false
+lr-decay-inv-sqrt:
+  - 0
+lr-warmup: 0
+lr-warmup-start-rate: 0
+lr-warmup-cycle: false
+lr-warmup-at-reload: false
+label-smoothing: 0
+clip-norm: 1
+exponential-smoothing: 0.0001
+guided-alignment: none
+guided-alignment-cost: mse
+guided-alignment-weight: 0.1
+data-weighting: ""
+data-weighting-type: sentence
+embedding-vectors: []
+embedding-normalization: false
+embedding-fix-src: false
+embedding-fix-trg: false
+multi-node: false
+multi-node-overlap: true
+ulr: false
+ulr-query-vectors: ""
+ulr-keys-vectors: ""
+ulr-trainable-transformation: false
+ulr-dim-emb: 0
+ulr-dropout: 0
+ulr-softmax-temperature: 1
+valid-sets:
+  - ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/data/dev.bpe.de
+  - ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/data/dev.bpe.en
+valid-freq: 20000
+valid-metrics:
+  - cross-entropy
+  - perplexity
+  - translation
+early-stopping: 5
+beam-size: 12
+normalize: 1
+max-length-factor: 3
+word-penalty: 0
+allow-unk: false
+n-best: false
+valid-mini-batch: 8
+valid-max-length: 1000
+valid-script-path: ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/score-dev.sh
+valid-translation-output: ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/model/dev.out
+keep-best: false
+valid-log: ../experiments/100M_fasttext_prob_x_len_x_bic1.1_+_biced_0.25_x_bic1.1/model/valid.log

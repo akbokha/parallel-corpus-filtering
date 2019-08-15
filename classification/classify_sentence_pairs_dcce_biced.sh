@@ -37,7 +37,8 @@ bicleaner-classify  \
         $OUTPUT_DIR/data_classified  \
         $TRAINING_METADATA_DIR/en-de.yaml \
         --threshold 0.5 \
-        --gpu $GPUS \
+        --processes 8 \
+        --gpu "$GPUS" \
         --dcce_model_src_trg $model_dir_src_trg/model.iter$BEST_SRC_TRG.npz \
         --dcce_model_trg_src $model_dir_trg_src/model.iter$BEST_TRG_SRC.npz \
         --dcce_src_vocab_src_trg $model_dir_src_trg/vocab.ende.yml \

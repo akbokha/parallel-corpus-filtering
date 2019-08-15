@@ -40,7 +40,6 @@ bicleaner-classify  \
         $TRAINING_METADATA_DIR/en-de.yaml \
         --threshold 0.5 \
         --dom_threshold $DOM_THRESHOLD \
-        --keep-dom_result \
         --gpu $GPUS \
         --dcce_model_src_trg $model_dir_src_trg/model.iter$BEST_SRC_TRG.npz \
         --dcce_model_trg_src $model_dir_trg_src/model.iter$BEST_TRG_SRC.npz \

@@ -13,7 +13,7 @@ bicleaner-classify  \
         $TO_BE_CLASSIFIED_DATA  \
         $OUTPUT_DIR/data_classified  \
         $TRAINING_METADATA_DIR/en-de.yaml \
-        --threshold 0.5
+        --threshold 0.55
 
 python extract_corpora_and_scores.py $OUTPUT_DIR
 

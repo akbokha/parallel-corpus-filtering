@@ -9,8 +9,8 @@ if len(sys.argv) > 1:
 with open(os.path.join(output_dir, 'data_classified')) as data, \
     open(os.path.join(output_dir, 'filtered_data_raw.en'), 'w') as en, \
     open(os.path.join(output_dir, 'filtered_data_raw.de'), 'w') as de, \
-    open(os.path.join(output_dir, 'filtered_data_scores'), 'w') as scores \
-    open(os.path.join(output_dir, 'filtered_dom_src_scores'), 'w') as dom_src_scores \
+    open(os.path.join(output_dir, 'filtered_data_scores'), 'w') as scores, \
+    open(os.path.join(output_dir, 'filtered_dom_src_scores'), 'w') as dom_src_scores, \
     open(os.path.join(output_dir, 'filtered_dom_trg_scores'), 'w') as dom_trg_scores:
     writer_en = csv.writer(en, delimiter='\t')
     writer_de = csv.writer(de, delimiter='\t')
@@ -24,4 +24,4 @@ with open(os.path.join(output_dir, 'data_classified')) as data, \
         writer_sc.writerow([line[4]])
         if len(line) == 7:
             writer_dom_src.writerow([line[5]])
-            writer_dom_trg.writerow([line[6])
+            writer_dom_trg.writerow([line[6]])
